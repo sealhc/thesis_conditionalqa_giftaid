@@ -1,0 +1,31 @@
+{
+  "source": "haitian-sun/ConditionalQA/v1_0/dev.json",
+  "commit": "77bd295952daf415548b3244db10880d3d55cfe0",
+  "id": "dev-38",
+  "policy_url": "https://www.gov.uk/claim-gift-aid",
+  "scenario": "I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.",
+  "question": "Am I eligible for Gift Aid?",
+  "native_gold": {
+    "answers": [
+      {
+        "answer": "yes",
+        "conditions": [
+          "<p>You must be recognised as a charity or CASC for tax purposes.</p>",
+          "<li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>",
+          "<li>make a Gift Aid declaration that gives you permission to claim it</li>"
+        ]
+      },
+      {
+        "answer": "no",
+        "conditions": [
+          "<li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>",
+          "<li>where the donor gets a ‘benefit’ over a certain limit</li>",
+          "<li>made through Payroll Giving</li>",
+          "<li>of shares</li>",
+          "<li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>"
+        ]
+      }
+    ]
+  },
+  "do_not_use_native_gold_in_model_prompts": true
+}
