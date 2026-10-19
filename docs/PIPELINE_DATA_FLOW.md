@@ -36,13 +36,13 @@ The reference rule is `C1 ∧ C2 ∧ C3 ∧ ¬(X1 ∨ X2 ∨ X3 ∨ X4 ∨ X5)`.
 For the model's own atom polarity, a *correct composition* would look like:
 
 ```json
-{"eligibility_expression":{"and":[
+{"eligibility_expression":{"op":"ALL","args":[
   {"ref":"a1"},{"ref":"a2"},{"ref":"a3"},{"ref":"a4"},
   {"ref":"a5"},{"ref":"a6"},{"ref":"a7"},{"ref":"a8"}
 ]}}
 ```
 
-**Important:** this JSON is an explanatory **expected logical structure**, not an unmodified saved output or the native ConditionalQA answer. In the audited Qwen run, the *actual* A1 output is `{"eligibility_expression":{"ref":"a1"}}`: it defines 8 atoms but uses **only a1** in the formula. This is a **logic-composition error**, even though condition coverage can be high.
+**Syntax note:** `op: ALL` is the actual schema grammar; `and` is not a valid operator key here. This example describes the desired Boolean composition of the model's own atom meanings, not the model's actual output.\n\n**Important:** this JSON is an explanatory **expected logical structure**, not an unmodified saved output or the native ConditionalQA answer. In the audited Qwen run, the *actual* A1 output is `{"eligibility_expression":{"ref":"a1"}}`: it defines 8 atoms but uses **only a1** in the formula. This is a **logic-composition error**, even though condition coverage can be high.
 
 ## A2 — Populate the same IR with case evidence
 
