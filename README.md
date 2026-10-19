@@ -1,4 +1,17 @@
-# ConditionalQA dev-38 — Gift Aid decision-support pilot
+# ConditionalQA dev-38 — Gift Aid Pilot
+
+## START HERE — for Pauline and research supervisors
+
+**[Read the full step-by-step experimental walkthrough](docs/STEP_BY_STEP_EXPERIMENT.md)**
+
+This guide explains the **four shared inputs**, why we synthesized YES/NO/NEED_MORE_INFORMATION cases, **exactly what A1, A2, A3 and B1 do**, what JSON each produces, the meaning of `atom`, `ref` and `eligibility_expression`, the intermediate Gold comparisons, and how the observed errors affected the final decision.
+
+**Five-minute orientation:** We compare Pipeline A (**A1 builds condition structure → A2 fills evidence into that same structure → A3 decides**) against Pipeline B (**B1 decides directly**) using the same policy, original background, additional donation evidence and question. A1+A2 form **one** intermediate representation. The original ConditionalQA Gold is conditional; our concrete decisions and intermediate references are researcher-derived.
+
+**Audit status:** Detailed documentation is now online. The complete raw-run archive and code are **not yet uploaded**; do not interpret this README as proof of full reproducibility.
+
+---
+
 
 **Exploratory single-case research; not tax advice.** This repository is being prepared for a fully auditable research release. The original ConditionalQA answer is conditional; the specific YES/NO/NEED_MORE_INFORMATION outcomes and intermediate reference states are researcher-derived.
 
