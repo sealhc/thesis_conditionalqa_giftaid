@@ -149,6 +149,16 @@ For Robyn R2_L, Qwen produces:
 - **Missing-information quality:** for R3, did the model name the **right missing facts**, including correct tax year and declaration coverage? The NEED_MORE_INFORMATION label alone is insufficient.
 - **Error propagation/absorption:** track each intermediate discrepancy jointly with the final outcome; do not infer a causal propagation rate from stage-wise averages.
 
+
+## Verified original Qwen R2_L rep01 JSON outputs (now on GitHub)
+
+These are **parsed model outputs**, not the raw response or the rendered prompt. They are linked for direct inspection; the corresponding exact prompts and raw response logs remain pending upload.
+
+- [A1 — actual parsed JSON](../runs/qwen_nothink_v7_rep01/R2_L/A1_parsed.json)
+- [A2 — actual parsed JSON](../runs/qwen_nothink_v7_rep01/R2_L/A2_parsed.json)
+- [A3 — actual parsed JSON](../runs/qwen_nothink_v7_rep01/R2_L/A3_parsed.json)
+- [B1 — actual parsed JSON](../runs/qwen_nothink_v7_rep01/R2_L/B1_parsed.json)
+
 ## 10. What a reviewer should be able to click
 
 For **every** run, the repository release must contain: `A1_PROMPT.txt`, `A1_raw.txt`, `A1_parsed.json`, equivalent A2/A3/B1 files, run metadata, provider request/attempt logs, source input and **post-run** Gold comparison. The raw outputs must not be replaced with cleaned summaries.
