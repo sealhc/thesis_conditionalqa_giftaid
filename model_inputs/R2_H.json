@@ -1,0 +1,58 @@
+{
+  "policy_passages": [
+    {
+      "id": "E01",
+      "html": "<p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>"
+    },
+    {
+      "id": "E02",
+      "html": "<p>You must be recognised as a charity or CASC for tax purposes.</p>"
+    },
+    {
+      "id": "E03",
+      "html": "<p>The donor must:</p>"
+    },
+    {
+      "id": "E04",
+      "html": "<li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>"
+    },
+    {
+      "id": "E05",
+      "html": "<li>make a Gift Aid declaration that gives you permission to claim it</li>"
+    },
+    {
+      "id": "E06",
+      "html": "<p>You can claim Gift Aid on donations from individuals. The donor must:</p>"
+    },
+    {
+      "id": "E07",
+      "html": "<li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>"
+    },
+    {
+      "id": "E08",
+      "html": "<p>You cannot claim on donations:</p>"
+    },
+    {
+      "id": "E09",
+      "html": "<li>made through Payroll Giving</li>"
+    },
+    {
+      "id": "E10",
+      "html": "<li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>"
+    },
+    {
+      "id": "E11",
+      "html": "<li>where the donor gets a ‘benefit’ over a certain limit</li>"
+    },
+    {
+      "id": "E12",
+      "html": "<li>of shares</li>"
+    },
+    {
+      "id": "E13",
+      "html": "<li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>"
+    }
+  ],
+  "decision_question": "Can the specified receipt be included in the charity’s ordinary Gift Aid claim under the supplied policy?",
+  "customer_scenario": "I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nWe are reviewing the £260 that reached our charity's bank account on 4 February 2026 from Robyn Ellis. The payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals. She has also volunteered at our adoption days. Our treasurer found two different folders under her name, so I have copied the relevant history below.\n\nIn the January events correspondence, Robyn, who runs a local grooming salon, asked whether our supporter newsletter could carry a booking link and whether the homepage could feature the salon for six weeks. The coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her. The coordinator's booking sheet shows the placements as 'awaiting settlement' until 4 February, when the £260 arrived; the same sheet then changed to 'confirmed'. The March newsletter archive and the dated website capture show the link in the agreed locations. A later volunteer note says 'we didn't raise an invoice, so I called it a donation'. A separate £20 cash gift from Robyn at the December collection event has its own receipt and was not part of the newsletter arrangement.\n\nA draft plan to cancel the March newsletter appears in the folder, but it is marked 'not approved'; the final distribution log and archived newsletter show that the edition went out. We have the charity's HMRC recognition letter. Robyn's personal tax position and whether she completed a Gift Aid form for the £260 have not been checked. The receipt under review in this file is the February £260 entry, not her separate £20 collection gift."
+}

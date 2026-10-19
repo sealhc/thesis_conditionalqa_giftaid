@@ -1,0 +1,32 @@
+{
+  "stage": "B1",
+  "saved_at_utc": "2026-10-18T22:05:37.062827+00:00",
+  "status": "parsed",
+  "reason": null,
+  "raw_sha256": "581da440b2739c881114273f6aa58d0f1e15de60aa94f2889192450d48b98d8e",
+  "valid_json": true,
+  "validation_error": null,
+  "retry_required": false,
+  "diagnostic_flags": [],
+  "json_envelope": {
+    "raw_sha256": "581da440b2739c881114273f6aa58d0f1e15de60aa94f2889192450d48b98d8e",
+    "parsed_text_sha256": "581da440b2739c881114273f6aa58d0f1e15de60aa94f2889192450d48b98d8e",
+    "outer_format_processed": false,
+    "envelope_operations": [],
+    "parser_policy": "v5_allowed_outer_wrappers_only",
+    "json_payload_content_modified": false
+  },
+  "api_metrics": {
+    "done": true,
+    "done_reason": "stop",
+    "prompt_eval_count": 863,
+    "eval_count": 761,
+    "num_ctx_configured": 32768,
+    "num_predict_configured": 8192,
+    "thinking_output_characters": 0,
+    "thinking_field_present": false,
+    "prompt_plus_generated_tokens_observed": 1624,
+    "context_pressure_95pct_heuristic": false,
+    "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_011CgAZj8euApmX7iEeCLyQ6",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"decision_target\":\"Whether Gift Aid can be claimed on a specific donation\",\"decision_unit\":\"one donation (the £95 payment from Devon Gray dated 1 March 2026)\",\"atoms\":[{\"id\":\"a1\",\"proposition\":\"The organisation claiming Gift Aid is recognised as a charity or CASC for tax purposes by HMRC\",\"entity_scope\":\"the claiming organisation (the veterinary hardship charity)\",\"source_ids\":[\"E02\"]},{\"id\":\"a2\",\"proposition\":\"The donation was made by an individual (not a company or other non-individual entity)\",\"entity_scope\":\"the donor (Devon Gray)\",\"source_ids\":[\"E06\"]},{\"id\":\"a3\",\"proposition\":\"The donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year in which the donation was made as the charity wants to claim in Gift Aid on that donation\",\"entity_scope\":\"the donor (Devon Gray) in the tax year covering 1 March 2026 (2025–26)\",\"source_ids\":[\"E04\",\"E07\"]},{\"id\":\"a4\",\"proposition\":\"The donor has made a Gift Aid declaration giving the charity permission to claim Gift Aid on the donation\",\"entity_scope\":\"the donor (Devon Gray) in relation to this donation\",\"source_ids\":[\"E05\"]},{\"id\":\"a5\",\"proposition\":\"The donation was NOT made through Payroll Giving\",\"entity_scope\":\"the donation (£95, 1 March 2026)\",\"source_ids\":[\"E09\"]},{\"id\":\"a6\",\"proposition\":\"The donation is NOT a payment for goods or services, and is NOT made because the charity bought goods or services for the donor\",\"entity_scope\":\"the donation (£95, 1 March 2026)\",\"source_ids\":[\"E10\"]},{\"id\":\"a7\",\"proposition\":\"The donor does NOT receive a benefit that exceeds the permitted limit in connection with the donation\",\"entity_scope\":\"the donor (Devon Gray) in relation to this donation\",\"source_ids\":[\"E11\"]},{\"id\":\"a8\",\"proposition\":\"The donation is NOT a donation of shares\",\"entity_scope\":\"the donation (£95, 1 March 2026)\",\"source_ids\":[\"E12\"]},{\"id\":\"a9\",\"proposition\":\"The donation is NOT made from a charity card or by means of a voucher (such as a CAF voucher)\",\"entity_scope\":\"the donation (£95, 1 March 2026)\",\"source_ids\":[\"E13\"]}],\"eligibility_expression\":{\"op\":\"ALL\",\"args\":[{\"ref\":\"a1\"},{\"ref\":\"a2\"},{\"ref\":\"a3\"},{\"ref\":\"a4\"},{\"ref\":\"a5\"},{\"ref\":\"a6\"},{\"ref\":\"a7\"},{\"ref\":\"a8\"},{\"ref\":\"a9\"}]},\"scope_issues\":[\"The charity also receives recurring monthly direct-debit donations from multiple donors. Each such donation is a separate decision unit and would need to be assessed individually against all conditions. This representation covers only the single £95 donation dated 1 March 2026 from Devon Gray.\"],\"limitations\":[\"The passages do not specify the monetary threshold for a donor benefit that would disqualify a donation (a11 references 'a certain limit' without quantifying it).\",\"The passages do not define the precise form, content, or duration requirements for a valid Gift Aid declaration; only that one must exist giving the charity permission to claim.\",\"The passages do not address whether a declaration signed for an earlier gift automatically covers subsequent gifts, or what happens when declaration pages are missing; this affects the assessability of a4 in the scenario but is not resolved by the supplied passages.\",\"The passages do not address the treatment of donations received via bank transfer specifically, beyond excluding Payroll Giving, shares, charity cards, and vouchers.\",\"The passages do not specify what documentary evidence is required to demonstrate the donor's tax payment (a3); only the substantive tax-payment condition is stated.\"]}"
+    }
+  ],
+  "container": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 3206,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 883,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

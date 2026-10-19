@@ -1,0 +1,138 @@
+ROLE
+You perform evidence-grounded fact matching, not a new rule-extraction task. Use only the inputs provided. Do not browse.
+
+TASK
+For every atom in the supplied INTERMEDIATE_REPRESENTATION, decide whether the CUSTOMER_SCENARIO supports that atomic proposition as TRUE, FALSE, UNKNOWN, or CONFLICTING. This is about the customer's current evidence, not whether the policy is correct. Do not make a final eligibility decision.
+
+DEFINITIONS
+TRUE: evidence positively establishes the stated proposition.
+FALSE: evidence positively establishes the proposition does not hold.
+UNKNOWN: no sufficient evidence for either TRUE or FALSE; silence is not negation.
+CONFLICTING: the scenario expressly contains mutually inconsistent evidence relevant to the proposition. Do not manufacture conflicts.
+
+RULES
+1. Preserve every atom ID exactly; do not add, delete, or silently rewrite atoms from the intermediate representation.
+2. Explain each status briefly with an exact excerpt from the scenario where possible. For UNKNOWN use an empty evidence_quote and say what is not established.
+3. Distinguish explicit evidence, necessary entailments, and assumptions. Do not convert indirect but ambiguous wording into certainty.
+4. Apply conditions to the correct person, gift, period or other unit; do not use evidence about one donor to infer all other donors' states.
+5. Do not use outside legal knowledge. Return one valid JSON object only.
+
+OUTPUT SCHEMA
+{
+ "statuses":[{"id":"a1","status":"TRUE|FALSE|UNKNOWN|CONFLICTING","evidence_quote":"exact short excerpt or empty string","justification":"one sentence"}],
+ "scope_issues":["issue if any"]
+}
+
+
+=== POLICY_PASSAGES ===
+[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>
+[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>
+[E03] <p>The donor must:</p>
+[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>
+[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>
+[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>
+[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>
+[E08] <p>You cannot claim on donations:</p>
+[E09] <li>made through Payroll Giving</li>
+[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>
+[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>
+[E12] <li>of shares</li>
+[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>
+
+=== DECISION_QUESTION ===
+Am I eligible for Gift Aid?
+
+=== CUSTOMER_SCENARIO ===
+I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.
+
+Additional customer information:
+Our finance volunteer is working through March receipts for our small veterinary hardship charity. The payment under review is a £95 credit dated 1 March 2026. The bank export identifies Devon Gray as the remitter from a personal account. The charity's HMRC recognition letter and a recent registration-status response confirm its recognition was still in force on 1 March 2026. Devon responded to a veterinary emergency appeal, and the booking and sales registers show no related purchase or reservation; the only thing sent to Devon was the automated thank-you email, and no discount or other benefit was offered. The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch.
+
+There is a folder labelled 'Devon tax and Gift Aid'. A P60 inside shows a substantial tax payment, but its heading says 'year ending 5 April 2024'. A separate summary from our accountant covers the charity's own 2025–26 accounts, not Devon's personal tax. We do not have a record of Devon's Income Tax or Capital Gains Tax for the year covering that payment.
+
+The donor database contains the first page of a scanned form marked 'D. Gray' from an earlier fundraising event. The only reference visible on that page belongs to an earlier gift, and the page setting out the declaration's coverage and duration is not in the scan. The older email address on the form has not been linked to Devon's current donor record. An index suggests a longer donor declaration may once have been filed, yet the remaining pages have not been located. The team wants to include the March £95 entry in its ordinary Gift Aid reconciliation if the supporting records permit it.
+
+=== INTERMEDIATE_REPRESENTATION (actual A1 JSON, wrapper excluded if present) ===
+{
+  "atoms": [
+    {
+      "entity_scope": "a donation from an individual to a charity or CASC",
+      "id": "a1",
+      "proposition": "the donor is an individual who made a donation to a recognised charity or CASC",
+      "source_ids": [
+        "E01",
+        "E02",
+        "E06"
+      ]
+    },
+    {
+      "entity_scope": "the donor's tax liability in the tax year of the donation",
+      "id": "a2",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year of the donation as the amount of Gift Aid being claimed",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "entity_scope": "a Gift Aid declaration from the donor",
+      "id": "a3",
+      "proposition": "the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid on the donation",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a4",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a5",
+      "proposition": "the donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a6",
+      "proposition": "the donation does not provide the donor with a benefit that exceeds a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a7",
+      "proposition": "the donation is not in the form of shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a8",
+      "proposition": "the donation is not from a charity card or a voucher such as a Charities Aid Foundation (CAF) voucher",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The donor's tax payment for the relevant tax year is not documented in the records, and the P60 refers to a year ending 5 April 2024, which is not the tax year of the March 2026 donation.",
+    "The donor declaration form is not fully accessible or verifiable; only a partial scan exists, and the declaration's coverage and duration are not visible.",
+    "The donor's personal tax records for the tax year of the donation are not available.",
+    "The donor database record is not fully linked to the current donor, as the older email address is not connected to Devon Gray."
+  ],
+  "scope_issues": []
+}

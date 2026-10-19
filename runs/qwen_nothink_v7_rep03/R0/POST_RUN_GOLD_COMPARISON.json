@@ -1,0 +1,403 @@
+{
+  "schema_version": "5.0",
+  "world": "R0",
+  "model": "qwen3:4b-instruct",
+  "model_version": "ollama {\"tag\": \"qwen3:4b-instruct\", \"digest\": \"0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0\", \"quantization\": \"Q4_K_M\"}",
+  "run_id": "qwen_nothink_v7_rep03",
+  "researcher_gold_decision": null,
+  "stage_validation": {
+    "A1": {
+      "stage": "A1",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a2 is defined but unused by eligibility_expression",
+          "atom_id": "a2"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a3 is defined but unused by eligibility_expression",
+          "atom_id": "a3"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a4 is defined but unused by eligibility_expression",
+          "atom_id": "a4"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a5 is defined but unused by eligibility_expression",
+          "atom_id": "a5"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a6 is defined but unused by eligibility_expression",
+          "atom_id": "a6"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a7 is defined but unused by eligibility_expression",
+          "atom_id": "a7"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a8 is defined but unused by eligibility_expression",
+          "atom_id": "a8"
+        }
+      ],
+      "record_file": "A1_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 888,
+        "eval_count": 604,
+        "num_ctx_configured": 32768,
+        "num_predict_configured": 8192,
+        "thinking_output_characters": 0,
+        "thinking_field_present": false,
+        "prompt_plus_generated_tokens_observed": 1492,
+        "context_pressure_95pct_heuristic": false,
+        "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+      },
+      "json_envelope": {
+        "raw_sha256": "f601ecee3f7e4a88ddfeb20e3c2e2923f120f341e2cbed432fa0497b2b4e2b88",
+        "parsed_text_sha256": "f601ecee3f7e4a88ddfeb20e3c2e2923f120f341e2cbed432fa0497b2b4e2b88",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "A2": {
+      "stage": "A2",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [],
+      "record_file": "A2_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 1361,
+        "eval_count": 581,
+        "num_ctx_configured": 32768,
+        "num_predict_configured": 8192,
+        "thinking_output_characters": 0,
+        "thinking_field_present": false,
+        "prompt_plus_generated_tokens_observed": 1942,
+        "context_pressure_95pct_heuristic": false,
+        "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+      },
+      "json_envelope": {
+        "raw_sha256": "18552a2fa5fba964ed84d42f44c4312f53e2b1e47cf63cab3a64b897080df409",
+        "parsed_text_sha256": "18552a2fa5fba964ed84d42f44c4312f53e2b1e47cf63cab3a64b897080df409",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "A3": {
+      "stage": "A3",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [
+        {
+          "code": "NEI_WITHOUT_CONDITIONAL_BRANCHES",
+          "detail": "A3 requests information but gives no conditional_branches (the prompt asks for them when unresolved)"
+        }
+      ],
+      "record_file": "A3_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 2201,
+        "eval_count": 490,
+        "num_ctx_configured": 32768,
+        "num_predict_configured": 8192,
+        "thinking_output_characters": 0,
+        "thinking_field_present": false,
+        "prompt_plus_generated_tokens_observed": 2691,
+        "context_pressure_95pct_heuristic": false,
+        "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+      },
+      "json_envelope": {
+        "raw_sha256": "3097c9b378e31fc2b3002a47b7856ccf6aa56dc8cf4fcf342024337abceedbfd",
+        "parsed_text_sha256": "3097c9b378e31fc2b3002a47b7856ccf6aa56dc8cf4fcf342024337abceedbfd",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "B1": {
+      "stage": "B1",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [
+        {
+          "code": "NEI_WITHOUT_CONDITIONAL_BRANCHES",
+          "detail": "B1 requests information but gives no conditional_branches (the prompt asks for them when unresolved)"
+        }
+      ],
+      "record_file": "B1_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 745,
+        "eval_count": 388,
+        "num_ctx_configured": 32768,
+        "num_predict_configured": 8192,
+        "thinking_output_characters": 0,
+        "thinking_field_present": false,
+        "prompt_plus_generated_tokens_observed": 1133,
+        "context_pressure_95pct_heuristic": false,
+        "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+      },
+      "json_envelope": {
+        "raw_sha256": "b005eff670bfee38dd2d42d70ee1e62fdbf55c507c12653551814bfbd7cb73d1",
+        "parsed_text_sha256": "b005eff670bfee38dd2d42d70ee1e62fdbf55c507c12653551814bfbd7cb73d1",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    }
+  },
+  "paths": {
+    "A": {
+      "status": "concluded",
+      "decision": "NEED_MORE_INFORMATION",
+      "correct": null,
+      "stop_stage": null,
+      "reason": null,
+      "completion_category": "completed",
+      "retry_required": false,
+      "diagnostic_flags": [
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a2 is defined but unused by eligibility_expression",
+          "atom_id": "a2"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a3 is defined but unused by eligibility_expression",
+          "atom_id": "a3"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a4 is defined but unused by eligibility_expression",
+          "atom_id": "a4"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a5 is defined but unused by eligibility_expression",
+          "atom_id": "a5"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a6 is defined but unused by eligibility_expression",
+          "atom_id": "a6"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a7 is defined but unused by eligibility_expression",
+          "atom_id": "a7"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a8 is defined but unused by eligibility_expression",
+          "atom_id": "a8"
+        },
+        {
+          "stage": "A3",
+          "code": "NEI_WITHOUT_CONDITIONAL_BRANCHES",
+          "detail": "A3 requests information but gives no conditional_branches (the prompt asks for them when unresolved)"
+        }
+      ],
+      "usage": {
+        "calls": 3,
+        "prompt_tokens": 4450,
+        "generated_tokens": 1675,
+        "usage_complete": true,
+        "note": "Model calls and token counts as reported by the server, summed over all attempts of all stages (retries included); API-level HTTP retries are counted in attempts.",
+        "attempts": 3
+      },
+      "attempts": {
+        "per_stage": {
+          "A1": 1,
+          "A2": 1,
+          "A3": 1
+        },
+        "total_model_calls": 3,
+        "retry_calls": 0,
+        "first_attempt_all_valid": true,
+        "unfinished_stage": null
+      }
+    },
+    "B": {
+      "status": "concluded",
+      "decision": "NEED_MORE_INFORMATION",
+      "correct": null,
+      "stop_stage": null,
+      "reason": null,
+      "completion_category": "completed",
+      "retry_required": false,
+      "diagnostic_flags": [
+        {
+          "stage": "B1",
+          "code": "NEI_WITHOUT_CONDITIONAL_BRANCHES",
+          "detail": "B1 requests information but gives no conditional_branches (the prompt asks for them when unresolved)"
+        }
+      ],
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 745,
+        "generated_tokens": 388,
+        "usage_complete": true,
+        "note": "Model calls and token counts as reported by the server, summed over all attempts of all stages (retries included); API-level HTTP retries are counted in attempts.",
+        "attempts": 1
+      },
+      "attempts": {
+        "per_stage": {
+          "B1": 1
+        },
+        "total_model_calls": 1,
+        "retry_calls": 0,
+        "first_attempt_all_valid": true,
+        "unfinished_stage": null
+      }
+    }
+  },
+  "paired_quality_eligible": false,
+  "limitations": [
+    "R0 native conditional Gold is not the researcher decision-state Gold.",
+    "Warning flags are not automatic semantic correctness verdicts.",
+    "One base case with correlated scenario variants is not a generalizable accuracy estimate."
+  ],
+  "paired": null,
+  "official_conditionalqa_gold_comparison": {
+    "gold_answers": [
+      {
+        "answer": "YES",
+        "condition_source_ids": [
+          "E02",
+          "E04",
+          "E05"
+        ]
+      },
+      {
+        "answer": "NO",
+        "condition_source_ids": [
+          "E10",
+          "E11",
+          "E09",
+          "E12",
+          "E13"
+        ]
+      }
+    ],
+    "reference_condition_count": 8,
+    "source_lookup_all_found": true,
+    "warnings": [
+      "Only source-ID coverage and YES/NO branch coverage can be checked mechanically.",
+      "Whether an atom semantically expresses a Gold condition requires manual independent alignment.",
+      "Native ConditionalQA Gold is NOT a decision-state Gold."
+    ],
+    "A1_native_gold_source_citation_proxy": {
+      "items": [
+        {
+          "gold_answer": "YES",
+          "gold_policy_id": "E02",
+          "source_cited_by_A1": true
+        },
+        {
+          "gold_answer": "YES",
+          "gold_policy_id": "E04",
+          "source_cited_by_A1": true
+        },
+        {
+          "gold_answer": "YES",
+          "gold_policy_id": "E05",
+          "source_cited_by_A1": true
+        },
+        {
+          "gold_answer": "NO",
+          "gold_policy_id": "E10",
+          "source_cited_by_A1": true
+        },
+        {
+          "gold_answer": "NO",
+          "gold_policy_id": "E11",
+          "source_cited_by_A1": true
+        },
+        {
+          "gold_answer": "NO",
+          "gold_policy_id": "E09",
+          "source_cited_by_A1": true
+        },
+        {
+          "gold_answer": "NO",
+          "gold_policy_id": "E12",
+          "source_cited_by_A1": true
+        },
+        {
+          "gold_answer": "NO",
+          "gold_policy_id": "E13",
+          "source_cited_by_A1": true
+        }
+      ],
+      "covered": 8,
+      "total": 8,
+      "fraction": 1.0,
+      "interpretation": "CITATION-ONLY coverage; NOT condition semantic precision/recall"
+    },
+    "A3_native_branch_label_coverage": {
+      "gold_labels": [
+        "NO",
+        "YES"
+      ],
+      "observed_labels": [],
+      "missing_labels": [
+        "NO",
+        "YES"
+      ],
+      "recall": 0.0,
+      "interpretation": "Label-level branch coverage only; condition text needs manual semantic review"
+    },
+    "B1_native_branch_label_coverage": {
+      "gold_labels": [
+        "NO",
+        "YES"
+      ],
+      "observed_labels": [],
+      "missing_labels": [
+        "NO",
+        "YES"
+      ],
+      "recall": 0.0,
+      "interpretation": "Label-level branch coverage only; condition text needs manual semantic review"
+    },
+    "A1_native_gold_semantic_review": {
+      "status": "PENDING_MANUAL_REVIEW",
+      "template": "R0_NATIVE_SEMANTIC_REVIEW_TEMPLATE.json",
+      "note": "Native 3+5 conditions have NOT been semantically scored; citation counts are only proxies."
+    }
+  }
+}

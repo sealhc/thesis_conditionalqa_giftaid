@@ -1,0 +1,30 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_011CgAQUjmocijzFhvhQtt2S",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"decision_target\":\"Whether Gift Aid can be claimed on a donation\",\"decision_unit\":\"one donation (transaction)\",\"atoms\":[{\"id\":\"a1\",\"proposition\":\"The organisation claiming Gift Aid is recognised as a charity or CASC for tax purposes\",\"entity_scope\":\"the claiming organisation\",\"source_ids\":[\"E02\"]},{\"id\":\"a2\",\"proposition\":\"The donation was made by an individual\",\"entity_scope\":\"the donor\",\"source_ids\":[\"E06\"]},{\"id\":\"a3\",\"proposition\":\"The donor has paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the total Gift Aid to be claimed on their donations in that year\",\"entity_scope\":\"the donor\",\"source_ids\":[\"E04\",\"E07\"]},{\"id\":\"a4\",\"proposition\":\"The donor has made a Gift Aid declaration giving the organisation permission to claim Gift Aid on the donation\",\"entity_scope\":\"the donor\",\"source_ids\":[\"E05\"]},{\"id\":\"a5\",\"proposition\":\"The donation was made through Payroll Giving\",\"entity_scope\":\"the donation\",\"source_ids\":[\"E09\"]},{\"id\":\"a6\",\"proposition\":\"The donation is a payment for goods or services, or was made because the charity or CASC bought goods or services\",\"entity_scope\":\"the donation\",\"source_ids\":[\"E10\"]},{\"id\":\"a7\",\"proposition\":\"The donor received a benefit in exchange for the donation that exceeds the permitted limit\",\"entity_scope\":\"the donor and donation\",\"source_ids\":[\"E11\"]},{\"id\":\"a8\",\"proposition\":\"The donation consists of shares\",\"entity_scope\":\"the donation\",\"source_ids\":[\"E12\"]},{\"id\":\"a9\",\"proposition\":\"The donation was made via a charity card or voucher (e.g. a CAF voucher)\",\"entity_scope\":\"the donation\",\"source_ids\":[\"E13\"]}],\"eligibility_expression\":{\"op\":\"ALL\",\"args\":[{\"ref\":\"a1\"},{\"ref\":\"a2\"},{\"ref\":\"a3\"},{\"ref\":\"a4\"},{\"op\":\"NOT\",\"arg\":{\"ref\":\"a5\"}},{\"op\":\"NOT\",\"arg\":{\"ref\":\"a6\"}},{\"op\":\"NOT\",\"arg\":{\"ref\":\"a7\"}},{\"op\":\"NOT\",\"arg\":{\"ref\":\"a8\"}},{\"op\":\"NOT\",\"arg\":{\"ref\":\"a9\"}}]},\"scope_issues\":[\"The customer receives both recurring monthly direct-debit donations and one-off donations. Gift Aid eligibility must be assessed per individual donation (or per donor per tax year for the tax-paid threshold), so different donations or donors may yield different outcomes and should not be collapsed into a single determination.\"],\"limitations\":[\"The passages do not specify the precise monetary threshold for a donor 'benefit' that disqualifies a donation (E11 refers only to 'a certain limit'); this threshold cannot be evaluated from the supplied material alone.\",\"The passages do not address whether Gift Aid can be claimed on donations received via direct debit specifically; no exclusion is stated, but no explicit confirmation is provided either.\",\"E01 and E06 both address Gift Aid but E01 focuses on the claiming rate and E06 on donor conditions; some overlap exists and the passages may not represent the complete HMRC rules.\"]}"
+    }
+  ],
+  "container": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 3001,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 725,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

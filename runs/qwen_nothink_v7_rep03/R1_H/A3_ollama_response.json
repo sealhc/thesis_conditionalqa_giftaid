@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T22:12:06.035067Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"conditional_branches\": [],\n  \"decision\": \"YES\",\n  \"decisive_condition_ids\": [\n    \"a1\",\n    \"a2\",\n    \"a3\",\n    \"a4\",\n    \"a5\",\n    \"a6\",\n    \"a7\",\n    \"a8\",\n    \"a9\"\n  ],\n  \"ir_discrepancies\": [],\n  \"justification\": \"The customer scenario satisfies all conditions for Gift Aid eligibility as defined in the policy. The donor is an individual who made a donation to a recognised charity. The donation was not made through Payroll Giving, is not a payment for goods or services, does not provide a benefit over a certain limit, is not in the form of shares or securities, and is not from a charity card or voucher. The donor has paid sufficient Income Tax (£980) to cover the claimed Gift Aid (total £80). The charity is recognised by HMRC. All conditions in the policy are met with explicit evidence, and no policy ambiguity or evidence gap prevents a positive decision.\",\n  \"missing_facts\": [],\n  \"scope_issues\": [\n    \"The policy does not specify whether a donation grouped with CAF card or voucher redemptions in a batch constitutes a separate donation for Gift Aid purposes, though it notes the batch was made on a different date.\"\n  ],\n  \"supporting_policy_ids\": [\n    \"E01\",\n    \"E02\",\n    \"E03\",\n    \"E04\",\n    \"E05\",\n    \"E06\",\n    \"E07\",\n    \"E08\",\n    \"E09\",\n    \"E10\",\n    \"E11\",\n    \"E12\",\n    \"E13\"\n  ],\n  \"unresolved_condition_ids\": []\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 14679662917,
+  "load_duration": 801042,
+  "prompt_eval_count": 3150,
+  "prompt_eval_cached_count": 951,
+  "prompt_eval_duration": 4973795000,
+  "eval_count": 380,
+  "eval_duration": 9398846000
+}

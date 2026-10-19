@@ -1,0 +1,20 @@
+{
+  "conditional_branches": [],
+  "decision": "YES",
+  "justification": "The charity is recognised as a charity for tax purposes (E02), the donation is from an individual (Elaine Carter) made via direct bank transfer (not payroll giving, not for goods or services, not a share or voucher) (E09, E10, E12, E13), the donor has paid sufficient tax (Income Tax of £980 in 2025–26, which is more than the £80 claimed in total, satisfying E04/E07), and the donor has made a Gift Aid declaration (E05/E06). The donation was not in exchange for a benefit or goods/services (E11), and is not covered by any of the prohibited types (E09–E13). Therefore, Gift Aid is eligible for this donation (E01).",
+  "missing_facts": [],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

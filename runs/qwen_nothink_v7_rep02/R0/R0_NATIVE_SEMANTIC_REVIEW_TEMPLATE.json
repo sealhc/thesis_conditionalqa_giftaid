@@ -1,0 +1,81 @@
+{
+  "instructions": "Manual review. Map each official Gold condition to zero or more model-generated A1 atom IDs. Set semantic_match true or false after checking exact meaning; do not score by source ID alone. Do not modify Gold text.",
+  "reviewer": "",
+  "review_timestamp": "",
+  "available_A1_atom_ids": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8"
+  ],
+  "items": [
+    {
+      "gold_condition_id": "YES_1",
+      "gold_answer_branch": "YES",
+      "official_gold_condition": "<p>You must be recognised as a charity or CASC for tax purposes.</p>",
+      "matched_A1_atom_ids": [],
+      "semantic_match": null,
+      "review_notes": ""
+    },
+    {
+      "gold_condition_id": "YES_2",
+      "gold_answer_branch": "YES",
+      "official_gold_condition": "<li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>",
+      "matched_A1_atom_ids": [],
+      "semantic_match": null,
+      "review_notes": ""
+    },
+    {
+      "gold_condition_id": "YES_3",
+      "gold_answer_branch": "YES",
+      "official_gold_condition": "<li>make a Gift Aid declaration that gives you permission to claim it</li>",
+      "matched_A1_atom_ids": [],
+      "semantic_match": null,
+      "review_notes": ""
+    },
+    {
+      "gold_condition_id": "NO_1",
+      "gold_answer_branch": "NO",
+      "official_gold_condition": "<li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>",
+      "matched_A1_atom_ids": [],
+      "semantic_match": null,
+      "review_notes": ""
+    },
+    {
+      "gold_condition_id": "NO_2",
+      "gold_answer_branch": "NO",
+      "official_gold_condition": "<li>where the donor gets a ‘benefit’ over a certain limit</li>",
+      "matched_A1_atom_ids": [],
+      "semantic_match": null,
+      "review_notes": ""
+    },
+    {
+      "gold_condition_id": "NO_3",
+      "gold_answer_branch": "NO",
+      "official_gold_condition": "<li>made through Payroll Giving</li>",
+      "matched_A1_atom_ids": [],
+      "semantic_match": null,
+      "review_notes": ""
+    },
+    {
+      "gold_condition_id": "NO_4",
+      "gold_answer_branch": "NO",
+      "official_gold_condition": "<li>of shares</li>",
+      "matched_A1_atom_ids": [],
+      "semantic_match": null,
+      "review_notes": ""
+    },
+    {
+      "gold_condition_id": "NO_5",
+      "gold_answer_branch": "NO",
+      "official_gold_condition": "<li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>",
+      "matched_A1_atom_ids": [],
+      "semantic_match": null,
+      "review_notes": ""
+    }
+  ]
+}

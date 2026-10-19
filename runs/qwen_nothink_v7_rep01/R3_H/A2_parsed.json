@@ -1,0 +1,53 @@
+{
+  "scope_issues": [],
+  "statuses": [
+    {
+      "evidence_quote": "The charity's HMRC recognition letter and a recent registration-status response confirm its recognition was still in force on 1 March 2026.",
+      "id": "a1",
+      "justification": "The scenario confirms the charity is recognised as a charity for tax purposes on the relevant date.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a2",
+      "justification": "There is no evidence about Devon's personal Income Tax or Capital Gains Tax for the tax year 2025–26; the P60 is from a different year and no record of Devon's personal tax for that year exists.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a3",
+      "justification": "The donor declaration form is only partially scanned, and the coverage and duration are not visible; no verified link exists between the older form and Devon's current record, and no record of a prior declaration is confirmed.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch.",
+      "id": "a4",
+      "justification": "The donation is described as a personal bank transfer, not payroll giving, so it does not meet the definition of Payroll Giving.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "The booking and sales registers show no related purchase or reservation; the only thing sent to Devon was the automated thank-you email, and no discount or other benefit was offered.",
+      "id": "a5",
+      "justification": "There is no indication that the donation was for goods or services or that the charity bought goods or services as a result of the donation.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "The only thing sent to Devon was the automated thank-you email, and no discount or other benefit was offered.",
+      "id": "a6",
+      "justification": "No benefit was provided to Devon beyond a standard thank-you email, and no benefit over a certain limit is indicated.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch.",
+      "id": "a7",
+      "justification": "The donation is a bank transfer, not a share transaction, so it is not of shares.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch.",
+      "id": "a8",
+      "justification": "The donation is not from a charity card or voucher, as it originates from a personal bank account and is not linked to any such instrument.",
+      "status": "TRUE"
+    }
+  ]
+}

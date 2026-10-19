@@ -1,0 +1,61 @@
+{
+  "statuses": [
+    {
+      "id": "a1",
+      "status": "TRUE",
+      "evidence_quote": "The charity's HMRC recognition was still in force when Devon Gray sent £95",
+      "justification": "The scenario explicitly states HMRC recognition was still in force at the time of the donation."
+    },
+    {
+      "id": "a2",
+      "status": "TRUE",
+      "evidence_quote": "Devon Gray sent £95 from a personal bank account on 1 March 2026",
+      "justification": "The donation came from a personal bank account, indicating an individual donor."
+    },
+    {
+      "id": "a3",
+      "status": "UNKNOWN",
+      "evidence_quote": "A tax document in Devon's folder covers the year ending 5 April 2024, not the tax year of this donation; no current-year donor tax evidence is available.",
+      "justification": "No evidence establishes that Devon Gray paid sufficient Income Tax or Capital Gains Tax in the 2025-26 tax year; the only tax document on file is for a different tax year."
+    },
+    {
+      "id": "a4",
+      "status": "UNKNOWN",
+      "evidence_quote": "A scanned declaration from an earlier event is incomplete: the page stating its coverage and duration is missing.",
+      "justification": "The available declaration is incomplete and it cannot be determined whether it validly covers this donation."
+    },
+    {
+      "id": "a5",
+      "status": "TRUE",
+      "evidence_quote": "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments.",
+      "justification": "The scenario explicitly states the transfer was unrelated to payroll deductions."
+    },
+    {
+      "id": "a6",
+      "status": "TRUE",
+      "evidence_quote": "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments.",
+      "justification": "The scenario explicitly states the transfer was unrelated to sales or bookings, ruling out payment for goods or services."
+    },
+    {
+      "id": "a7",
+      "status": "TRUE",
+      "evidence_quote": "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments.",
+      "justification": "The scenario explicitly states the transfer was unrelated to benefits, indicating no benefit was received by the donor."
+    },
+    {
+      "id": "a8",
+      "status": "TRUE",
+      "evidence_quote": "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments.",
+      "justification": "The scenario explicitly states the transfer was unrelated to shares."
+    },
+    {
+      "id": "a9",
+      "status": "TRUE",
+      "evidence_quote": "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments.",
+      "justification": "The scenario explicitly states the transfer was unrelated to charity-card and voucher payments."
+    }
+  ],
+  "scope_issues": [
+    "The customer mentions multiple donors paying by direct debit and one-off donors; this analysis covers only the single identified donation from Devon Gray on 1 March 2026. Other donations would each require separate evaluation against the same conditions."
+  ]
+}

@@ -1,0 +1,603 @@
+{
+  "labels": {
+    "TRUE": "evidence supports proposition",
+    "FALSE": "evidence supports negation",
+    "UNKNOWN": "not established either way",
+    "CONFLICTING": "opposing contemporaneous evidence unresolved"
+  },
+  "scenario_statuses": {
+    "R1_L": {
+      "reference_decision": "YES",
+      "statuses": {
+        "G_C1": "TRUE",
+        "G_C2": "TRUE",
+        "G_C3": "TRUE",
+        "G_X1": "FALSE",
+        "G_X2": "FALSE",
+        "G_X3": "FALSE",
+        "G_X4": "FALSE",
+        "G_X5": "FALSE"
+      },
+      "evidence_basis": {
+        "G_C1": "explicit",
+        "G_C2": "explicit",
+        "G_C3": "explicit",
+        "G_X1": "explicit",
+        "G_X2": "explicit",
+        "G_X3": "explicit",
+        "G_X4": "explicit",
+        "G_X5": "explicit"
+      },
+      "evidence_source_form": {
+        "G_C1": "staff_statement",
+        "G_C2": "statement_with_figures",
+        "G_C3": "staff_statement",
+        "G_X1": "staff_statement",
+        "G_X2": "staff_statement",
+        "G_X3": "staff_statement",
+        "G_X4": "staff_statement",
+        "G_X5": "staff_statement"
+      },
+      "outcome_relevance": {
+        "G_C1": "required_for_yes",
+        "G_C2": "required_for_yes",
+        "G_C3": "required_for_yes",
+        "G_X1": "required_for_yes",
+        "G_X2": "required_for_yes",
+        "G_X3": "required_for_yes",
+        "G_X4": "required_for_yes",
+        "G_X5": "required_for_yes"
+      },
+      "evidence_quotes": {
+        "G_C1": [
+          "The charity's HMRC recognition was confirmed as still in force on 16 March 2026."
+        ],
+        "G_C2": [
+          "Her Income Tax paid for 2025–26 was £980",
+          "totals £80"
+        ],
+        "G_C3": [
+          "Her signed Gift Aid declaration covers this payment."
+        ],
+        "G_X1": [
+          "The fundraiser checked the associated sales and booking records: Elaine received no goods, services or benefit in exchange."
+        ],
+        "G_X2": [
+          "Elaine received no goods, services or benefit in exchange."
+        ],
+        "G_X3": [
+          "This was not a payroll deduction or a transfer of shares."
+        ],
+        "G_X4": [
+          "This was not a payroll deduction or a transfer of shares."
+        ],
+        "G_X5": [
+          "The processor's CAF charity-card and voucher receipts were different payments with different settlement references; FP-0316-EL was Elaine's direct bank transfer."
+        ]
+      },
+      "evidence_notes": {
+        "G_C1": "Recognition confirmed on the payment date.",
+        "G_C2": "£80 of Gift Aid claimed against £980 of Income Tax paid.",
+        "G_C3": "Stated to cover this payment.",
+        "G_X1": "Sales and booking records show no goods or services.",
+        "G_X2": "Explicit denial of any benefit.",
+        "G_X3": "Explicit.",
+        "G_X4": "Explicit.",
+        "G_X5": "CAF card/voucher receipts are separate payments from this direct transfer."
+      },
+      "G4_missing_information": {
+        "must_identify": [],
+        "not_needed": [
+          "Nothing further; every atom established."
+        ]
+      },
+      "expected_missing_if_nei": [],
+      "scope_note": "one specified receipt",
+      "evaluation_scope": "Selected standard Gift Aid rules from policy E01–E13; not comprehensive legal advice",
+      "gold_review_status": "PROPOSED_DEFINITE_YES; all eight atoms stated in the text; independent review required.",
+      "gold_source": "researcher-authored, pending audit",
+      "world": "R1_L",
+      "annotation_provenance": "RESEARCHER_SCOPED_NOT_OFFICIAL",
+      "evidence_review_status": "REQUIRES_INDEPENDENT_SEMANTIC_REVIEW"
+    },
+    "R1_H": {
+      "reference_decision": "YES",
+      "statuses": {
+        "G_C1": "TRUE",
+        "G_C2": "TRUE",
+        "G_C3": "TRUE",
+        "G_X1": "FALSE",
+        "G_X2": "FALSE",
+        "G_X3": "FALSE",
+        "G_X4": "FALSE",
+        "G_X5": "FALSE"
+      },
+      "evidence_basis": {
+        "G_C1": "explicit",
+        "G_C2": "explicit",
+        "G_C3": "explicit",
+        "G_X1": "explicit",
+        "G_X2": "explicit",
+        "G_X3": "explicit",
+        "G_X4": "explicit",
+        "G_X5": "explicit"
+      },
+      "evidence_source_form": {
+        "G_C1": "regulator_correspondence",
+        "G_C2": "calculation",
+        "G_C3": "signed_record",
+        "G_X1": "register_reconciliation",
+        "G_X2": "staff_statement",
+        "G_X3": "staff_statement",
+        "G_X4": "staff_statement",
+        "G_X5": "settlement_references"
+      },
+      "outcome_relevance": {
+        "G_C1": "required_for_yes",
+        "G_C2": "required_for_yes",
+        "G_C3": "required_for_yes",
+        "G_X1": "required_for_yes",
+        "G_X2": "required_for_yes",
+        "G_X3": "required_for_yes",
+        "G_X4": "required_for_yes",
+        "G_X5": "required_for_yes"
+      },
+      "evidence_quotes": {
+        "G_C1": [
+          "the treasurer’s status check confirms the charity was still recognised on 16 March 2026"
+        ],
+        "G_C2": [
+          "Her tax summary for the year to 5 April 2026 shows £980 of Income Tax paid",
+          "£80 in total, well below her £980"
+        ],
+        "G_C3": [
+          "Elaine signed an electronic Gift Aid declaration on 15 March",
+          "The declaration says it covers this donation"
+        ],
+        "G_X1": [
+          "The sales, booking and event records show nothing linked to this payment"
+        ],
+        "G_X2": [
+          "she was not offered admission, advertising, a product or any other benefit"
+        ],
+        "G_X3": [
+          "It did not go through a payroll giving scheme"
+        ],
+        "G_X4": [
+          "no shares, securities or other assets were delivered"
+        ],
+        "G_X5": [
+          "those were paid to the charity in a combined batch on 18 March, while FP-0316-EL came directly from Elaine’s bank on 16 March"
+        ]
+      },
+      "evidence_notes": {
+        "G_C1": "Recognition confirmed on the payment date.",
+        "G_C2": "£30 + £50 = £80, stated to be well below £980 tax paid in 2025-26.",
+        "G_C3": "Signed declaration, stated to cover this donation, matched to FP-0316-EL.",
+        "G_X1": "Records show no purchase or service tied to the payment.",
+        "G_X2": "Explicit denial of any benefit.",
+        "G_X3": "Explicit.",
+        "G_X4": "Explicit.",
+        "G_X5": "CAF card/voucher redemptions were a separate batch from this direct payment."
+      },
+      "G4_missing_information": {
+        "must_identify": [],
+        "not_needed": [
+          "Nothing further; every atom established."
+        ]
+      },
+      "expected_missing_if_nei": [],
+      "scope_note": "one specified receipt",
+      "evaluation_scope": "Selected standard Gift Aid rules from policy E01–E13; not comprehensive legal advice",
+      "gold_review_status": "PROPOSED_DEFINITE_YES; all eight atoms stated in the text; independent review required.",
+      "gold_source": "researcher-authored, pending audit",
+      "world": "R1_H",
+      "annotation_provenance": "RESEARCHER_SCOPED_NOT_OFFICIAL",
+      "evidence_review_status": "REQUIRES_INDEPENDENT_SEMANTIC_REVIEW"
+    },
+    "R2_L": {
+      "reference_decision": "NO",
+      "statuses": {
+        "G_C1": "UNKNOWN",
+        "G_C2": "UNKNOWN",
+        "G_C3": "UNKNOWN",
+        "G_X1": "TRUE",
+        "G_X2": "UNKNOWN",
+        "G_X3": "UNKNOWN",
+        "G_X4": "UNKNOWN",
+        "G_X5": "UNKNOWN"
+      },
+      "evidence_basis": {
+        "G_C1": "unknown",
+        "G_C2": "unknown",
+        "G_C3": "unknown",
+        "G_X1": "entailed",
+        "G_X2": "unknown",
+        "G_X3": "unknown",
+        "G_X4": "unknown",
+        "G_X5": "unknown"
+      },
+      "evidence_source_form": {
+        "G_C1": "document_exists_date_unestablished",
+        "G_C2": "statement_not_checked",
+        "G_C3": "statement_not_checked",
+        "G_X1": "correspondence_and_booking_records",
+        "G_X2": "none",
+        "G_X3": "none",
+        "G_X4": "none",
+        "G_X5": "none"
+      },
+      "outcome_relevance": {
+        "G_C1": "irrelevant_to_outcome",
+        "G_C2": "irrelevant_to_outcome",
+        "G_C3": "irrelevant_to_outcome",
+        "G_X1": "decisive",
+        "G_X2": "irrelevant_to_outcome",
+        "G_X3": "irrelevant_to_outcome",
+        "G_X4": "irrelevant_to_outcome",
+        "G_X5": "irrelevant_to_outcome"
+      },
+      "evidence_quotes": {
+        "G_C1": [
+          "The charity has an HMRC recognition letter"
+        ],
+        "G_C2": [
+          "have not been checked"
+        ],
+        "G_C3": [
+          "have not been checked"
+        ],
+        "G_X1": [
+          "she accepted a £260 price for advertising her grooming salon in the charity's newsletter and on its website",
+          "The booking was confirmed after her payment, and the advertisement appeared as agreed."
+        ],
+        "G_X2": [],
+        "G_X3": [],
+        "G_X4": [],
+        "G_X5": []
+      },
+      "evidence_notes": {
+        "G_C1": "A recognition letter exists but being in force on the payment date is not stated; irrelevant because X1 decides NO.",
+        "G_C2": "Explicitly not checked; cannot rescue the claim.",
+        "G_C3": "Explicitly not checked; the separate £20 gift paperwork is a different gift.",
+        "G_X1": "A priced advertising placement, accepted, confirmed on payment and delivered. Requires classifying advertising placements as services (E10).",
+        "G_X2": "A promotional benefit exists but the policy limit is not supplied; irrelevant because X1 decides.",
+        "G_X3": "Not established; irrelevant because X1 is established TRUE.",
+        "G_X4": "Not established; irrelevant because X1 is established TRUE.",
+        "G_X5": "Not established; irrelevant because X1 is established TRUE."
+      },
+      "G4_missing_information": {
+        "must_identify": [],
+        "not_needed": [
+          "G_C1 recognition date, G_C2 donor tax, G_C3 declaration and G_X2 benefit limit cannot rescue the claim once G_X1 is established; listing them as blocking and answering NEED_MORE_INFORMATION is incorrect."
+        ]
+      },
+      "expected_missing_if_nei": [],
+      "scope_note": "one specified receipt",
+      "evaluation_scope": "Selected standard Gift Aid rules from policy E01–E13; not comprehensive legal advice",
+      "gold_review_status": "PROPOSED_DEFINITE_NO; rests on one classification judgement (advertising placement = service). Highest-priority review item.",
+      "gold_source": "researcher-authored, pending audit",
+      "world": "R2_L",
+      "annotation_provenance": "RESEARCHER_SCOPED_NOT_OFFICIAL",
+      "evidence_review_status": "REQUIRES_INDEPENDENT_SEMANTIC_REVIEW"
+    },
+    "R2_H": {
+      "reference_decision": "NO",
+      "statuses": {
+        "G_C1": "UNKNOWN",
+        "G_C2": "UNKNOWN",
+        "G_C3": "UNKNOWN",
+        "G_X1": "TRUE",
+        "G_X2": "UNKNOWN",
+        "G_X3": "UNKNOWN",
+        "G_X4": "UNKNOWN",
+        "G_X5": "UNKNOWN"
+      },
+      "evidence_basis": {
+        "G_C1": "unknown",
+        "G_C2": "unknown",
+        "G_C3": "unknown",
+        "G_X1": "entailed",
+        "G_X2": "unknown",
+        "G_X3": "unknown",
+        "G_X4": "unknown",
+        "G_X5": "unknown"
+      },
+      "evidence_source_form": {
+        "G_C1": "document_exists_date_unestablished",
+        "G_C2": "statement_not_checked",
+        "G_C3": "statement_not_checked",
+        "G_X1": "correspondence_and_booking_records",
+        "G_X2": "none",
+        "G_X3": "none",
+        "G_X4": "none",
+        "G_X5": "none"
+      },
+      "outcome_relevance": {
+        "G_C1": "irrelevant_to_outcome",
+        "G_C2": "irrelevant_to_outcome",
+        "G_C3": "irrelevant_to_outcome",
+        "G_X1": "decisive",
+        "G_X2": "irrelevant_to_outcome",
+        "G_X3": "irrelevant_to_outcome",
+        "G_X4": "irrelevant_to_outcome",
+        "G_X5": "irrelevant_to_outcome"
+      },
+      "evidence_quotes": {
+        "G_C1": [
+          "We have the charity's HMRC recognition letter"
+        ],
+        "G_C2": [
+          "have not been checked"
+        ],
+        "G_C3": [
+          "have not been checked"
+        ],
+        "G_X1": [
+          "The coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her.",
+          "the same sheet then changed to 'confirmed'",
+          "show the link in the agreed locations"
+        ],
+        "G_X2": [],
+        "G_X3": [],
+        "G_X4": [],
+        "G_X5": []
+      },
+      "evidence_notes": {
+        "G_C1": "A recognition letter exists but being in force on the payment date is not stated; irrelevant because X1 decides NO.",
+        "G_C2": "Explicitly not checked; cannot rescue the claim.",
+        "G_C3": "Explicitly not checked; the separate £20 gift paperwork is a different gift.",
+        "G_X1": "A quoted price for two advertising placements, accepted, activated on payment, and delivered. Requires classifying advertising placements as services (E10).",
+        "G_X2": "A promotional benefit exists but the policy limit is not supplied; irrelevant because X1 decides.",
+        "G_X3": "Not established; irrelevant because X1 is established TRUE.",
+        "G_X4": "Not established; irrelevant because X1 is established TRUE.",
+        "G_X5": "Not established; irrelevant because X1 is established TRUE."
+      },
+      "G4_missing_information": {
+        "must_identify": [],
+        "not_needed": [
+          "G_C1 recognition date, G_C2 donor tax, G_C3 declaration and G_X2 benefit limit cannot rescue the claim once G_X1 is established; listing them as blocking and answering NEED_MORE_INFORMATION is incorrect."
+        ]
+      },
+      "expected_missing_if_nei": [],
+      "scope_note": "one specified receipt",
+      "evaluation_scope": "Selected standard Gift Aid rules from policy E01–E13; not comprehensive legal advice",
+      "gold_review_status": "PROPOSED_DEFINITE_NO; rests on one classification judgement (advertising placement = service). Highest-priority review item.",
+      "gold_source": "researcher-authored, pending audit",
+      "world": "R2_H",
+      "annotation_provenance": "RESEARCHER_SCOPED_NOT_OFFICIAL",
+      "evidence_review_status": "REQUIRES_INDEPENDENT_SEMANTIC_REVIEW"
+    },
+    "R3_L": {
+      "reference_decision": "NEED_MORE_INFORMATION",
+      "statuses": {
+        "G_C1": "TRUE",
+        "G_C2": "UNKNOWN",
+        "G_C3": "UNKNOWN",
+        "G_X1": "FALSE",
+        "G_X2": "FALSE",
+        "G_X3": "FALSE",
+        "G_X4": "FALSE",
+        "G_X5": "FALSE"
+      },
+      "evidence_basis": {
+        "G_C1": "explicit",
+        "G_C2": "unknown",
+        "G_C3": "unknown",
+        "G_X1": "explicit",
+        "G_X2": "explicit",
+        "G_X3": "explicit",
+        "G_X4": "explicit",
+        "G_X5": "explicit"
+      },
+      "evidence_source_form": {
+        "G_C1": "staff_statement",
+        "G_C2": "tax_document_wrong_year",
+        "G_C3": "declaration_scope_missing",
+        "G_X1": "staff_statement",
+        "G_X2": "staff_statement",
+        "G_X3": "staff_statement",
+        "G_X4": "staff_statement",
+        "G_X5": "staff_statement"
+      },
+      "outcome_relevance": {
+        "G_C1": "required_for_yes",
+        "G_C2": "decisive",
+        "G_C3": "decisive",
+        "G_X1": "required_for_yes",
+        "G_X2": "required_for_yes",
+        "G_X3": "required_for_yes",
+        "G_X4": "required_for_yes",
+        "G_X5": "required_for_yes"
+      },
+      "evidence_quotes": {
+        "G_C1": [
+          "The charity's HMRC recognition was still in force when Devon Gray sent £95"
+        ],
+        "G_C2": [
+          "covers the year ending 5 April 2024, not the tax year of this donation; no current-year donor tax evidence is available"
+        ],
+        "G_C3": [
+          "the page stating its coverage and duration is missing"
+        ],
+        "G_X1": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ],
+        "G_X2": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ],
+        "G_X3": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ],
+        "G_X4": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ],
+        "G_X5": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ]
+      },
+      "evidence_notes": {
+        "G_C1": "Recognition in force on the gift date.",
+        "G_C2": "The tax document is for 2023-24; the gift falls in 2025-26; no current-year evidence.",
+        "G_C3": "Only an incomplete earlier form exists; coverage and duration are not established. No per-transaction rule is assumed.",
+        "G_X1": "No purchase or service tied to the gift.",
+        "G_X2": "Explicit: no benefit.",
+        "G_X3": "Explicit: not a payroll deduction.",
+        "G_X4": "Explicit: not shares.",
+        "G_X5": "Explicit: distinct from card/voucher settlement."
+      },
+      "G4_missing_information": {
+        "must_identify": [
+          {
+            "fact": "Devon's Income Tax/CGT paid in the 2025-26 tax year (at least £23.75 = 25% x £95, E01)",
+            "atom": "G_C2",
+            "effect": "below £23.75 -> NO; sufficient -> still need G_C3"
+          },
+          {
+            "fact": "Whether a valid Gift Aid declaration by Devon covers this £95 (locate the coverage/duration page and confirm 'D. Gray' is Devon)",
+            "atom": "G_C3",
+            "effect": "none or not covering -> NO; covering and G_C2 sufficient -> YES"
+          }
+        ],
+        "not_needed": [
+          "G_C1 and G_X1-G_X5 are established."
+        ]
+      },
+      "expected_missing_if_nei": [
+        "G_C2",
+        "G_C3"
+      ],
+      "scope_note": "one specified receipt",
+      "evaluation_scope": "Selected standard Gift Aid rules from policy E01–E13; not comprehensive legal advice",
+      "gold_review_status": "PROPOSED_NEED_MORE_INFORMATION; current-year tax and a valid covering declaration are both missing.",
+      "gold_source": "researcher-authored, pending audit",
+      "world": "R3_L",
+      "annotation_provenance": "RESEARCHER_SCOPED_NOT_OFFICIAL",
+      "evidence_review_status": "REQUIRES_INDEPENDENT_SEMANTIC_REVIEW"
+    },
+    "R3_H": {
+      "reference_decision": "NEED_MORE_INFORMATION",
+      "statuses": {
+        "G_C1": "TRUE",
+        "G_C2": "UNKNOWN",
+        "G_C3": "UNKNOWN",
+        "G_X1": "FALSE",
+        "G_X2": "FALSE",
+        "G_X3": "FALSE",
+        "G_X4": "FALSE",
+        "G_X5": "FALSE"
+      },
+      "evidence_basis": {
+        "G_C1": "explicit",
+        "G_C2": "unknown",
+        "G_C3": "unknown",
+        "G_X1": "explicit",
+        "G_X2": "explicit",
+        "G_X3": "explicit",
+        "G_X4": "explicit",
+        "G_X5": "explicit"
+      },
+      "evidence_source_form": {
+        "G_C1": "staff_statement",
+        "G_C2": "tax_document_wrong_year",
+        "G_C3": "declaration_scope_missing",
+        "G_X1": "remitter_page_and_registers",
+        "G_X2": "staff_statement",
+        "G_X3": "remitter_page_and_registers",
+        "G_X4": "remitter_page_and_registers",
+        "G_X5": "remitter_page_and_registers"
+      },
+      "outcome_relevance": {
+        "G_C1": "required_for_yes",
+        "G_C2": "decisive",
+        "G_C3": "decisive",
+        "G_X1": "required_for_yes",
+        "G_X2": "required_for_yes",
+        "G_X3": "required_for_yes",
+        "G_X4": "required_for_yes",
+        "G_X5": "required_for_yes"
+      },
+      "evidence_quotes": {
+        "G_C1": [
+          "confirm its recognition was still in force on 1 March 2026"
+        ],
+        "G_C2": [
+          "its heading says 'year ending 5 April 2024'",
+          "We do not have a record of Devon's Income Tax or Capital Gains Tax for the year covering that payment."
+        ],
+        "G_C3": [
+          "the page setting out the declaration's coverage and duration is not in the scan"
+        ],
+        "G_X1": [
+          "the booking and sales registers show no related purchase or reservation"
+        ],
+        "G_X2": [
+          "the only thing sent to Devon was the automated thank-you email, and no discount or other benefit was offered"
+        ],
+        "G_X3": [
+          "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch."
+        ],
+        "G_X4": [
+          "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch."
+        ],
+        "G_X5": [
+          "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch."
+        ]
+      },
+      "evidence_notes": {
+        "G_C1": "Recognition in force on the gift date.",
+        "G_C2": "The tax document is for 2023-24; the gift falls in 2025-26; no current-year evidence.",
+        "G_C3": "Only an incomplete earlier form exists; coverage and duration are not established. No per-transaction rule is assumed.",
+        "G_X1": "No purchase or service tied to the gift.",
+        "G_X2": "Explicit: no benefit.",
+        "G_X3": "Explicit: not a payroll deduction.",
+        "G_X4": "Explicit: not shares.",
+        "G_X5": "Explicit: distinct from card/voucher settlement."
+      },
+      "G4_missing_information": {
+        "must_identify": [
+          {
+            "fact": "Devon's Income Tax/CGT paid in the 2025-26 tax year (at least £23.75 = 25% x £95, E01)",
+            "atom": "G_C2",
+            "effect": "below £23.75 -> NO; sufficient -> still need G_C3"
+          },
+          {
+            "fact": "Whether a valid Gift Aid declaration by Devon covers this £95 (locate the coverage/duration page and confirm 'D. Gray' is Devon)",
+            "atom": "G_C3",
+            "effect": "none or not covering -> NO; covering and G_C2 sufficient -> YES"
+          }
+        ],
+        "not_needed": [
+          "G_C1 and G_X1-G_X5 are established."
+        ]
+      },
+      "expected_missing_if_nei": [
+        "G_C2",
+        "G_C3"
+      ],
+      "scope_note": "one specified receipt",
+      "evaluation_scope": "Selected standard Gift Aid rules from policy E01–E13; not comprehensive legal advice",
+      "gold_review_status": "PROPOSED_NEED_MORE_INFORMATION; current-year tax and a valid covering declaration are both missing.",
+      "gold_source": "researcher-authored, pending audit",
+      "world": "R3_H",
+      "annotation_provenance": "RESEARCHER_SCOPED_NOT_OFFICIAL",
+      "evidence_review_status": "REQUIRES_INDEPENDENT_SEMANTIC_REVIEW"
+    }
+  },
+  "official_R0_gold_file": "data/official_dev38_original.json",
+  "note": "R0 intentionally has NO researcher-created decision gold. R1-R3 are paired researcher-scoped reference states; not official labels.",
+  "schema_version": "lowhigh-v7",
+  "evidence_basis_definitions": {
+    "explicit": "Stated in the scenario text.",
+    "entailed": "Follows necessarily from the scenario text plus rules inside the 13 policy passages only. Outside world knowledge does not count.",
+    "unknown": "Not established either way; silence is not negation.",
+    "conflicting": "Mutually inconsistent evidence, unresolved (not used in this matrix)."
+  },
+  "outcome_relevance_definitions": {
+    "required_for_yes": "must be established for a YES",
+    "decisive": "this atom determines the reference outcome",
+    "irrelevant_to_outcome": "cannot change the reference outcome"
+  },
+  "decision_semantics": "YES: every required atom established TRUE and every exclusion established FALSE. NO: some required atom established FALSE, or some exclusion established TRUE. NEED_MORE_INFORMATION: otherwise, including UNKNOWN. NO requires an established failure, not merely a failure to establish.",
+  "decision_unit_rule": "The decision unit is the single receipt the scenario names. R1-R3 use the synthetic question about including that receipt in the ordinary claim."
+}

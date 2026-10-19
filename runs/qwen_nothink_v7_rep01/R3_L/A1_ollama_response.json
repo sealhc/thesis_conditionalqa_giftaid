@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T21:59:10.78348Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"atoms\": [\n    {\n      \"entity_scope\": \"donor\",\n      \"id\": \"a1\",\n      \"proposition\": \"the donor is recognised as a charity or CASC for tax purposes\",\n      \"source_ids\": [\n        \"E02\"\n      ]\n    },\n    {\n      \"entity_scope\": \"donor\",\n      \"id\": \"a2\",\n      \"proposition\": \"the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year of the donation as the amount of Gift Aid being claimed\",\n      \"source_ids\": [\n        \"E04\",\n        \"E07\"\n      ]\n    },\n    {\n      \"entity_scope\": \"donor\",\n      \"id\": \"a3\",\n      \"proposition\": \"the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid\",\n      \"source_ids\": [\n        \"E05\"\n      ]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a4\",\n      \"proposition\": \"the donation is not made through Payroll Giving\",\n      \"source_ids\": [\n        \"E09\"\n      ]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a5\",\n      \"proposition\": \"the donation is not a payment for goods or services or made because the charity bought goods and services\",\n      \"source_ids\": [\n        \"E10\"\n      ]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a6\",\n      \"proposition\": \"the donation is not where the donor receives a benefit over a certain limit\",\n      \"source_ids\": [\n        \"E11\"\n      ]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a7\",\n      \"proposition\": \"the donation is not of shares\",\n      \"source_ids\": [\n        \"E12\"\n      ]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a8\",\n      \"proposition\": \"the donation is not from a charity card or of vouchers, for example Charities Aid Foundation (CAF) vouchers\",\n      \"source_ids\": [\n        \"E13\"\n      ]\n    }\n  ],\n  \"decision_target\": \"eligibility for Gift Aid\",\n  \"decision_unit\": \"one donation\",\n  \"eligibility_expression\": {\n    \"ref\": \"a1\"\n  },\n  \"limitations\": [\n    \"The donor's tax year evidence is not available for the donation made in 2026, and the Gift Aid declaration is incomplete, so the truth of the tax and declaration conditions cannot be verified.\",\n    \"The policy does not specify whether donations from individuals are only eligible if the donor is a charity or CASC; this is not explicitly stated, and the donor must be recognised as a charity or CASC for tax purposes (E02), which is a separate condition.\"\n  ],\n  \"scope_issues\": [\n    \"The policy applies to donations from individuals, but does not specify whether donations from individuals who are not recognised as charities or CASC are eligible. The decision target is per donation, but the policy may not cover all types of donations or donors.\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 15980580625,
+  "load_duration": 3229458,
+  "prompt_eval_count": 1013,
+  "prompt_eval_cached_count": 887,
+  "prompt_eval_duration": 281275000,
+  "eval_count": 687,
+  "eval_duration": 15530493000
+}

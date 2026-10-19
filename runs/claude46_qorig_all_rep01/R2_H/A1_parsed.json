@@ -1,0 +1,121 @@
+{
+  "decision_target": "Whether Gift Aid can be claimed on the £260 payment received from Robyn Ellis on 4 February 2026",
+  "decision_unit": "one transaction (the £260 payment of 4 February 2026)",
+  "atoms": [
+    {
+      "id": "a1",
+      "proposition": "The organisation claiming Gift Aid is recognised as a charity or CASC for tax purposes by HMRC",
+      "entity_scope": "the charity run by the customer",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "id": "a2",
+      "proposition": "The donation was made by an individual (not a company or other entity)",
+      "entity_scope": "Robyn Ellis as the donor",
+      "source_ids": [
+        "E06"
+      ]
+    },
+    {
+      "id": "a3",
+      "proposition": "The donor paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the amount of Gift Aid to be claimed on the donation",
+      "entity_scope": "Robyn Ellis in the tax year of the donation",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "id": "a4",
+      "proposition": "The donor has made a Gift Aid declaration giving the charity permission to claim Gift Aid on the donation",
+      "entity_scope": "Robyn Ellis in relation to the £260 payment",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "id": "a5",
+      "proposition": "The payment was not made through Payroll Giving",
+      "entity_scope": "the £260 payment from Robyn Ellis",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "id": "a6",
+      "proposition": "The payment is not a payment for goods or services, and was not made because the charity bought goods or services from the donor",
+      "entity_scope": "the £260 payment from Robyn Ellis",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "id": "a7",
+      "proposition": "The donor does not receive a 'benefit' from the charity in connection with the donation that exceeds the permitted limit",
+      "entity_scope": "Robyn Ellis in relation to the £260 payment",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "id": "a8",
+      "proposition": "The donation is not a gift of shares",
+      "entity_scope": "the £260 payment from Robyn Ellis",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "id": "a9",
+      "proposition": "The donation was not made via charity cards or vouchers (e.g. CAF vouchers)",
+      "entity_scope": "the £260 payment from Robyn Ellis",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "eligibility_expression": {
+    "op": "ALL",
+    "args": [
+      {
+        "ref": "a1"
+      },
+      {
+        "ref": "a2"
+      },
+      {
+        "ref": "a3"
+      },
+      {
+        "ref": "a4"
+      },
+      {
+        "ref": "a5"
+      },
+      {
+        "ref": "a6"
+      },
+      {
+        "ref": "a7"
+      },
+      {
+        "ref": "a8"
+      },
+      {
+        "ref": "a9"
+      }
+    ]
+  },
+  "scope_issues": [
+    "The £260 payment and the separate £20 cash gift from Robyn Ellis at the December collection event are two distinct transactions; this analysis covers only the £260 February payment as specified. The £20 gift would require a separate eligibility determination.",
+    "The booking correspondence and coordinator records raise a factual question about whether the £260 constitutes payment for advertising services (newsletter link and homepage placement) rather than a donation, which directly affects atom a6 and therefore whether Gift Aid can be claimed at all. This is a scope issue that must be resolved on the facts before the eligibility expression can be evaluated."
+  ],
+  "limitations": [
+    "The passages do not define the monetary threshold for a donor 'benefit' that disqualifies a donation (atom a7); only the existence of such a limit is stated in E11.",
+    "The passages do not specify the precise form or content required for a valid Gift Aid declaration (atom a4) beyond the requirement that it gives permission to claim.",
+    "The passages do not address whether volunteering by the donor constitutes a 'benefit' for the purposes of E11.",
+    "Whether Robyn Ellis paid sufficient Income Tax or Capital Gains Tax in the 2025-26 tax year (atom a3) and whether she completed a Gift Aid declaration for the £260 (atom a4) are expressly noted as unchecked in the scenario."
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "decision_target": "Whether Gift Aid can be claimed on the £260 payment received from Robyn Ellis on 4 February 2026",
+  "decision_unit": "one transaction (the £260 payment of 4 February 2026)",
+  "atoms": [
+    {
+      "id": "a1",
+      "proposition": "The claiming organisation is recognised as a charity or CASC for tax purposes by HMRC",
+      "entity_scope": "the charity run by the customer",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "id": "a2",
+      "proposition": "The donation was made by an individual (not a company or other entity)",
+      "entity_scope": "Robyn Ellis (the donor)",
+      "source_ids": [
+        "E06"
+      ]
+    },
+    {
+      "id": "a3",
+      "proposition": "The donor paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the amount the charity wishes to claim in Gift Aid on this donation",
+      "entity_scope": "Robyn Ellis in the tax year containing 4 February 2026",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "id": "a4",
+      "proposition": "The donor has made a Gift Aid declaration giving the charity permission to claim Gift Aid on this donation",
+      "entity_scope": "Robyn Ellis in relation to the £260 payment",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "id": "a5",
+      "proposition": "The £260 payment is not a payment for goods or services supplied by the charity or CASC",
+      "entity_scope": "the £260 transaction of 4 February 2026",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "id": "a6",
+      "proposition": "The £260 payment was not made because the charity or CASC bought goods or services from the donor",
+      "entity_scope": "the £260 transaction of 4 February 2026",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "id": "a7",
+      "proposition": "The donation was not made through Payroll Giving",
+      "entity_scope": "the £260 transaction of 4 February 2026",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "id": "a8",
+      "proposition": "The donor does not receive a 'benefit' in return for the donation that exceeds the permitted limit",
+      "entity_scope": "Robyn Ellis in relation to the £260 payment",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "id": "a9",
+      "proposition": "The donation is not a donation of shares",
+      "entity_scope": "the £260 transaction of 4 February 2026",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "id": "a10",
+      "proposition": "The donation was not made via a charity card or voucher (e.g. a CAF voucher)",
+      "entity_scope": "the £260 transaction of 4 February 2026",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "eligibility_expression": {
+    "op": "ALL",
+    "args": [
+      {
+        "ref": "a1"
+      },
+      {
+        "ref": "a2"
+      },
+      {
+        "ref": "a3"
+      },
+      {
+        "ref": "a4"
+      },
+      {
+        "ref": "a5"
+      },
+      {
+        "ref": "a6"
+      },
+      {
+        "ref": "a7"
+      },
+      {
+        "ref": "a8"
+      },
+      {
+        "ref": "a9"
+      },
+      {
+        "ref": "a10"
+      }
+    ]
+  },
+  "scope_issues": [
+    "The £20 separate cash gift from Robyn Ellis at the December collection event is a distinct transaction with its own receipt and would require a separate eligibility assessment; it is explicitly out of scope for this review.",
+    "If the £260 is found to be a payment for advertising services rather than a donation, the question of Gift Aid eligibility on any genuine donation element (if separable) would require further policy guidance not present in the supplied passages."
+  ],
+  "limitations": [
+    "The supplied passages do not specify the monetary threshold for a donor 'benefit' that disqualifies a donation under E11; whether newsletter/website placements constitute such a benefit and whether their value exceeds the threshold cannot be determined from the passages alone.",
+    "The passages do not define what distinguishes a 'donation' from a 'payment for goods or services' beyond the words used in E10; the factual determination of which category the £260 falls into is a factual question, not resolved by the passages.",
+    "The passages do not address partial Gift Aid claims where only part of a payment may be a genuine donation.",
+    "Robyn Ellis's tax position (a3) and whether a Gift Aid declaration (a4) exists for the £260 have been flagged as unchecked in the scenario; these are required conditions but their truth values are not established in the supplied material."
+  ]
+}

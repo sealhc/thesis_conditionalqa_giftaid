@@ -1,0 +1,42 @@
+{
+  "url": "https://www.gov.uk/claim-gift-aid",
+  "scenario": "I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.",
+  "question": "Am I eligible for Gift Aid?",
+  "not_answerable": false,
+  "answers": [
+    [
+      "yes",
+      [
+        "<p>You must be recognised as a charity or CASC for tax purposes.</p>",
+        "<li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>",
+        "<li>make a Gift Aid declaration that gives you permission to claim it</li>"
+      ]
+    ],
+    [
+      "no",
+      [
+        "<li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>",
+        "<li>where the donor gets a ‘benefit’ over a certain limit</li>",
+        "<li>made through Payroll Giving</li>",
+        "<li>of shares</li>",
+        "<li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>"
+      ]
+    ]
+  ],
+  "evidences": [
+    "<p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>",
+    "<p>You must be recognised as a charity or CASC for tax purposes.</p>",
+    "<p>The donor must:</p>",
+    "<li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>",
+    "<li>make a Gift Aid declaration that gives you permission to claim it</li>",
+    "<p>You can claim Gift Aid on donations from individuals. The donor must:</p>",
+    "<li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>",
+    "<p>You cannot claim on donations:</p>",
+    "<li>made through Payroll Giving</li>",
+    "<li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>",
+    "<li>where the donor gets a ‘benefit’ over a certain limit</li>",
+    "<li>of shares</li>",
+    "<li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>"
+  ],
+  "id": "dev-38"
+}

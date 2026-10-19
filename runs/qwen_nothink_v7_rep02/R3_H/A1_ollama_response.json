@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T22:08:29.488914Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"atoms\": [\n    {\n      \"entity_scope\": \"donor\",\n      \"id\": \"a1\",\n      \"proposition\": \"the donor is recognised as a charity or CASC for tax purposes\",\n      \"source_ids\": [\"E02\"]\n    },\n    {\n      \"entity_scope\": \"donor\",\n      \"id\": \"a2\",\n      \"proposition\": \"the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid being claimed\",\n      \"source_ids\": [\"E04\", \"E07\"]\n    },\n    {\n      \"entity_scope\": \"donor\",\n      \"id\": \"a3\",\n      \"proposition\": \"the donor has made a Gift Aid declaration that gives permission to claim Gift Aid\",\n      \"source_ids\": [\"E05\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a4\",\n      \"proposition\": \"the donation is not made through Payroll Giving\",\n      \"source_ids\": [\"E09\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a5\",\n      \"proposition\": \"the donation is not a payment for goods or services or made because the charity bought goods and services\",\n      \"source_ids\": [\"E10\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a6\",\n      \"proposition\": \"the donation does not provide the donor with a benefit over a certain limit\",\n      \"source_ids\": [\"E11\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a7\",\n      \"proposition\": \"the donation is not of shares\",\n      \"source_ids\": [\"E12\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a8\",\n      \"proposition\": \"the donation is not from a charity card or voucher, such as a Charities Aid Foundation (CAF) voucher\",\n      \"source_ids\": [\"E13\"]\n    }\n  ],\n  \"decision_target\": \"eligibility for Gift Aid on a donation\",\n  \"decision_unit\": \"one donation\",\n  \"eligibility_expression\": {\n    \"ref\": \"a1\"\n  },\n  \"limitations\": [\n    \"The donor's tax record for the relevant tax year is not available; the P60 referenced is for a different tax year and does not cover the donation period.\",\n    \"The donor declaration form is not fully accessible or verifiable; only an older, incomplete form is present, and no current declaration is confirmed.\",\n    \"The donor's identity is linked to an older email address, and the current donor record lacks a confirmed connection to the form.\",\n    \"The supporting records for the donation (e.g., declaration, tax records) are incomplete or missing, and the team has not located a complete donor declaration file.\"\n  ],\n  \"scope_issues\": []\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 16042943875,
+  "load_duration": 1834042,
+  "prompt_eval_count": 1263,
+  "prompt_eval_cached_count": 887,
+  "prompt_eval_duration": 809270000,
+  "eval_count": 627,
+  "eval_duration": 15079433000
+}

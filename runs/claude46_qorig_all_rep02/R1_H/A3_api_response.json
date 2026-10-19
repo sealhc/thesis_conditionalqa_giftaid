@@ -1,0 +1,30 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_011CgAQzccn95aMQdaanCJCq",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"decision\":\"YES\",\"supporting_policy_ids\":[\"E01\",\"E02\",\"E04\",\"E05\",\"E06\",\"E07\",\"E09\",\"E10\",\"E11\",\"E12\",\"E13\"],\"decisive_condition_ids\":[\"a1\",\"a2\",\"a3\",\"a4\",\"a5\",\"a6\",\"a7\",\"a8\",\"a9\"],\"unresolved_condition_ids\":[],\"missing_facts\":[],\"justification\":\"All nine conditions required for Gift Aid eligibility on donation FP-0316-EL (£120 from Elaine Carter, 16 March 2026) are satisfied. (a1) The charity holds confirmed HMRC recognition as of 16 March 2026. (a2) Elaine Carter is an individual donor, evidenced by her personal current account. (a3) She paid £980 Income Tax in the year to 5 April 2026, comfortably exceeding the total £80 Gift Aid to be reclaimed across all her donations that year. (a4) She signed an electronic Gift Aid declaration on 15 March 2026, one day before the donation, explicitly covering this donation, with a timestamped audit trail matched to FP-0316-EL. (a5) The donation was not made through Payroll Giving. (a6) No goods or services were provided in connection with the payment. (a7) No benefit of any kind was provided to Elaine. (a8) No shares or securities were involved. (a9) FP-0316-EL is a direct Faster Payment from Elaine's personal bank account received 16 March 2026, clearly distinct from the CAF card and voucher redemptions (CC-0314, VC-0317) which arrived in a separate batch on 18 March 2026. The treasurer may include this receipt in the ordinary Gift Aid return.\",\"scope_issues\":[\"This assessment covers only transaction FP-0316-EL. The monthly direct-debit donors and other one-off donations mentioned in the scenario each require their own separate eligibility assessment.\"],\"ir_discrepancies\":[],\"conditional_branches\":[]}"
+    }
+  ],
+  "container": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 4457,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 489,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

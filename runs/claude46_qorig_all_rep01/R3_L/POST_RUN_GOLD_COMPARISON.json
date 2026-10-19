@@ -1,0 +1,261 @@
+{
+  "schema_version": "5.0",
+  "world": "R3_L",
+  "model": "claude-sonnet-4-6",
+  "model_version": "anthropic API; smoke returned_model=claude-sonnet-4-6",
+  "run_id": "claude46_qorig_all_rep01",
+  "researcher_gold_decision": "NEED_MORE_INFORMATION",
+  "stage_validation": {
+    "A1": {
+      "stage": "A1",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [],
+      "record_file": "A1_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "stop": "end_turn",
+        "returned_model": "claude-sonnet-4-6",
+        "usage": {
+          "input_tokens": 2951,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 748,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        },
+        "thinking_chars": 0,
+        "thinking_tokens": null,
+        "thinking_blocks": 0,
+        "attempts": 1
+      },
+      "json_envelope": {
+        "raw_sha256": "d21298201d345b3de2f31e71446a97e1c6cd2be524764bf1201f4f63724efe10",
+        "parsed_text_sha256": "d21298201d345b3de2f31e71446a97e1c6cd2be524764bf1201f4f63724efe10",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "A2": {
+      "stage": "A2",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [
+        {
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a3 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a3"
+        },
+        {
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a4 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a4"
+        }
+      ],
+      "record_file": "A2_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "stop": "end_turn",
+        "returned_model": "claude-sonnet-4-6",
+        "usage": {
+          "input_tokens": 2404,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 666,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        },
+        "thinking_chars": 0,
+        "thinking_tokens": null,
+        "thinking_blocks": 0,
+        "attempts": 1
+      },
+      "json_envelope": {
+        "raw_sha256": "24570b54fd54826e5132fc4c1d27ab1d6b540e804d6c33cb3ab9eaaab3138c21",
+        "parsed_text_sha256": "24570b54fd54826e5132fc4c1d27ab1d6b540e804d6c33cb3ab9eaaab3138c21",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "A3": {
+      "stage": "A3",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [],
+      "record_file": "A3_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "stop": "end_turn",
+        "returned_model": "claude-sonnet-4-6",
+        "usage": {
+          "input_tokens": 4032,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 675,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        },
+        "thinking_chars": 0,
+        "thinking_tokens": null,
+        "thinking_blocks": 0,
+        "attempts": 1
+      },
+      "json_envelope": {
+        "raw_sha256": "d34be7aba61c2628d1f5522934122ffe765fd8a3e822ac554b2073c3e3f37888",
+        "parsed_text_sha256": "d34be7aba61c2628d1f5522934122ffe765fd8a3e822ac554b2073c3e3f37888",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "B1": {
+      "stage": "B1",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [],
+      "record_file": "B1_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "stop": "end_turn",
+        "returned_model": "claude-sonnet-4-6",
+        "usage": {
+          "input_tokens": 1451,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 474,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        },
+        "thinking_chars": 0,
+        "thinking_tokens": null,
+        "thinking_blocks": 0,
+        "attempts": 1
+      },
+      "json_envelope": {
+        "raw_sha256": "dd3eb0f786ccbcd9e66ac57fcd7e3c06d3d1421440c3fd92a47b37a5028cb76b",
+        "parsed_text_sha256": "dd3eb0f786ccbcd9e66ac57fcd7e3c06d3d1421440c3fd92a47b37a5028cb76b",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    }
+  },
+  "paths": {
+    "A": {
+      "status": "concluded",
+      "decision": "NEED_MORE_INFORMATION",
+      "correct": true,
+      "stop_stage": null,
+      "reason": null,
+      "completion_category": "completed",
+      "retry_required": false,
+      "diagnostic_flags": [
+        {
+          "stage": "A2",
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a3 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a3"
+        },
+        {
+          "stage": "A2",
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a4 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a4"
+        }
+      ],
+      "usage": {
+        "calls": 3,
+        "prompt_tokens": 9387,
+        "generated_tokens": 2089,
+        "usage_complete": true,
+        "note": "Model calls and token counts as reported by the server, summed over all attempts of all stages (retries included); API-level HTTP retries are counted in attempts.",
+        "attempts": 3
+      },
+      "attempts": {
+        "per_stage": {
+          "A1": 1,
+          "A2": 1,
+          "A3": 1
+        },
+        "total_model_calls": 3,
+        "retry_calls": 0,
+        "first_attempt_all_valid": true,
+        "unfinished_stage": null
+      }
+    },
+    "B": {
+      "status": "concluded",
+      "decision": "NEED_MORE_INFORMATION",
+      "correct": true,
+      "stop_stage": null,
+      "reason": null,
+      "completion_category": "completed",
+      "retry_required": false,
+      "diagnostic_flags": [],
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1451,
+        "generated_tokens": 474,
+        "usage_complete": true,
+        "note": "Model calls and token counts as reported by the server, summed over all attempts of all stages (retries included); API-level HTTP retries are counted in attempts.",
+        "attempts": 1
+      },
+      "attempts": {
+        "per_stage": {
+          "B1": 1
+        },
+        "total_model_calls": 1,
+        "retry_calls": 0,
+        "first_attempt_all_valid": true,
+        "unfinished_stage": null
+      }
+    }
+  },
+  "paired_quality_eligible": true,
+  "limitations": [
+    "R0 native conditional Gold is not the researcher decision-state Gold.",
+    "Warning flags are not automatic semantic correctness verdicts.",
+    "One base case with correlated scenario variants is not a generalizable accuracy estimate."
+  ],
+  "paired": {
+    "A_correct": true,
+    "B_correct": true,
+    "both_correct": true,
+    "A_only_correct": false,
+    "B_only_correct": false
+  },
+  "stepwise_semantic_review": {
+    "status": "PENDING_MANUAL_REVIEW",
+    "note": "A1 coverage, A2 semantic accuracy, missing-information matching and reasoning grounding are NOT scored until reviewed. Run: python3 scripts/stepwise_review.py template --run <RUN>"
+  }
+}

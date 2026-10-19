@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T22:03:17.896606Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"conditional_branches\": [],\n  \"decision\": \"YES\",\n  \"justification\": \"The charity is recognised as a charity for tax purposes (E02), the donation from Elaine Carter is from an individual (E06), she made a Gift Aid declaration (E05), her tax paid (£980) meets or exceeds the required amount (E04 and E07), the donation was not made through payroll giving, not for goods or services, not in exchange for a benefit, not for shares, and not via charity cards or vouchers (E09, E10, E11, E12, E13). Thus, all conditions for Gift Aid eligibility are satisfied for this specific donation (FP-0316-EL).\",\n  \"missing_facts\": [],\n  \"scope_issues\": [],\n  \"supporting_policy_ids\": [\n    \"E02\",\n    \"E04\",\n    \"E05\",\n    \"E06\",\n    \"E07\",\n    \"E09\",\n    \"E10\",\n    \"E11\",\n    \"E12\",\n    \"E13\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6114564541,
+  "load_duration": 618583,
+  "prompt_eval_count": 923,
+  "prompt_eval_cached_count": 739,
+  "prompt_eval_duration": 410586000,
+  "eval_count": 250,
+  "eval_duration": 5589634000
+}

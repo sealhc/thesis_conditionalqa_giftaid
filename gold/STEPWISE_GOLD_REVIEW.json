@@ -1,0 +1,1059 @@
+{
+  "R1_L": {
+    "A1_reference_conditions": [
+      {
+        "id": "G_C1",
+        "proposition": "The charity/CASC is recognised for tax purposes",
+        "policy_source_ids": [
+          "E02"
+        ]
+      },
+      {
+        "id": "G_C2",
+        "proposition": "The individual donor has paid at least as much qualifying Income Tax or Capital Gains Tax in the relevant tax year as the Gift Aid to be claimed",
+        "policy_source_ids": [
+          "E04",
+          "E07"
+        ]
+      },
+      {
+        "id": "G_C3",
+        "proposition": "The donor has made a Gift Aid declaration permitting the claim",
+        "policy_source_ids": [
+          "E05"
+        ]
+      },
+      {
+        "id": "G_X1",
+        "proposition": "The payment is for goods/services or arose because the charity/CASC bought goods/services",
+        "policy_source_ids": [
+          "E08",
+          "E10"
+        ]
+      },
+      {
+        "id": "G_X2",
+        "proposition": "The donor receives a benefit over the applicable limit",
+        "policy_source_ids": [
+          "E08",
+          "E11"
+        ]
+      },
+      {
+        "id": "G_X3",
+        "proposition": "The gift is made via Payroll Giving",
+        "policy_source_ids": [
+          "E08",
+          "E09"
+        ]
+      },
+      {
+        "id": "G_X4",
+        "proposition": "The gift consists of shares",
+        "policy_source_ids": [
+          "E08",
+          "E12"
+        ]
+      },
+      {
+        "id": "G_X5",
+        "proposition": "The gift comes from charity cards or vouchers",
+        "policy_source_ids": [
+          "E08",
+          "E13"
+        ]
+      }
+    ],
+    "A2_reference_statuses": [
+      {
+        "id": "G_C1",
+        "expected_status": "TRUE",
+        "reference_rationale": "Recognition confirmed on the payment date.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The charity's HMRC recognition was confirmed as still in force on 16 March 2026."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C2",
+        "expected_status": "TRUE",
+        "reference_rationale": "£80 of Gift Aid claimed against £980 of Income Tax paid.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "statement_with_figures",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "Her Income Tax paid for 2025–26 was £980",
+          "totals £80"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C3",
+        "expected_status": "TRUE",
+        "reference_rationale": "Stated to cover this payment.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "Her signed Gift Aid declaration covers this payment."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X1",
+        "expected_status": "FALSE",
+        "reference_rationale": "Sales and booking records show no goods or services.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The fundraiser checked the associated sales and booking records: Elaine received no goods, services or benefit in exchange."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X2",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit denial of any benefit.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "Elaine received no goods, services or benefit in exchange."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X3",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "This was not a payroll deduction or a transfer of shares."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X4",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "This was not a payroll deduction or a transfer of shares."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X5",
+        "expected_status": "FALSE",
+        "reference_rationale": "CAF card/voucher receipts are separate payments from this direct transfer.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The processor's CAF charity-card and voucher receipts were different payments with different settlement references; FP-0316-EL was Elaine's direct bank transfer."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      }
+    ],
+    "A3_B1_reference_decision": "YES",
+    "A3_B1_expected_missing_conditions": [],
+    "grading_caveat": "A1 atom IDs can differ from reference IDs; semantic alignment is necessary. B1 is not required to output A1/A2 schemas.",
+    "A3_B1_missing_information": {
+      "must_identify": [],
+      "not_needed": [
+        "Nothing further; every atom established."
+      ]
+    }
+  },
+  "R1_H": {
+    "A1_reference_conditions": [
+      {
+        "id": "G_C1",
+        "proposition": "The charity/CASC is recognised for tax purposes",
+        "policy_source_ids": [
+          "E02"
+        ]
+      },
+      {
+        "id": "G_C2",
+        "proposition": "The individual donor has paid at least as much qualifying Income Tax or Capital Gains Tax in the relevant tax year as the Gift Aid to be claimed",
+        "policy_source_ids": [
+          "E04",
+          "E07"
+        ]
+      },
+      {
+        "id": "G_C3",
+        "proposition": "The donor has made a Gift Aid declaration permitting the claim",
+        "policy_source_ids": [
+          "E05"
+        ]
+      },
+      {
+        "id": "G_X1",
+        "proposition": "The payment is for goods/services or arose because the charity/CASC bought goods/services",
+        "policy_source_ids": [
+          "E08",
+          "E10"
+        ]
+      },
+      {
+        "id": "G_X2",
+        "proposition": "The donor receives a benefit over the applicable limit",
+        "policy_source_ids": [
+          "E08",
+          "E11"
+        ]
+      },
+      {
+        "id": "G_X3",
+        "proposition": "The gift is made via Payroll Giving",
+        "policy_source_ids": [
+          "E08",
+          "E09"
+        ]
+      },
+      {
+        "id": "G_X4",
+        "proposition": "The gift consists of shares",
+        "policy_source_ids": [
+          "E08",
+          "E12"
+        ]
+      },
+      {
+        "id": "G_X5",
+        "proposition": "The gift comes from charity cards or vouchers",
+        "policy_source_ids": [
+          "E08",
+          "E13"
+        ]
+      }
+    ],
+    "A2_reference_statuses": [
+      {
+        "id": "G_C1",
+        "expected_status": "TRUE",
+        "reference_rationale": "Recognition confirmed on the payment date.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "regulator_correspondence",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "the treasurer’s status check confirms the charity was still recognised on 16 March 2026"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C2",
+        "expected_status": "TRUE",
+        "reference_rationale": "£30 + £50 = £80, stated to be well below £980 tax paid in 2025-26.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "calculation",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "Her tax summary for the year to 5 April 2026 shows £980 of Income Tax paid",
+          "£80 in total, well below her £980"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C3",
+        "expected_status": "TRUE",
+        "reference_rationale": "Signed declaration, stated to cover this donation, matched to FP-0316-EL.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "signed_record",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "Elaine signed an electronic Gift Aid declaration on 15 March",
+          "The declaration says it covers this donation"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X1",
+        "expected_status": "FALSE",
+        "reference_rationale": "Records show no purchase or service tied to the payment.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "register_reconciliation",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The sales, booking and event records show nothing linked to this payment"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X2",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit denial of any benefit.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "she was not offered admission, advertising, a product or any other benefit"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X3",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "It did not go through a payroll giving scheme"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X4",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "no shares, securities or other assets were delivered"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X5",
+        "expected_status": "FALSE",
+        "reference_rationale": "CAF card/voucher redemptions were a separate batch from this direct payment.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "settlement_references",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "those were paid to the charity in a combined batch on 18 March, while FP-0316-EL came directly from Elaine’s bank on 16 March"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      }
+    ],
+    "A3_B1_reference_decision": "YES",
+    "A3_B1_expected_missing_conditions": [],
+    "grading_caveat": "A1 atom IDs can differ from reference IDs; semantic alignment is necessary. B1 is not required to output A1/A2 schemas.",
+    "A3_B1_missing_information": {
+      "must_identify": [],
+      "not_needed": [
+        "Nothing further; every atom established."
+      ]
+    }
+  },
+  "R2_L": {
+    "A1_reference_conditions": [
+      {
+        "id": "G_C1",
+        "proposition": "The charity/CASC is recognised for tax purposes",
+        "policy_source_ids": [
+          "E02"
+        ]
+      },
+      {
+        "id": "G_C2",
+        "proposition": "The individual donor has paid at least as much qualifying Income Tax or Capital Gains Tax in the relevant tax year as the Gift Aid to be claimed",
+        "policy_source_ids": [
+          "E04",
+          "E07"
+        ]
+      },
+      {
+        "id": "G_C3",
+        "proposition": "The donor has made a Gift Aid declaration permitting the claim",
+        "policy_source_ids": [
+          "E05"
+        ]
+      },
+      {
+        "id": "G_X1",
+        "proposition": "The payment is for goods/services or arose because the charity/CASC bought goods/services",
+        "policy_source_ids": [
+          "E08",
+          "E10"
+        ]
+      },
+      {
+        "id": "G_X2",
+        "proposition": "The donor receives a benefit over the applicable limit",
+        "policy_source_ids": [
+          "E08",
+          "E11"
+        ]
+      },
+      {
+        "id": "G_X3",
+        "proposition": "The gift is made via Payroll Giving",
+        "policy_source_ids": [
+          "E08",
+          "E09"
+        ]
+      },
+      {
+        "id": "G_X4",
+        "proposition": "The gift consists of shares",
+        "policy_source_ids": [
+          "E08",
+          "E12"
+        ]
+      },
+      {
+        "id": "G_X5",
+        "proposition": "The gift comes from charity cards or vouchers",
+        "policy_source_ids": [
+          "E08",
+          "E13"
+        ]
+      }
+    ],
+    "A2_reference_statuses": [
+      {
+        "id": "G_C1",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "A recognition letter exists but being in force on the payment date is not stated; irrelevant because X1 decides NO.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "document_exists_date_unestablished",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [
+          "The charity has an HMRC recognition letter"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C2",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Explicitly not checked; cannot rescue the claim.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "statement_not_checked",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [
+          "have not been checked"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C3",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Explicitly not checked; the separate £20 gift paperwork is a different gift.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "statement_not_checked",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [
+          "have not been checked"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X1",
+        "expected_status": "TRUE",
+        "reference_rationale": "A priced advertising placement, accepted, confirmed on payment and delivered. Requires classifying advertising placements as services (E10).",
+        "evidence_basis": "entailed",
+        "evidence_source_form": "correspondence_and_booking_records",
+        "outcome_relevance": "decisive",
+        "verbatim_evidence": [
+          "she accepted a £260 price for advertising her grooming salon in the charity's newsletter and on its website",
+          "The booking was confirmed after her payment, and the advertisement appeared as agreed."
+        ],
+        "review_status": "NEEDS_HUMAN_REVIEW"
+      },
+      {
+        "id": "G_X2",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "A promotional benefit exists but the policy limit is not supplied; irrelevant because X1 decides.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "none",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X3",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Not established; irrelevant because X1 is established TRUE.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "none",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X4",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Not established; irrelevant because X1 is established TRUE.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "none",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X5",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Not established; irrelevant because X1 is established TRUE.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "none",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      }
+    ],
+    "A3_B1_reference_decision": "NO",
+    "A3_B1_expected_missing_conditions": [],
+    "grading_caveat": "A1 atom IDs can differ from reference IDs; semantic alignment is necessary. B1 is not required to output A1/A2 schemas.",
+    "A3_B1_missing_information": {
+      "must_identify": [],
+      "not_needed": [
+        "G_C1 recognition date, G_C2 donor tax, G_C3 declaration and G_X2 benefit limit cannot rescue the claim once G_X1 is established; listing them as blocking and answering NEED_MORE_INFORMATION is incorrect."
+      ]
+    }
+  },
+  "R2_H": {
+    "A1_reference_conditions": [
+      {
+        "id": "G_C1",
+        "proposition": "The charity/CASC is recognised for tax purposes",
+        "policy_source_ids": [
+          "E02"
+        ]
+      },
+      {
+        "id": "G_C2",
+        "proposition": "The individual donor has paid at least as much qualifying Income Tax or Capital Gains Tax in the relevant tax year as the Gift Aid to be claimed",
+        "policy_source_ids": [
+          "E04",
+          "E07"
+        ]
+      },
+      {
+        "id": "G_C3",
+        "proposition": "The donor has made a Gift Aid declaration permitting the claim",
+        "policy_source_ids": [
+          "E05"
+        ]
+      },
+      {
+        "id": "G_X1",
+        "proposition": "The payment is for goods/services or arose because the charity/CASC bought goods/services",
+        "policy_source_ids": [
+          "E08",
+          "E10"
+        ]
+      },
+      {
+        "id": "G_X2",
+        "proposition": "The donor receives a benefit over the applicable limit",
+        "policy_source_ids": [
+          "E08",
+          "E11"
+        ]
+      },
+      {
+        "id": "G_X3",
+        "proposition": "The gift is made via Payroll Giving",
+        "policy_source_ids": [
+          "E08",
+          "E09"
+        ]
+      },
+      {
+        "id": "G_X4",
+        "proposition": "The gift consists of shares",
+        "policy_source_ids": [
+          "E08",
+          "E12"
+        ]
+      },
+      {
+        "id": "G_X5",
+        "proposition": "The gift comes from charity cards or vouchers",
+        "policy_source_ids": [
+          "E08",
+          "E13"
+        ]
+      }
+    ],
+    "A2_reference_statuses": [
+      {
+        "id": "G_C1",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "A recognition letter exists but being in force on the payment date is not stated; irrelevant because X1 decides NO.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "document_exists_date_unestablished",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [
+          "We have the charity's HMRC recognition letter"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C2",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Explicitly not checked; cannot rescue the claim.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "statement_not_checked",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [
+          "have not been checked"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C3",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Explicitly not checked; the separate £20 gift paperwork is a different gift.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "statement_not_checked",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [
+          "have not been checked"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X1",
+        "expected_status": "TRUE",
+        "reference_rationale": "A quoted price for two advertising placements, accepted, activated on payment, and delivered. Requires classifying advertising placements as services (E10).",
+        "evidence_basis": "entailed",
+        "evidence_source_form": "correspondence_and_booking_records",
+        "outcome_relevance": "decisive",
+        "verbatim_evidence": [
+          "The coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her.",
+          "the same sheet then changed to 'confirmed'",
+          "show the link in the agreed locations"
+        ],
+        "review_status": "NEEDS_HUMAN_REVIEW"
+      },
+      {
+        "id": "G_X2",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "A promotional benefit exists but the policy limit is not supplied; irrelevant because X1 decides.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "none",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X3",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Not established; irrelevant because X1 is established TRUE.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "none",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X4",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Not established; irrelevant because X1 is established TRUE.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "none",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X5",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Not established; irrelevant because X1 is established TRUE.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "none",
+        "outcome_relevance": "irrelevant_to_outcome",
+        "verbatim_evidence": [],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      }
+    ],
+    "A3_B1_reference_decision": "NO",
+    "A3_B1_expected_missing_conditions": [],
+    "grading_caveat": "A1 atom IDs can differ from reference IDs; semantic alignment is necessary. B1 is not required to output A1/A2 schemas.",
+    "A3_B1_missing_information": {
+      "must_identify": [],
+      "not_needed": [
+        "G_C1 recognition date, G_C2 donor tax, G_C3 declaration and G_X2 benefit limit cannot rescue the claim once G_X1 is established; listing them as blocking and answering NEED_MORE_INFORMATION is incorrect."
+      ]
+    }
+  },
+  "R3_L": {
+    "A1_reference_conditions": [
+      {
+        "id": "G_C1",
+        "proposition": "The charity/CASC is recognised for tax purposes",
+        "policy_source_ids": [
+          "E02"
+        ]
+      },
+      {
+        "id": "G_C2",
+        "proposition": "The individual donor has paid at least as much qualifying Income Tax or Capital Gains Tax in the relevant tax year as the Gift Aid to be claimed",
+        "policy_source_ids": [
+          "E04",
+          "E07"
+        ]
+      },
+      {
+        "id": "G_C3",
+        "proposition": "The donor has made a Gift Aid declaration permitting the claim",
+        "policy_source_ids": [
+          "E05"
+        ]
+      },
+      {
+        "id": "G_X1",
+        "proposition": "The payment is for goods/services or arose because the charity/CASC bought goods/services",
+        "policy_source_ids": [
+          "E08",
+          "E10"
+        ]
+      },
+      {
+        "id": "G_X2",
+        "proposition": "The donor receives a benefit over the applicable limit",
+        "policy_source_ids": [
+          "E08",
+          "E11"
+        ]
+      },
+      {
+        "id": "G_X3",
+        "proposition": "The gift is made via Payroll Giving",
+        "policy_source_ids": [
+          "E08",
+          "E09"
+        ]
+      },
+      {
+        "id": "G_X4",
+        "proposition": "The gift consists of shares",
+        "policy_source_ids": [
+          "E08",
+          "E12"
+        ]
+      },
+      {
+        "id": "G_X5",
+        "proposition": "The gift comes from charity cards or vouchers",
+        "policy_source_ids": [
+          "E08",
+          "E13"
+        ]
+      }
+    ],
+    "A2_reference_statuses": [
+      {
+        "id": "G_C1",
+        "expected_status": "TRUE",
+        "reference_rationale": "Recognition in force on the gift date.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The charity's HMRC recognition was still in force when Devon Gray sent £95"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C2",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "The tax document is for 2023-24; the gift falls in 2025-26; no current-year evidence.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "tax_document_wrong_year",
+        "outcome_relevance": "decisive",
+        "verbatim_evidence": [
+          "covers the year ending 5 April 2024, not the tax year of this donation; no current-year donor tax evidence is available"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C3",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Only an incomplete earlier form exists; coverage and duration are not established. No per-transaction rule is assumed.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "declaration_scope_missing",
+        "outcome_relevance": "decisive",
+        "verbatim_evidence": [
+          "the page stating its coverage and duration is missing"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X1",
+        "expected_status": "FALSE",
+        "reference_rationale": "No purchase or service tied to the gift.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X2",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit: no benefit.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X3",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit: not a payroll deduction.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X4",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit: not shares.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X5",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit: distinct from card/voucher settlement.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      }
+    ],
+    "A3_B1_reference_decision": "NEED_MORE_INFORMATION",
+    "A3_B1_expected_missing_conditions": [
+      "G_C2",
+      "G_C3"
+    ],
+    "grading_caveat": "A1 atom IDs can differ from reference IDs; semantic alignment is necessary. B1 is not required to output A1/A2 schemas.",
+    "A3_B1_missing_information": {
+      "must_identify": [
+        {
+          "fact": "Devon's Income Tax/CGT paid in the 2025-26 tax year (at least £23.75 = 25% x £95, E01)",
+          "atom": "G_C2",
+          "effect": "below £23.75 -> NO; sufficient -> still need G_C3"
+        },
+        {
+          "fact": "Whether a valid Gift Aid declaration by Devon covers this £95 (locate the coverage/duration page and confirm 'D. Gray' is Devon)",
+          "atom": "G_C3",
+          "effect": "none or not covering -> NO; covering and G_C2 sufficient -> YES"
+        }
+      ],
+      "not_needed": [
+        "G_C1 and G_X1-G_X5 are established."
+      ]
+    }
+  },
+  "R3_H": {
+    "A1_reference_conditions": [
+      {
+        "id": "G_C1",
+        "proposition": "The charity/CASC is recognised for tax purposes",
+        "policy_source_ids": [
+          "E02"
+        ]
+      },
+      {
+        "id": "G_C2",
+        "proposition": "The individual donor has paid at least as much qualifying Income Tax or Capital Gains Tax in the relevant tax year as the Gift Aid to be claimed",
+        "policy_source_ids": [
+          "E04",
+          "E07"
+        ]
+      },
+      {
+        "id": "G_C3",
+        "proposition": "The donor has made a Gift Aid declaration permitting the claim",
+        "policy_source_ids": [
+          "E05"
+        ]
+      },
+      {
+        "id": "G_X1",
+        "proposition": "The payment is for goods/services or arose because the charity/CASC bought goods/services",
+        "policy_source_ids": [
+          "E08",
+          "E10"
+        ]
+      },
+      {
+        "id": "G_X2",
+        "proposition": "The donor receives a benefit over the applicable limit",
+        "policy_source_ids": [
+          "E08",
+          "E11"
+        ]
+      },
+      {
+        "id": "G_X3",
+        "proposition": "The gift is made via Payroll Giving",
+        "policy_source_ids": [
+          "E08",
+          "E09"
+        ]
+      },
+      {
+        "id": "G_X4",
+        "proposition": "The gift consists of shares",
+        "policy_source_ids": [
+          "E08",
+          "E12"
+        ]
+      },
+      {
+        "id": "G_X5",
+        "proposition": "The gift comes from charity cards or vouchers",
+        "policy_source_ids": [
+          "E08",
+          "E13"
+        ]
+      }
+    ],
+    "A2_reference_statuses": [
+      {
+        "id": "G_C1",
+        "expected_status": "TRUE",
+        "reference_rationale": "Recognition in force on the gift date.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "confirm its recognition was still in force on 1 March 2026"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C2",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "The tax document is for 2023-24; the gift falls in 2025-26; no current-year evidence.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "tax_document_wrong_year",
+        "outcome_relevance": "decisive",
+        "verbatim_evidence": [
+          "its heading says 'year ending 5 April 2024'",
+          "We do not have a record of Devon's Income Tax or Capital Gains Tax for the year covering that payment."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_C3",
+        "expected_status": "UNKNOWN",
+        "reference_rationale": "Only an incomplete earlier form exists; coverage and duration are not established. No per-transaction rule is assumed.",
+        "evidence_basis": "unknown",
+        "evidence_source_form": "declaration_scope_missing",
+        "outcome_relevance": "decisive",
+        "verbatim_evidence": [
+          "the page setting out the declaration's coverage and duration is not in the scan"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X1",
+        "expected_status": "FALSE",
+        "reference_rationale": "No purchase or service tied to the gift.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "remitter_page_and_registers",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "the booking and sales registers show no related purchase or reservation"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X2",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit: no benefit.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "staff_statement",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "the only thing sent to Devon was the automated thank-you email, and no discount or other benefit was offered"
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X3",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit: not a payroll deduction.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "remitter_page_and_registers",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X4",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit: not shares.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "remitter_page_and_registers",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      },
+      {
+        "id": "G_X5",
+        "expected_status": "FALSE",
+        "reference_rationale": "Explicit: distinct from card/voucher settlement.",
+        "evidence_basis": "explicit",
+        "evidence_source_form": "remitter_page_and_registers",
+        "outcome_relevance": "required_for_yes",
+        "verbatim_evidence": [
+          "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch."
+        ],
+        "review_status": "AUTO_QUOTE_CHECK_ONLY"
+      }
+    ],
+    "A3_B1_reference_decision": "NEED_MORE_INFORMATION",
+    "A3_B1_expected_missing_conditions": [
+      "G_C2",
+      "G_C3"
+    ],
+    "grading_caveat": "A1 atom IDs can differ from reference IDs; semantic alignment is necessary. B1 is not required to output A1/A2 schemas.",
+    "A3_B1_missing_information": {
+      "must_identify": [
+        {
+          "fact": "Devon's Income Tax/CGT paid in the 2025-26 tax year (at least £23.75 = 25% x £95, E01)",
+          "atom": "G_C2",
+          "effect": "below £23.75 -> NO; sufficient -> still need G_C3"
+        },
+        {
+          "fact": "Whether a valid Gift Aid declaration by Devon covers this £95 (locate the coverage/duration page and confirm 'D. Gray' is Devon)",
+          "atom": "G_C3",
+          "effect": "none or not covering -> NO; covering and G_C2 sufficient -> YES"
+        }
+      ],
+      "not_needed": [
+        "G_C1 and G_X1-G_X5 are established."
+      ]
+    }
+  }
+}

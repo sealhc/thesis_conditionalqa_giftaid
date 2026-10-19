@@ -1,0 +1,126 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a1"
+      ],
+      "description": "The intermediate representation asserts that 'the donor is recognised as a charity or CASC for tax purposes' is a required condition (ref: E02), but the customer scenario provides no evidence about the charity's tax recognition status. This fact is omitted in the intermediate representation, which incorrectly assumes it is established.",
+      "policy_ids": [
+        "E02"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation maps 'the donor has paid at least as much in Income Tax or Capital Gains Tax' to E04, but the customer scenario provides no information about the donor's tax payment. This is an unsupported atom.",
+      "policy_ids": [
+        "E04"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a3"
+      ],
+      "description": "The intermediate representation includes 'the donor has made a Gift Aid declaration', but the customer scenario does not mention any such declaration. This is an unsupported atom.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a4"
+      ],
+      "description": "The intermediate representation assumes the donation is not through Payroll Giving, but the customer scenario does not specify the method of donation. This is an unsupported atom.",
+      "policy_ids": [
+        "E09"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a5"
+      ],
+      "description": "The intermediate representation assumes the donation is not a payment for goods or services, but the customer scenario does not describe the nature of the donations. This is an unsupported atom.",
+      "policy_ids": [
+        "E10"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a6"
+      ],
+      "description": "The intermediate representation assumes the donation does not involve a benefit over a limit, but the customer scenario provides no information about donor benefits. This is an unsupported atom.",
+      "policy_ids": [
+        "E11"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a7"
+      ],
+      "description": "The intermediate representation assumes the donation is not shares, but the customer scenario does not describe the form of the donation. This is an unsupported atom.",
+      "policy_ids": [
+        "E12"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a8"
+      ],
+      "description": "The intermediate representation assumes the donation is not from charity cards or vouchers, but the customer scenario does not mention such donations. This is an unsupported atom.",
+      "policy_ids": [
+        "E13"
+      ],
+      "type": "UNSUPPORTED"
+    }
+  ],
+  "justification": "The customer scenario describes a small independent charity receiving donations via direct debit and one-off donations, but provides no information about whether the charity is recognised as a charity or CASC for tax purposes, whether donors have paid sufficient tax, whether Gift Aid declarations have been made, or the nature of the donations. Without these facts, the conditions for Gift Aid eligibility as specified in E02, E04, E05, E09, E10, E11, E12, and E13 cannot be verified. The intermediate representation incorrectly assumes these facts are established based on the scenario, but the evidence does not support them.",
+  "missing_facts": [
+    "Whether the charity is recognised as a charity or CASC for tax purposes",
+    "Whether each donor has paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the amount of Gift Aid being claimed",
+    "Whether each donor has made a Gift Aid declaration",
+    "Whether the donations (direct debits or one-off) are made through Payroll Giving",
+    "Whether the donations are payments for goods or services or made because the charity or CASC bought goods and services",
+    "Whether the donor receives a benefit over a certain limit",
+    "Whether the donation is shares",
+    "Whether the donation is from charity cards or vouchers such as CAF vouchers"
+  ],
+  "scope_issues": [
+    "The policy does not specify whether the conditions apply to one-off donations or recurring donations such as monthly direct debits, creating a scope ambiguity in the application of Gift Aid rules to different types of donations."
+  ],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8"
+  ]
+}

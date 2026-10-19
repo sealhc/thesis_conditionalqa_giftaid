@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T22:11:24.110374Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"atoms\": [\n    {\n      \"entity_scope\": \"the donor\",\n      \"id\": \"a1\",\n      \"proposition\": \"the donor is an individual who donates to a charity or CASC\",\n      \"source_ids\": [\"E01\", \"E06\"]\n    },\n    {\n      \"entity_scope\": \"the donor\",\n      \"id\": \"a2\",\n      \"proposition\": \"the donor has paid at least as much in Income Tax or Capital Gains Tax in that tax year as the amount of Gift Aid claimed\",\n      \"source_ids\": [\"E04\", \"E07\"]\n    },\n    {\n      \"entity_scope\": \"the donor\",\n      \"id\": \"a3\",\n      \"proposition\": \"the donor has made a Gift Aid declaration that gives permission to claim Gift Aid on the donation\",\n      \"source_ids\": [\"E05\"]\n    },\n    {\n      \"entity_scope\": \"the donation\",\n      \"id\": \"a4\",\n      \"proposition\": \"the donation is not made through Payroll Giving\",\n      \"source_ids\": [\"E09\"]\n    },\n    {\n      \"entity_scope\": \"the donation\",\n      \"id\": \"a5\",\n      \"proposition\": \"the donation is not a payment for goods or services or made because the charity bought goods and services\",\n      \"source_ids\": [\"E10\"]\n    },\n    {\n      \"entity_scope\": \"the donation\",\n      \"id\": \"a6\",\n      \"proposition\": \"the donation does not give the donor a 'benefit' over a certain limit\",\n      \"source_ids\": [\"E11\"]\n    },\n    {\n      \"entity_scope\": \"the donation\",\n      \"id\": \"a7\",\n      \"proposition\": \"the donation is not of shares or any other form of securities\",\n      \"source_ids\": [\"E12\"]\n    },\n    {\n      \"entity_scope\": \"the donation\",\n      \"id\": \"a8\",\n      \"proposition\": \"the donation is not from a charity card or voucher, such as Charities Aid Foundation (CAF) vouchers\",\n      \"source_ids\": [\"E13\"]\n    },\n    {\n      \"entity_scope\": \"the charity\",\n      \"id\": \"a9\",\n      \"proposition\": \"the charity is recognised as a charity or CASC for tax purposes\",\n      \"source_ids\": [\"E02\"]\n    }\n  ],\n  \"decision_target\": \"eligibility for Gift Aid on a donation\",\n  \"decision_unit\": \"one donation\",\n  \"eligibility_expression\": {\n    \"ref\": \"a1\"\n  },\n  \"limitations\": [\n    \"The policy does not specify how to evaluate whether a donation constitutes a 'benefit' over a certain limit, leaving this condition under-defined.\",\n    \"The policy does not specify whether a donation grouped with CAF card or voucher redemptions in a batch constitutes a separate donation for Gift Aid purposes, though it notes the batch was made on a different date.\"\n  ],\n  \"scope_issues\": [\n    \"The policy applies to donations from individuals, but does not specify whether the same rule applies to all types of donations (e.g., one-off vs. recurring), nor whether the rules are cumulative across multiple donations.\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 16597767417,
+  "load_duration": 1385167,
+  "prompt_eval_count": 1294,
+  "prompt_eval_cached_count": 888,
+  "prompt_eval_duration": 882643000,
+  "eval_count": 687,
+  "eval_duration": 15547548000
+}

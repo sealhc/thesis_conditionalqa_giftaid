@@ -1,0 +1,80 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "one transaction",
+      "id": "a1",
+      "proposition": "The donor is an individual who made a donation to a recognised charity or CASC",
+      "source_ids": [
+        "E01",
+        "E02"
+      ]
+    },
+    {
+      "entity_scope": "one transaction",
+      "id": "a2",
+      "proposition": "The donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid claimed",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "entity_scope": "one transaction",
+      "id": "a3",
+      "proposition": "The donor has made a Gift Aid declaration that gives permission to claim Gift Aid on this donation",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "one transaction",
+      "id": "a4",
+      "proposition": "The donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "one transaction",
+      "id": "a5",
+      "proposition": "The donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "one transaction",
+      "id": "a6",
+      "proposition": "The donation does not provide the donor with a 'benefit' over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "one transaction",
+      "id": "a7",
+      "proposition": "The donation is not of shares or other securities",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "one transaction",
+      "id": "a8",
+      "proposition": "The donation is not from a charity card or voucher, such as a Charities Aid Foundation (CAF) voucher",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one transaction",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The policy does not specify how to handle donations that are grouped with CAF card or voucher redemptions in a batch, but does prohibit such donations if they are from charity cards or vouchers. The batch timing and grouping are not sufficient to override the prohibition if the donation itself is from a card or voucher.",
+    "The policy does not specify whether a donation that is not linked to a benefit or service is eligible if it is made via a digital payment app, though the donation is described as a personal payment from a current account and not through payroll giving."
+  ],
+  "scope_issues": []
+}

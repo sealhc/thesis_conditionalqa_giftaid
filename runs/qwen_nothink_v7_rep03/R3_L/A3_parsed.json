@@ -1,0 +1,74 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a1"
+      ],
+      "description": "The intermediate representation incorrectly asserts that 'the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year of the donation' is a proposition that can be evaluated from the evidence, but the customer scenario explicitly states that the donor's tax document covers a prior year and no current-year donor tax evidence is available. Thus, the tax-year alignment is unknown, and the condition cannot be evaluated.",
+      "policy_ids": [
+        "E04",
+        "E07"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation treats the Gift Aid declaration as valid based on an incomplete scanned document, but the customer scenario states the page stating its coverage and duration is missing. Thus, the declaration cannot be confirmed as valid or complete, and the status is unknown.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a8"
+      ],
+      "description": "The intermediate representation assigns status 'UNKNOWN' to the charity's recognition, but the customer scenario only states the charity 'attempts to help people' — this does not confirm HMRC recognition. E02 requires recognition for tax purposes, and this is not established by the evidence.",
+      "policy_ids": [
+        "E02"
+      ],
+      "type": "SCOPE"
+    },
+    {
+      "condition_ids": [
+        "a5"
+      ],
+      "description": "The intermediate representation treats the 'benefit' exception as irrelevant because no benefit is stated, but the policy (E11) specifies that donations where the donor receives a benefit over a certain limit are excluded. The donation is for an emergency vet appeal, which may involve a benefit to the donor (e.g., a vet visit), but the evidence does not clarify whether such a benefit exists or exceeds a threshold. This remains unresolved.",
+      "policy_ids": [
+        "E11"
+      ],
+      "type": "RELATION"
+    }
+  ],
+  "justification": "The customer scenario lacks definitive evidence on the donor's tax payment in the relevant tax year, the validity of the Gift Aid declaration, and whether the donation constitutes a benefit exceeding a limit. Additionally, the charity's formal HMRC recognition is not explicitly confirmed. Without these facts, the conditions for Gift Aid eligibility under E04, E05, and E11 cannot be satisfied with certainty. The policy does not define whether emergency appeals constitute a benefit, nor does it specify treatment of one-off donations versus recurring ones, creating ambiguity in scope.",
+  "missing_facts": [
+    "The donor's tax payment in the tax year of the donation (2026) for the donation made on 1 March 2026",
+    "Whether the donor received a benefit from the donation that exceeds the specified limit",
+    "Whether the charity is formally recognised by HMRC as a charity or CASC for tax purposes",
+    "The full content and validity of the Gift Aid declaration for this specific donation"
+  ],
+  "scope_issues": [
+    "The policy does not specify whether one-off donations or recurring donations are treated differently in eligibility"
+  ],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a1",
+    "a2",
+    "a5",
+    "a8"
+  ]
+}

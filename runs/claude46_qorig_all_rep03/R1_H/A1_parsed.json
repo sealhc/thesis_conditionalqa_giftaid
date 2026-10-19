@@ -1,0 +1,120 @@
+{
+  "decision_target": "Whether the charity can claim Gift Aid on the specific donation FP-0316-EL (£120 from Elaine Carter received 16 March 2026)",
+  "decision_unit": "one transaction (FP-0316-EL)",
+  "atoms": [
+    {
+      "id": "a1",
+      "proposition": "The organisation claiming Gift Aid is recognised as a charity or CASC for tax purposes by HMRC",
+      "entity_scope": "the charity",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "id": "a2",
+      "proposition": "The donation was made by an individual (not a company or other non-individual entity)",
+      "entity_scope": "the donor (Elaine Carter)",
+      "source_ids": [
+        "E06"
+      ]
+    },
+    {
+      "id": "a3",
+      "proposition": "The donor has paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the total amount the charity wants to claim in Gift Aid across all donations by that donor in that year",
+      "entity_scope": "the donor (Elaine Carter) in the tax year to 5 April 2026",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "id": "a4",
+      "proposition": "The donor has made a Gift Aid declaration giving the charity permission to claim Gift Aid on the donation",
+      "entity_scope": "the donor (Elaine Carter) in relation to FP-0316-EL",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "id": "a5",
+      "proposition": "The donation was NOT made through Payroll Giving",
+      "entity_scope": "the donation FP-0316-EL",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "id": "a6",
+      "proposition": "The donation is NOT a payment for goods or services, and was NOT made because the charity bought goods or services",
+      "entity_scope": "the donation FP-0316-EL",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "id": "a7",
+      "proposition": "The donor did NOT receive a benefit over the permitted limit in connection with the donation",
+      "entity_scope": "the donor (Elaine Carter) in relation to FP-0316-EL",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "id": "a8",
+      "proposition": "The donation is NOT a donation of shares",
+      "entity_scope": "the donation FP-0316-EL",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "id": "a9",
+      "proposition": "The donation was NOT made from a charity card or by means of a voucher (e.g. a CAF voucher)",
+      "entity_scope": "the donation FP-0316-EL",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "eligibility_expression": {
+    "op": "ALL",
+    "args": [
+      {
+        "ref": "a1"
+      },
+      {
+        "ref": "a2"
+      },
+      {
+        "ref": "a3"
+      },
+      {
+        "ref": "a4"
+      },
+      {
+        "ref": "a5"
+      },
+      {
+        "ref": "a6"
+      },
+      {
+        "ref": "a7"
+      },
+      {
+        "ref": "a8"
+      },
+      {
+        "ref": "a9"
+      }
+    ]
+  },
+  "scope_issues": [
+    "The customer also receives monthly direct debit donations and other one-off donations; each donation may need to be assessed separately against the same conditions. This representation covers only the single transaction FP-0316-EL as identified by the treasurer.",
+    "The donor-level tax-paid condition (a3) must be evaluated across all Gift Aid claims the charity (and potentially other charities) intend to make on donations by Elaine Carter in the same tax year, not just this donation in isolation; the passages do not specify whether the comparison is charity-specific or aggregate across all Gift Aid claims on the donor."
+  ],
+  "limitations": [
+    "The passages do not specify the exact monetary benefit threshold referenced in E11; the policy only states 'over a certain limit' without defining it, so the precise threshold cannot be derived from the supplied material alone.",
+    "The passages do not address whether an electronic Gift Aid declaration satisfies the declaration requirement under E05; the supplied text does not specify the required form or format of the declaration.",
+    "E04 and E07 overlap in content; both are cited for a3 as the passages together constitute the donor tax-paid condition, but neither passage provides a precise formula for multi-donor or multi-charity aggregation scenarios."
+  ]
+}

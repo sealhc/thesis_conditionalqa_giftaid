@@ -1,0 +1,32 @@
+{
+  "conditional_branches": [
+    {
+      "conditions_in_words": "Robyn has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid claimed, and has made a Gift Aid declaration.",
+      "possible_answer": "YES"
+    },
+    {
+      "conditions_in_words": "Robyn has not paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid claimed, or has not made a Gift Aid declaration.",
+      "possible_answer": "NO"
+    }
+  ],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The £260 payment from Robyn is labeled as a donation and is not a payment for goods or services, nor is it from a payroll giving scheme or a share, voucher, or charity card. The charity is recognised as a charity for tax purposes (per E02), and the donation is not prohibited under E09–E13. However, the policy requires the donor to have paid at least as much in tax as the claimed Gift Aid (E04/E07) and to have made a Gift Aid declaration (E05). The customer scenario confirms the donation was made, the nature of the transaction, and the charity's recognition, but does not confirm Robyn's tax position or whether she completed a Gift Aid declaration. Without this information, eligibility cannot be determined.",
+  "missing_facts": [
+    "Whether Robyn paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid claimed",
+    "Whether Robyn completed a Gift Aid declaration for the £260 donation"
+  ],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

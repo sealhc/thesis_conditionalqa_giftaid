@@ -1,0 +1,40 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [],
+  "justification": "The policy requires that the donor be recognised as a charity or CASC for tax purposes (E02), has paid at least as much in tax as the claimed Gift Aid (E04), and has made a Gift Aid declaration (E05). The customer scenario does not establish whether the charity is recognised, nor does it confirm donor tax payments or a Gift Aid declaration. Additionally, while donations are described as direct debit and one-off, there is no evidence about whether they are via Payroll Giving, for goods/services, or involve benefits, shares, or vouchers. Without these key facts, eligibility cannot be determined. The intermediate representation and condition statuses correctly identify these gaps, and no evidence supports a positive or negative decision.",
+  "missing_facts": [
+    "Whether the charity is recognised as a charity or CASC for tax purposes",
+    "Whether the donors have paid at least as much in Income Tax or Capital Gains Tax as the amount of Gift Aid to be claimed",
+    "Whether the donors have made a Gift Aid declaration",
+    "Whether the donations are made through Payroll Giving",
+    "Whether the donations are for goods or services or made because the charity bought goods and services",
+    "Whether the donor receives a benefit over a certain limit",
+    "Whether the donation involves shares",
+    "Whether the donation is from charity cards or vouchers, such as CAF vouchers"
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether donations from organisations or other entities are covered. The customer scenario only involves individuals, so this scope issue is limited to the customer's context."
+  ],
+  "supporting_policy_ids": [
+    "E02",
+    "E04",
+    "E05",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8"
+  ]
+}

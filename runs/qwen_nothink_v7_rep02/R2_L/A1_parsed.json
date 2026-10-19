@@ -1,0 +1,80 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "the donor",
+      "id": "a1",
+      "proposition": "the donor is recognised as a charity or CASC for tax purposes",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "entity_scope": "the donor",
+      "id": "a2",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid being claimed",
+      "source_ids": [
+        "E04"
+      ]
+    },
+    {
+      "entity_scope": "the donor",
+      "id": "a3",
+      "proposition": "the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a4",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a5",
+      "proposition": "the donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a6",
+      "proposition": "the donation is not a payment where the donor gets a 'benefit' over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a7",
+      "proposition": "the donation is not of shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a8",
+      "proposition": "the donation is not from a charity card or of vouchers, for example Charities Aid Foundation (CAF) vouchers",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The policy does not specify how to determine whether a donation constitutes a 'payment for goods or services' or a 'benefit' over a certain limit; these are defined by HMRC and may require further evidence.",
+    "The policy does not specify whether a donation made in exchange for advertising is considered a payment for goods or services or a benefit, and this is not explicitly defined in the passages."
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether direct debit or one-off donations are treated differently; the decision must be evaluated per donation."
+  ]
+}

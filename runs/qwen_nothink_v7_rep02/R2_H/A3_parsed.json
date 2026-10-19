@@ -1,0 +1,54 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a8"
+      ],
+      "description": "The intermediate representation asserts that 'Robyn Ellis has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid being claimed' (a8) based on E04, but the original evidence does not confirm Robyn's tax position or her tax liability. This is an unsupported atom. The status in the condition statuses correctly reports it as UNKNOWN.",
+      "policy_ids": [
+        "E04"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a9"
+      ],
+      "description": "The intermediate representation asserts that 'Robyn Ellis has completed a Gift Aid declaration that gives the charity permission to claim Gift Aid on the donation' (a9) based on E05, but the original evidence states 'Robyn's personal tax position and whether she completed a Gift Aid form for the £260 have not been checked'. This is an unsupported atom. The status in the condition statuses correctly reports it as UNKNOWN.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a1"
+      ],
+      "description": "The intermediate representation links the proposition about the donation being labeled as a 'donation' to E01, which is about Gift Aid eligibility, not the nature of the payment. E01 describes the claimable benefit (25p per £1 donation), not the categorization of the transaction. This misaligns the scope of the proposition with the policy source, creating a scope issue.",
+      "policy_ids": [
+        "E01"
+      ],
+      "type": "SCOPE"
+    }
+  ],
+  "justification": "The customer scenario establishes that the £260 payment from Robyn Ellis is labeled as a donation and described as a contribution to help animals, with no invoice raised and no indication of a service or benefit over a limit. The charity is recognized by HMRC. However, the policy requires that the donor must have paid at least as much in Income Tax or Capital Gains Tax as the amount of Gift Aid being claimed (E04), and must have completed a Gift Aid declaration (E05). These two conditions are not verified in the evidence. Without confirmation of Robyn's tax position or her completion of a Gift Aid declaration, the eligibility for Gift Aid cannot be established. The intermediate representation incorrectly attributes support to E01 for the donation's nature, which is not a valid policy basis for eligibility.",
+  "missing_facts": [
+    "Robyn Ellis's personal tax position (amount of Income Tax or Capital Gains Tax paid in the relevant tax year)",
+    "Whether Robyn Ellis completed a Gift Aid declaration for the £260 donation"
+  ],
+  "scope_issues": [
+    "The intermediate representation incorrectly maps the proposition about the donation being labeled as a 'donation' to E01, which governs the claimable benefit, not the categorization of the transaction. The evidence about the nature of the payment is not supported by E01, which is about the claim mechanism, not the transaction type."
+  ],
+  "supporting_policy_ids": [
+    "E02",
+    "E04",
+    "E05"
+  ],
+  "unresolved_condition_ids": [
+    "a8",
+    "a9"
+  ]
+}

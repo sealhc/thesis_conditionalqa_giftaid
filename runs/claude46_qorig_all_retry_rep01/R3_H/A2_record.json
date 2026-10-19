@@ -1,0 +1,122 @@
+{
+  "stage": "A2",
+  "saved_at_utc": "2026-10-18T23:24:55.838282+00:00",
+  "status": "parsed",
+  "reason": null,
+  "raw_sha256": "cc70ce72b7681835ca21c52a8be8ac9a540718078d46509b24393a646c593709",
+  "valid_json": true,
+  "validation_error": null,
+  "retry_required": false,
+  "diagnostic_flags": [
+    {
+      "code": "QUOTE_NOT_VERBATIM",
+      "detail": "A2 a1 quote not found as exact scenario substring",
+      "atom_id": "a1",
+      "quote_is_verbatim": false
+    },
+    {
+      "code": "QUOTE_NOT_VERBATIM",
+      "detail": "A2 a2 quote not found as exact scenario substring",
+      "atom_id": "a2",
+      "quote_is_verbatim": false
+    },
+    {
+      "code": "UNKNOWN_WITH_QUOTE",
+      "detail": "A2 a3 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+      "atom_id": "a3"
+    },
+    {
+      "code": "QUOTE_NOT_VERBATIM",
+      "detail": "A2 a4 quote not found as exact scenario substring",
+      "atom_id": "a4",
+      "quote_is_verbatim": false
+    },
+    {
+      "code": "UNKNOWN_WITH_QUOTE",
+      "detail": "A2 a4 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+      "atom_id": "a4"
+    },
+    {
+      "code": "QUOTE_NOT_VERBATIM",
+      "detail": "A2 a9 quote not found as exact scenario substring",
+      "atom_id": "a9",
+      "quote_is_verbatim": false
+    }
+  ],
+  "json_envelope": {
+    "raw_sha256": "cc70ce72b7681835ca21c52a8be8ac9a540718078d46509b24393a646c593709",
+    "parsed_text_sha256": "cc70ce72b7681835ca21c52a8be8ac9a540718078d46509b24393a646c593709",
+    "outer_format_processed": false,
+    "envelope_operations": [],
+    "parser_policy": "v5_allowed_outer_wrappers_only",
+    "json_payload_content_modified": false
+  },
+  "quote_verbatim_checks": [
+    {
+      "atom_id": "a1",
+      "quote_is_verbatim": false,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a2",
+      "quote_is_verbatim": false,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a3",
+      "quote_is_verbatim": true,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a4",
+      "quote_is_verbatim": false,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a5",
+      "quote_is_verbatim": true,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a6",
+      "quote_is_verbatim": true,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a7",
+      "quote_is_verbatim": true,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a8",
+      "quote_is_verbatim": true,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a9",
+      "quote_is_verbatim": false,
+      "has_quote": true
+    }
+  ],
+  "api_metrics": {
+    "stop": "end_turn",
+    "returned_model": "claude-sonnet-4-6",
+    "usage": {
+      "input_tokens": 2793,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 713,
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "thinking_chars": 0,
+    "thinking_tokens": null,
+    "thinking_blocks": 0,
+    "attempts": 1
+  }
+}

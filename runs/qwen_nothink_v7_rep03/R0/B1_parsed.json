@@ -1,0 +1,24 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The policy establishes eligibility requirements for Gift Aid, including that the organisation must be recognised as a charity or CASC (E02), the donor must have paid at least as much in income or capital gains tax as the claimed amount (E04/E07), and a Gift Aid declaration must be made (E05). The customer runs a small independent charity, which satisfies the recognition requirement (E02). However, the customer's scenario does not specify whether the donors have paid sufficient tax, whether they have made a Gift Aid declaration, or whether the donations are eligible (e.g., not from payroll giving, not for goods/services, not involving benefits or shares). The type of donations (monthly direct debits and one-off donations) is not detailed in terms of eligibility. Without knowing whether donors meet the tax payment requirement or whether donations fall under prohibited categories (e.g., via charity cards, for goods/services), the eligibility cannot be determined.",
+  "missing_facts": [
+    "Whether donors have paid at least as much in Income Tax or Capital Gains Tax as the claimed Gift Aid amount",
+    "Whether donors have made a Gift Aid declaration",
+    "Whether the donations are for goods or services or were made because the charity bought goods and services",
+    "Whether the donations involve a 'benefit' over a certain limit",
+    "Whether the donations are from shares, charity cards, or vouchers"
+  ],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E02",
+    "E04",
+    "E05",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

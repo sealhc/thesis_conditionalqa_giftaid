@@ -1,0 +1,53 @@
+{
+  "scope_issues": [],
+  "statuses": [
+    {
+      "evidence_quote": "You must be recognised as a charity or CASC for tax purposes.",
+      "id": "a1",
+      "justification": "The charity's HMRC recognition letter and a recent registration-status response confirm its recognition was still in force on 1 March 2026, satisfying the condition that the charity is recognised.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a2",
+      "justification": "No sufficient evidence is provided about Devon Gray's tax liability in the tax year of the donation (2025–26). The P60 refers to a year ending 5 April 2024, which is not the relevant tax year. There is no record of Devon's Income Tax or Capital Gains Tax for the 2025–26 tax year, so it is not established whether the donor paid at least as much as the claimed Gift Aid amount.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a3",
+      "justification": "The donor database contains only a partial scan of a form with an older email address not linked to Devon Gray, and the declaration's coverage and duration are not visible. No verifiable Gift Aid declaration exists for this donation, so the presence of a declaration is not established.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "You cannot claim on donations: made through Payroll Giving",
+      "id": "a4",
+      "justification": "The remitter page identifies an ordinary bank transfer from Devon's personal account, distinct from employer deductions. This is not Payroll Giving, so the donation is not made through Payroll Giving.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "You cannot claim on donations: that are a payment for goods or services or made because your charity or CASC bought goods and services",
+      "id": "a5",
+      "justification": "The booking and sales registers show no related purchase or reservation; the only thing sent to Devon was the automated thank-you email, and no discount or other benefit was offered. Thus, the donation is not for goods or services.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "You cannot claim on donations: where the donor gets a ‘benefit’ over a certain limit",
+      "id": "a6",
+      "justification": "No benefit was offered to Devon beyond the standard thank-you email. There is no indication of any benefit exceeding a certain limit, so this condition is not triggered.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "You cannot claim on donations: of shares",
+      "id": "a7",
+      "justification": "The donation is a £95 credit from a personal bank account, not in the form of shares. The donation is not described as involving shares.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "You cannot claim on donations: from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers",
+      "id": "a8",
+      "justification": "The remitter is identified as a personal bank transfer from Devon's personal account, not from a charity card or voucher. There is no mention of a voucher or charity card being used.",
+      "status": "TRUE"
+    }
+  ]
+}

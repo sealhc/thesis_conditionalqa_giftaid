@@ -1,0 +1,30 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_011CgAQkmaPizwjuj6qq94GC",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"decision_target\":\"Whether the charity can claim Gift Aid on a specific donation\",\"decision_unit\":\"one donation (Devon Gray, £95, 1 March 2026)\",\"atoms\":[{\"id\":\"a1\",\"proposition\":\"The organisation claiming Gift Aid is recognised as a charity or CASC for tax purposes by HMRC\",\"entity_scope\":\"the charity\",\"source_ids\":[\"E02\"]},{\"id\":\"a2\",\"proposition\":\"The donation was made by an individual (not a company or other entity)\",\"entity_scope\":\"the donor (Devon Gray)\",\"source_ids\":[\"E06\"]},{\"id\":\"a3\",\"proposition\":\"The donor paid at least as much in Income Tax or Capital Gains Tax in the tax year of the donation (2025-26) as the charity wants to claim in Gift Aid on that donation\",\"entity_scope\":\"the donor (Devon Gray)\",\"source_ids\":[\"E04\",\"E07\"]},{\"id\":\"a4\",\"proposition\":\"The donor has made a valid Gift Aid declaration giving the charity permission to claim Gift Aid on the donation\",\"entity_scope\":\"the donor (Devon Gray)\",\"source_ids\":[\"E05\"]},{\"id\":\"a5\",\"proposition\":\"The donation was NOT made through Payroll Giving\",\"entity_scope\":\"the donation\",\"source_ids\":[\"E09\"]},{\"id\":\"a6\",\"proposition\":\"The donation is NOT a payment for goods or services, and was NOT made because the charity bought goods or services\",\"entity_scope\":\"the donation\",\"source_ids\":[\"E10\"]},{\"id\":\"a7\",\"proposition\":\"The donor does NOT receive a benefit exceeding the permitted limit in connection with the donation\",\"entity_scope\":\"the donor (Devon Gray) and the donation\",\"source_ids\":[\"E11\"]},{\"id\":\"a8\",\"proposition\":\"The donation is NOT a donation of shares\",\"entity_scope\":\"the donation\",\"source_ids\":[\"E12\"]},{\"id\":\"a9\",\"proposition\":\"The donation was NOT made via a charity card or voucher (e.g. CAF voucher)\",\"entity_scope\":\"the donation\",\"source_ids\":[\"E13\"]}],\"eligibility_expression\":{\"op\":\"ALL\",\"args\":[{\"ref\":\"a1\"},{\"ref\":\"a2\"},{\"ref\":\"a3\"},{\"ref\":\"a4\"},{\"ref\":\"a5\"},{\"ref\":\"a6\"},{\"ref\":\"a7\"},{\"ref\":\"a8\"},{\"ref\":\"a9\"}]},\"scope_issues\":[\"The customer mentions multiple donors paying by direct debit and one-off donors; this analysis covers only the single identified donation from Devon Gray on 1 March 2026. Other donations would each require separate evaluation against the same conditions.\"],\"limitations\":[\"a3 cannot be confirmed: the only tax document on file covers tax year ending 5 April 2024, not the donation tax year 2025-26; no current-year donor tax evidence is available.\",\"a4 cannot be confirmed: the scanned Gift Aid declaration is incomplete — the page stating its coverage and duration is missing, so it is unclear whether it validly covers this donation.\",\"The passages do not specify the exact benefit limit referenced in E11, so the threshold for a7 cannot be quantified from the supplied material alone.\",\"The passages do not define what constitutes a valid Gift Aid declaration (e.g. required form, content, or duration), limiting assessment of a4.\"]}"
+    }
+  ],
+  "container": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 2951,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 748,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

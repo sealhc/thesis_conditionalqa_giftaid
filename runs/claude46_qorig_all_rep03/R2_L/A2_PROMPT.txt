@@ -1,0 +1,173 @@
+ROLE
+You perform evidence-grounded fact matching, not a new rule-extraction task. Use only the inputs provided. Do not browse.
+
+TASK
+For every atom in the supplied INTERMEDIATE_REPRESENTATION, decide whether the CUSTOMER_SCENARIO supports that atomic proposition as TRUE, FALSE, UNKNOWN, or CONFLICTING. This is about the customer's current evidence, not whether the policy is correct. Do not make a final eligibility decision.
+
+DEFINITIONS
+TRUE: evidence positively establishes the stated proposition.
+FALSE: evidence positively establishes the proposition does not hold.
+UNKNOWN: no sufficient evidence for either TRUE or FALSE; silence is not negation.
+CONFLICTING: the scenario expressly contains mutually inconsistent evidence relevant to the proposition. Do not manufacture conflicts.
+
+RULES
+1. Preserve every atom ID exactly; do not add, delete, or silently rewrite atoms from the intermediate representation.
+2. Explain each status briefly with an exact excerpt from the scenario where possible. For UNKNOWN use an empty evidence_quote and say what is not established.
+3. Distinguish explicit evidence, necessary entailments, and assumptions. Do not convert indirect but ambiguous wording into certainty.
+4. Apply conditions to the correct person, gift, period or other unit; do not use evidence about one donor to infer all other donors' states.
+5. Do not use outside legal knowledge. Return one valid JSON object only.
+
+OUTPUT SCHEMA
+{
+ "statuses":[{"id":"a1","status":"TRUE|FALSE|UNKNOWN|CONFLICTING","evidence_quote":"exact short excerpt or empty string","justification":"one sentence"}],
+ "scope_issues":["issue if any"]
+}
+
+
+=== POLICY_PASSAGES ===
+[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>
+[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>
+[E03] <p>The donor must:</p>
+[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>
+[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>
+[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>
+[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>
+[E08] <p>You cannot claim on donations:</p>
+[E09] <li>made through Payroll Giving</li>
+[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>
+[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>
+[E12] <li>of shares</li>
+[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>
+
+=== DECISION_QUESTION ===
+Am I eligible for Gift Aid?
+
+=== CUSTOMER_SCENARIO ===
+I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.
+
+Additional customer information:
+Robyn Ellis paid the charity £260 on 4 February 2026. The bookkeeping sheet calls it a donation, but January emails show she accepted a £260 price for advertising her grooming salon in the charity's newsletter and on its website. The booking was confirmed after her payment, and the advertisement appeared as agreed. Her separate £20 cash gift in December was unrelated. The charity has an HMRC recognition letter, but Robyn's tax position and any Gift Aid declaration for the £260 have not been checked.
+
+=== INTERMEDIATE_REPRESENTATION (actual A1 JSON, wrapper excluded if present) ===
+{
+  "decision_target": "Whether the charity can claim Gift Aid on a donation",
+  "decision_unit": "one donation (each donation assessed individually)",
+  "atoms": [
+    {
+      "id": "a1",
+      "proposition": "The organisation claiming Gift Aid is recognised as a charity or community amateur sports club (CASC) for tax purposes by HMRC",
+      "entity_scope": "the charity or CASC making the claim",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "id": "a2",
+      "proposition": "The donation was made by an individual (not a company or other entity)",
+      "entity_scope": "the donor",
+      "source_ids": [
+        "E06"
+      ]
+    },
+    {
+      "id": "a3",
+      "proposition": "The donor has paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the amount the charity wants to claim in Gift Aid on that donation",
+      "entity_scope": "the donor",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "id": "a4",
+      "proposition": "The donor has made a Gift Aid declaration giving the charity permission to claim Gift Aid on the donation",
+      "entity_scope": "the donor",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "id": "a5",
+      "proposition": "The donation was NOT made through Payroll Giving",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "id": "a6",
+      "proposition": "The donation is NOT a payment for goods or services, and is NOT made because the charity or CASC bought goods or services from the donor",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "id": "a7",
+      "proposition": "The donor does NOT receive a benefit in connection with the donation that exceeds the permitted limit",
+      "entity_scope": "the donor and the donation",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "id": "a8",
+      "proposition": "The donation is NOT a donation of shares",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "id": "a9",
+      "proposition": "The donation was NOT made via a charity card or voucher (e.g. a CAF voucher)",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "eligibility_expression": {
+    "op": "ALL",
+    "args": [
+      {
+        "ref": "a1"
+      },
+      {
+        "ref": "a2"
+      },
+      {
+        "ref": "a3"
+      },
+      {
+        "ref": "a4"
+      },
+      {
+        "ref": "a5"
+      },
+      {
+        "ref": "a6"
+      },
+      {
+        "ref": "a7"
+      },
+      {
+        "ref": "a8"
+      },
+      {
+        "ref": "a9"
+      }
+    ]
+  },
+  "scope_issues": [
+    "The customer has multiple donors making both recurring (direct debit) and one-off donations; each individual donation must be assessed separately against all conditions, so a single yes/no answer cannot be given for the charity as a whole",
+    "The £260 payment from Robyn Ellis and her separate £20 cash gift are distinct transactions that may reach different conclusions under the same rules and must be assessed independently"
+  ],
+  "limitations": [
+    "The passages do not specify the exact monetary threshold above which a donor benefit disqualifies a donation (a7); only that a limit exists",
+    "The passages do not define what counts as a 'benefit' for the purposes of the benefit limit (a7)",
+    "The passages do not address mixed payments (part payment for goods/services, part genuine donation) or whether a partial Gift Aid claim is permissible",
+    "No guidance is provided in the passages on record-keeping requirements beyond the Gift Aid declaration itself",
+    "The passages do not address the process or timing requirements for Gift Aid declarations"
+  ]
+}

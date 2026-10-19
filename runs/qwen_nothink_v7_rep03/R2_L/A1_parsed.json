@@ -1,0 +1,82 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "a donation made by an individual to a charity or CASC",
+      "id": "a1",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "a donation made by an individual to a charity or CASC",
+      "id": "a2",
+      "proposition": "the donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "a donation made by an individual to a charity or CASC",
+      "id": "a3",
+      "proposition": "the donation does not provide the donor with a benefit over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "a donation made by an individual to a charity or CASC",
+      "id": "a4",
+      "proposition": "the donation is not of shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "a donation made by an individual to a charity or CASC",
+      "id": "a5",
+      "proposition": "the donation is not from a charity card or voucher, such as a Charities Aid Foundation (CAF) voucher",
+      "source_ids": [
+        "E13"
+      ]
+    },
+    {
+      "entity_scope": "the donor",
+      "id": "a6",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in that tax year as the amount of Gift Aid being claimed",
+      "source_ids": [
+        "E04"
+      ]
+    },
+    {
+      "entity_scope": "the donor",
+      "id": "a7",
+      "proposition": "the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "the recipient organisation",
+      "id": "a8",
+      "proposition": "the organisation is recognised as a charity or CASC for tax purposes",
+      "source_ids": [
+        "E02"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The policy does not specify how to assess whether a donation constitutes a payment for goods or services, or whether a benefit exceeds a certain limit, which may require further evidence or judgment.",
+    "The policy does not specify whether a donation made in exchange for an advertisement constitutes a payment for goods or services, or whether such a transaction is covered by the 'benefit' rule.",
+    "The policy does not define the threshold for a 'benefit' or the nature of a 'certain limit' that triggers the prohibition in E11.",
+    "The policy does not specify whether a donation for advertising services is considered a transaction for goods or services, or whether such a transaction is permitted under Gift Aid rules."
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but the scenario includes both monthly direct debits and one-off donations; the policy does not distinguish between types of donations beyond the prohibitions listed."
+  ]
+}

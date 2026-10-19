@@ -1,0 +1,41 @@
+{
+  "stage": "A3",
+  "saved_at_utc": "2026-10-18T22:03:11.777876+00:00",
+  "status": "parsed",
+  "reason": null,
+  "raw_sha256": "8f06f5bf86f6fddc0883d6da7ed6de84b6d0013d22a96e9cf9d1af4cb7907c09",
+  "valid_json": true,
+  "validation_error": null,
+  "retry_required": false,
+  "diagnostic_flags": [
+    {
+      "code": "DECIDED_WITH_UNRESOLVED_ATOMS",
+      "detail": "A3 returned YES while listing unresolved atoms",
+      "unresolved": [
+        "a6",
+        "a7"
+      ]
+    }
+  ],
+  "json_envelope": {
+    "raw_sha256": "8f06f5bf86f6fddc0883d6da7ed6de84b6d0013d22a96e9cf9d1af4cb7907c09",
+    "parsed_text_sha256": "8f06f5bf86f6fddc0883d6da7ed6de84b6d0013d22a96e9cf9d1af4cb7907c09",
+    "outer_format_processed": false,
+    "envelope_operations": [],
+    "parser_policy": "v5_allowed_outer_wrappers_only",
+    "json_payload_content_modified": false
+  },
+  "api_metrics": {
+    "done": true,
+    "done_reason": "stop",
+    "prompt_eval_count": 2520,
+    "eval_count": 385,
+    "num_ctx_configured": 32768,
+    "num_predict_configured": 8192,
+    "thinking_output_characters": 0,
+    "thinking_field_present": false,
+    "prompt_plus_generated_tokens_observed": 2905,
+    "context_pressure_95pct_heuristic": false,
+    "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+  }
+}

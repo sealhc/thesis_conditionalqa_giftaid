@@ -1,0 +1,55 @@
+{
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether donations from organisations or other entities are covered. The customer scenario only involves individuals, so this scope issue is limited to the customer's context."
+  ],
+  "statuses": [
+    {
+      "evidence_quote": "",
+      "id": "a1",
+      "justification": "The customer scenario states they run a small, independent charity but does not state whether they are recognised as a charity or CASC for tax purposes. E02 requires recognition, but this is not established in the scenario.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a2",
+      "justification": "The customer scenario does not mention anything about the donor's tax payments or the amount of Income Tax or Capital Gains Tax paid in the tax year. E04 requires this, but no evidence is provided.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a3",
+      "justification": "The customer scenario does not mention any Gift Aid declaration made by the donor. E05 requires such a declaration, but there is no evidence of it being made.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a4",
+      "justification": "The customer scenario describes donations via direct debit and one-off donations, but does not specify whether these are through Payroll Giving. No evidence is provided to confirm or deny this, so it is not established.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a5",
+      "justification": "The scenario does not describe any donation as being for goods or services, nor does it say the charity bought goods or services in connection with the donation. Therefore, this is not established.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a6",
+      "justification": "The scenario does not mention any benefit received by the donor that exceeds a certain limit. This proposition is not established in the scenario.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a7",
+      "justification": "The scenario does not mention any donation involving shares. This proposition is not established.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a8",
+      "justification": "The scenario does not mention any donation from charity cards or vouchers, such as CAF vouchers. This proposition is not established.",
+      "status": "UNKNOWN"
+    }
+  ]
+}

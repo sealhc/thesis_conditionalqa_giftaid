@@ -1,0 +1,354 @@
+{
+  "schema_version": "5.0",
+  "world": "R2_H",
+  "model": "qwen3:4b-instruct",
+  "model_version": "ollama {\"tag\": \"qwen3:4b-instruct\", \"digest\": \"0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0\", \"quantization\": \"Q4_K_M\"}",
+  "run_id": "qwen_nothink_v7_rep02",
+  "researcher_gold_decision": "NO",
+  "stage_validation": {
+    "A1": {
+      "stage": "A1",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a2 is defined but unused by eligibility_expression",
+          "atom_id": "a2"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a3 is defined but unused by eligibility_expression",
+          "atom_id": "a3"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a4 is defined but unused by eligibility_expression",
+          "atom_id": "a4"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a5 is defined but unused by eligibility_expression",
+          "atom_id": "a5"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a6 is defined but unused by eligibility_expression",
+          "atom_id": "a6"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a7 is defined but unused by eligibility_expression",
+          "atom_id": "a7"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a8 is defined but unused by eligibility_expression",
+          "atom_id": "a8"
+        },
+        {
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a9 is defined but unused by eligibility_expression",
+          "atom_id": "a9"
+        }
+      ],
+      "record_file": "A1_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 1235,
+        "eval_count": 877,
+        "num_ctx_configured": 32768,
+        "num_predict_configured": 8192,
+        "thinking_output_characters": 0,
+        "thinking_field_present": false,
+        "prompt_plus_generated_tokens_observed": 2112,
+        "context_pressure_95pct_heuristic": false,
+        "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+      },
+      "json_envelope": {
+        "raw_sha256": "09c363b728668482dacc2e7eda4bee03b2cf9652515d03f89473a088902887ef",
+        "parsed_text_sha256": "09c363b728668482dacc2e7eda4bee03b2cf9652515d03f89473a088902887ef",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "A2": {
+      "stage": "A2",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [
+        {
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a3 quote not found as exact scenario substring",
+          "atom_id": "a3",
+          "quote_is_verbatim": false
+        },
+        {
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a5 quote not found as exact scenario substring",
+          "atom_id": "a5",
+          "quote_is_verbatim": false
+        },
+        {
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a8 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a8"
+        },
+        {
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a9 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a9"
+        }
+      ],
+      "record_file": "A2_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 1985,
+        "eval_count": 907,
+        "num_ctx_configured": 32768,
+        "num_predict_configured": 8192,
+        "thinking_output_characters": 0,
+        "thinking_field_present": false,
+        "prompt_plus_generated_tokens_observed": 2892,
+        "context_pressure_95pct_heuristic": false,
+        "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+      },
+      "json_envelope": {
+        "raw_sha256": "3e913cc29c65076ff6daad03c98b9186990f5d0d428d993d3d927c2e40d20084",
+        "parsed_text_sha256": "3e913cc29c65076ff6daad03c98b9186990f5d0d428d993d3d927c2e40d20084",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "A3": {
+      "stage": "A3",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [
+        {
+          "code": "NEI_WITHOUT_CONDITIONAL_BRANCHES",
+          "detail": "A3 requests information but gives no conditional_branches (the prompt asks for them when unresolved)"
+        }
+      ],
+      "record_file": "A3_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 3151,
+        "eval_count": 773,
+        "num_ctx_configured": 32768,
+        "num_predict_configured": 8192,
+        "thinking_output_characters": 0,
+        "thinking_field_present": false,
+        "prompt_plus_generated_tokens_observed": 3924,
+        "context_pressure_95pct_heuristic": false,
+        "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+      },
+      "json_envelope": {
+        "raw_sha256": "68d017015ab09ccf3c73338da910f98101e6531fbf5e1fefbcef7d9331bc0652",
+        "parsed_text_sha256": "68d017015ab09ccf3c73338da910f98101e6531fbf5e1fefbcef7d9331bc0652",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "B1": {
+      "stage": "B1",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [],
+      "record_file": "B1_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 1092,
+        "eval_count": 474,
+        "num_ctx_configured": 32768,
+        "num_predict_configured": 8192,
+        "thinking_output_characters": 0,
+        "thinking_field_present": false,
+        "prompt_plus_generated_tokens_observed": 1566,
+        "context_pressure_95pct_heuristic": false,
+        "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+      },
+      "json_envelope": {
+        "raw_sha256": "66475e78eb6590c04791ed52c51c4dc489ef1695dd4acc45d9f0fad13c301be5",
+        "parsed_text_sha256": "66475e78eb6590c04791ed52c51c4dc489ef1695dd4acc45d9f0fad13c301be5",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    }
+  },
+  "paths": {
+    "A": {
+      "status": "concluded",
+      "decision": "NEED_MORE_INFORMATION",
+      "correct": false,
+      "stop_stage": null,
+      "reason": null,
+      "completion_category": "completed",
+      "retry_required": false,
+      "diagnostic_flags": [
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a2 is defined but unused by eligibility_expression",
+          "atom_id": "a2"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a3 is defined but unused by eligibility_expression",
+          "atom_id": "a3"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a4 is defined but unused by eligibility_expression",
+          "atom_id": "a4"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a5 is defined but unused by eligibility_expression",
+          "atom_id": "a5"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a6 is defined but unused by eligibility_expression",
+          "atom_id": "a6"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a7 is defined but unused by eligibility_expression",
+          "atom_id": "a7"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a8 is defined but unused by eligibility_expression",
+          "atom_id": "a8"
+        },
+        {
+          "stage": "A1",
+          "code": "UNUSED_ATOM",
+          "detail": "A1 atom a9 is defined but unused by eligibility_expression",
+          "atom_id": "a9"
+        },
+        {
+          "stage": "A2",
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a3 quote not found as exact scenario substring",
+          "atom_id": "a3",
+          "quote_is_verbatim": false
+        },
+        {
+          "stage": "A2",
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a5 quote not found as exact scenario substring",
+          "atom_id": "a5",
+          "quote_is_verbatim": false
+        },
+        {
+          "stage": "A2",
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a8 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a8"
+        },
+        {
+          "stage": "A2",
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a9 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a9"
+        },
+        {
+          "stage": "A3",
+          "code": "NEI_WITHOUT_CONDITIONAL_BRANCHES",
+          "detail": "A3 requests information but gives no conditional_branches (the prompt asks for them when unresolved)"
+        }
+      ],
+      "usage": {
+        "calls": 3,
+        "prompt_tokens": 6371,
+        "generated_tokens": 2557,
+        "usage_complete": true,
+        "note": "Model calls and token counts as reported by the server, summed over all attempts of all stages (retries included); API-level HTTP retries are counted in attempts.",
+        "attempts": 3
+      },
+      "attempts": {
+        "per_stage": {
+          "A1": 1,
+          "A2": 1,
+          "A3": 1
+        },
+        "total_model_calls": 3,
+        "retry_calls": 0,
+        "first_attempt_all_valid": true,
+        "unfinished_stage": null
+      }
+    },
+    "B": {
+      "status": "concluded",
+      "decision": "NEED_MORE_INFORMATION",
+      "correct": false,
+      "stop_stage": null,
+      "reason": null,
+      "completion_category": "completed",
+      "retry_required": false,
+      "diagnostic_flags": [],
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1092,
+        "generated_tokens": 474,
+        "usage_complete": true,
+        "note": "Model calls and token counts as reported by the server, summed over all attempts of all stages (retries included); API-level HTTP retries are counted in attempts.",
+        "attempts": 1
+      },
+      "attempts": {
+        "per_stage": {
+          "B1": 1
+        },
+        "total_model_calls": 1,
+        "retry_calls": 0,
+        "first_attempt_all_valid": true,
+        "unfinished_stage": null
+      }
+    }
+  },
+  "paired_quality_eligible": true,
+  "limitations": [
+    "R0 native conditional Gold is not the researcher decision-state Gold.",
+    "Warning flags are not automatic semantic correctness verdicts.",
+    "One base case with correlated scenario variants is not a generalizable accuracy estimate."
+  ],
+  "paired": {
+    "A_correct": false,
+    "B_correct": false,
+    "both_correct": false,
+    "A_only_correct": false,
+    "B_only_correct": false
+  },
+  "stepwise_semantic_review": {
+    "status": "PENDING_MANUAL_REVIEW",
+    "note": "A1 coverage, A2 semantic accuracy, missing-information matching and reasoning grounding are NOT scored until reviewed. Run: python3 scripts/stepwise_review.py template --run <RUN>"
+  }
+}

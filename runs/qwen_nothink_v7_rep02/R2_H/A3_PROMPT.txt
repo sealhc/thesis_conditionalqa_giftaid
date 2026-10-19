@@ -1,0 +1,209 @@
+ROLE
+You are the final language-model decision stage of a condition-mediated decision-support workflow. Use only the supplied policy passages, decision question, customer scenario, and model-generated intermediate outputs. Do not browse or use external legal knowledge.
+
+TASK
+Make the final decision using BOTH the original source material (POLICY_PASSAGES, DECISION_QUESTION, CUSTOMER_SCENARIO) AND the explicit INTERMEDIATE_REPRESENTATION and CONDITION_STATUSES produced in earlier steps. The intermediate outputs are useful but fallible: examine whether they agree with the original evidence instead of accepting them blindly. You must make the decision yourself; no program calculates the decision for you.
+
+DECISION REQUIREMENTS
+- Return YES when the supplied policy and customer evidence establish a positive decision.
+- Return NO when the supplied policy and customer evidence establish a negative decision.
+- Otherwise return NEED_MORE_INFORMATION and identify the facts that could resolve the decision.
+- An unmentioned fact is unknown rather than false. A fact need not be known if its value cannot change an outcome already established by the evidence.
+- Apply facts to the correct decision unit, entity, payment and time period. Do not transfer evidence about one payment or person to another without support.
+- Compare the intermediate representation and mapped statuses against the original source. If an omission, unsupported atom, wrong logical relationship, mis-scoped fact, or misread evidence matters, report it in ir_discrepancies. Do not conceal a discrepancy or assume the intermediate outputs are correct merely because they are structured.
+- Do not assume any particular final decision. Do not invent policy rules or customer facts.
+- If unresolved, briefly describe conditional alternatives and the information needed. If the decision is established, conditional_branches should be empty.
+- Do not initiate a follow-up interaction. Return one valid JSON object only.
+
+OUTPUT SCHEMA
+{
+  "decision":"YES|NO|NEED_MORE_INFORMATION",
+  "supporting_policy_ids":["E01"],
+  "decisive_condition_ids":["a1"],
+  "unresolved_condition_ids":["a2"],
+  "missing_facts":["a concrete fact needed to resolve the decision, if any"],
+  "justification":"concise explanation grounded in the supplied material",
+  "scope_issues":["a decision-unit limitation, if any"],
+  "ir_discrepancies":[{"type":"OMISSION|UNSUPPORTED|RELATION|SCOPE|STATUS|OTHER","description":"issue found when comparing intermediate outputs with the original source","policy_ids":["E01"],"condition_ids":["a1"]}],
+  "conditional_branches":[{"possible_answer":"YES|NO","conditions_in_words":"only if currently unresolved"}]
+}
+
+The example IDs above are output-format placeholders, not required findings. Use empty lists for inapplicable fields. The supplied intermediate representation and condition statuses are evidence aids, not an authoritative Gold answer.
+
+
+=== POLICY_PASSAGES ===
+[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>
+[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>
+[E03] <p>The donor must:</p>
+[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>
+[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>
+[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>
+[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>
+[E08] <p>You cannot claim on donations:</p>
+[E09] <li>made through Payroll Giving</li>
+[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>
+[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>
+[E12] <li>of shares</li>
+[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>
+
+=== DECISION_QUESTION ===
+Am I eligible for Gift Aid?
+
+=== CUSTOMER_SCENARIO ===
+I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.
+
+Additional customer information:
+We are reviewing the £260 that reached our charity's bank account on 4 February 2026 from Robyn Ellis. The payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals. She has also volunteered at our adoption days. Our treasurer found two different folders under her name, so I have copied the relevant history below.
+
+In the January events correspondence, Robyn, who runs a local grooming salon, asked whether our supporter newsletter could carry a booking link and whether the homepage could feature the salon for six weeks. The coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her. The coordinator's booking sheet shows the placements as 'awaiting settlement' until 4 February, when the £260 arrived; the same sheet then changed to 'confirmed'. The March newsletter archive and the dated website capture show the link in the agreed locations. A later volunteer note says 'we didn't raise an invoice, so I called it a donation'. A separate £20 cash gift from Robyn at the December collection event has its own receipt and was not part of the newsletter arrangement.
+
+A draft plan to cancel the March newsletter appears in the folder, but it is marked 'not approved'; the final distribution log and archived newsletter show that the edition went out. We have the charity's HMRC recognition letter. Robyn's personal tax position and whether she completed a Gift Aid form for the £260 have not been checked. The receipt under review in this file is the February £260 entry, not her separate £20 collection gift.
+
+=== INTERMEDIATE_REPRESENTATION (actual A1 JSON, wrapper excluded if present) ===
+{
+  "atoms": [
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a1",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is labeled as a 'donation' in the payment spreadsheet and is described by Robyn as a contribution to help animals",
+      "source_ids": [
+        "E01"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a2",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a3",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is not a payment made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a4",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 does not involve a 'benefit' over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a5",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is not a payment of shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a6",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is not a payment from a charity card or voucher such as a Charities Aid Foundation (CAF) voucher",
+      "source_ids": [
+        "E13"
+      ]
+    },
+    {
+      "entity_scope": "Robyn Ellis",
+      "id": "a7",
+      "proposition": "Robyn Ellis is recognized as a charity or CASC for tax purposes",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "entity_scope": "Robyn Ellis",
+      "id": "a8",
+      "proposition": "Robyn Ellis has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid being claimed",
+      "source_ids": [
+        "E04"
+      ]
+    },
+    {
+      "entity_scope": "Robyn Ellis",
+      "id": "a9",
+      "proposition": "Robyn Ellis has completed a Gift Aid declaration that gives the charity permission to claim Gift Aid on the donation",
+      "source_ids": [
+        "E05"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The tax position of Robyn Ellis and whether she completed a Gift Aid declaration are not verified and thus cannot be confirmed as true or false.",
+    "The nature of the £260 payment is described as a donation in the context, but the absence of a formal receipt or declaration from Robyn does not confirm the factual basis of the donation as a gift rather than a service or payment for goods or services."
+  ],
+  "scope_issues": []
+}
+
+=== CONDITION_STATUSES (actual A2 JSON, wrapper excluded if present) ===
+{
+  "scope_issues": [],
+  "statuses": [
+    {
+      "evidence_quote": "The payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals.",
+      "id": "a1",
+      "justification": "The scenario explicitly states that the payment is labeled as a 'donation' in the spreadsheet and Robyn described it as helping animals, which supports the proposition that it is a donation.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "The coordinator's booking sheet shows the placements as 'awaiting settlement' until 4 February, when the £260 arrived; the same sheet then changed to 'confirmed'. The March newsletter archive and the dated website capture show the link in the agreed locations. A later volunteer note says 'we didn't raise an invoice, so I called it a donation'.",
+      "id": "a2",
+      "justification": "The absence of an invoice and the description of the payment as a donation in a volunteer note, combined with the fact that it was not tied to a purchase or service, supports that it is not a payment for goods or services or made because the charity bought goods and services.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "The payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals. Robyn runs a local grooming salon, and the arrangement was for promotional placements on the newsletter and website.",
+      "id": "a3",
+      "justification": "There is no evidence that the £260 was made through Payroll Giving. The payment originated from a personal donation arrangement, not a payroll arrangement, so it is not a Payroll Giving payment.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "A later volunteer note says 'we didn't raise an invoice, so I called it a donation'.",
+      "id": "a4",
+      "justification": "The volunteer note indicates that the payment was not made for a benefit over a certain limit, as no invoice was raised and the transaction was described as a donation, which implies it was not a benefit-based payment.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "The donation of £260 from Robyn Ellis on 4 February 2026 is not a payment of shares.",
+      "id": "a5",
+      "justification": "There is no mention of shares or any form of equity being transferred. The transaction is described as a donation to help animals, not a share payment.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "A later volunteer note says 'we didn't raise an invoice, so I called it a donation'.",
+      "id": "a6",
+      "justification": "There is no reference to charity cards or vouchers such as CAF vouchers. The payment is described as a personal donation, not originating from a voucher or card.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "We have the charity's HMRC recognition letter.",
+      "id": "a7",
+      "justification": "The HMRC recognition letter confirms that the charity is recognized for tax purposes, which satisfies the requirement under E02.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "Robyn's personal tax position and whether she completed a Gift Aid form for the £260 have not been checked.",
+      "id": "a8",
+      "justification": "There is no evidence about Robyn's tax position or how much she paid in Income Tax or Capital Gains Tax. The absence of verification means the proposition is not established as true or false.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "Robyn's personal tax position and whether she completed a Gift Aid form for the £260 have not been checked.",
+      "id": "a9",
+      "justification": "There is no evidence that Robyn completed a Gift Aid declaration. The absence of a declaration or record means the proposition is not established as true or false.",
+      "status": "UNKNOWN"
+    }
+  ]
+}

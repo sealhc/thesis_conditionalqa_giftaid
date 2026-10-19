@@ -1,0 +1,28 @@
+{
+  "conditional_branches": [
+    {
+      "conditions_in_words": "Robyn Ellis has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the charity wants to claim in Gift Aid, and has made a Gift Aid declaration for the £260 donation.",
+      "possible_answer": "YES"
+    },
+    {
+      "conditions_in_words": "Robyn Ellis has not paid at least as much in Income Tax or Capital Gains Tax in the tax year as the charity wants to claim in Gift Aid, or has not made a Gift Aid declaration for the £260 donation.",
+      "possible_answer": "NO"
+    }
+  ],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The £260 payment was for advertising services, not a donation, as evidenced by the January emails showing a price was agreed for advertising her grooming salon. According to E10, donations for goods or services are not eligible for Gift Aid. The charity is recognised as a charity (E02), but the tax position of the donor and whether a Gift Aid declaration was made are not confirmed. Therefore, eligibility depends on whether this payment qualifies as a donation (it does not, per E10) and whether the donor met tax and declaration requirements (unknown). The policy prohibits claiming Gift Aid on payments for goods or services (E10), which applies here. However, the customer's question is about eligibility for Gift Aid in general, and the evidence shows this specific payment does not qualify. Still, the decision must be made per the specific transaction, and since the nature of the payment is not clearly a donation, and E10 applies, the answer is not definitively YES or NO without confirmation of the transaction type and donor compliance. Thus, more information is needed about whether the £260 was a donation or a payment for goods/services and whether Robyn has met tax and declaration requirements.",
+  "missing_facts": [
+    "Whether the £260 payment was a donation or a payment for goods or services",
+    "Robyn Ellis's tax position for the tax year (whether she paid at least as much in Income Tax or Capital Gains Tax as the charity wants to claim)",
+    "Whether Robyn made a Gift Aid declaration for the £260 donation"
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but the nature of the £260 payment must be verified to determine if it qualifies as a donation under the policy"
+  ],
+  "supporting_policy_ids": [
+    "E10",
+    "E02",
+    "E04",
+    "E05"
+  ]
+}

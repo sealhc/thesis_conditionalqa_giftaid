@@ -1,0 +1,21 @@
+{
+  "conditional_branches": [],
+  "decision": "YES",
+  "justification": "The donation of £120 from Elaine Carter on 16 March 2026 is eligible for Gift Aid because: (1) the charity is recognised as a charity for tax purposes (per E02), (2) the donation is from an individual (per E06), (3) the donor has paid at least as much in Income Tax as the claimed Gift Aid (Elaine paid £980 in Income Tax, and the claimed Gift Aid is £30 on this donation, well below the tax threshold), (4) Elaine made a Gift Aid declaration covering this donation (per E05), (5) the donation is not via Payroll Giving (per E09), (6) it is not for goods or services or made as a result of a purchase (per E10), (7) the donor does not receive a benefit over a certain limit (per E11), (8) no shares or securities were delivered (per E12), and (9) it is not from a charity card or voucher (per E13). The payment is distinct from CAF card/voucher redemptions and was made directly from Elaine's bank account. All conditions for Gift Aid eligibility are met.",
+  "missing_facts": [],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

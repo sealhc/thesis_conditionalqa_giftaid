@@ -1,0 +1,150 @@
+{
+  "decision_target": "Whether the charity can claim Gift Aid on a donation",
+  "decision_unit": "one donation (each donation assessed separately)",
+  "atoms": [
+    {
+      "id": "a1",
+      "proposition": "The organisation claiming Gift Aid is recognised as a charity or community amateur sports club (CASC) for tax purposes by HMRC",
+      "entity_scope": "the claiming organisation",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "id": "a2",
+      "proposition": "The donation was made by an individual (not a company or other entity)",
+      "entity_scope": "the donor",
+      "source_ids": [
+        "E06"
+      ]
+    },
+    {
+      "id": "a3",
+      "proposition": "The donor has paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the amount the charity wishes to claim in Gift Aid on that donation",
+      "entity_scope": "the donor",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "id": "a4",
+      "proposition": "The donor has made a Gift Aid declaration giving the charity permission to claim Gift Aid on the donation",
+      "entity_scope": "the donor",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "id": "a5",
+      "proposition": "The donation was made through Payroll Giving",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "id": "a6",
+      "proposition": "The donation is a payment for goods or services supplied by the donor to the charity or CASC",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "id": "a7",
+      "proposition": "The donation was made because the charity or CASC bought goods or services from the donor",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "id": "a8",
+      "proposition": "The donor receives a benefit in return for the donation that exceeds the permitted limit",
+      "entity_scope": "the donor and the donation",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "id": "a9",
+      "proposition": "The donation consists of shares",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "id": "a10",
+      "proposition": "The donation was made via a charity card or voucher (e.g. a Charities Aid Foundation voucher)",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "eligibility_expression": {
+    "op": "ALL",
+    "args": [
+      {
+        "ref": "a1"
+      },
+      {
+        "ref": "a2"
+      },
+      {
+        "ref": "a3"
+      },
+      {
+        "ref": "a4"
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a5"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a6"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a7"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a8"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a9"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a10"
+        }
+      }
+    ]
+  },
+  "scope_issues": [
+    "The customer has multiple donors making both recurring (direct debit) and one-off donations; each individual donation must be assessed separately against all conditions, so the decision unit is per donation rather than per donor or per period.",
+    "The £260 payment from Robyn Ellis and her separate £20 cash gift are distinct transactions that may yield different outcomes and must be evaluated independently."
+  ],
+  "limitations": [
+    "The passages do not specify the exact monetary threshold for the 'benefit' limit in E11; only that a limit exists.",
+    "The passages do not define which types of entities qualify as 'individuals' beyond excluding the examples given; edge cases (e.g. sole traders donating business funds) are not addressed.",
+    "The passages do not address the mechanics or recordkeeping requirements for Gift Aid declarations beyond requiring one to exist.",
+    "The passages do not address partial Gift Aid claims where only part of a payment may qualify as a donation (e.g. if a payment is partly for services and partly a genuine gift)."
+  ]
+}

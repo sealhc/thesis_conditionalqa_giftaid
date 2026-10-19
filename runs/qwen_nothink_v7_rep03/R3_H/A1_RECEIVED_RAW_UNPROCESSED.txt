@@ -1,0 +1,64 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "a donation from an individual to a charity or CASC",
+      "id": "a1",
+      "proposition": "the donor is an individual who made a donation to a recognised charity or CASC",
+      "source_ids": ["E01", "E02", "E06"]
+    },
+    {
+      "entity_scope": "the donor's tax liability in the tax year of the donation",
+      "id": "a2",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year of the donation as the amount of Gift Aid being claimed",
+      "source_ids": ["E04", "E07"]
+    },
+    {
+      "entity_scope": "a Gift Aid declaration from the donor",
+      "id": "a3",
+      "proposition": "the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid on the donation",
+      "source_ids": ["E05"]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a4",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": ["E09"]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a5",
+      "proposition": "the donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": ["E10"]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a6",
+      "proposition": "the donation does not provide the donor with a benefit that exceeds a certain limit",
+      "source_ids": ["E11"]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a7",
+      "proposition": "the donation is not in the form of shares",
+      "source_ids": ["E12"]
+    },
+    {
+      "entity_scope": "the nature of the donation",
+      "id": "a8",
+      "proposition": "the donation is not from a charity card or a voucher such as a Charities Aid Foundation (CAF) voucher",
+      "source_ids": ["E13"]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The donor's tax payment for the relevant tax year is not documented in the records, and the P60 refers to a year ending 5 April 2024, which is not the tax year of the March 2026 donation.",
+    "The donor declaration form is not fully accessible or verifiable; only a partial scan exists, and the declaration's coverage and duration are not visible.",
+    "The donor's personal tax records for the tax year of the donation are not available.",
+    "The donor database record is not fully linked to the current donor, as the older email address is not connected to Devon Gray."
+  ],
+  "scope_issues": []
+}

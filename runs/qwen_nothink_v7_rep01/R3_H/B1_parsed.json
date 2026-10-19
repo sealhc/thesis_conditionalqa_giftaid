@@ -1,0 +1,33 @@
+{
+  "conditional_branches": [
+    {
+      "conditions_in_words": "Devon Gray has paid at least as much in Income Tax or Capital Gains Tax in the tax year 2024–25 (the year covering the 1 March 2026 donation) as the amount of Gift Aid claimed, and has made a valid Gift Aid declaration that covers this donation.",
+      "possible_answer": "YES"
+    },
+    {
+      "conditions_in_words": "Devon Gray has not paid at least as much in Income Tax or Capital Gains Tax in the tax year 2024–25 as the amount of Gift Aid claimed, or has not made a valid Gift Aid declaration covering this donation.",
+      "possible_answer": "NO"
+    }
+  ],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The donation is from an individual (Devon Gray) to a recognised charity, made via a personal bank transfer, not through payroll giving, for goods or services, or as a benefit. It does not involve shares, charity cards, or vouchers. However, the policy requires the donor to have paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year (2024–25) as the Gift Aid claimed, and to have made a valid Gift Aid declaration. The customer has a P60 for Devon from year ending 5 April 2024 (a prior year), but this does not confirm tax payment for the 2024–25 tax year. There is no evidence that Devon's tax liability for 2024–25 is known or met. Additionally, the donor declaration form is incomplete or missing, and no valid declaration is confirmed. Therefore, the eligibility of the £95 donation for Gift Aid cannot be determined without confirmation of Devon's tax payment and a valid declaration. Policy passages E04, E05, and E07 are directly relevant.",
+  "missing_facts": [
+    "Devon Gray's actual Income Tax or Capital Gains Tax payment for the tax year 2024–25 (covering the donation on 1 March 2026)",
+    "Evidence of a valid Gift Aid declaration made by Devon Gray covering the £95 donation"
+  ],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

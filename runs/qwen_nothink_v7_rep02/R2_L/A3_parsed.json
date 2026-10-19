@@ -1,0 +1,48 @@
+{
+  "conditional_branches": [],
+  "decision": "NO",
+  "decisive_condition_ids": [
+    "a5"
+  ],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation incorrectly links 'the donor has paid at least as much in Income Tax or Capital Gains Tax' to the proposition under 'entity_scope: the donor' without evidence, but the customer scenario provides no information about Robyn Ellis's tax position or any tax payment. This omission is a factual gap that must be acknowledged.",
+      "policy_ids": [
+        "E04"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a3"
+      ],
+      "description": "The intermediate representation includes a proposition about a Gift Aid declaration, but the customer scenario states that Robyn's tax position and any Gift Aid declaration have not been checked. This fact is not supported by evidence and thus cannot be affirmed. The intermediate output assumes a status without evidence.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a5"
+      ],
+      "description": "The intermediate representation and condition status correctly identify that the £260 donation was for advertising, which constitutes a 'payment for goods or services' under E10. However, the intermediate representation incorrectly frames this as a 'false' proposition when it should be evaluated as a violation of the policy. The policy explicitly prohibits claiming Gift Aid on such donations. This is a correct logical assessment, but the intermediate representation mislabels the status as 'FALSE' when it should be interpreted as a disqualifying condition.",
+      "policy_ids": [
+        "E10"
+      ],
+      "type": "STATUS"
+    }
+  ],
+  "justification": "The donation of £260 from Robyn Ellis was made in exchange for advertising services, which constitutes a 'payment for goods or services' as defined in E10. The policy explicitly prohibits claiming Gift Aid on such donations. The charity is recognised as a CASC (E02), and the donation is not via Payroll Giving (E09), not of shares (E12), not from a voucher (E13), and does not involve a benefit over a limit (E11). However, the core disqualifying condition — that the donation is a payment for goods or services — is established by the scenario. Therefore, Gift Aid cannot be claimed on this donation, and the customer is not eligible for Gift Aid on this specific transaction.",
+  "missing_facts": [],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether direct debit or one-off donations are treated differently; the decision must be evaluated per donation."
+  ],
+  "supporting_policy_ids": [
+    "E10"
+  ],
+  "unresolved_condition_ids": []
+}

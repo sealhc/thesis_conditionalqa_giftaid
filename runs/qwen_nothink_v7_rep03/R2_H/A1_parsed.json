@@ -1,0 +1,91 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "a donation from an individual to a charity or CASC",
+      "id": "a1",
+      "proposition": "The donation is made by an individual to a charity or CASC",
+      "source_ids": [
+        "E01",
+        "E06"
+      ]
+    },
+    {
+      "entity_scope": "a donor who is a tax-payer",
+      "id": "a2",
+      "proposition": "The donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the claimed Gift Aid amount",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "entity_scope": "a donor who has made a Gift Aid declaration",
+      "id": "a3",
+      "proposition": "The donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "a donation that is not made through payroll giving",
+      "id": "a4",
+      "proposition": "The donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "a donation that is not a payment for goods or services",
+      "id": "a5",
+      "proposition": "The donation is not a payment for goods or services or made because the charity or CASC bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "a donation that does not provide a benefit over a certain limit",
+      "id": "a6",
+      "proposition": "The donation does not provide a benefit to the donor over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "a donation that is not in the form of shares",
+      "id": "a7",
+      "proposition": "The donation is not of shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "a donation that is not from a charity card or voucher",
+      "id": "a8",
+      "proposition": "The donation is not from a charity card or voucher such as Charities Aid Foundation (CAF) vouchers",
+      "source_ids": [
+        "E13"
+      ]
+    },
+    {
+      "entity_scope": "a donation made by an individual to a recognized charity or CASC",
+      "id": "a9",
+      "proposition": "The charity or CASC is recognised as a charity or CASC for tax purposes",
+      "source_ids": [
+        "E02"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The donor's tax position and whether a Gift Aid declaration was made are not confirmed in the scenario and may need to be verified.",
+    "The nature of the donation (e.g., whether it is a payment for goods or services or provides a benefit) is not definitively established and must be assessed based on the evidence provided.",
+    "The policy does not cover all possible forms of donations or individual circumstances, and gaps in evidence may prevent a full assessment."
+  ],
+  "scope_issues": [
+    "The scenario includes multiple donations (e.g., £260 and £20), but the policy applies per donation; no indication is given whether the policy applies to all or only specific donations."
+  ]
+}

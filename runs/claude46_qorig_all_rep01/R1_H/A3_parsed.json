@@ -1,0 +1,37 @@
+{
+  "decision": "YES",
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "decisive_condition_ids": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8",
+    "a9"
+  ],
+  "unresolved_condition_ids": [],
+  "missing_facts": [],
+  "justification": "All nine conditions required for Gift Aid eligibility are satisfied for donation FP-0316-EL (£120 from Elaine Carter, 16 March 2026). (a1) The charity held valid HMRC recognition on the date of the donation, confirmed by the 2023 recognition letter and the treasurer's status check. (a2) Elaine Carter is an individual donor, evidenced by her named personal current account. (a3) Elaine paid £980 Income Tax in the 2025-26 tax year; total Gift Aid recoverable across all her donations that year is only £80 (£30 on this donation, £50 on others), well within her tax paid. (a4) She signed an electronic Gift Aid declaration on 15 March 2026—before the 16 March donation—explicitly covering this donation, with a full audit trail. (a5) The payment was not made through Payroll Giving. (a6) No goods or services were involved; sales and booking records show nothing linked to this payment. (a7) No benefit of any kind was provided to Elaine; the only communication was a standard thank-you email. (a8) The payment was a cash Faster Payment, not shares or other assets. (a9) FP-0316-EL is a direct bank transfer from Elaine's personal account, clearly distinct from the CAF card and voucher redemptions (CC-0314, VC-0317) which arrived in a separate batch on 18 March. The charity may therefore include this £120 donation in its ordinary Gift Aid return and reclaim £30.",
+  "scope_issues": [
+    "This assessment covers only the single transaction FP-0316-EL. The monthly direct debit donors and other one-off donors referenced in the scenario each require a separate Gift Aid eligibility evaluation.",
+    "The policy passages do not specify the precise monetary threshold for the donor benefit limit (E11). However, as the scenario states no benefit whatsoever was provided to Elaine, this gap does not affect the outcome for this donation.",
+    "The policy passages do not explicitly address whether an electronic Gift Aid declaration satisfies the declaration requirement. However, the scenario provides a detailed audit trail (e-signature, timestamp, audit record, donor record match) and no policy passage restricts declarations to paper form, so this does not block the decision on the evidence supplied."
+  ],
+  "ir_discrepancies": [],
+  "conditional_branches": []
+}

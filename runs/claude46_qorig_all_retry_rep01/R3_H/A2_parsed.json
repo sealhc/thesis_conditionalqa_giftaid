@@ -1,0 +1,62 @@
+{
+  "statuses": [
+    {
+      "id": "a1",
+      "status": "TRUE",
+      "evidence_quote": "the charity's HMRC recognition letter and a recent registration-status response confirm its recognition was still in force on 1 March 2026",
+      "justification": "The scenario explicitly confirms the charity held valid HMRC recognition on the date of the donation."
+    },
+    {
+      "id": "a2",
+      "status": "TRUE",
+      "evidence_quote": "the remitter page identifies an ordinary bank transfer initiated from Devon's personal account",
+      "justification": "The payment came from Devon Gray's personal account, establishing the donor is an individual."
+    },
+    {
+      "id": "a3",
+      "status": "UNKNOWN",
+      "evidence_quote": "We do not have a record of Devon's Income Tax or Capital Gains Tax for the year covering that payment",
+      "justification": "The only tax document available is a P60 for the year ending 5 April 2024, not the 2025–26 tax year in which the donation was made, so the required tax payment for the correct year is not established."
+    },
+    {
+      "id": "a4",
+      "status": "UNKNOWN",
+      "evidence_quote": "the page setting out the declaration's coverage and duration is not in the scan … the remaining pages have not been located",
+      "justification": "A partial scanned form exists but the pages confirming the declaration's scope and whether it covers this donation are missing, so it cannot be established that a valid Gift Aid declaration exists for this gift."
+    },
+    {
+      "id": "a5",
+      "status": "TRUE",
+      "evidence_quote": "distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch",
+      "justification": "The payment is explicitly distinguished from the employer deduction file (Payroll Giving channel), confirming it was not made through Payroll Giving."
+    },
+    {
+      "id": "a6",
+      "status": "TRUE",
+      "evidence_quote": "the booking and sales registers show no related purchase or reservation; the only thing sent to Devon was the automated thank-you email",
+      "justification": "Records show no goods or services transaction associated with Devon's payment, establishing it is not a payment for goods or services."
+    },
+    {
+      "id": "a7",
+      "status": "TRUE",
+      "evidence_quote": "no discount or other benefit was offered",
+      "justification": "The scenario explicitly states no benefit of any kind was provided to Devon in connection with the donation."
+    },
+    {
+      "id": "a8",
+      "status": "TRUE",
+      "evidence_quote": "distinct from the employer deduction file, the securities transfer journal",
+      "justification": "The payment is explicitly distinguished from the securities transfer journal, confirming it is not a donation of shares."
+    },
+    {
+      "id": "a9",
+      "status": "TRUE",
+      "evidence_quote": "distinct from … the charity-card and voucher processor's separately numbered settlement batch",
+      "justification": "The payment is explicitly distinguished from the charity-card and voucher settlement batch, confirming it was not made via a charity card or voucher."
+    }
+  ],
+  "scope_issues": [
+    "The scenario mentions multiple donors paying monthly by direct debit; each of those donations is a separate decision unit and would require individual assessment — this evaluation covers only the single £95 donation from Devon Gray dated 1 March 2026.",
+    "The partial Gift Aid declaration form references an earlier gift and its coverage/duration pages are missing; whether any declaration validly extends to this March 2026 donation cannot be determined from the supplied policy passages alone."
+  ]
+}

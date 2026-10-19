@@ -1,0 +1,29 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The policy states that Gift Aid can be claimed on donations from individuals, but only if the donor has paid at least as much in Income Tax or Capital Gains Tax as the amount claimed (E04/E07), and if the donor makes a Gift Aid declaration (E05). Additionally, the charity must be recognised as a charity or CASC for tax purposes (E02). The customer's scenario mentions they run a small independent charity, which implies recognition as a charity, but it does not confirm whether they are recognised for tax purposes. Furthermore, the donations are described as monthly direct debits and one-off donations, but there is no information on whether these donations are for goods or services, whether the donor received a benefit over a certain limit, or whether a Gift Aid declaration was made. The policy also prohibits Gift Aid on certain types of donations (E09-E13), but no details are provided about the nature of the donations. Therefore, without knowing the tax status of the donor, whether a Gift Aid declaration was made, and the nature of the donations, eligibility cannot be determined.",
+  "missing_facts": [
+    "Whether the donor has paid at least as much in Income Tax or Capital Gains Tax as the claimed Gift Aid amount",
+    "Whether the donor has made a Gift Aid declaration",
+    "Whether the donations are for goods or services or made as a result of the charity purchasing goods and services",
+    "Whether the donor received a benefit over a certain limit",
+    "Whether the donations are from individuals or through Payroll Giving or other prohibited channels",
+    "Whether the charity is recognised as a charity or CASC for tax purposes"
+  ],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

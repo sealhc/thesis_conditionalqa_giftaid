@@ -1,0 +1,55 @@
+{
+  "scope_issues": [
+    "The policy applies to individual donations, but does not specify whether one-off donations or recurring donations are treated differently in eligibility."
+  ],
+  "statuses": [
+    {
+      "evidence_quote": "",
+      "id": "a1",
+      "justification": "The customer scenario does not specify the tax year of the donation, nor does it state that the donor paid at least as much in Income Tax or Capital Gains Tax in the tax year of the donation. The donor's tax document covers a prior year, and no current-year donor tax evidence is available. Therefore, it is not established whether the donor has paid at least as much in tax as the claimed Gift Aid amount.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a2",
+      "justification": "The customer scenario states that a scanned declaration from an earlier event is incomplete, with the page stating its coverage and duration missing. There is no evidence that a valid, complete Gift Aid declaration was made for this donation.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments.",
+      "id": "a3",
+      "justification": "The donation was made from a personal bank account and was unrelated to payroll giving, so it is not a Payroll Giving donation.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "The transfer was unrelated to sales, bookings, benefits, payroll deductions, shares or the separately settled charity-card and voucher payments.",
+      "id": "a4",
+      "justification": "The donation was made for an emergency vet appeal and was unrelated to the purchase of goods or services by the charity or to a benefit received by the donor, so it is not a payment for goods or services.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a5",
+      "justification": "The policy does not specify whether a donation made for an emergency vet appeal qualifies as a 'benefit' over a certain limit, and the scenario does not state that the donor received a benefit exceeding a limit. However, no evidence is provided on whether a benefit was provided or exceeded a threshold.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a6",
+      "justification": "The donation was not described as shares or any form of equity interest. It was a personal payment for an emergency appeal, so it is not shares.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a7",
+      "justification": "The donation was not from a charity card or voucher, and the scenario explicitly states it was made from a personal bank account, unrelated to charity cards or vouchers.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "I run a small, independent charity which attempts to help people struggling with their vet costs.",
+      "id": "a8",
+      "justification": "The customer describes running a small independent charity, which implies recognition as a charity for tax purposes, consistent with E02. However, no explicit statement confirms HMRC recognition status.",
+      "status": "UNKNOWN"
+    }
+  ]
+}

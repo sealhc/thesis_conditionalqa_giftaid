@@ -1,0 +1,17 @@
+{
+  "stage": "A2",
+  "max_attempts": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 4103,
+      "valid": true,
+      "status": "parsed",
+      "reason": null
+    }
+  ],
+  "valid": true,
+  "first_attempt_valid": true,
+  "unfinished_after_retries": false,
+  "retry_rule": "same frozen prompt, no error feedback, seed = base + 1000*(attempt-1); the first valid output is the one used"
+}

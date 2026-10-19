@@ -1,0 +1,27 @@
+TASK: A1 mapping. A reference list of conditions (with the entity each applies to), a model-generated list of atoms, both logical expressions and the policy passages are given. Judge semantic equivalence, not identifiers, wording or atom counts.
+
+1. reference_checks: for EVERY reference condition, say how well the model atoms cover it.
+   FULL      - the model atom(s), taken together, state the same condition with the same entity scope and the same polarity. A condition may be split over several atoms or merged with others only if the joint logic keeps the reference meaning.
+   PARTIAL   - part of the meaning is expressed but part is not: too broad or too narrow, one half of a conjunction, entity left vague.
+   INCORRECT - an atom is clearly aimed at this reference condition but states something different (wrong entity, reversed polarity, a different requirement).
+   MISSING   - no model atom addresses it.
+   List the IDs of the model atoms involved (model_atom_ids) for FULL, PARTIAL and INCORRECT; an empty list only for MISSING.
+2. extra_atoms: for EVERY model atom that is NOT listed under a FULL or PARTIAL reference check (including atoms listed only under INCORRECT), give exactly one assessment:
+   SUPPORTED_ADDITIONAL - the policy passages support it as a genuine requirement, prohibition or exception for deciding the question, but the reference does not list it.
+   REDUNDANT   - it restates something already covered by another atom or a reference condition.
+   UNSUPPORTED - no passage supports it, or it is a fact from the scenario turned into a condition, or it is the INCORRECT attempt described above.
+   AMBIGUOUS   - you cannot decide from the passages. (An atom that is the INCORRECT attempt can only be UNSUPPORTED or AMBIGUOUS.)
+   Do NOT list atoms that are under a FULL or PARTIAL check here.
+3. logic: compare MODEL_EXPRESSION with REFERENCE_EXPRESSION. EQUIVALENT only if the AND/OR/NOT structure over the matched conditions has the same meaning. Reference exclusions are stated as the positive circumstance (for example "the payment is for goods or services") with the NOT in the expression; a model atom that states the circumstance negatively, or states it positively and negates it in the expression, is the same condition if the joint expression excludes the same cases. NOT_EQUIVALENT: list the concrete differences in issues. UNDETERMINED if the material does not settle it.
+4. scope: MATCH only if each model atom applies its condition to the same entity (charity / donor-year / donor-gift / per gift) as the reference condition it covers. MISMATCH: list the concrete problems in issues. UNCLEAR if you cannot tell.
+Use only the material supplied; do not use outside legal knowledge; when unsure choose the stricter label. Do not consider any customer outcome or downstream answer: none is shown to you.
+Every rationale must be one non-empty sentence. uncertain_cases lists each item you are not sure about as "ID: what is unclear" (empty list if none). confidence is HIGH only if none of your judgements is borderline.
+
+OUTPUT SCHEMA
+{"reference_checks":[{"gold_id":"G_C1","coverage":"FULL","model_atom_ids":["a1"],"rationale":"..."}],
+ "extra_atoms":[{"model_atom_id":"a2","assessment":"SUPPORTED_ADDITIONAL","rationale":"..."}],
+ "logic":{"assessment":"EQUIVALENT","issues":[]},
+ "scope":{"assessment":"MATCH","issues":[]},
+ "uncertain_cases":[],
+ "confidence":"HIGH"}
+Include every reference condition exactly once. Never invent model atom IDs; use only IDs from MODEL_ATOMS.

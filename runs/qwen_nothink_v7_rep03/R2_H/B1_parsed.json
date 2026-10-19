@@ -1,0 +1,20 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The policy requires that the donor must have paid at least as much in Income Tax or Capital Gains Tax in the tax year as the charity wants to claim (E04/E07), and must make a Gift Aid declaration (E05). The customer scenario confirms Robyn made a donation of £260 labeled as such and has volunteered, but does not confirm whether she has paid sufficient tax or whether she completed a Gift Aid declaration. While the charity is recognised (E02) and the donation is not from a payroll giving, goods/service payment, or a benefit over a limit (E09-E13), the absence of evidence on Robyn's tax payment and Gift Aid declaration renders eligibility undetermined. Therefore, the facts needed to resolve the decision are missing.",
+  "missing_facts": [
+    "Whether Robyn Ellis has paid at least as much in Income Tax or Capital Gains Tax in the 2025-2026 tax year as the charity wants to claim in Gift Aid",
+    "Whether Robyn Ellis completed a Gift Aid declaration for the £260 donation"
+  ],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E02",
+    "E04",
+    "E05",
+    "E07",
+    "E09",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

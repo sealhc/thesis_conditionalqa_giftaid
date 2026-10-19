@@ -1,0 +1,65 @@
+{
+  "conditional_branches": [],
+  "decision": "YES",
+  "decisive_condition_ids": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a7",
+    "a8"
+  ],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a6"
+      ],
+      "description": "The intermediate representation includes a proposition about the donor receiving a 'benefit' over a certain limit (a6), but the original policy passage E11 and the customer scenario provide no information about whether Elaine received such a benefit. The evidence does not establish this fact, making the proposition unsupported and thus a mis-scoped or unsupported atom.",
+      "policy_ids": [
+        "E11"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a1"
+      ],
+      "description": "The intermediate representation assigns entity scope 'donor' to a1, but the policy E02 requires the charity, not the donor, to be recognised as a charity or CASC for tax purposes. This is a scope error in the atom's entity_scope assignment.",
+      "policy_ids": [
+        "E02"
+      ],
+      "type": "SCOPE"
+    },
+    {
+      "condition_ids": [
+      "a2"
+      ],
+      "description": "The intermediate representation and condition status interpret the tax requirement as being met because total Gift Aid claimed (£80) is less than donor's tax paid (£980). However, the policy E04 and E07 state the donor must have paid at least as much tax as the amount of Gift Aid claimed — per donation or in total? The policy does not specify whether this applies per donation or in total. This creates ambiguity in the interpretation of the tax requirement. The intermediate representation assumes a total application, but the policy is silent on granularity.",
+      "policy_ids": [
+        "E04",
+        "E07"
+      ],
+      "type": "RELATION"
+    }
+  ],
+  "justification": "The charity is recognised as such for tax purposes (E02), the donor has paid sufficient income tax for the 2025–26 tax year (E04/E07), and has made a signed Gift Aid declaration (E05). The donation was not made via Payroll Giving (E09), not for goods or services (E10), not involving shares (E12), and not from a charity card or voucher (E13). The donor did not receive a benefit over a certain limit, though this is not explicitly stated. The tax requirement is satisfied in total, as the total Gift Aid claimed (£80) is less than or equal to the donor's tax paid (£980). The policy does not specify per-donation or total tax thresholds, but the evidence supports a total application. No other conditions block eligibility. Therefore, the donation is eligible for Gift Aid.",
+  "missing_facts": [],
+  "scope_issues": [
+    "The policy does not specify whether Gift Aid eligibility applies to recurring donations or one-off donations separately."
+  ],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E09",
+    "E10",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a6"
+  ]
+}

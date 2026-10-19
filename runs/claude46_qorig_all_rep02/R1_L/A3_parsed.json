@@ -1,0 +1,37 @@
+{
+  "decision": "YES",
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "decisive_condition_ids": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8",
+    "a9"
+  ],
+  "unresolved_condition_ids": [],
+  "missing_facts": [],
+  "justification": "For transaction FP-0316-EL (Elaine Carter, £120 on 16 March 2026), all positive eligibility conditions are met and all exclusions are negated. The charity holds current HMRC recognition (a1: TRUE, E02). Elaine is an individual donor (a2: TRUE, E06). Her Income Tax paid for 2025–26 is £980, which exceeds the £80 total Gift Aid claimed on her donations that year (a3: TRUE, E04/E07). A signed Gift Aid declaration covering this payment exists (a4: TRUE, E05). The donation was not made via Payroll Giving (a5: FALSE, E09), is not a payment for goods or services (a6: FALSE, E10), involved no benefit to the donor (a7: FALSE, E11), is not a donation of shares (a8: FALSE, E12), and is not a charity card or voucher payment (a9: FALSE, E13). All conditions of the eligibility expression are satisfied, so Gift Aid can be claimed on this donation. Note that the decision applies specifically to FP-0316-EL; other donations (recurring direct debits and other one-off payments) would need separate verification of donor-level and donation-level conditions.",
+  "scope_issues": [
+    "The customer's question is framed at the charity level and covers multiple donors and transactions (recurring direct debits and other one-off donations). The supplied evidence is sufficient only to assess transaction FP-0316-EL (Elaine Carter). All other transactions remain unverified and cannot be assessed from the supplied information."
+  ],
+  "ir_discrepancies": [],
+  "conditional_branches": []
+}

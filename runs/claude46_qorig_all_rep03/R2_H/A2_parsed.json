@@ -1,0 +1,69 @@
+{
+  "statuses": [
+    {
+      "id": "a1",
+      "status": "TRUE",
+      "evidence_quote": "We have the charity's HMRC recognition letter.",
+      "justification": "The scenario explicitly states the charity holds an HMRC recognition letter, establishing it is recognised for tax purposes."
+    },
+    {
+      "id": "a2",
+      "status": "TRUE",
+      "evidence_quote": "Robyn Ellis, who runs a local grooming salon",
+      "justification": "Robyn Ellis is described as an individual who runs a local grooming salon, establishing she is a natural person, not a company or other entity."
+    },
+    {
+      "id": "a3",
+      "status": "UNKNOWN",
+      "evidence_quote": "",
+      "justification": "The scenario explicitly states 'Robyn's personal tax position... has not been checked', so there is no evidence establishing whether she paid sufficient Income Tax or Capital Gains Tax in the relevant year."
+    },
+    {
+      "id": "a4",
+      "status": "UNKNOWN",
+      "evidence_quote": "whether she completed a Gift Aid form for the £260 have not been checked",
+      "justification": "The scenario explicitly states that whether a Gift Aid declaration exists for the £260 has not been checked, so this cannot be established."
+    },
+    {
+      "id": "a5",
+      "status": "CONFLICTING",
+      "evidence_quote": "the coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her... the payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals",
+      "justification": "The scenario contains mutually inconsistent evidence: the booking correspondence and coordinator sheet indicate the £260 was payment for advertising placements (goods or services), while the payment spreadsheet labels it 'donation' and Robyn's message frames it as charitable giving."
+    },
+    {
+      "id": "a6",
+      "status": "FALSE",
+      "evidence_quote": "asked whether our supporter newsletter could carry a booking link and whether the homepage could feature the salon for six weeks. The coordinator sent her a mock-up and quoted £260 for the two placements.",
+      "justification": "The evidence positively establishes that the charity provided advertising placements (newsletter and website features) to Robyn's salon, meaning the charity supplied services to the donor, making this condition not met."
+    },
+    {
+      "id": "a7",
+      "status": "TRUE",
+      "evidence_quote": "£260 that reached our charity's bank account on 4 February 2026",
+      "justification": "The payment arrived directly into the charity's bank account with no mention of any payroll mechanism, and there is no evidence it was made through Payroll Giving."
+    },
+    {
+      "id": "a8",
+      "status": "CONFLICTING",
+      "evidence_quote": "asked whether our supporter newsletter could carry a booking link and whether the homepage could feature the salon for six weeks... the March newsletter archive and the dated website capture show the link in the agreed locations",
+      "justification": "The evidence shows Robyn received concrete advertising benefits (newsletter booking link and homepage feature for six weeks) in connection with the £260, but the policy passages do not specify the monetary threshold for a disqualifying benefit, creating an unresolvable conflict between the factual benefit received and the unknown threshold."
+    },
+    {
+      "id": "a9",
+      "status": "TRUE",
+      "evidence_quote": "£260 that reached our charity's bank account on 4 February 2026",
+      "justification": "The payment is described as a monetary amount reaching the bank account; there is no indication it involved a donation of shares."
+    },
+    {
+      "id": "a10",
+      "status": "TRUE",
+      "evidence_quote": "£260 that reached our charity's bank account on 4 February 2026",
+      "justification": "The payment arrived directly in the bank account with no mention of charity cards or vouchers such as CAF vouchers."
+    }
+  ],
+  "scope_issues": [
+    "The £20 separate cash gift from Robyn Ellis at the December collection event is explicitly out of scope for this review and would require a separate eligibility assessment.",
+    "The factual characterisation of the £260 as either a payment for advertising services or a genuine donation is central to atoms a5 and a6 but cannot be resolved solely from the policy passages supplied; further factual determination or policy guidance would be needed.",
+    "The policy passages do not specify the monetary threshold above which a donor benefit disqualifies a donation under E11, so whether the advertising placements received by Robyn exceed that threshold cannot be determined from the supplied material."
+  ]
+}

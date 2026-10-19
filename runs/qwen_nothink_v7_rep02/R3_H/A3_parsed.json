@@ -1,0 +1,59 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation states that the donor has paid at least as much in tax as required, but the evidence shows no record of Devon Gray's tax payment for the 2025–26 tax year. The P60 referenced is for a different year (year ending 5 April 2024), and no tax record for the relevant year is available. The intermediate representation incorrectly implies that the tax payment is known, when it is actually absent.",
+      "policy_ids": [
+        "E04",
+        "E07"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a3"
+      ],
+      "description": "The intermediate representation claims that a Gift Aid declaration is present, but the evidence shows only an older, incomplete scan of a form with no verifiable current declaration. The form's coverage and duration are not accessible, and no current declaration is confirmed. The intermediate representation falsely asserts the existence of a valid declaration.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a6"
+      ],
+      "description": "The intermediate representation includes a proposition about the absence of a benefit over a certain limit, but the evidence only states that no discount or benefit was offered. This is not sufficient to confirm the absence of a benefit over a certain limit, as the policy requires a benefit to be assessed against a specific threshold. The condition is not fully supported and misreads the evidence.",
+      "policy_ids": [
+        "E11"
+      ],
+      "type": "RELATION"
+    }
+  ],
+  "justification": "The customer scenario establishes that the donation is from a personal account, not Payroll Giving, and that no goods or services were purchased or benefits offered. The charity is recognised for tax purposes. However, there is no evidence of Devon Gray's Income Tax or Capital Gains Tax payment for the 2025–26 tax year, and no current or verifiable Gift Aid declaration exists. The policy requires both tax payment and a valid declaration to claim Gift Aid. Without these, eligibility cannot be established.",
+  "missing_facts": [
+    "Devon Gray's Income Tax or Capital Gains Tax payment for the 2025–26 tax year",
+    "A current, complete, and verified Gift Aid declaration from Devon Gray for the donation period"
+  ],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E02",
+    "E04",
+    "E05",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a2",
+    "a3",
+    "a6"
+  ]
+}

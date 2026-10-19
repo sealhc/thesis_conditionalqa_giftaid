@@ -1,0 +1,193 @@
+ROLE
+You are the final language-model decision stage of a condition-mediated decision-support workflow. Use only the supplied policy passages, decision question, customer scenario, and model-generated intermediate outputs. Do not browse or use external legal knowledge.
+
+TASK
+Make the final decision using BOTH the original source material (POLICY_PASSAGES, DECISION_QUESTION, CUSTOMER_SCENARIO) AND the explicit INTERMEDIATE_REPRESENTATION and CONDITION_STATUSES produced in earlier steps. The intermediate outputs are useful but fallible: examine whether they agree with the original evidence instead of accepting them blindly. You must make the decision yourself; no program calculates the decision for you.
+
+DECISION REQUIREMENTS
+- Return YES when the supplied policy and customer evidence establish a positive decision.
+- Return NO when the supplied policy and customer evidence establish a negative decision.
+- Otherwise return NEED_MORE_INFORMATION and identify the facts that could resolve the decision.
+- An unmentioned fact is unknown rather than false. A fact need not be known if its value cannot change an outcome already established by the evidence.
+- Apply facts to the correct decision unit, entity, payment and time period. Do not transfer evidence about one payment or person to another without support.
+- Compare the intermediate representation and mapped statuses against the original source. If an omission, unsupported atom, wrong logical relationship, mis-scoped fact, or misread evidence matters, report it in ir_discrepancies. Do not conceal a discrepancy or assume the intermediate outputs are correct merely because they are structured.
+- Do not assume any particular final decision. Do not invent policy rules or customer facts.
+- If unresolved, briefly describe conditional alternatives and the information needed. If the decision is established, conditional_branches should be empty.
+- Do not initiate a follow-up interaction. Return one valid JSON object only.
+
+OUTPUT SCHEMA
+{
+  "decision":"YES|NO|NEED_MORE_INFORMATION",
+  "supporting_policy_ids":["E01"],
+  "decisive_condition_ids":["a1"],
+  "unresolved_condition_ids":["a2"],
+  "missing_facts":["a concrete fact needed to resolve the decision, if any"],
+  "justification":"concise explanation grounded in the supplied material",
+  "scope_issues":["a decision-unit limitation, if any"],
+  "ir_discrepancies":[{"type":"OMISSION|UNSUPPORTED|RELATION|SCOPE|STATUS|OTHER","description":"issue found when comparing intermediate outputs with the original source","policy_ids":["E01"],"condition_ids":["a1"]}],
+  "conditional_branches":[{"possible_answer":"YES|NO","conditions_in_words":"only if currently unresolved"}]
+}
+
+The example IDs above are output-format placeholders, not required findings. Use empty lists for inapplicable fields. The supplied intermediate representation and condition statuses are evidence aids, not an authoritative Gold answer.
+
+
+=== POLICY_PASSAGES ===
+[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>
+[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>
+[E03] <p>The donor must:</p>
+[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>
+[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>
+[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>
+[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>
+[E08] <p>You cannot claim on donations:</p>
+[E09] <li>made through Payroll Giving</li>
+[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>
+[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>
+[E12] <li>of shares</li>
+[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>
+
+=== DECISION_QUESTION ===
+Am I eligible for Gift Aid?
+
+=== CUSTOMER_SCENARIO ===
+I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.
+
+=== INTERMEDIATE_REPRESENTATION (actual A1 JSON, wrapper excluded if present) ===
+{
+  "atoms": [
+    {
+      "entity_scope": "donor",
+      "id": "a1",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid being claimed",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "entity_scope": "donor",
+      "id": "a2",
+      "proposition": "the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a3",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a4",
+      "proposition": "the donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a5",
+      "proposition": "the donation is not where the donor receives a benefit over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a6",
+      "proposition": "the donation is not of shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a7",
+      "proposition": "the donation is not from charity cards or vouchers, such as Charities Aid Foundation (CAF) vouchers",
+      "source_ids": [
+        "E13"
+      ]
+    },
+    {
+      "entity_scope": "charity",
+      "id": "a8",
+      "proposition": "the charity is recognised as a charity or CASC for tax purposes",
+      "source_ids": [
+        "E02"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The policy does not specify whether donations from individuals who are not donors in the sense of having paid tax are covered; this may require further clarification.",
+    "The policy does not specify whether one-off donations or recurring donations are treated differently for Gift Aid eligibility; this may require further clarification."
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether direct debit or one-off donations are treated differently in terms of eligibility. This creates a scope ambiguity between donation types and the application of the rules to different forms of payment."
+  ]
+}
+
+=== CONDITION_STATUSES (actual A2 JSON, wrapper excluded if present) ===
+{
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether direct debit or one-off donations are treated differently in terms of eligibility. This creates a scope ambiguity between donation types and the application of the rules to different forms of payment."
+  ],
+  "statuses": [
+    {
+      "evidence_quote": "",
+      "id": "a1",
+      "justification": "The customer scenario does not state anything about the donor's tax payment in the relevant tax year, nor does it mention any specific tax amount or comparison with the claimed Gift Aid. Thus, there is no evidence to establish whether the donor has paid at least as much in Income Tax or Capital Gains Tax as the amount of Gift Aid being claimed.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a2",
+      "justification": "The customer scenario does not mention any Gift Aid declaration being made by the donor or any formal permission granted to the charity to claim Gift Aid. There is no evidence of such a declaration.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a3",
+      "justification": "The customer scenario describes donations via direct debit and one-off donations, but does not specify whether these are through Payroll Giving. There is no evidence that any donation is made through Payroll Giving, but also no explicit confirmation that they are not. Therefore, the status cannot be determined from the scenario.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a4",
+      "justification": "The customer scenario describes donations for vet costs, which are not payments for goods or services made because the charity bought goods and services. However, it does not explicitly state that the donations are not for goods or services or not made as a result of a purchase. Thus, the proposition is not established.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a5",
+      "justification": "The customer scenario does not mention any benefit received by the donor, nor any situation where a donor receives a benefit over a certain limit. There is no evidence about the donor receiving a benefit, so the proposition is not established.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a6",
+      "justification": "The customer scenario does not mention any donation involving shares. There is no evidence of shares being donated, so the proposition is not established.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a7",
+      "justification": "The customer scenario does not mention any donation from charity cards or vouchers, such as CAF vouchers. There is no evidence of such donations, so the proposition is not established.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a8",
+      "justification": "The customer scenario states that the charity is a small independent charity, but does not confirm whether it is recognised as a charity or CASC for tax purposes. While it is implied to be a charity, the policy requires formal recognition, and this is not explicitly stated or confirmed in the scenario.",
+      "status": "UNKNOWN"
+    }
+  ]
+}

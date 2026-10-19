@@ -1,0 +1,19 @@
+{
+  "conditional_branches": [],
+  "decision": "YES",
+  "justification": "The charity is recognised as a charity for tax purposes (E02), the donation from Elaine Carter is from an individual (E06), she made a Gift Aid declaration (E05), her tax paid (£980) meets or exceeds the required amount (E04 and E07), the donation was not made through payroll giving, not for goods or services, not in exchange for a benefit, not for shares, and not via charity cards or vouchers (E09, E10, E11, E12, E13). Thus, all conditions for Gift Aid eligibility are satisfied for this specific donation (FP-0316-EL).",
+  "missing_facts": [],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

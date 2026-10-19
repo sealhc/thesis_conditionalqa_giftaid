@@ -1,0 +1,12 @@
+{
+  "stage": "B1",
+  "saved_at_utc": "2026-10-18T21:39:01.482065+00:00",
+  "status": "technical_failure",
+  "reason": "CONFIGURATION_ERROR",
+  "detail": "HTTP 400: Bad Request | server said: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgARh4uBfvfr1h91CyvgN\"}",
+  "raw_sha256": null,
+  "valid_json": false,
+  "retry_required": true,
+  "api_metrics": null,
+  "diagnostic_flags": []
+}

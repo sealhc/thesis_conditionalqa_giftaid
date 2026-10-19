@@ -1,0 +1,75 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation includes a proposition about the donor's tax position (E04/E07), but the condition status explicitly states this is unknown. The evidence does not confirm Robyn Ellis's tax payment in the tax year, so this fact is missing, and its omission in the intermediate representation is a failure to represent the actual evidence.",
+      "policy_ids": [
+        "E04",
+        "E07"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a3"
+      ],
+      "description": "The intermediate representation includes a proposition about a Gift Aid declaration (E05), but the condition status explicitly states this is unknown. The scenario does not mention any Gift Aid declaration being made by Robyn, so this fact is missing, and its omission in the intermediate representation is a failure to represent the actual evidence.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a6"
+      ],
+      "description": "The intermediate representation includes a proposition about a benefit over a certain limit (E11), but the condition status explicitly states this is unknown. The scenario does not establish whether the donation provides a benefit to the donor over a certain limit, so this fact is missing, and its omission in the intermediate representation is a failure to represent the actual evidence.",
+      "policy_ids": [
+        "E11"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a1"
+      ],
+      "description": "The intermediate representation correctly identifies the donation as made by an individual to a charity or CASC (E01/E06), and the evidence supports this. However, the intermediate representation fails to link this to the specific donation of £260 from Robyn, and instead generalizes to 'a donation'. This is a scope issue: the proposition must be scoped to the specific £260 donation, not abstractly.",
+      "policy_ids": [
+        "E01",
+        "E06"
+      ],
+      "type": "SCOPE"
+    }
+  ],
+  "justification": "The customer scenario establishes that the £260 payment from Robyn Ellis is labeled as a donation, not payroll giving, and is not a payment for goods or services or a benefit. The charity is recognised for tax purposes. However, the policy requires that the donor has paid at least as much in Income Tax or Capital Gains Tax as the claimed Gift Aid amount (E04/E07), and that a Gift Aid declaration has been made (E05). Neither of these facts is confirmed in the scenario. Additionally, the nature of any benefit provided by the donation is not established, which may trigger E11. Without verification of these key facts, eligibility for Gift Aid cannot be determined. The intermediate representation omits or misscopes these critical conditions, and the evidence does not establish them.",
+  "missing_facts": [
+    "Whether Robyn Ellis paid at least as much in Income Tax or Capital Gains Tax in the 2025–2026 tax year as the claimed Gift Aid amount",
+    "Whether Robyn Ellis made a Gift Aid declaration for the £260 donation",
+    "Whether the £260 donation provides a benefit to Robyn Ellis over a certain limit"
+  ],
+  "scope_issues": [
+    "The intermediate representation generalizes the donation condition without anchoring it to the specific £260 transaction from Robyn, which undermines the precision required for a per-donation eligibility assessment."
+  ],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a2",
+    "a3",
+    "a6"
+  ]
+}

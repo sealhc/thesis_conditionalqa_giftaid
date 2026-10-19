@@ -1,0 +1,335 @@
+{
+  "model": "qwen3:4b-instruct",
+  "messages": [
+    {
+      "role": "user",
+      "content": "ROLE\nYou analyze decision rules in supplied source passages. Use only the supplied material. Do not browse, use outside legal knowledge, or infer an outcome from intuition.\n\nTASK\nGiven POLICY_PASSAGES, DECISION_QUESTION and CUSTOMER_SCENARIO, build an explicit, machine-readable representation of the conditions that govern the decision. This step constructs the policy representation; do not decide the case and do not assign customer-specific truth values yet.\n\nGUIDELINES\n1. Use the question and scenario to identify the decision target and its unit (person, transaction, claim, period, etc.). If several units could require different decisions, state that scope issue rather than collapsing them.\n2. Extract each material prerequisite, prohibition, exception, or alternative from the provided passages, including ones that the customer has not mentioned. Preserve the logical relations ALL (AND), ANY (OR), and NOT. Represent each atomic proposition in positive wording so its truth can later be checked against evidence.\n3. Keep atoms atomic: do not combine independent facts in one item. Do not replace missing facts with negative findings. Do not introduce legal requirements unsupported by the supplied passages. You may record unclear or incomplete coverage under limitations.\n4. For every atom, cite the exact POLICY_PASSAGES IDs that support it. Build the Boolean expression only from the atom IDs you actually returned.\n5. Do not use terms such as 'eligible' in place of actual factual prerequisites. Return one valid JSON object, without Markdown or surrounding commentary.\n\nOUTPUT SCHEMA\n{\n  \"decision_target\": \"short natural-language description\",\n  \"decision_unit\": \"e.g., one person, one transaction, multiple transactions, not specified\",\n  \"atoms\": [\n    {\"id\":\"a1\", \"proposition\":\"single checkable factual statement\", \"entity_scope\":\"who/what this statement concerns\", \"source_ids\":[\"E01\"]}\n  ],\n  \"eligibility_expression\": {\"op\":\"ALL\", \"args\":[{\"ref\":\"a1\"}]},\n  \"scope_issues\": [\"nonempty only if applicable\"],\n  \"limitations\": [\"nonempty only if applicable\"]\n}\n\nEXPRESSION GRAMMAR: {\"ref\":\"atom_id\"} OR {\"op\":\"NOT\",\"arg\":<expression>} OR {\"op\":\"ALL\",\"args\":[<expression>,...]} OR {\"op\":\"ANY\",\"args\":[<expression>,...]}. Nested groups are allowed. The schema examples above specify syntax only, not the number or identity of conditions in this case. Preserve the meaning of the policy rather than forcing a particular number of atoms.\n\n\n=== POLICY_PASSAGES ===\n[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>\n[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>\n[E03] <p>The donor must:</p>\n[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>\n[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>\n[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>\n[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>\n[E08] <p>You cannot claim on donations:</p>\n[E09] <li>made through Payroll Giving</li>\n[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>\n[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>\n[E12] <li>of shares</li>\n[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>\n\n=== DECISION_QUESTION ===\nAm I eligible for Gift Aid?\n\n=== CUSTOMER_SCENARIO ===\nI run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nThe treasurer is checking a £120 Faster Payment received on 16 March 2026, reference FP-0316-EL. The bank’s remitter details name Elaine Carter and her personal current account. Elaine’s email to the fundraiser says she sent the £120 from her banking app after reading about a rescued dog’s emergency treatment. The charity’s 2023 HMRC recognition letter is on file, and the treasurer’s status check confirms the charity was still recognised on 16 March 2026.\n\nElaine signed an electronic Gift Aid declaration on 15 March, and the e-signature service holds the signed document, timestamp and audit record. The declaration says it covers this donation, and the finance assistant matched it to FP-0316-EL through her donor record. Her tax summary for the year to 5 April 2026 shows £980 of Income Tax paid. Her signed note lists £200 of other Gift Aid donations that year; the treasurer’s sheet shows £30 recoverable on this £120 and £50 on the others, £80 in total, well below her £980.\n\nThe sales, booking and event records show nothing linked to this payment, and the only thing sent to Elaine was the standard thank-you email; she was not offered admission, advertising, a product or any other benefit. It did not go through a payroll giving scheme, and no shares, securities or other assets were delivered. An older spreadsheet groups it with two CAF card and voucher redemptions (CC-0314, VC-0317), but those were paid to the charity in a combined batch on 18 March, while FP-0316-EL came directly from Elaine’s bank on 16 March. The treasurer wants to include this receipt in the ordinary Gift Aid return if the records permit.\n"
+    }
+  ],
+  "stream": false,
+  "options": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 4101,
+    "num_ctx": 32768,
+    "num_predict": 8192
+  },
+  "think": false,
+  "format": {
+    "$defs": {
+      "expr0": {
+        "type": "object",
+        "properties": {
+          "ref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ref"
+        ],
+        "additionalProperties": false
+      },
+      "expr1": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ref"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "type": "string",
+                "enum": [
+                  "NOT"
+                ]
+              },
+              "arg": {
+                "$ref": "#/$defs/expr0"
+              }
+            },
+            "required": [
+              "op",
+              "arg"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "type": "string",
+                "enum": [
+                  "ALL",
+                  "ANY"
+                ]
+              },
+              "args": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/expr0"
+                }
+              }
+            },
+            "required": [
+              "op",
+              "args"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "expr2": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ref"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "type": "string",
+                "enum": [
+                  "NOT"
+                ]
+              },
+              "arg": {
+                "$ref": "#/$defs/expr1"
+              }
+            },
+            "required": [
+              "op",
+              "arg"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "type": "string",
+                "enum": [
+                  "ALL",
+                  "ANY"
+                ]
+              },
+              "args": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/expr1"
+                }
+              }
+            },
+            "required": [
+              "op",
+              "args"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "expr3": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ref"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "type": "string",
+                "enum": [
+                  "NOT"
+                ]
+              },
+              "arg": {
+                "$ref": "#/$defs/expr2"
+              }
+            },
+            "required": [
+              "op",
+              "arg"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "type": "string",
+                "enum": [
+                  "ALL",
+                  "ANY"
+                ]
+              },
+              "args": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/expr2"
+                }
+              }
+            },
+            "required": [
+              "op",
+              "args"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "expr4": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ref"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "type": "string",
+                "enum": [
+                  "NOT"
+                ]
+              },
+              "arg": {
+                "$ref": "#/$defs/expr3"
+              }
+            },
+            "required": [
+              "op",
+              "arg"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "type": "string",
+                "enum": [
+                  "ALL",
+                  "ANY"
+                ]
+              },
+              "args": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/expr3"
+                }
+              }
+            },
+            "required": [
+              "op",
+              "args"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "type": "object",
+    "properties": {
+      "decision_target": {
+        "type": "string"
+      },
+      "decision_unit": {
+        "type": "string"
+      },
+      "atoms": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "proposition": {
+              "type": "string"
+            },
+            "entity_scope": {
+              "type": "string"
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "id",
+            "proposition",
+            "entity_scope",
+            "source_ids"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "eligibility_expression": {
+        "$ref": "#/$defs/expr4"
+      },
+      "scope_issues": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "decision_target",
+      "decision_unit",
+      "atoms",
+      "eligibility_expression",
+      "scope_issues",
+      "limitations"
+    ],
+    "additionalProperties": false
+  }
+}

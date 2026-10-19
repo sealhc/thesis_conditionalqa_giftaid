@@ -1,0 +1,86 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a1",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is labeled as a 'donation' in the payment spreadsheet and is described by Robyn as a contribution to help animals",
+      "source_ids": [
+        "E01"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a2",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a3",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is not a payment made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a4",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 does not involve a 'benefit' over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a5",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is not a payment of shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "the donation of £260 from Robyn Ellis on 4 February 2026",
+      "id": "a6",
+      "proposition": "the donation of £260 from Robyn Ellis on 4 February 2026 is not a payment from a charity card or voucher such as a Charities Aid Foundation (CAF) voucher",
+      "source_ids": [
+        "E13"
+      ]
+    },
+    {
+      "entity_scope": "Robyn Ellis",
+      "id": "a7",
+      "proposition": "Robyn Ellis is recognized as a charity or CASC for tax purposes",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "entity_scope": "Robyn Ellis",
+      "id": "a8",
+      "proposition": "Robyn Ellis has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid being claimed",
+      "source_ids": [
+        "E04"
+      ]
+    },
+    {
+      "entity_scope": "Robyn Ellis",
+      "id": "a9",
+      "proposition": "Robyn Ellis has completed a Gift Aid declaration that gives the charity permission to claim Gift Aid on the donation",
+      "source_ids": [
+        "E05"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The tax position of Robyn Ellis and whether she completed a Gift Aid declaration are not verified and thus cannot be confirmed as true or false.",
+    "The nature of the £260 payment is described as a donation in the context, but the absence of a formal receipt or declaration from Robyn does not confirm the factual basis of the donation as a gift rather than a service or payment for goods or services."
+  ],
+  "scope_issues": []
+}

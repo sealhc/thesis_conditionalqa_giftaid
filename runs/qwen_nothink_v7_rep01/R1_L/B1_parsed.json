@@ -1,0 +1,19 @@
+{
+  "conditional_branches": [],
+  "decision": "YES",
+  "justification": "The customer runs a recognised charity (HMRC recognition confirmed as in force on 16 March 2026), the donation from Elaine Carter is a direct bank transfer (not payroll giving, not for goods/services, not a share or voucher), she made a Gift Aid declaration, and her income tax paid (£980) meets or exceeds the required amount for Gift Aid (as per E04 and E07). The donation is not a payment for goods or services, nor does it involve a benefit over a limit or shares or charity cards/vouchers (E10, E11, E12, E13). Therefore, Gift Aid is eligible under E01, E02, E03, E04, E06, and E07.",
+  "missing_facts": [],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E06",
+    "E07",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

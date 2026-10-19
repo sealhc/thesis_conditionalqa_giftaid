@@ -1,0 +1,61 @@
+{
+  "statuses": [
+    {
+      "id": "a1",
+      "status": "TRUE",
+      "evidence_quote": "The charity's HMRC recognition was confirmed as still in force on 16 March 2026.",
+      "justification": "The scenario explicitly confirms the organisation holds current HMRC recognition as a charity, satisfying the requirement to be recognised for tax purposes."
+    },
+    {
+      "id": "a2",
+      "status": "TRUE",
+      "evidence_quote": "Elaine Carter sent £120 from her own bank account on 16 March 2026",
+      "justification": "Elaine Carter is identified as a named individual making a personal bank transfer, establishing the donor is an individual."
+    },
+    {
+      "id": "a3",
+      "status": "TRUE",
+      "evidence_quote": "Her Income Tax paid for 2025–26 was £980, and the Gift Aid claimed for this and her other donations that year totals £80.",
+      "justification": "£980 in Income Tax paid exceeds £80 in total Gift Aid claimed for the year, so the donor has paid at least as much tax as the Gift Aid being claimed."
+    },
+    {
+      "id": "a4",
+      "status": "TRUE",
+      "evidence_quote": "Her signed Gift Aid declaration covers this payment.",
+      "justification": "The scenario explicitly states a signed Gift Aid declaration exists covering the specific transaction FP-0316-EL."
+    },
+    {
+      "id": "a5",
+      "status": "FALSE",
+      "evidence_quote": "This was not a payroll deduction or a transfer of shares.",
+      "justification": "The scenario expressly states the donation was not made through payroll deduction, ruling out Payroll Giving."
+    },
+    {
+      "id": "a6",
+      "status": "FALSE",
+      "evidence_quote": "Elaine received no goods, services or benefit in exchange.",
+      "justification": "The scenario explicitly confirms no goods or services were received in exchange for the donation."
+    },
+    {
+      "id": "a7",
+      "status": "FALSE",
+      "evidence_quote": "Elaine received no goods, services or benefit in exchange.",
+      "justification": "The scenario explicitly states no benefit was received, so the donor did not receive a benefit exceeding any permitted limit."
+    },
+    {
+      "id": "a8",
+      "status": "FALSE",
+      "evidence_quote": "This was not a payroll deduction or a transfer of shares.",
+      "justification": "The scenario expressly states the donation was not a transfer of shares."
+    },
+    {
+      "id": "a9",
+      "status": "FALSE",
+      "evidence_quote": "FP-0316-EL was Elaine's direct bank transfer... The processor's CAF charity-card and voucher receipts were different payments with different settlement references.",
+      "justification": "The scenario explicitly distinguishes FP-0316-EL as a direct bank transfer, separate from any CAF voucher or charity card payments."
+    }
+  ],
+  "scope_issues": [
+    "The customer's question is asked at the charity level and encompasses multiple donors making both recurring direct debit and one-off donations; the scenario provides sufficient detail only for transaction FP-0316-EL (Elaine Carter). Donor-level conditions (tax paid, Gift Aid declaration) and donation-level exclusions for all other transactions remain unverified and cannot be assessed from the supplied information."
+  ]
+}

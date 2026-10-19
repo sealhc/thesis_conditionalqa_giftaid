@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T21:56:14.281374Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"conditional_branches\": [],\n  \"decision\": \"YES\",\n  \"decisive_condition_ids\": [\n    \"a1\",\n    \"a2\",\n    \"a3\",\n    \"a4\",\n    \"a5\",\n    \"a6\",\n    \"a7\",\n    \"a8\",\n    \"a9\"\n  ],\n  \"ir_discrepancies\": [],\n  \"justification\": \"The donation is from an individual (Elaine) to a recognised charity, not made via payroll giving, not for goods or services, not involving a benefit over a limit, not a share or security payment, and not from a charity card or voucher. The donor has paid sufficient tax (£980) and has made a Gift Aid declaration covering this specific donation. All policy conditions for Gift Aid eligibility are satisfied based on the provided evidence.\",\n  \"missing_facts\": [],\n  \"scope_issues\": [\n    \"The policy does not specify whether Gift Aid can be claimed on donations made in a single transaction or on a combination of donations from the same donor, nor whether a batch of donations from different sources must be treated separately.\"\n  ],\n  \"supporting_policy_ids\": [\n    \"E01\",\n    \"E02\",\n    \"E03\",\n    \"E04\",\n    \"E05\",\n    \"E06\",\n    \"E07\",\n    \"E08\",\n    \"E09\",\n    \"E10\",\n    \"E11\",\n    \"E12\",\n    \"E13\"\n  ],\n  \"unresolved_condition_ids\": []\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 14751154167,
+  "load_duration": 1478250,
+  "prompt_eval_count": 3239,
+  "prompt_eval_cached_count": 951,
+  "prompt_eval_duration": 5503255000,
+  "eval_count": 336,
+  "eval_duration": 8836640000
+}

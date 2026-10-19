@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T21:55:29.21603Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"atoms\": [\n    {\n      \"entity_scope\": \"donor\",\n      \"id\": \"a1\",\n      \"proposition\": \"the donor is an individual\",\n      \"source_ids\": [\"E06\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a2\",\n      \"proposition\": \"the donation is made to a charity or CASC\",\n      \"source_ids\": [\"E01\", \"E02\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a3\",\n      \"proposition\": \"the donation is not made through Payroll Giving\",\n      \"source_ids\": [\"E08\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a4\",\n      \"proposition\": \"the donation is not a payment for goods or services or made because the charity bought goods and services\",\n      \"source_ids\": [\"E08\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a5\",\n      \"proposition\": \"the donor does not receive a benefit over a certain limit\",\n      \"source_ids\": [\"E08\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a6\",\n      \"proposition\": \"the donation is not a payment of shares or other securities\",\n      \"source_ids\": [\"E08\"]\n    },\n    {\n      \"entity_scope\": \"donation\",\n      \"id\": \"a7\",\n      \"proposition\": \"the donation is not from a charity card or voucher such as CAF vouchers\",\n      \"source_ids\": [\"E08\"]\n    },\n    {\n      \"entity_scope\": \"donor\",\n      \"id\": \"a8\",\n      \"proposition\": \"the donor has paid at least as much in Income Tax or Capital Gains Tax in that tax year as the amount claimed in Gift Aid\",\n      \"source_ids\": [\"E04\"]\n    },\n    {\n      \"entity_scope\": \"donor\",\n      \"id\": \"a9\",\n      \"proposition\": \"the donor has made a Gift Aid declaration that gives permission to claim Gift Aid\",\n      \"source_ids\": [\"E05\"]\n    }\n  ],\n  \"decision_target\": \"eligibility for Gift Aid on a donation\",\n  \"decision_unit\": \"one donation\",\n  \"eligibility_expression\": {\n    \"ref\": \"a1\"\n  },\n  \"limitations\": [\n    \"The policy does not specify whether donations from individuals are eligible only if the donor is a UK resident or whether tax year boundaries apply to the tax year in which the donation is received, though the tax year is referenced in the policy.\",\n    \"The policy does not specify whether a donation from a donor who has made other Gift Aid donations in the same year affects eligibility for this specific donation, though the tax summary and declared donations are referenced.\"\n  ],\n  \"scope_issues\": [\n    \"The policy applies to donations from individuals to charities or CASCs, but does not specify whether Gift Aid can be claimed on donations made in a single transaction or on a combination of donations from the same donor, nor whether a batch of donations from different sources must be treated separately.\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 16901246333,
+  "load_duration": 1635791,
+  "prompt_eval_count": 1294,
+  "prompt_eval_cached_count": 888,
+  "prompt_eval_duration": 880601000,
+  "eval_count": 684,
+  "eval_duration": 15803357000
+}

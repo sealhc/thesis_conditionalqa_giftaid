@@ -1,0 +1,103 @@
+{
+  "stage": "A2",
+  "saved_at_utc": "2026-10-18T21:59:27.603657+00:00",
+  "status": "parsed",
+  "reason": null,
+  "raw_sha256": "b5f6ed370a77e9d450a95f2da400afac7f034a94fa27e336024b3fa3b07eafe0",
+  "valid_json": true,
+  "validation_error": null,
+  "retry_required": false,
+  "diagnostic_flags": [
+    {
+      "code": "QUOTE_NOT_VERBATIM",
+      "detail": "A2 a1 quote not found as exact scenario substring",
+      "atom_id": "a1",
+      "quote_is_verbatim": false
+    },
+    {
+      "code": "QUOTE_NOT_VERBATIM",
+      "detail": "A2 a4 quote not found as exact scenario substring",
+      "atom_id": "a4",
+      "quote_is_verbatim": false
+    },
+    {
+      "code": "QUOTE_NOT_VERBATIM",
+      "detail": "A2 a5 quote not found as exact scenario substring",
+      "atom_id": "a5",
+      "quote_is_verbatim": false
+    },
+    {
+      "code": "ASSERTED_STATUS_WITHOUT_QUOTE",
+      "detail": "A2 a7 is TRUE but evidence_quote is empty",
+      "atom_id": "a7"
+    },
+    {
+      "code": "ASSERTED_STATUS_WITHOUT_QUOTE",
+      "detail": "A2 a8 is TRUE but evidence_quote is empty",
+      "atom_id": "a8"
+    }
+  ],
+  "json_envelope": {
+    "raw_sha256": "b5f6ed370a77e9d450a95f2da400afac7f034a94fa27e336024b3fa3b07eafe0",
+    "parsed_text_sha256": "b5f6ed370a77e9d450a95f2da400afac7f034a94fa27e336024b3fa3b07eafe0",
+    "outer_format_processed": false,
+    "envelope_operations": [],
+    "parser_policy": "v5_allowed_outer_wrappers_only",
+    "json_payload_content_modified": false
+  },
+  "quote_verbatim_checks": [
+    {
+      "atom_id": "a1",
+      "quote_is_verbatim": false,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a2",
+      "quote_is_verbatim": null,
+      "has_quote": false
+    },
+    {
+      "atom_id": "a3",
+      "quote_is_verbatim": null,
+      "has_quote": false
+    },
+    {
+      "atom_id": "a4",
+      "quote_is_verbatim": false,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a5",
+      "quote_is_verbatim": false,
+      "has_quote": true
+    },
+    {
+      "atom_id": "a6",
+      "quote_is_verbatim": null,
+      "has_quote": false
+    },
+    {
+      "atom_id": "a7",
+      "quote_is_verbatim": null,
+      "has_quote": false
+    },
+    {
+      "atom_id": "a8",
+      "quote_is_verbatim": null,
+      "has_quote": false
+    }
+  ],
+  "api_metrics": {
+    "done": true,
+    "done_reason": "stop",
+    "prompt_eval_count": 1537,
+    "eval_count": 641,
+    "num_ctx_configured": 32768,
+    "num_predict_configured": 8192,
+    "thinking_output_characters": 0,
+    "thinking_field_present": false,
+    "prompt_plus_generated_tokens_observed": 2178,
+    "context_pressure_95pct_heuristic": false,
+    "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+  }
+}

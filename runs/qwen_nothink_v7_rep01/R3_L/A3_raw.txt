@@ -1,0 +1,62 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation incorrectly states that the donor has paid at least as much in tax as the claimed Gift Aid, but the customer scenario provides no evidence of tax payments in the tax year of the donation (2026), and the tax document covers a previous year (2024). The policy requires the donor to have paid at least as much in tax as the claimed Gift Aid in the relevant tax year (E04, E07), and this fact is unsupported and unverifiable.",
+      "policy_ids": [
+        "E04",
+        "E07"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a3"
+      ],
+      "description": "The intermediate representation asserts that a valid Gift Aid declaration was made, but the scanned declaration is incomplete with the coverage page missing. The policy requires a valid Gift Aid declaration from the donor (E05), and this condition cannot be verified from the evidence.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a6"
+      ],
+      "description": "The intermediate representation assigns status 'UNKNOWN' to the condition about a donor receiving a benefit over a certain limit, but the scenario does not mention any such benefit. However, the policy (E11) includes this as a disqualifying factor, and the absence of evidence about a benefit is not sufficient to establish that no benefit was received. This condition is not addressed in the evidence, and its status remains unresolved.",
+      "policy_ids": [
+        "E11"
+      ],
+      "type": "OMISSION"
+    }
+  ],
+  "justification": "The customer scenario establishes that the donation is from an individual to a recognised charity, made via personal bank account, unrelated to goods/services, and not involving shares or vouchers. However, the policy requires both the donor to have paid sufficient tax in the donation's tax year (E04, E07) and to have made a valid Gift Aid declaration (E05). Neither of these conditions can be verified in the evidence: the donor's tax year evidence is unavailable for 2026, and the declaration is incomplete. Additionally, the policy prohibits claims where the donor receives a benefit over a certain limit (E11), though this is not addressed in the scenario. Without verification of these key conditions, eligibility cannot be determined.",
+  "missing_facts": [
+    "The amount of Income Tax or Capital Gains Tax paid by Devon Gray in the tax year ending 5 April 2026",
+    "The full content and validity of the Gift Aid declaration made by Devon Gray",
+    "Whether the donation resulted in a benefit to the donor over a certain limit"
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether such donations are eligible if the donor is not recognised as a charity or CASC. However, the customer scenario confirms the charity is recognised, so this does not apply. The decision is per donation, and the policy conditions are correctly scoped to that level."
+  ],
+  "supporting_policy_ids": [
+    "E02",
+    "E04",
+    "E05",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a2",
+    "a3",
+    "a6"
+  ]
+}

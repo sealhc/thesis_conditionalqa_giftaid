@@ -1,0 +1,37 @@
+{
+  "stage": "B1",
+  "saved_at_utc": "2026-10-18T22:10:13.618184+00:00",
+  "status": "parsed",
+  "reason": null,
+  "raw_sha256": "b005eff670bfee38dd2d42d70ee1e62fdbf55c507c12653551814bfbd7cb73d1",
+  "valid_json": true,
+  "validation_error": null,
+  "retry_required": false,
+  "diagnostic_flags": [
+    {
+      "code": "NEI_WITHOUT_CONDITIONAL_BRANCHES",
+      "detail": "B1 requests information but gives no conditional_branches (the prompt asks for them when unresolved)"
+    }
+  ],
+  "json_envelope": {
+    "raw_sha256": "b005eff670bfee38dd2d42d70ee1e62fdbf55c507c12653551814bfbd7cb73d1",
+    "parsed_text_sha256": "b005eff670bfee38dd2d42d70ee1e62fdbf55c507c12653551814bfbd7cb73d1",
+    "outer_format_processed": false,
+    "envelope_operations": [],
+    "parser_policy": "v5_allowed_outer_wrappers_only",
+    "json_payload_content_modified": false
+  },
+  "api_metrics": {
+    "done": true,
+    "done_reason": "stop",
+    "prompt_eval_count": 745,
+    "eval_count": 388,
+    "num_ctx_configured": 32768,
+    "num_predict_configured": 8192,
+    "thinking_output_characters": 0,
+    "thinking_field_present": false,
+    "prompt_plus_generated_tokens_observed": 1133,
+    "context_pressure_95pct_heuristic": false,
+    "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+  }
+}

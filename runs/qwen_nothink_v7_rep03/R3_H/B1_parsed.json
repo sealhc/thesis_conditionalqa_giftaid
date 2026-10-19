@@ -1,0 +1,36 @@
+{
+  "conditional_branches": [
+    {
+      "conditions_in_words": "Devon Gray has paid at least as much in Income Tax or Capital Gains Tax in the tax year ending 5 April 2024 as the amount of Gift Aid claimed (i.e., 25p per £1 donation), and has made a valid Gift Aid declaration covering the donation of £95 on 1 March 2026.",
+      "possible_answer": "YES"
+    },
+    {
+      "conditions_in_words": "Devon Gray has not paid sufficient tax in the tax year ending 5 April 2024, or no valid Gift Aid declaration exists for the donation, or the donation is otherwise excluded under policy rules (e.g., via payroll, goods/service, benefit, shares, or charity card/voucher), then the claim is not eligible.",
+      "possible_answer": "NO"
+    }
+  ],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The policy requires the donor to have paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the claimed Gift Aid amount (E04/E07), and to have made a valid Gift Aid declaration (E05). The customer scenario confirms the donation is from a personal account, not payroll giving (E09), not for goods/services (E10), and no benefit was offered (E11). However, the P60 shows tax paid for the year ending 5 April 2024, which is not the same as the tax year covering the donation (which would be 2025–26). There is no record of Devon’s personal tax for the 2025–26 tax year, and no evidence that a valid Gift Aid declaration was made or retained. The donor form scan is incomplete and the declaration’s coverage is unclear. Thus, the key facts regarding tax payment and declaration are missing. Policy passage E04/E07 and E05 are directly applicable, but their requirements are not satisfied due to missing evidence.",
+  "missing_facts": [
+    "Devon Gray's Income Tax or Capital Gains Tax payment for the tax year covering the donation (2025–26)",
+    "Evidence of a valid Gift Aid declaration made by Devon Gray for the £95 donation on 1 March 2026"
+  ],
+  "scope_issues": [
+    "The donation is from a personal account, so it is not payroll giving (E09), and no goods/services were involved (E10), but the tax year and declaration status are not confirmed."
+  ],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

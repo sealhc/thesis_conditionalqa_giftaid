@@ -1,0 +1,26 @@
+{
+  "decision": "NEED_MORE_INFORMATION",
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E07"
+  ],
+  "missing_facts": [
+    "Whether Devon Gray paid at least as much in Income Tax or Capital Gains Tax in the tax year ending 5 April 2026 (the tax year of the donation on 1 March 2026) as the charity wishes to claim in Gift Aid — the only tax document available covers the year ending 5 April 2024, which is a different tax year.",
+    "Whether a valid Gift Aid declaration from Devon Gray exists that covers this donation — the scanned declaration on file is incomplete (the page stating its coverage and duration is missing), so it cannot be confirmed as sufficient."
+  ],
+  "justification": "The charity appears to meet the recognition requirement (E02) and the donation itself does not fall into any of the excluded categories (E09–E13). However, two conditions remain unresolved. First, under E04/E07, the donor must have paid at least as much in Income Tax or Capital Gains Tax in the same tax year as the Gift Aid amount claimed. The only tax evidence available relates to 2023–24, not 2025–26 (the year of the 1 March 2026 donation), so donor tax eligibility for the correct year is unconfirmed. Second, under E05, a valid Gift Aid declaration giving the charity permission to claim must exist. The declaration on file is incomplete — the page showing its scope and duration is missing — so it cannot be confirmed as covering this donation.",
+  "scope_issues": [],
+  "conditional_branches": [
+    {
+      "possible_answer": "YES",
+      "conditions_in_words": "Devon Gray paid at least as much in Income Tax or Capital Gains Tax in the 2025–26 tax year as the Gift Aid amount to be claimed, AND a valid Gift Aid declaration exists (or is obtained) that covers this donation."
+    },
+    {
+      "possible_answer": "NO",
+      "conditions_in_words": "Devon Gray did not pay sufficient Income Tax or Capital Gains Tax in the 2025–26 tax year, OR no valid Gift Aid declaration covering this donation can be established."
+    }
+  ]
+}

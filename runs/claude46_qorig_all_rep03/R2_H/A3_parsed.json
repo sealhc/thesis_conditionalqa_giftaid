@@ -1,0 +1,50 @@
+{
+  "decision": "NO",
+  "supporting_policy_ids": [
+    "E10"
+  ],
+  "decisive_condition_ids": [
+    "a5",
+    "a6"
+  ],
+  "unresolved_condition_ids": [
+    "a3",
+    "a4",
+    "a8"
+  ],
+  "missing_facts": [
+    "Whether Robyn Ellis paid sufficient Income Tax or Capital Gains Tax in the 2025-26 tax year to cover the Gift Aid claim (a3)",
+    "Whether Robyn Ellis completed a Gift Aid declaration for the £260 payment (a4)",
+    "The monetary threshold for a disqualifying donor benefit under E11 and whether the advertising placements exceed it (a8)"
+  ],
+  "justification": "The decisive issue is the nature of the £260 payment. The evidence overwhelmingly indicates that this was a payment for goods or services rather than a genuine donation. The sequence of events is clear: Robyn Ellis requested two advertising placements (a newsletter booking link and a six-week homepage feature for her grooming salon), the charity coordinator sent a mock-up and quoted exactly £260 for those two placements, Robyn confirmed the amount worked for her, the booking sheet marked the placements as 'awaiting settlement' until 4 February when the £260 arrived and the status changed to 'confirmed', and the March newsletter and website subsequently showed the placements in the agreed locations. This is a commercial transaction for advertising services. The fact that a volunteer later labelled it a 'donation' on the payment spreadsheet, and that Robyn's accompanying message expressed goodwill toward the animals, does not alter the underlying nature of the payment. Policy passage E10 explicitly excludes from Gift Aid any donation 'that is a payment for goods or services or made because your charity or CASC bought goods and services'. The charity supplied advertising services to Robyn's salon; the £260 was the agreed price for those services. Condition a5 (the payment is not for goods or services) is therefore FALSE, and condition a6 (the payment was not made because the charity bought goods or services from the donor) is also effectively FALSE given the charity supplied services to the donor in exchange. Because E10 is an absolute exclusion and the evidence firmly places the £260 within that exclusion, Gift Aid cannot be claimed on this payment regardless of whether the other conditions (a3, a4, a8) are satisfied. The unresolved conditions are noted but cannot rescue eligibility given the a5/a6 failure.",
+  "scope_issues": [
+    "The £20 separate cash gift from Robyn Ellis at the December collection event is a distinct transaction with its own receipt and is explicitly out of scope for this review; it would require a separate eligibility assessment.",
+    "The supplied policy passages do not specify the monetary threshold for a disqualifying donor benefit under E11, so the benefit question (a8) cannot be fully resolved from the supplied material alone, though it is moot given the E10 exclusion."
+  ],
+  "ir_discrepancies": [
+    {
+      "type": "STATUS",
+      "description": "The intermediate representation marks a6 as FALSE (condition not met) while marking a5 as CONFLICTING. In fact, both a5 and a6 point to the same underlying E10 exclusion: the charity supplied advertising services to Robyn in exchange for the £260. The evidence is not genuinely conflicting for a5; the commercial booking correspondence, mock-up, quote, confirmation, and subsequent delivery of the placements decisively establish the payment was for services. The 'donation' label on the spreadsheet and Robyn's goodwill message are insufficient to override the documented commercial arrangement. A5 should be assessed as FALSE (condition not met), not CONFLICTING.",
+      "policy_ids": [
+        "E10"
+      ],
+      "condition_ids": [
+        "a5",
+        "a6"
+      ]
+    },
+    {
+      "type": "OTHER",
+      "description": "The condition_statuses treat a5 and a6 as separate conditions with different statuses (CONFLICTING vs FALSE), but both arise from the single E10 exclusion clause ('payment for goods or services or made because your charity or CASC bought goods and services'). The distinction between the two sub-clauses of E10 is not material here because the evidence establishes both: the £260 was a payment for advertising services supplied by the charity to the donor.",
+      "policy_ids": [
+        "E10"
+      ],
+      "condition_ids": [
+        "a5",
+        "a6"
+      ]
+    }
+  ],
+  "conditional_branches": []
+}

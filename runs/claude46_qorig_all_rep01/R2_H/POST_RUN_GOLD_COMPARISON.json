@@ -1,0 +1,346 @@
+{
+  "schema_version": "5.0",
+  "world": "R2_H",
+  "model": "claude-sonnet-4-6",
+  "model_version": "anthropic API; smoke returned_model=claude-sonnet-4-6",
+  "run_id": "claude46_qorig_all_rep01",
+  "researcher_gold_decision": "NO",
+  "stage_validation": {
+    "A1": {
+      "stage": "A1",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [],
+      "record_file": "A1_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "stop": "end_turn",
+        "returned_model": "claude-sonnet-4-6",
+        "usage": {
+          "input_tokens": 3179,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 903,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        },
+        "thinking_chars": 0,
+        "thinking_tokens": null,
+        "thinking_blocks": 0,
+        "attempts": 1
+      },
+      "json_envelope": {
+        "raw_sha256": "b008301834633897cad2498d0f3f9123175a3b90e6046be92e330e2535da4c9a",
+        "parsed_text_sha256": "b008301834633897cad2498d0f3f9123175a3b90e6046be92e330e2535da4c9a",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "A2": {
+      "stage": "A2",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [
+        {
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a2 quote not found as exact scenario substring",
+          "atom_id": "a2",
+          "quote_is_verbatim": false
+        },
+        {
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a4 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a4"
+        },
+        {
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a6 quote not found as exact scenario substring",
+          "atom_id": "a6",
+          "quote_is_verbatim": false
+        },
+        {
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a7 quote not found as exact scenario substring",
+          "atom_id": "a7",
+          "quote_is_verbatim": false
+        },
+        {
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a8 quote not found as exact scenario substring",
+          "atom_id": "a8",
+          "quote_is_verbatim": false
+        },
+        {
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a9 quote not found as exact scenario substring",
+          "atom_id": "a9",
+          "quote_is_verbatim": false
+        }
+      ],
+      "record_file": "A2_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "stop": "end_turn",
+        "returned_model": "claude-sonnet-4-6",
+        "usage": {
+          "input_tokens": 2792,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 941,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        },
+        "thinking_chars": 0,
+        "thinking_tokens": null,
+        "thinking_blocks": 0,
+        "attempts": 1
+      },
+      "json_envelope": {
+        "raw_sha256": "1e8d2f192905febd4153f5e3866ea002de3f85138445e5a63bd93e42fd283217",
+        "parsed_text_sha256": "1e8d2f192905febd4153f5e3866ea002de3f85138445e5a63bd93e42fd283217",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "A3": {
+      "stage": "A3",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [
+        {
+          "code": "DECIDED_WITH_MISSING_FACTS",
+          "detail": "A3 returned NO but still lists missing_facts"
+        },
+        {
+          "code": "DECIDED_WITH_UNRESOLVED_ATOMS",
+          "detail": "A3 returned NO while listing unresolved atoms",
+          "unresolved": [
+            "a3",
+            "a4",
+            "a5",
+            "a7"
+          ]
+        }
+      ],
+      "record_file": "A3_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "stop": "end_turn",
+        "returned_model": "claude-sonnet-4-6",
+        "usage": {
+          "input_tokens": 4701,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 909,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        },
+        "thinking_chars": 0,
+        "thinking_tokens": null,
+        "thinking_blocks": 0,
+        "attempts": 1
+      },
+      "json_envelope": {
+        "raw_sha256": "33c65d52348e89563cc1c829ebaaf0a696d074b9b8d3d2c9c77ac14274b157d2",
+        "parsed_text_sha256": "33c65d52348e89563cc1c829ebaaf0a696d074b9b8d3d2c9c77ac14274b157d2",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    },
+    "B1": {
+      "stage": "B1",
+      "status": "parsed",
+      "reason": null,
+      "has_parsed": true,
+      "diagnostic_flags": [],
+      "record_file": "B1_record.json",
+      "retry_required": false,
+      "api_metrics": {
+        "stop": "end_turn",
+        "returned_model": "claude-sonnet-4-6",
+        "usage": {
+          "input_tokens": 1679,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 330,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        },
+        "thinking_chars": 0,
+        "thinking_tokens": null,
+        "thinking_blocks": 0,
+        "attempts": 1
+      },
+      "json_envelope": {
+        "raw_sha256": "b04bc2eaa10ddc1533cd706e77acbd32234bff7dc8f444bf4f599172fe2c3611",
+        "parsed_text_sha256": "b04bc2eaa10ddc1533cd706e77acbd32234bff7dc8f444bf4f599172fe2c3611",
+        "outer_format_processed": false,
+        "envelope_operations": [],
+        "parser_policy": "v5_allowed_outer_wrappers_only",
+        "json_payload_content_modified": false
+      }
+    }
+  },
+  "paths": {
+    "A": {
+      "status": "concluded",
+      "decision": "NO",
+      "correct": true,
+      "stop_stage": null,
+      "reason": null,
+      "completion_category": "completed",
+      "retry_required": false,
+      "diagnostic_flags": [
+        {
+          "stage": "A2",
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a2 quote not found as exact scenario substring",
+          "atom_id": "a2",
+          "quote_is_verbatim": false
+        },
+        {
+          "stage": "A2",
+          "code": "UNKNOWN_WITH_QUOTE",
+          "detail": "A2 a4 UNKNOWN with nonempty evidence_quote (review whether quote supports uncertainty)",
+          "atom_id": "a4"
+        },
+        {
+          "stage": "A2",
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a6 quote not found as exact scenario substring",
+          "atom_id": "a6",
+          "quote_is_verbatim": false
+        },
+        {
+          "stage": "A2",
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a7 quote not found as exact scenario substring",
+          "atom_id": "a7",
+          "quote_is_verbatim": false
+        },
+        {
+          "stage": "A2",
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a8 quote not found as exact scenario substring",
+          "atom_id": "a8",
+          "quote_is_verbatim": false
+        },
+        {
+          "stage": "A2",
+          "code": "QUOTE_NOT_VERBATIM",
+          "detail": "A2 a9 quote not found as exact scenario substring",
+          "atom_id": "a9",
+          "quote_is_verbatim": false
+        },
+        {
+          "stage": "A3",
+          "code": "DECIDED_WITH_MISSING_FACTS",
+          "detail": "A3 returned NO but still lists missing_facts"
+        },
+        {
+          "stage": "A3",
+          "code": "DECIDED_WITH_UNRESOLVED_ATOMS",
+          "detail": "A3 returned NO while listing unresolved atoms",
+          "unresolved": [
+            "a3",
+            "a4",
+            "a5",
+            "a7"
+          ]
+        }
+      ],
+      "usage": {
+        "calls": 3,
+        "prompt_tokens": 10672,
+        "generated_tokens": 2753,
+        "usage_complete": true,
+        "note": "Model calls and token counts as reported by the server, summed over all attempts of all stages (retries included); API-level HTTP retries are counted in attempts.",
+        "attempts": 3
+      },
+      "attempts": {
+        "per_stage": {
+          "A1": 1,
+          "A2": 1,
+          "A3": 1
+        },
+        "total_model_calls": 3,
+        "retry_calls": 0,
+        "first_attempt_all_valid": true,
+        "unfinished_stage": null
+      }
+    },
+    "B": {
+      "status": "concluded",
+      "decision": "NO",
+      "correct": true,
+      "stop_stage": null,
+      "reason": null,
+      "completion_category": "completed",
+      "retry_required": false,
+      "diagnostic_flags": [],
+      "usage": {
+        "calls": 1,
+        "prompt_tokens": 1679,
+        "generated_tokens": 330,
+        "usage_complete": true,
+        "note": "Model calls and token counts as reported by the server, summed over all attempts of all stages (retries included); API-level HTTP retries are counted in attempts.",
+        "attempts": 1
+      },
+      "attempts": {
+        "per_stage": {
+          "B1": 1
+        },
+        "total_model_calls": 1,
+        "retry_calls": 0,
+        "first_attempt_all_valid": true,
+        "unfinished_stage": null
+      }
+    }
+  },
+  "paired_quality_eligible": true,
+  "limitations": [
+    "R0 native conditional Gold is not the researcher decision-state Gold.",
+    "Warning flags are not automatic semantic correctness verdicts.",
+    "One base case with correlated scenario variants is not a generalizable accuracy estimate."
+  ],
+  "paired": {
+    "A_correct": true,
+    "B_correct": true,
+    "both_correct": true,
+    "A_only_correct": false,
+    "B_only_correct": false
+  },
+  "stepwise_semantic_review": {
+    "status": "PENDING_MANUAL_REVIEW",
+    "note": "A1 coverage, A2 semantic accuracy, missing-information matching and reasoning grounding are NOT scored until reviewed. Run: python3 scripts/stepwise_review.py template --run <RUN>"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "model": "claude-sonnet-4-6",
+  "id": "msg_011CgAR1FkSHmbuqqw2BJxS9",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"decision\":\"YES\",\"supporting_policy_ids\":[\"E01\",\"E02\",\"E03\",\"E04\",\"E05\",\"E06\",\"E07\",\"E08\",\"E09\",\"E10\",\"E11\",\"E12\",\"E13\"],\"missing_facts\":[],\"justification\":\"All requirements for Gift Aid on payment FP-0316-EL (£120 from Elaine Carter, 16 March 2026) are satisfied: (1) The charity holds a valid HMRC recognition letter confirmed current on 16 March 2026 [E02]. (2) Elaine made an electronic Gift Aid declaration on 15 March 2026, covering this donation, with a full audit trail [E05]. (3) Elaine paid £980 in Income Tax in the tax year to 5 April 2026; the total Gift Aid to be reclaimed across all her donations is £80 (£30 on this gift + £50 on others), well within her £980 tax liability [E04/E07]. (4) The donation is not excluded: it was not made through Payroll Giving [E09]; it is not a payment for goods or services and no benefit was provided to Elaine beyond the standard thank-you email [E10/E11]; it is not a donation of shares or securities [E12]; and although an older spreadsheet groups it with CAF card/voucher redemptions (CC-0314, VC-0317), FP-0316-EL arrived directly from Elaine's personal bank account on 16 March, two days before the CAF batch settled on 18 March — it is clearly a direct personal donation, not a charity card or voucher redemption [E13]. The charity may therefore include this £120 in its ordinary Gift Aid return and reclaim £30 (25p per £1) [E01].\",\"scope_issues\":[\"The CAF card and voucher payments CC-0314 and VC-0317 are NOT eligible for Gift Aid [E13] and must be excluded from the return; only FP-0316-EL is addressed here.\"],\"conditional_branches\":[]}"
+    }
+  ],
+  "container": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1725,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 486,
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

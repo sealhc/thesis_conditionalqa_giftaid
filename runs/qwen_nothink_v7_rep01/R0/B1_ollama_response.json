@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T21:54:11.091722Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"conditional_branches\": [],\n  \"decision\": \"NEED_MORE_INFORMATION\",\n  \"justification\": \"The policy establishes eligibility for Gift Aid on individual donations, but only if the donor has paid sufficient tax and makes a Gift Aid declaration. The policy also excludes donations via payroll giving, for goods/services, and for 'benefits' over certain limits, or where shares or vouchers are involved. The customer scenario mentions monthly direct debit and one-off donations, which are not excluded under the policy. However, it does not specify whether the donor has paid sufficient tax or made a Gift Aid declaration. Additionally, it does not confirm if the charity is recognised as a charity for tax purposes. Without confirmation of these key facts, eligibility cannot be determined. Policy passages E02, E04, E05, E06, E07, E09–E13 are relevant but do not resolve the missing facts.\",\n  \"missing_facts\": [\n    \"Whether the donor has paid at least as much in Income Tax or Capital Gains Tax as the amount of Gift Aid claimed\",\n    \"Whether the donor has made a Gift Aid declaration\",\n    \"Whether the charity is recognised as a charity for tax purposes\"\n  ],\n  \"scope_issues\": [],\n  \"supporting_policy_ids\": [\n    \"E01\",\n    \"E02\",\n    \"E03\",\n    \"E04\",\n    \"E05\",\n    \"E06\",\n    \"E07\",\n    \"E09\",\n    \"E10\",\n    \"E11\",\n    \"E12\",\n    \"E13\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8383603333,
+  "load_duration": 2139958,
+  "prompt_eval_count": 745,
+  "prompt_eval_cached_count": 744,
+  "prompt_eval_duration": 23654000,
+  "eval_count": 345,
+  "eval_duration": 8061545000
+}

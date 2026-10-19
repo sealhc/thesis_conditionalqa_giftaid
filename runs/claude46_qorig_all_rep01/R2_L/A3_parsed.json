@@ -1,0 +1,32 @@
+{
+  "decision": "NO",
+  "supporting_policy_ids": [
+    "E10",
+    "E11"
+  ],
+  "decisive_condition_ids": [
+    "a6",
+    "a8"
+  ],
+  "unresolved_condition_ids": [],
+  "missing_facts": [],
+  "justification": "The £260 payment from Robyn Ellis cannot qualify for Gift Aid. The customer scenario establishes through January emails and booking confirmation that the £260 was accepted as payment for advertising Robyn's grooming salon in the charity's newsletter and website — advertising services that were duly delivered. This makes the £260 a payment for goods or services (E10), which is an excluded category under policy. Additionally, Robyn received a tangible commercial benefit (advertising) in return, engaging the exclusion under E11. Either exclusion alone is sufficient to disqualify the payment. The bookkeeping label of 'donation' does not override the factual character of the transaction. The charity's HMRC recognition (a1 TRUE) satisfies that prerequisite, but the disqualifying conditions under a6 and a8 are independently decisive and produce a NO outcome regardless of the unknown status of a3 (tax position) and a4 (Gift Aid declaration), since those conditions are never reached when an exclusion applies. The £20 December cash gift from Robyn is a separate transaction not assessed here due to insufficient detail, and the monthly direct debit donors are also separate decision units not addressed in the scenario detail provided.",
+  "scope_issues": [
+    "Only the £260 payment from Robyn Ellis has sufficient factual detail for a definitive assessment. The £20 December cash gift and the monthly direct debit donors are separate decision units requiring independent evaluation with additional information (tax positions, Gift Aid declarations, nature of payments)."
+  ],
+  "ir_discrepancies": [
+    {
+      "type": "OTHER",
+      "description": "The condition_statuses assess a6 and a8 as both TRUE and treat them as independently decisive, which is correct. However, the intermediate representation's eligibility_expression requires NOT(a6) and NOT(a8) as separate conjuncts, so either being TRUE is sufficient to defeat eligibility. The IR correctly captures this structure. No material discrepancy, but worth noting that the A2 output correctly identifies a6 as the primary disqualifier (payment for services) and a8 as a secondary one (benefit received), both grounded in the same factual evidence.",
+      "policy_ids": [
+        "E10",
+        "E11"
+      ],
+      "condition_ids": [
+        "a6",
+        "a8"
+      ]
+    }
+  ],
+  "conditional_branches": []
+}

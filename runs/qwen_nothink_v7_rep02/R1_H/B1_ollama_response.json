@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T22:04:23.464155Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"conditional_branches\": [],\n  \"decision\": \"YES\",\n  \"justification\": \"The donation of £120 from Elaine Carter on 16 March 2026 is eligible for Gift Aid because: (1) the charity is recognised as a charity for tax purposes (per E02), (2) the donation is from an individual (per E06), (3) the donor has paid at least as much in Income Tax as the claimed Gift Aid (Elaine paid £980 in Income Tax, and the claimed Gift Aid is £30 on this donation, well below the tax threshold), (4) Elaine made a Gift Aid declaration covering this donation (per E05), (5) the donation is not via Payroll Giving (per E09), (6) it is not for goods or services or made as a result of a purchase (per E10), (7) the donor does not receive a benefit over a certain limit (per E11), (8) no shares or securities were delivered (per E12), and (9) it is not from a charity card or voucher (per E13). The payment is distinct from CAF card/voucher redemptions and was made directly from Elaine's bank account. All conditions for Gift Aid eligibility are met.\",\n  \"missing_facts\": [],\n  \"scope_issues\": [],\n  \"supporting_policy_ids\": [\n    \"E01\",\n    \"E02\",\n    \"E03\",\n    \"E04\",\n    \"E05\",\n    \"E06\",\n    \"E07\",\n    \"E09\",\n    \"E10\",\n    \"E11\",\n    \"E12\",\n    \"E13\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9961104000,
+  "load_duration": 915542,
+  "prompt_eval_count": 1151,
+  "prompt_eval_cached_count": 745,
+  "prompt_eval_duration": 872821000,
+  "eval_count": 376,
+  "eval_duration": 8863821000
+}

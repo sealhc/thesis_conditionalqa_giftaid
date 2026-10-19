@@ -1,0 +1,37 @@
+{
+  "conditional_branches": [],
+  "decision": "YES",
+  "decisive_condition_ids": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8",
+    "a9"
+  ],
+  "ir_discrepancies": [],
+  "justification": "The donation is from an individual (Elaine) to a recognised charity, not made via payroll giving, not for goods or services, not involving a benefit over a limit, not a share or security payment, and not from a charity card or voucher. The donor has paid sufficient tax (£980) and has made a Gift Aid declaration covering this specific donation. All policy conditions for Gift Aid eligibility are satisfied based on the provided evidence.",
+  "missing_facts": [],
+  "scope_issues": [
+    "The policy does not specify whether Gift Aid can be claimed on donations made in a single transaction or on a combination of donations from the same donor, nor whether a batch of donations from different sources must be treated separately."
+  ],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": []
+}

@@ -1,0 +1,19 @@
+TASK: Final-answer check. One model's final answer is shown with the customer scenario and the reference. Answer:
+1. For EACH fact the model listed as missing (by index): which reference missing facts (by reference_fact_id) it means the same as (empty list if none), and, only when it matches none, whether it is unnecessary (true if the reference outcome cannot change whatever its value; false if it is a genuinely relevant open question that the reference does not list). For a matched fact use null.
+2. reasoning.decisive_conditions_correct: the justification relies on the reference's decisive conditions (given) and does not rest the outcome on irrelevant ones.
+   reasoning.asserts_unsupported_fact: true if the answer states as established a fact the scenario does not state or contradicts.
+   reasoning.scope_correct: the answer concerns the single receipt/payment under review and does not transfer facts from another payment, person or period.
+Judge reasoning even when the final decision itself is wrong.
+3. ONLY if MODEL_FINAL_ANSWER.conditional_answer_applicable is true (the model answered NEED_MORE_INFORMATION), judge its conditional_branches against the reference missing facts and decisive conditions:
+   conditional_answer.branches_match_reference: FULL = the branches state the conditions under which each possible answer holds and these correspond to the reference's missing facts / decisive conditions, with nothing material left out; PARTIAL = some correspond or something material is missing; NONE = no branches, or none correspond.
+   conditional_answer.asserts_unsupported_condition: true if a branch rests on a condition that is neither in the policy nor a reasonable reading of the reference.
+   When it is not applicable, omit the conditional_answer object.
+
+reason must be one non-empty sentence. uncertain_cases lists each item you are unsure about as "ID: what is unclear" (empty list if none); confidence is HIGH only if no judgement is borderline.
+
+OUTPUT SCHEMA
+{"missing_facts":[{"index":0,"matches_reference_fact_ids":[],"unnecessary":true}],
+ "reasoning":{"decisive_conditions_correct":true,"asserts_unsupported_fact":false,"scope_correct":true,"reason":"one sentence"},
+ "conditional_answer":{"branches_match_reference":"FULL|PARTIAL|NONE","asserts_unsupported_condition":false,"reason":"one sentence"},
+ "uncertain_cases":[],"confidence":"HIGH"}
+Include every listed missing fact once; use an empty list if the model listed none.

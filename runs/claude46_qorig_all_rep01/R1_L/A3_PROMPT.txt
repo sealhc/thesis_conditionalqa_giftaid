@@ -1,0 +1,255 @@
+ROLE
+You are the final language-model decision stage of a condition-mediated decision-support workflow. Use only the supplied policy passages, decision question, customer scenario, and model-generated intermediate outputs. Do not browse or use external legal knowledge.
+
+TASK
+Make the final decision using BOTH the original source material (POLICY_PASSAGES, DECISION_QUESTION, CUSTOMER_SCENARIO) AND the explicit INTERMEDIATE_REPRESENTATION and CONDITION_STATUSES produced in earlier steps. The intermediate outputs are useful but fallible: examine whether they agree with the original evidence instead of accepting them blindly. You must make the decision yourself; no program calculates the decision for you.
+
+DECISION REQUIREMENTS
+- Return YES when the supplied policy and customer evidence establish a positive decision.
+- Return NO when the supplied policy and customer evidence establish a negative decision.
+- Otherwise return NEED_MORE_INFORMATION and identify the facts that could resolve the decision.
+- An unmentioned fact is unknown rather than false. A fact need not be known if its value cannot change an outcome already established by the evidence.
+- Apply facts to the correct decision unit, entity, payment and time period. Do not transfer evidence about one payment or person to another without support.
+- Compare the intermediate representation and mapped statuses against the original source. If an omission, unsupported atom, wrong logical relationship, mis-scoped fact, or misread evidence matters, report it in ir_discrepancies. Do not conceal a discrepancy or assume the intermediate outputs are correct merely because they are structured.
+- Do not assume any particular final decision. Do not invent policy rules or customer facts.
+- If unresolved, briefly describe conditional alternatives and the information needed. If the decision is established, conditional_branches should be empty.
+- Do not initiate a follow-up interaction. Return one valid JSON object only.
+
+OUTPUT SCHEMA
+{
+  "decision":"YES|NO|NEED_MORE_INFORMATION",
+  "supporting_policy_ids":["E01"],
+  "decisive_condition_ids":["a1"],
+  "unresolved_condition_ids":["a2"],
+  "missing_facts":["a concrete fact needed to resolve the decision, if any"],
+  "justification":"concise explanation grounded in the supplied material",
+  "scope_issues":["a decision-unit limitation, if any"],
+  "ir_discrepancies":[{"type":"OMISSION|UNSUPPORTED|RELATION|SCOPE|STATUS|OTHER","description":"issue found when comparing intermediate outputs with the original source","policy_ids":["E01"],"condition_ids":["a1"]}],
+  "conditional_branches":[{"possible_answer":"YES|NO","conditions_in_words":"only if currently unresolved"}]
+}
+
+The example IDs above are output-format placeholders, not required findings. Use empty lists for inapplicable fields. The supplied intermediate representation and condition statuses are evidence aids, not an authoritative Gold answer.
+
+
+=== POLICY_PASSAGES ===
+[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>
+[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>
+[E03] <p>The donor must:</p>
+[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>
+[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>
+[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>
+[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>
+[E08] <p>You cannot claim on donations:</p>
+[E09] <li>made through Payroll Giving</li>
+[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>
+[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>
+[E12] <li>of shares</li>
+[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>
+
+=== DECISION_QUESTION ===
+Am I eligible for Gift Aid?
+
+=== CUSTOMER_SCENARIO ===
+I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.
+
+Additional customer information:
+The charity's HMRC recognition was confirmed as still in force on 16 March 2026. Elaine Carter sent £120 from her own bank account on 16 March 2026 (FP-0316-EL) after reading an emergency veterinary appeal. Her signed Gift Aid declaration covers this payment. Her Income Tax paid for 2025–26 was £980, and the Gift Aid claimed for this and her other donations that year totals £80. The fundraiser checked the associated sales and booking records: Elaine received no goods, services or benefit in exchange. This was not a payroll deduction or a transfer of shares. The processor's CAF charity-card and voucher receipts were different payments with different settlement references; FP-0316-EL was Elaine's direct bank transfer.
+
+=== INTERMEDIATE_REPRESENTATION (actual A1 JSON, wrapper excluded if present) ===
+{
+  "decision_target": "Whether Gift Aid can be claimed on a donation",
+  "decision_unit": "one donation (transaction)",
+  "atoms": [
+    {
+      "id": "a1",
+      "proposition": "The organisation claiming Gift Aid is recognised as a charity or CASC for tax purposes",
+      "entity_scope": "the claiming organisation",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "id": "a2",
+      "proposition": "The donation was made by an individual",
+      "entity_scope": "the donor",
+      "source_ids": [
+        "E06"
+      ]
+    },
+    {
+      "id": "a3",
+      "proposition": "The donor has paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the total Gift Aid to be claimed on their donations in that year",
+      "entity_scope": "the donor",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "id": "a4",
+      "proposition": "The donor has made a Gift Aid declaration giving the organisation permission to claim Gift Aid on the donation",
+      "entity_scope": "the donor",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "id": "a5",
+      "proposition": "The donation was made through Payroll Giving",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "id": "a6",
+      "proposition": "The donation is a payment for goods or services, or was made because the charity or CASC bought goods or services",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "id": "a7",
+      "proposition": "The donor received a benefit in exchange for the donation that exceeds the permitted limit",
+      "entity_scope": "the donor and donation",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "id": "a8",
+      "proposition": "The donation consists of shares",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "id": "a9",
+      "proposition": "The donation was made via a charity card or voucher (e.g. a CAF voucher)",
+      "entity_scope": "the donation",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "eligibility_expression": {
+    "op": "ALL",
+    "args": [
+      {
+        "ref": "a1"
+      },
+      {
+        "ref": "a2"
+      },
+      {
+        "ref": "a3"
+      },
+      {
+        "ref": "a4"
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a5"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a6"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a7"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a8"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "a9"
+        }
+      }
+    ]
+  },
+  "scope_issues": [
+    "The customer receives both recurring monthly direct-debit donations and one-off donations. Gift Aid eligibility must be assessed per individual donation (or per donor per tax year for the tax-paid threshold), so different donations or donors may yield different outcomes and should not be collapsed into a single determination."
+  ],
+  "limitations": [
+    "The passages do not specify the precise monetary threshold for a donor 'benefit' that disqualifies a donation (E11 refers only to 'a certain limit'); this threshold cannot be evaluated from the supplied material alone.",
+    "The passages do not address whether Gift Aid can be claimed on donations received via direct debit specifically; no exclusion is stated, but no explicit confirmation is provided either.",
+    "E01 and E06 both address Gift Aid but E01 focuses on the claiming rate and E06 on donor conditions; some overlap exists and the passages may not represent the complete HMRC rules."
+  ]
+}
+
+=== CONDITION_STATUSES (actual A2 JSON, wrapper excluded if present) ===
+{
+  "statuses": [
+    {
+      "id": "a1",
+      "status": "TRUE",
+      "evidence_quote": "The charity's HMRC recognition was confirmed as still in force on 16 March 2026.",
+      "justification": "The scenario explicitly confirms the charity holds current HMRC recognition as required by E02."
+    },
+    {
+      "id": "a2",
+      "status": "TRUE",
+      "evidence_quote": "Elaine Carter sent £120 from her own bank account on 16 March 2026",
+      "justification": "Elaine Carter is named as an individual donor making a personal bank transfer, satisfying the requirement that the donation be made by an individual."
+    },
+    {
+      "id": "a3",
+      "status": "TRUE",
+      "evidence_quote": "Her Income Tax paid for 2025–26 was £980, and the Gift Aid claimed for this and her other donations that year totals £80.",
+      "justification": "£980 in Income Tax paid exceeds £80 in total Gift Aid claimed that year, so the donor has paid at least as much tax as the Gift Aid to be claimed."
+    },
+    {
+      "id": "a4",
+      "status": "TRUE",
+      "evidence_quote": "Her signed Gift Aid declaration covers this payment.",
+      "justification": "The scenario explicitly states a signed Gift Aid declaration exists that covers the specific donation FP-0316-EL."
+    },
+    {
+      "id": "a5",
+      "status": "FALSE",
+      "evidence_quote": "This was not a payroll deduction or a transfer of shares.",
+      "justification": "The scenario expressly states the donation was not made through payroll giving."
+    },
+    {
+      "id": "a6",
+      "status": "FALSE",
+      "evidence_quote": "Elaine received no goods, services or benefit in exchange.",
+      "justification": "The fundraiser's check of sales and booking records confirms the donation was not a payment for goods or services."
+    },
+    {
+      "id": "a7",
+      "status": "FALSE",
+      "evidence_quote": "Elaine received no goods, services or benefit in exchange.",
+      "justification": "The scenario explicitly states no benefit was received, so the donor did not receive a benefit exceeding any permitted limit."
+    },
+    {
+      "id": "a8",
+      "status": "FALSE",
+      "evidence_quote": "This was not a payroll deduction or a transfer of shares.",
+      "justification": "The scenario expressly states the donation was not a transfer of shares."
+    },
+    {
+      "id": "a9",
+      "status": "FALSE",
+      "evidence_quote": "FP-0316-EL was Elaine's direct bank transfer... CAF charity-card and voucher receipts were different payments with different settlement references.",
+      "justification": "The scenario distinguishes FP-0316-EL as a direct bank transfer, explicitly separate from any CAF voucher or charity card payments."
+    }
+  ],
+  "scope_issues": [
+    "The scenario describes both recurring monthly direct-debit donors and one-off donors; the evidence provided is specific to Elaine Carter's donation FP-0316-EL. Atom statuses for other donors or transactions cannot be determined from the information given and would need separate assessment."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "decision": "YES",
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "decisive_condition_ids": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8",
+    "a9"
+  ],
+  "unresolved_condition_ids": [],
+  "missing_facts": [],
+  "justification": "All positive eligibility conditions are met for donation FP-0316-EL from Elaine Carter: (a1) the charity holds current HMRC recognition as confirmed on 16 March 2026; (a2) Elaine Carter is an individual donor making a personal bank transfer; (a3) her Income Tax paid for 2025–26 (£980) exceeds the total Gift Aid to be claimed on her donations that year (£80); (a4) her signed Gift Aid declaration covers this specific payment. All disqualifying conditions are absent: (a5) the donation was not made through Payroll Giving; (a6) it was not a payment for goods or services; (a7) Elaine received no benefit in exchange; (a8) it was not a transfer of shares; (a9) it was a direct bank transfer, explicitly distinct from CAF voucher or charity card payments. Therefore Gift Aid can be claimed on this donation. Note: this determination applies specifically to FP-0316-EL; other donations from other donors would require separate assessment.",
+  "scope_issues": [
+    "The determination applies only to donation FP-0316-EL (Elaine Carter, 16 March 2026). The charity also receives monthly direct-debit donations and other one-off donations from other donors; each would need to be assessed individually against the same conditions, particularly the tax-paid threshold (a3) and Gift Aid declaration (a4) requirements."
+  ],
+  "ir_discrepancies": [],
+  "conditional_branches": []
+}

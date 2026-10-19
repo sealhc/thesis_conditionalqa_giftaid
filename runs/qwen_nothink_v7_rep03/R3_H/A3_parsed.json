@@ -1,0 +1,62 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation states that 'the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year of the donation' as the amount of Gift Aid being claimed, but the evidence shows no record of Devon's tax for the 2025–26 tax year. The P60 refers to a year ending 5 April 2024, which is not the relevant tax year. This omission of a key tax record leads to an unsupported assertion in the intermediate representation.",
+      "policy_ids": [
+        "E04",
+        "E07"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a3"
+      ],
+      "description": "The intermediate representation asserts that 'the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid', but the evidence only shows a partial scan of a form with an older email address not linked to Devon Gray. The declaration's coverage and duration are not visible, and no verifiable declaration exists. This is a misread of the evidence, making the proposition unsupported.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a1"
+      ],
+      "description": "The intermediate representation includes 'the donor is an individual who made a donation to a recognised charity or CASC' as a sufficient condition for eligibility, but this is only a necessary condition. The policy requires additional conditions (tax payment and declaration) to be met. The intermediate representation fails to recognize that the existence of a recognised charity is not sufficient alone.",
+      "policy_ids": [
+        "E01",
+        "E02"
+      ],
+      "type": "RELATION"
+    }
+  ],
+  "justification": "The customer scenario establishes that the donation is from an individual to a recognised charity, and the nature of the donation does not trigger any of the prohibited categories (e.g., not Payroll Giving, not for goods/services, not involving shares or vouchers). However, two critical conditions from the policy—(1) the donor must have paid at least as much in tax as the claimed Gift Aid in the relevant tax year (2025–26), and (2) a valid Gift Aid declaration from the donor—are not established. The P60 refers to a prior tax year, and no personal tax records for 2025–26 exist. The donor database contains only a partial, unlinked form with no verifiable declaration. Without these two conditions, eligibility cannot be confirmed.",
+  "missing_facts": [
+    "Devon Gray's personal Income Tax or Capital Gains Tax payment for the tax year 2025–26",
+    "A verifiable Gift Aid declaration from Devon Gray for the donation made on 1 March 2026"
+  ],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a2",
+    "a3"
+  ]
+}

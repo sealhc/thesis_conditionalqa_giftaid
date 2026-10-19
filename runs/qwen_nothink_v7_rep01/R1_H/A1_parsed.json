@@ -1,0 +1,89 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "donor",
+      "id": "a1",
+      "proposition": "the donor is an individual",
+      "source_ids": [
+        "E06"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a2",
+      "proposition": "the donation is made to a charity or CASC",
+      "source_ids": [
+        "E01",
+        "E02"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a3",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": [
+        "E08"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a4",
+      "proposition": "the donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E08"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a5",
+      "proposition": "the donor does not receive a benefit over a certain limit",
+      "source_ids": [
+        "E08"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a6",
+      "proposition": "the donation is not a payment of shares or other securities",
+      "source_ids": [
+        "E08"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a7",
+      "proposition": "the donation is not from a charity card or voucher such as CAF vouchers",
+      "source_ids": [
+        "E08"
+      ]
+    },
+    {
+      "entity_scope": "donor",
+      "id": "a8",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in that tax year as the amount claimed in Gift Aid",
+      "source_ids": [
+        "E04"
+      ]
+    },
+    {
+      "entity_scope": "donor",
+      "id": "a9",
+      "proposition": "the donor has made a Gift Aid declaration that gives permission to claim Gift Aid",
+      "source_ids": [
+        "E05"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The policy does not specify whether donations from individuals are eligible only if the donor is a UK resident or whether tax year boundaries apply to the tax year in which the donation is received, though the tax year is referenced in the policy.",
+    "The policy does not specify whether a donation from a donor who has made other Gift Aid donations in the same year affects eligibility for this specific donation, though the tax summary and declared donations are referenced."
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals to charities or CASCs, but does not specify whether Gift Aid can be claimed on donations made in a single transaction or on a combination of donations from the same donor, nor whether a batch of donations from different sources must be treated separately."
+  ]
+}

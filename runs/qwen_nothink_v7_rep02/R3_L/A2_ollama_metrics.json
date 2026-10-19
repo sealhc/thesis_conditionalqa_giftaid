@@ -1,0 +1,13 @@
+{
+  "done": true,
+  "done_reason": "stop",
+  "prompt_eval_count": 1506,
+  "eval_count": 714,
+  "num_ctx_configured": 32768,
+  "num_predict_configured": 8192,
+  "thinking_output_characters": 0,
+  "thinking_field_present": false,
+  "prompt_plus_generated_tokens_observed": 2220,
+  "context_pressure_95pct_heuristic": false,
+  "context_note": "Context pressure is only a heuristic: tokens counted by Ollama do not prove original input was or was not truncated."
+}

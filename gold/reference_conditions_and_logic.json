@@ -1,0 +1,174 @@
+{
+  "status": "researcher-drafted, requires independent domain review before any claim of legal validity",
+  "source_policy": "data/policy_dev38_13.json",
+  "scope": "A particular ordinary Gift Aid donation within the cited 2022 ConditionalQA dev-38 excerpts; no GASDS or broader HMRC exceptions, no claim of comprehensive current law",
+  "native_gold": {
+    "answers": [
+      {
+        "answer": "yes",
+        "conditions": [
+          "<p>You must be recognised as a charity or CASC for tax purposes.</p>",
+          "<li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>",
+          "<li>make a Gift Aid declaration that gives you permission to claim it</li>"
+        ]
+      },
+      {
+        "answer": "no",
+        "conditions": [
+          "<li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>",
+          "<li>where the donor gets a ‘benefit’ over a certain limit</li>",
+          "<li>made through Payroll Giving</li>",
+          "<li>of shares</li>",
+          "<li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>"
+        ]
+      }
+    ]
+  },
+  "native_gold_interpretation": "Native labels are answer branches with conditions, NOT a complete executable law/decision tree.",
+  "atoms": [
+    {
+      "id": "G_C1",
+      "proposition": "The charity/CASC is recognised for tax purposes",
+      "kind": "required",
+      "entity": "charity",
+      "source_ids": [
+        "E02"
+      ],
+      "origin": "native_yes_condition"
+    },
+    {
+      "id": "G_C2",
+      "proposition": "The individual donor has paid at least as much qualifying Income Tax or Capital Gains Tax in the relevant tax year as the Gift Aid to be claimed",
+      "kind": "required",
+      "entity": "donor-year",
+      "source_ids": [
+        "E04",
+        "E07"
+      ],
+      "origin": "native_yes_condition"
+    },
+    {
+      "id": "G_C3",
+      "proposition": "The donor has made a Gift Aid declaration permitting the claim",
+      "kind": "required",
+      "entity": "donor-gift",
+      "source_ids": [
+        "E05"
+      ],
+      "origin": "native_yes_condition"
+    },
+    {
+      "id": "G_X1",
+      "proposition": "The payment is for goods/services or arose because the charity/CASC bought goods/services",
+      "kind": "exclusion",
+      "entity": "gift",
+      "source_ids": [
+        "E08",
+        "E10"
+      ],
+      "origin": "native_no_condition"
+    },
+    {
+      "id": "G_X2",
+      "proposition": "The donor receives a benefit over the applicable limit",
+      "kind": "exclusion",
+      "entity": "gift",
+      "source_ids": [
+        "E08",
+        "E11"
+      ],
+      "origin": "native_no_condition"
+    },
+    {
+      "id": "G_X3",
+      "proposition": "The gift is made via Payroll Giving",
+      "kind": "exclusion",
+      "entity": "gift",
+      "source_ids": [
+        "E08",
+        "E09"
+      ],
+      "origin": "native_no_condition"
+    },
+    {
+      "id": "G_X4",
+      "proposition": "The gift consists of shares",
+      "kind": "exclusion",
+      "entity": "gift",
+      "source_ids": [
+        "E08",
+        "E12"
+      ],
+      "origin": "native_no_condition"
+    },
+    {
+      "id": "G_X5",
+      "proposition": "The gift comes from charity cards or vouchers",
+      "kind": "exclusion",
+      "entity": "gift",
+      "source_ids": [
+        "E08",
+        "E13"
+      ],
+      "origin": "native_no_condition"
+    }
+  ],
+  "reference_logic": {
+    "op": "ALL",
+    "args": [
+      {
+        "ref": "G_C1"
+      },
+      {
+        "ref": "G_C2"
+      },
+      {
+        "ref": "G_C3"
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "G_X1"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "G_X2"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "G_X3"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "G_X4"
+        }
+      },
+      {
+        "op": "NOT",
+        "arg": {
+          "ref": "G_X5"
+        }
+      }
+    ]
+  },
+  "semantics": "TRUE only if all positive requirements are TRUE and all exclusions FALSE. FALSE if any requirement FALSE or any exclusion TRUE, irrespective of other UNKNOWNs. Otherwise UNKNOWN. This is for reference scoring only, NEVER run as the tested Pipeline A final decision.",
+  "source_coverage_note": "13 excerpts do not exhaust the full legal rules. Model-added, text-supported predicates can be legitimate; do not automatically penalize them for being absent from the native 3+5 annotation. Adjudicate additions for relevance and scope.",
+  "reference_logic_provenance": "researcher-authored scoped Boolean interpretation; not present as executable logic in ConditionalQA",
+  "reference_scoring_atoms": [
+    "G_C1",
+    "G_C2",
+    "G_C3",
+    "G_X1",
+    "G_X2",
+    "G_X3",
+    "G_X4",
+    "G_X5"
+  ],
+  "notes_on_additional_model_atoms": "Policy-supported additional atoms may be present in A1, but are not silently added to 3+5 scored Gold; flag them for manual independent review."
+}

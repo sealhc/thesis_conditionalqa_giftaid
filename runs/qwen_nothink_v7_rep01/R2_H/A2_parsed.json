@@ -1,0 +1,55 @@
+{
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether one-off donations or recurring donations are treated differently; this distinction is not addressed in the passages."
+  ],
+  "statuses": [
+    {
+      "evidence_quote": "I run a small, independent charity which attempts to help people struggling with their vet costs. We have the charity's HMRC recognition letter.",
+      "id": "a1",
+      "justification": "The customer runs a charity recognised by HMRC, and the donation is from an individual, satisfying the requirement of being a recognised charity or CASC.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a2",
+      "justification": "There is no evidence about Robyn Ellis's personal tax position or how much she paid in Income Tax or Capital Gains Tax in the relevant tax year. The scenario does not establish that she paid at least as much as the claimed Gift Aid amount.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a3",
+      "justification": "There is no evidence that Robyn made a Gift Aid declaration or that she gave permission for Gift Aid to be claimed. The scenario does not confirm this step.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "The payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals. She has also volunteered at our adoption days.",
+      "id": "a4",
+      "justification": "The £260 is labelled a donation and not linked to Payroll Giving, so it does not meet the condition for exclusion under E09.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "In the January events correspondence, Robyn...asked whether our supporter newsletter could carry a booking link...and whether the homepage could feature the salon for six weeks. The coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her. The coordinator's booking sheet shows the placements as 'awaiting settlement' until 4 February, when the £260 arrived; the same sheet then changed to 'confirmed'. The March newsletter archive and the dated website capture show the link in the agreed locations. A later volunteer note says 'we didn't raise an invoice, so I called it a donation'.",
+      "id": "a5",
+      "justification": "The £260 was paid for the placement of a business in the newsletter and website, which is a service arrangement. The donor is not making a payment for goods or services; rather, the charity is providing a service (advertising space). However, the payment is for the use of space, which constitutes a payment for a service, and thus may fall under E10. The scenario does not clearly establish whether this is a donation or a service payment. The absence of an invoice and the description of it as a donation are not sufficient to override the policy definition of a payment for goods or services.",
+      "status": "CONFLICTING"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a6",
+      "justification": "There is no evidence about whether Robyn receives a benefit over a certain limit. The scenario does not describe any such benefit or indicate whether the donation involves a benefit that exceeds a threshold.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a7",
+      "justification": "The donation is not described as being of shares. The scenario does not mention any share transfer or ownership interest.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a8",
+      "justification": "The donation is not from a charity card or voucher. The scenario does not mention any such instrument.",
+      "status": "TRUE"
+    }
+  ]
+}

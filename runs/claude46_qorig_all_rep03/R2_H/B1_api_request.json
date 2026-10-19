@@ -1,0 +1,82 @@
+{
+  "model": "claude-sonnet-4-6",
+  "max_tokens": 8192,
+  "messages": [
+    {
+      "role": "user",
+      "content": "ROLE\nYou answer the customer's decision question using only the supplied policy passages, decision question, and customer scenario. Do not browse or use outside legal knowledge.\n\nTASK\nAnswer the customer's question directly. You may consider all material requirements, prohibitions, exceptions and relevant evidence, and explain them. You are NOT required to construct a separate machine-readable or persistent intermediate rule representation.\n\nDECISION REQUIREMENTS\n- Return YES when the supplied policy and customer evidence establish a positive decision.\n- Return NO when the supplied policy and customer evidence establish a negative decision.\n- Otherwise, return NEED_MORE_INFORMATION and identify the facts needed to resolve the decision.\n- Treat unmentioned facts as unknown, not false. Do not require every fact to be known when the available evidence already determines the outcome.\n- Pay attention to which person, payment, date or other unit the question covers. If multiple payments may have different eligibility, do not collapse them into an unsupported global conclusion.\n- Do not presume a specific final answer. Do not make up policy rules or user facts. You may give a concise explanation and cite the supplied passage IDs.\n- If unresolved, briefly state possible conditional YES/NO answers and what facts make them applicable. This is a conditional explanation, not a persistent rule graph. If definitely decided, use an empty conditional_branches list.\n- Do not conduct a follow-up conversation.\nReturn one valid JSON object only.\n\nOUTPUT SCHEMA\n{\n \"decision\":\"YES|NO|NEED_MORE_INFORMATION\",\n \"supporting_policy_ids\":[\"E01\"],\n \"missing_facts\":[\"specific unresolved fact, only if relevant\"],\n \"justification\":\"brief evidence-grounded explanation\",\n \"scope_issues\":[\"if applicable\"],\n \"conditional_branches\":[{\"possible_answer\":\"YES|NO\",\"conditions_in_words\":\"applicability condition, only if outcome remains unresolved\"}]\n}\n\n\n=== POLICY_PASSAGES ===\n[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>\n[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>\n[E03] <p>The donor must:</p>\n[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>\n[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>\n[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>\n[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>\n[E08] <p>You cannot claim on donations:</p>\n[E09] <li>made through Payroll Giving</li>\n[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>\n[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>\n[E12] <li>of shares</li>\n[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>\n\n=== DECISION_QUESTION ===\nAm I eligible for Gift Aid?\n\n=== CUSTOMER_SCENARIO ===\nI run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nWe are reviewing the £260 that reached our charity's bank account on 4 February 2026 from Robyn Ellis. The payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals. She has also volunteered at our adoption days. Our treasurer found two different folders under her name, so I have copied the relevant history below.\n\nIn the January events correspondence, Robyn, who runs a local grooming salon, asked whether our supporter newsletter could carry a booking link and whether the homepage could feature the salon for six weeks. The coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her. The coordinator's booking sheet shows the placements as 'awaiting settlement' until 4 February, when the £260 arrived; the same sheet then changed to 'confirmed'. The March newsletter archive and the dated website capture show the link in the agreed locations. A later volunteer note says 'we didn't raise an invoice, so I called it a donation'. A separate £20 cash gift from Robyn at the December collection event has its own receipt and was not part of the newsletter arrangement.\n\nA draft plan to cancel the March newsletter appears in the folder, but it is marked 'not approved'; the final distribution log and archived newsletter show that the edition went out. We have the charity's HMRC recognition letter. Robyn's personal tax position and whether she completed a Gift Aid form for the £260 have not been checked. The receipt under review in this file is the February £260 entry, not her separate £20 collection gift.\n"
+    }
+  ],
+  "temperature": 0.6,
+  "output_config": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "decision": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "NEED_MORE_INFORMATION"
+            ]
+          },
+          "supporting_policy_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_facts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "justification": {
+            "type": "string"
+          },
+          "scope_issues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "conditional_branches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "possible_answer": {
+                  "type": "string",
+                  "enum": [
+                    "YES",
+                    "NO"
+                  ]
+                },
+                "conditions_in_words": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "possible_answer",
+                "conditions_in_words"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "decision",
+          "supporting_policy_ids",
+          "missing_facts",
+          "justification",
+          "scope_issues",
+          "conditional_branches"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

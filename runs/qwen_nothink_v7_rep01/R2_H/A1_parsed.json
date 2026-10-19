@@ -1,0 +1,83 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "donation from an individual",
+      "id": "a1",
+      "proposition": "the donation is made by an individual to a recognised charity or CASC",
+      "source_ids": [
+        "E01",
+        "E02"
+      ]
+    },
+    {
+      "entity_scope": "donation from an individual",
+      "id": "a2",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid being claimed",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "entity_scope": "donation from an individual",
+      "id": "a3",
+      "proposition": "the donor has made a Gift Aid declaration that gives permission to claim Gift Aid",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a4",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a5",
+      "proposition": "the donation is not a payment for goods or services or made because the charity or CASC bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a6",
+      "proposition": "the donation is not where the donor receives a 'benefit' over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a7",
+      "proposition": "the donation is not of shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a8",
+      "proposition": "the donation is not from a charity card or of vouchers, for example Charities Aid Foundation (CAF) vouchers",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The tax position of the donor and whether a Gift Aid declaration was made are not confirmed and must be verified.",
+    "The nature of the £260 donation (e.g., whether it is a payment for goods or services or a benefit) is not definitively established in the scenario and must be assessed based on context.",
+    "The policy does not specify how to treat donations where a donor receives a benefit, or whether the benefit threshold applies to non-monetary support."
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether one-off donations or recurring donations are treated differently; this distinction is not addressed in the passages."
+  ]
+}

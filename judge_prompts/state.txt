@@ -1,0 +1,11 @@
+TASK: A2 status check. For each reference condition listed, a model assigned a status (TRUE, FALSE, UNKNOWN or CONFLICTING) with an evidence quote and justification, to the model atom(s) that express that condition. The reference status and the reference evidence are given, together with the customer scenario.
+For each item answer:
+- status_correct: true only if the model status means the same as the reference status AND the model's reasoning rests on what the scenario actually says (not on an invented or misread fact). UNKNOWN means the scenario does not settle the condition; silence is not FALSE.
+- quote_supports_status: only if the model gave a non-empty quote: true if that quote, read in the scenario, actually supports the model's status; false otherwise. Use null when the model gave no quote.
+
+reason must be one non-empty sentence. uncertain_cases lists each item you are unsure about as "ID: what is unclear" (empty list if none); confidence is HIGH only if no judgement is borderline.
+
+OUTPUT SCHEMA
+{"items":[{"gold_condition_id":"G_C1","status_correct":true,"quote_supports_status":true,"reason":"one sentence"}],
+ "uncertain_cases":[],"confidence":"HIGH"}
+Include every item given, once.

@@ -1,0 +1,54 @@
+{
+  "pair_design": [
+    {
+      "pair": "R1",
+      "gold": "YES",
+      "same_reference_statuses": true,
+      "low_words": 114,
+      "high_words": 272,
+      "high_complexity_features": [
+        "separate settlement batch and bank reference",
+        "multiple donors/transaction types",
+        "cross-document tax and declaration matching"
+      ]
+    },
+    {
+      "pair": "R2",
+      "gold": "NO",
+      "same_reference_statuses": true,
+      "low_words": 84,
+      "high_words": 271,
+      "high_complexity_features": [
+        "ledger label versus commercial agreement",
+        "chronological quotation-payment-fulfilment chain",
+        "cancelled plan distractor"
+      ]
+    },
+    {
+      "pair": "R3",
+      "gold": "NEED_MORE_INFORMATION",
+      "same_reference_statuses": true,
+      "low_words": 93,
+      "high_words": 297,
+      "high_complexity_features": [
+        "outdated donor tax document",
+        "incomplete historical declaration",
+        "multiple document scopes"
+      ]
+    }
+  ],
+  "limitations": [
+    "Only one underlying policy case; paired scenarios are not independent samples.",
+    "LOW and HIGH differ in length as well as cross-record complexity: complexity is not causally isolated.",
+    "R0 official conditional-answer Gold is distinct and excluded from synthetic decision accuracy.",
+    "Gold for R1-R3 is researcher scoped; independent domain verification has not been completed.",
+    "No guarantee stronger model will differ across pipelines; 3 repeats measure within-item variation only.",
+    "A (three calls) versus B (one call) confounds IR with inference budget; interpret as full-workflow comparison.",
+    "Model website Claude repetitions do not expose reproducible random seed; record actual product/model/settings.",
+    "Thinking is OFF in the main matrix for both models; a thinking-ON arm is a separate control and must be reported separately.",
+    "Strong model is to be called through the API with fixed model ID; temperature/seed controllability under that API must be confirmed in a smoke test.",
+    "R0 (official conditional answers) is reported separately from R1-R3 decision-label accuracy and its semantic review is manual.",
+    "Stage-wise semantic scores for all runs come from an LLM judge that is valid only after calibration against human labels on a stratified sample (judge_review.py agreement, pre-registered threshold); human-confirmed and judge-labelled numbers are reported apart; human-human agreement has not been measured.",
+    "A1 judge fields (coverage, atom_assessment, logic/scope assessment, confidence) come from the user's standalone A1 judge design merged into the stage-wise framework; the judge has never been called live and no human calibration labels exist yet, so every judge-derived number is UNCALIBRATED. A1 for R0 against the official native condition text is still manual."
+  ]
+}

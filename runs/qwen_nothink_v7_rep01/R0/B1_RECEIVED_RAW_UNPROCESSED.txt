@@ -1,0 +1,25 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The policy establishes eligibility for Gift Aid on individual donations, but only if the donor has paid sufficient tax and makes a Gift Aid declaration. The policy also excludes donations via payroll giving, for goods/services, and for 'benefits' over certain limits, or where shares or vouchers are involved. The customer scenario mentions monthly direct debit and one-off donations, which are not excluded under the policy. However, it does not specify whether the donor has paid sufficient tax or made a Gift Aid declaration. Additionally, it does not confirm if the charity is recognised as a charity for tax purposes. Without confirmation of these key facts, eligibility cannot be determined. Policy passages E02, E04, E05, E06, E07, E09–E13 are relevant but do not resolve the missing facts.",
+  "missing_facts": [
+    "Whether the donor has paid at least as much in Income Tax or Capital Gains Tax as the amount of Gift Aid claimed",
+    "Whether the donor has made a Gift Aid declaration",
+    "Whether the charity is recognised as a charity for tax purposes"
+  ],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "model": "qwen3:4b-instruct",
+  "messages": [
+    {
+      "role": "user",
+      "content": "ROLE\nYou answer the customer's decision question using only the supplied policy passages, decision question, and customer scenario. Do not browse or use outside legal knowledge.\n\nTASK\nAnswer the customer's question directly. You may consider all material requirements, prohibitions, exceptions and relevant evidence, and explain them. You are NOT required to construct a separate machine-readable or persistent intermediate rule representation.\n\nDECISION REQUIREMENTS\n- Return YES when the supplied policy and customer evidence establish a positive decision.\n- Return NO when the supplied policy and customer evidence establish a negative decision.\n- Otherwise, return NEED_MORE_INFORMATION and identify the facts needed to resolve the decision.\n- Treat unmentioned facts as unknown, not false. Do not require every fact to be known when the available evidence already determines the outcome.\n- Pay attention to which person, payment, date or other unit the question covers. If multiple payments may have different eligibility, do not collapse them into an unsupported global conclusion.\n- Do not presume a specific final answer. Do not make up policy rules or user facts. You may give a concise explanation and cite the supplied passage IDs.\n- If unresolved, briefly state possible conditional YES/NO answers and what facts make them applicable. This is a conditional explanation, not a persistent rule graph. If definitely decided, use an empty conditional_branches list.\n- Do not conduct a follow-up conversation.\nReturn one valid JSON object only.\n\nOUTPUT SCHEMA\n{\n \"decision\":\"YES|NO|NEED_MORE_INFORMATION\",\n \"supporting_policy_ids\":[\"E01\"],\n \"missing_facts\":[\"specific unresolved fact, only if relevant\"],\n \"justification\":\"brief evidence-grounded explanation\",\n \"scope_issues\":[\"if applicable\"],\n \"conditional_branches\":[{\"possible_answer\":\"YES|NO\",\"conditions_in_words\":\"applicability condition, only if outcome remains unresolved\"}]\n}\n\n\n=== POLICY_PASSAGES ===\n[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>\n[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>\n[E03] <p>The donor must:</p>\n[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>\n[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>\n[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>\n[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>\n[E08] <p>You cannot claim on donations:</p>\n[E09] <li>made through Payroll Giving</li>\n[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>\n[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>\n[E12] <li>of shares</li>\n[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>\n\n=== DECISION_QUESTION ===\nAm I eligible for Gift Aid?\n\n=== CUSTOMER_SCENARIO ===\nI run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nOur finance volunteer is working through March receipts for our small veterinary hardship charity. The payment under review is a £95 credit dated 1 March 2026. The bank export identifies Devon Gray as the remitter from a personal account. The charity's HMRC recognition letter and a recent registration-status response confirm its recognition was still in force on 1 March 2026. Devon responded to a veterinary emergency appeal, and the booking and sales registers show no related purchase or reservation; the only thing sent to Devon was the automated thank-you email, and no discount or other benefit was offered. The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch.\n\nThere is a folder labelled 'Devon tax and Gift Aid'. A P60 inside shows a substantial tax payment, but its heading says 'year ending 5 April 2024'. A separate summary from our accountant covers the charity's own 2025–26 accounts, not Devon's personal tax. We do not have a record of Devon's Income Tax or Capital Gains Tax for the year covering that payment.\n\nThe donor database contains the first page of a scanned form marked 'D. Gray' from an earlier fundraising event. The only reference visible on that page belongs to an earlier gift, and the page setting out the declaration's coverage and duration is not in the scan. The older email address on the form has not been linked to Devon's current donor record. An index suggests a longer donor declaration may once have been filed, yet the remaining pages have not been located. The team wants to include the March £95 entry in its ordinary Gift Aid reconciliation if the supporting records permit it.\n"
+    }
+  ],
+  "stream": false,
+  "options": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 4101,
+    "num_ctx": 32768,
+    "num_predict": 8192
+  },
+  "think": false,
+  "format": {
+    "type": "object",
+    "properties": {
+      "decision": {
+        "type": "string",
+        "enum": [
+          "YES",
+          "NO",
+          "NEED_MORE_INFORMATION"
+        ]
+      },
+      "supporting_policy_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "missing_facts": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "justification": {
+        "type": "string"
+      },
+      "scope_issues": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "conditional_branches": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "possible_answer": {
+              "type": "string",
+              "enum": [
+                "YES",
+                "NO"
+              ]
+            },
+            "conditions_in_words": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "possible_answer",
+            "conditions_in_words"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "decision",
+      "supporting_policy_ids",
+      "missing_facts",
+      "justification",
+      "scope_issues",
+      "conditional_branches"
+    ],
+    "additionalProperties": false
+  }
+}

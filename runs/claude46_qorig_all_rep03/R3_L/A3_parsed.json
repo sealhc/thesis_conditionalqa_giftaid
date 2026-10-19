@@ -1,0 +1,48 @@
+{
+  "decision": "NEED_MORE_INFORMATION",
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "decisive_condition_ids": [
+    "a1",
+    "a2",
+    "a5",
+    "a6",
+    "a7",
+    "a8",
+    "a9"
+  ],
+  "unresolved_condition_ids": [
+    "a3",
+    "a4"
+  ],
+  "missing_facts": [
+    "Evidence that Devon Gray paid at least as much in Income Tax or Capital Gains Tax in the 2025-26 tax year as the charity wishes to claim in Gift Aid on the £95 donation (the only tax document on file covers 2023-24, which is not the relevant year).",
+    "A complete and valid Gift Aid declaration from Devon Gray that clearly covers this donation — the scanned declaration on file is missing the page stating its coverage and duration, so it cannot be confirmed that it applies to the 1 March 2026 donation."
+  ],
+  "justification": "All conditions that can be assessed from the available evidence are satisfied: the charity holds current HMRC recognition (a1 TRUE); Devon Gray donated as an individual from a personal bank account (a2 TRUE); and the donation is free of all the excluded categories — Payroll Giving, goods/services, donor benefits, shares, and charity cards/vouchers (a5–a9 TRUE). However, two mandatory conditions remain unresolved. First, a3: the policy (E04/E07) requires the donor to have paid at least as much Income Tax or Capital Gains Tax in the tax year of the donation (2025-26) as the charity wishes to claim; the only tax document available for Devon Gray covers the year ending 5 April 2024, so current-year tax status is unknown. Second, a4: the policy (E05) requires a Gift Aid declaration giving the charity permission to claim; the scanned declaration is incomplete — the page confirming its coverage and duration is missing — so it cannot be established that a valid declaration covers this donation. Because all nine conditions must be satisfied and two are unresolved, the decision cannot yet be YES or NO.",
+  "scope_issues": [
+    "This assessment covers only the specific donation of £95 by Devon Gray on 1 March 2026. The customer also has multiple donors paying by direct debit and other one-off donors; each of those donations would require a separate eligibility assessment with its own donor-specific evidence."
+  ],
+  "ir_discrepancies": [],
+  "conditional_branches": [
+    {
+      "possible_answer": "YES",
+      "conditions_in_words": "Gift Aid can be claimed on this donation if (i) Devon Gray can confirm they paid sufficient Income Tax or Capital Gains Tax in the 2025-26 tax year to cover the Gift Aid amount (25p per £1, so at least £23.75 on the £95 donation), AND (ii) a complete, valid Gift Aid declaration is obtained from Devon Gray that unambiguously covers this donation."
+    },
+    {
+      "possible_answer": "NO",
+      "conditions_in_words": "Gift Aid cannot be claimed on this donation if Devon Gray did not pay sufficient Income Tax or Capital Gains Tax in 2025-26, OR if no valid Gift Aid declaration covering this donation can be obtained or confirmed."
+    }
+  ]
+}

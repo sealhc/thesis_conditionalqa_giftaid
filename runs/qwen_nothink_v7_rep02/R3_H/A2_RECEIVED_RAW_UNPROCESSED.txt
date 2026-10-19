@@ -1,0 +1,53 @@
+{
+  "scope_issues": [],
+  "statuses": [
+    {
+      "evidence_quote": "The charity's HMRC recognition letter and a recent registration-status response confirm its recognition was still in force on 1 March 2026.",
+      "id": "a1",
+      "justification": "The charity is recognised as a charity for tax purposes as confirmed by HMRC documents on the relevant date.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a2",
+      "justification": "No evidence is provided about Devon Gray's Income Tax or Capital Gains Tax payment for the tax year covering the donation date (2025–26); the P60 is for a different year and does not cover the relevant period.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a3",
+      "justification": "The donor declaration form is only partially accessible, with an older, incomplete scan and no current or verified declaration found; the form's coverage and duration are not present.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch.",
+      "id": "a4",
+      "justification": "The payment is a personal bank transfer, not through Payroll Giving, as confirmed by the remitter page description.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "The booking and sales registers show no related purchase or reservation; the only thing sent to Devon was the automated thank-you email, and no discount or other benefit was offered.",
+      "id": "a5",
+      "justification": "There is no record of a purchase or service transaction related to the donation, and no benefit was provided to the donor.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a6",
+      "justification": "No evidence is provided about any benefit being offered to the donor over a certain limit; the scenario states no discount or benefit was offered.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a7",
+      "justification": "The donation is described as a direct debit from a personal account for a veterinary emergency appeal, not involving shares.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a8",
+      "justification": "The donation is not from a charity card or voucher; the remitter is a personal bank account, and no reference to a charity card or voucher is made.",
+      "status": "TRUE"
+    }
+  ]
+}

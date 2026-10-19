@@ -1,0 +1,30 @@
+{
+  "conditional_branches": [
+    {
+      "conditions_in_words": "Devon Gray has paid at least as much in Income Tax or Capital Gains Tax in the tax year ending 5 April 2024 as the amount of Gift Aid being claimed (i.e., 25p per £1 donated), and has made a valid Gift Aid declaration covering the donation of £95 on 1 March 2026.",
+      "possible_answer": "YES"
+    },
+    {
+      "conditions_in_words": "Devon Gray has not paid sufficient tax in the tax year ending 5 April 2024, or no tax record is available for that year, or the Gift Aid declaration is missing or unverified, or the donation is otherwise excluded by policy (e.g., via a benefit or payroll giving), then Gift Aid is not eligible.",
+      "possible_answer": "NO"
+    }
+  ],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The policy requires the donor to have paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the amount of Gift Aid claimed (E04/E07), and to have made a valid Gift Aid declaration (E05). The customer scenario confirms the donation is from a personal account, not payroll giving, and no benefit was offered (E09/E11/E12/E13), so it does not fall under excluded categories. However, the P60 shows tax for the year ending 5 April 2024, which is not the same tax year as the donation (1 March 2026), and there is no evidence that Devon paid sufficient tax in that year or that a valid declaration exists. The scanned form lacks the declaration page, and no record of Devon's tax or declaration is confirmed. Thus, eligibility cannot be determined without confirming Devon's tax liability and declaration for the relevant tax year (2024–25).",
+  "missing_facts": [
+    "Whether Devon Gray paid at least as much in Income Tax or Capital Gains Tax in the tax year ending 5 April 2024 as the amount of Gift Aid claimed (25p per £1 of donation)",
+    "Whether Devon Gray made a valid Gift Aid declaration that permits the claim for the £95 donation on 1 March 2026"
+  ],
+  "scope_issues": [
+    "The donation date (1 March 2026) falls in a tax year that may not be the same as the P60's year ending 5 April 2024, and the tax record is not confirmed to cover the relevant tax year."
+  ],
+  "supporting_policy_ids": [
+    "E04",
+    "E05",
+    "E07",
+    "E09",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

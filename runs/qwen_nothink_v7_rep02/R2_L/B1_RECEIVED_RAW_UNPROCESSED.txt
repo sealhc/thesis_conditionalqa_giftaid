@@ -1,0 +1,28 @@
+{
+  "conditional_branches": [
+    {
+      "conditions_in_words": "Robyn Ellis has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid claimed, and has made a Gift Aid declaration for the £260 donation.",
+      "possible_answer": "YES"
+    },
+    {
+      "conditions_in_words": "Robyn Ellis has not paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid claimed, or has not made a Gift Aid declaration for the £260 donation.",
+      "possible_answer": "NO"
+    }
+  ],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The £260 payment was for an advertisement service, not a donation. According to E10, donations for goods or services are not eligible for Gift Aid. The customer scenario describes this as a payment for a service (advertising), which falls under E10. Therefore, the £260 payment is not eligible for Gift Aid. However, the tax position of the donor (Robyn Ellis) and whether she made a Gift Aid declaration are not confirmed, and the policy requires a declaration (E05) and tax compliance (E04/E07). Since the nature of the payment is a service fee, E10 applies. Thus, Gift Aid is not eligible on this transaction. The decision on eligibility for the £260 payment is negative based on E10. However, the customer question is general: 'Am I eligible for Gift Aid?' which may refer to the charity as a whole or to specific donations. Given the specific donation in question is not eligible, and no other donations are described, the answer depends on whether the customer is asking about general eligibility or this specific transaction. Since the scenario does not confirm if any donations meet the criteria, and the £260 transaction is ineligible, but no other donations are described, the decision is ambiguous. Therefore, we require confirmation on whether the customer is asking about the £260 transaction or general eligibility. The policy does not allow Gift Aid on payments for goods or services (E10), so that transaction is ineligible. But without knowing if other donations are valid and whether the donor has met tax requirements and made declarations, we cannot confirm overall eligibility. Thus, we require more information on whether other donations are valid and whether the donor has met all requirements for Gift Aid.",
+  "missing_facts": [
+    "Whether any other donations are valid and meet the criteria for Gift Aid (e.g., are not for goods or services, not via payroll giving, not for a benefit over a limit, not shares or vouchers)",
+    "Whether Robyn Ellis has made a Gift Aid declaration for the £260 donation",
+    "Whether Robyn Ellis has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid claimed"
+  ],
+  "scope_issues": [
+    "The customer question is general ('Am I eligible for Gift Aid?'), but the scenario describes only one transaction that is for a service, which is ineligible under E10. The charity is recognised (E02), so it meets the organisational requirement. However, eligibility depends on the nature of each donation. Without details on other donations, we cannot assess overall eligibility. The question may refer to the charity as a whole or to specific donations. This ambiguity requires clarification."
+  ],
+  "supporting_policy_ids": [
+    "E10",
+    "E02",
+    "E04",
+    "E05"
+  ]
+}

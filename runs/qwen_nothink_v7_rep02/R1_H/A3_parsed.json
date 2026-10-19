@@ -1,0 +1,32 @@
+{
+  "conditional_branches": [],
+  "decision": "YES",
+  "decisive_condition_ids": [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8"
+  ],
+  "ir_discrepancies": [],
+  "justification": "The customer operates a recognised charity and receives a donation from an individual, Elaine Carter, who made a direct payment via her bank app. The donation is not linked to a benefit over a limit, not for goods or services, not through payroll giving, not involving shares or securities, and not from a charity card or voucher. The donor has paid sufficient tax (£980) to cover the claimed Gift Aid (£80), and has made a valid Gift Aid declaration covering this donation. All conditions in the policy are satisfied as per the evidence. The grouping of this transaction with CAF redemptions in a different batch does not imply the donation originated from a charity card or voucher, and the timing and source confirm it is an individual donation. Therefore, Gift Aid is eligible.",
+  "missing_facts": [],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": []
+}

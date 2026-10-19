@@ -1,0 +1,40 @@
+{
+  "stage": "A3",
+  "saved_at_utc": "2026-10-18T23:25:11.327323+00:00",
+  "status": "parsed",
+  "reason": null,
+  "raw_sha256": "971cf78c287d890aa9efc0cacec6a1afb84323c0d8e3e1975163bb03a24805ee",
+  "valid_json": true,
+  "validation_error": null,
+  "retry_required": false,
+  "diagnostic_flags": [],
+  "json_envelope": {
+    "raw_sha256": "971cf78c287d890aa9efc0cacec6a1afb84323c0d8e3e1975163bb03a24805ee",
+    "parsed_text_sha256": "971cf78c287d890aa9efc0cacec6a1afb84323c0d8e3e1975163bb03a24805ee",
+    "outer_format_processed": false,
+    "envelope_operations": [],
+    "parser_policy": "v5_allowed_outer_wrappers_only",
+    "json_payload_content_modified": false
+  },
+  "api_metrics": {
+    "stop": "end_turn",
+    "returned_model": "claude-sonnet-4-6",
+    "usage": {
+      "input_tokens": 4477,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 724,
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "thinking_chars": 0,
+    "thinking_tokens": null,
+    "thinking_blocks": 0,
+    "attempts": 1
+  }
+}

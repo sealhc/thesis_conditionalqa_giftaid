@@ -1,0 +1,35 @@
+{
+  "conditional_branches": [
+    {
+      "conditions_in_words": "The donor has paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the claimed Gift Aid amount, and the donor has made a valid Gift Aid declaration.",
+      "possible_answer": "YES"
+    },
+    {
+      "conditions_in_words": "The donor has not paid sufficient tax in the relevant tax year or the declaration is incomplete or invalid.",
+      "possible_answer": "NO"
+    }
+  ],
+  "decision": "NEED_MORE_INFORMATION",
+  "justification": "The customer runs a recognised charity, so E02 is satisfied. The donation is from an individual, not through payroll giving, goods/services, shares, or charity cards/vouchers (E09-E13), so those prohibitions do not apply. However, the tax document covers the year ending 5 April 2024, not the tax year of the donation (2026), and no current-year donor tax evidence is available. Additionally, the donor's Gift Aid declaration is incomplete. According to E04 and E05, the donor must have paid sufficient tax and make a valid declaration. Without evidence of tax payment in the relevant tax year or a complete declaration, eligibility cannot be confirmed. Thus, more information is needed on the donor's tax liability for the relevant tax year and the validity of the declaration.",
+  "missing_facts": [
+    "Donor's tax payment in the tax year relevant to the donation (2026)",
+    "Completeness and validity of the donor's Gift Aid declaration"
+  ],
+  "scope_issues": [
+    "The donation is one-off and unrelated to services or goods, so it is not excluded by E10 or E11. However, tax and declaration details are missing for the relevant tax year."
+  ],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

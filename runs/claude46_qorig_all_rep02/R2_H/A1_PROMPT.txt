@@ -1,0 +1,55 @@
+ROLE
+You analyze decision rules in supplied source passages. Use only the supplied material. Do not browse, use outside legal knowledge, or infer an outcome from intuition.
+
+TASK
+Given POLICY_PASSAGES, DECISION_QUESTION and CUSTOMER_SCENARIO, build an explicit, machine-readable representation of the conditions that govern the decision. This step constructs the policy representation; do not decide the case and do not assign customer-specific truth values yet.
+
+GUIDELINES
+1. Use the question and scenario to identify the decision target and its unit (person, transaction, claim, period, etc.). If several units could require different decisions, state that scope issue rather than collapsing them.
+2. Extract each material prerequisite, prohibition, exception, or alternative from the provided passages, including ones that the customer has not mentioned. Preserve the logical relations ALL (AND), ANY (OR), and NOT. Represent each atomic proposition in positive wording so its truth can later be checked against evidence.
+3. Keep atoms atomic: do not combine independent facts in one item. Do not replace missing facts with negative findings. Do not introduce legal requirements unsupported by the supplied passages. You may record unclear or incomplete coverage under limitations.
+4. For every atom, cite the exact POLICY_PASSAGES IDs that support it. Build the Boolean expression only from the atom IDs you actually returned.
+5. Do not use terms such as 'eligible' in place of actual factual prerequisites. Return one valid JSON object, without Markdown or surrounding commentary.
+
+OUTPUT SCHEMA
+{
+  "decision_target": "short natural-language description",
+  "decision_unit": "e.g., one person, one transaction, multiple transactions, not specified",
+  "atoms": [
+    {"id":"a1", "proposition":"single checkable factual statement", "entity_scope":"who/what this statement concerns", "source_ids":["E01"]}
+  ],
+  "eligibility_expression": {"op":"ALL", "args":[{"ref":"a1"}]},
+  "scope_issues": ["nonempty only if applicable"],
+  "limitations": ["nonempty only if applicable"]
+}
+
+EXPRESSION GRAMMAR: {"ref":"atom_id"} OR {"op":"NOT","arg":<expression>} OR {"op":"ALL","args":[<expression>,...]} OR {"op":"ANY","args":[<expression>,...]}. Nested groups are allowed. The schema examples above specify syntax only, not the number or identity of conditions in this case. Preserve the meaning of the policy rather than forcing a particular number of atoms.
+
+
+=== POLICY_PASSAGES ===
+[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>
+[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>
+[E03] <p>The donor must:</p>
+[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>
+[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>
+[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>
+[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>
+[E08] <p>You cannot claim on donations:</p>
+[E09] <li>made through Payroll Giving</li>
+[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>
+[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>
+[E12] <li>of shares</li>
+[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>
+
+=== DECISION_QUESTION ===
+Am I eligible for Gift Aid?
+
+=== CUSTOMER_SCENARIO ===
+I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.
+
+Additional customer information:
+We are reviewing the £260 that reached our charity's bank account on 4 February 2026 from Robyn Ellis. The payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals. She has also volunteered at our adoption days. Our treasurer found two different folders under her name, so I have copied the relevant history below.
+
+In the January events correspondence, Robyn, who runs a local grooming salon, asked whether our supporter newsletter could carry a booking link and whether the homepage could feature the salon for six weeks. The coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her. The coordinator's booking sheet shows the placements as 'awaiting settlement' until 4 February, when the £260 arrived; the same sheet then changed to 'confirmed'. The March newsletter archive and the dated website capture show the link in the agreed locations. A later volunteer note says 'we didn't raise an invoice, so I called it a donation'. A separate £20 cash gift from Robyn at the December collection event has its own receipt and was not part of the newsletter arrangement.
+
+A draft plan to cancel the March newsletter appears in the folder, but it is marked 'not approved'; the final distribution log and archived newsletter show that the edition went out. We have the charity's HMRC recognition letter. Robyn's personal tax position and whether she completed a Gift Aid form for the £260 have not been checked. The receipt under review in this file is the February £260 entry, not her separate £20 collection gift.

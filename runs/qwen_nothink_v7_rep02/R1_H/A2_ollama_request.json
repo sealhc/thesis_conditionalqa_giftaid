@@ -1,0 +1,68 @@
+{
+  "model": "qwen3:4b-instruct",
+  "messages": [
+    {
+      "role": "user",
+      "content": "ROLE\nYou perform evidence-grounded fact matching, not a new rule-extraction task. Use only the inputs provided. Do not browse.\n\nTASK\nFor every atom in the supplied INTERMEDIATE_REPRESENTATION, decide whether the CUSTOMER_SCENARIO supports that atomic proposition as TRUE, FALSE, UNKNOWN, or CONFLICTING. This is about the customer's current evidence, not whether the policy is correct. Do not make a final eligibility decision.\n\nDEFINITIONS\nTRUE: evidence positively establishes the stated proposition.\nFALSE: evidence positively establishes the proposition does not hold.\nUNKNOWN: no sufficient evidence for either TRUE or FALSE; silence is not negation.\nCONFLICTING: the scenario expressly contains mutually inconsistent evidence relevant to the proposition. Do not manufacture conflicts.\n\nRULES\n1. Preserve every atom ID exactly; do not add, delete, or silently rewrite atoms from the intermediate representation.\n2. Explain each status briefly with an exact excerpt from the scenario where possible. For UNKNOWN use an empty evidence_quote and say what is not established.\n3. Distinguish explicit evidence, necessary entailments, and assumptions. Do not convert indirect but ambiguous wording into certainty.\n4. Apply conditions to the correct person, gift, period or other unit; do not use evidence about one donor to infer all other donors' states.\n5. Do not use outside legal knowledge. Return one valid JSON object only.\n\nOUTPUT SCHEMA\n{\n \"statuses\":[{\"id\":\"a1\",\"status\":\"TRUE|FALSE|UNKNOWN|CONFLICTING\",\"evidence_quote\":\"exact short excerpt or empty string\",\"justification\":\"one sentence\"}],\n \"scope_issues\":[\"issue if any\"]\n}\n\n\n=== POLICY_PASSAGES ===\n[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>\n[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>\n[E03] <p>The donor must:</p>\n[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>\n[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>\n[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>\n[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>\n[E08] <p>You cannot claim on donations:</p>\n[E09] <li>made through Payroll Giving</li>\n[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>\n[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>\n[E12] <li>of shares</li>\n[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>\n\n=== DECISION_QUESTION ===\nAm I eligible for Gift Aid?\n\n=== CUSTOMER_SCENARIO ===\nI run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nThe treasurer is checking a £120 Faster Payment received on 16 March 2026, reference FP-0316-EL. The bank’s remitter details name Elaine Carter and her personal current account. Elaine’s email to the fundraiser says she sent the £120 from her banking app after reading about a rescued dog’s emergency treatment. The charity’s 2023 HMRC recognition letter is on file, and the treasurer’s status check confirms the charity was still recognised on 16 March 2026.\n\nElaine signed an electronic Gift Aid declaration on 15 March, and the e-signature service holds the signed document, timestamp and audit record. The declaration says it covers this donation, and the finance assistant matched it to FP-0316-EL through her donor record. Her tax summary for the year to 5 April 2026 shows £980 of Income Tax paid. Her signed note lists £200 of other Gift Aid donations that year; the treasurer’s sheet shows £30 recoverable on this £120 and £50 on the others, £80 in total, well below her £980.\n\nThe sales, booking and event records show nothing linked to this payment, and the only thing sent to Elaine was the standard thank-you email; she was not offered admission, advertising, a product or any other benefit. It did not go through a payroll giving scheme, and no shares, securities or other assets were delivered. An older spreadsheet groups it with two CAF card and voucher redemptions (CC-0314, VC-0317), but those were paid to the charity in a combined batch on 18 March, while FP-0316-EL came directly from Elaine’s bank on 16 March. The treasurer wants to include this receipt in the ordinary Gift Aid return if the records permit.\n\n=== INTERMEDIATE_REPRESENTATION (actual A1 JSON, wrapper excluded if present) ===\n{\n  \"atoms\": [\n    {\n      \"entity_scope\": \"one transaction\",\n      \"id\": \"a1\",\n      \"proposition\": \"The donor is an individual who made a donation to a recognised charity or CASC\",\n      \"source_ids\": [\n        \"E01\",\n        \"E02\"\n      ]\n    },\n    {\n      \"entity_scope\": \"one transaction\",\n      \"id\": \"a2\",\n      \"proposition\": \"The donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid claimed\",\n      \"source_ids\": [\n        \"E04\",\n        \"E07\"\n      ]\n    },\n    {\n      \"entity_scope\": \"one transaction\",\n      \"id\": \"a3\",\n      \"proposition\": \"The donor has made a Gift Aid declaration that gives permission to claim Gift Aid on this donation\",\n      \"source_ids\": [\n        \"E05\"\n      ]\n    },\n    {\n      \"entity_scope\": \"one transaction\",\n      \"id\": \"a4\",\n      \"proposition\": \"The donation is not made through Payroll Giving\",\n      \"source_ids\": [\n        \"E09\"\n      ]\n    },\n    {\n      \"entity_scope\": \"one transaction\",\n      \"id\": \"a5\",\n      \"proposition\": \"The donation is not a payment for goods or services or made because the charity bought goods and services\",\n      \"source_ids\": [\n        \"E10\"\n      ]\n    },\n    {\n      \"entity_scope\": \"one transaction\",\n      \"id\": \"a6\",\n      \"proposition\": \"The donation does not provide the donor with a 'benefit' over a certain limit\",\n      \"source_ids\": [\n        \"E11\"\n      ]\n    },\n    {\n      \"entity_scope\": \"one transaction\",\n      \"id\": \"a7\",\n      \"proposition\": \"The donation is not of shares or other securities\",\n      \"source_ids\": [\n        \"E12\"\n      ]\n    },\n    {\n      \"entity_scope\": \"one transaction\",\n      \"id\": \"a8\",\n      \"proposition\": \"The donation is not from a charity card or voucher, such as a Charities Aid Foundation (CAF) voucher\",\n      \"source_ids\": [\n        \"E13\"\n      ]\n    }\n  ],\n  \"decision_target\": \"eligibility for Gift Aid on a donation\",\n  \"decision_unit\": \"one transaction\",\n  \"eligibility_expression\": {\n    \"ref\": \"a1\"\n  },\n  \"limitations\": [\n    \"The policy does not specify how to handle donations that are grouped with CAF card or voucher redemptions in a batch, but does prohibit such donations if they are from charity cards or vouchers. The batch timing and grouping are not sufficient to override the prohibition if the donation itself is from a card or voucher.\",\n    \"The policy does not specify whether a donation that is not linked to a benefit or service is eligible if it is made via a digital payment app, though the donation is described as a personal payment from a current account and not through payroll giving.\"\n  ],\n  \"scope_issues\": []\n}\n"
+    }
+  ],
+  "stream": false,
+  "options": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 4102,
+    "num_ctx": 32768,
+    "num_predict": 8192
+  },
+  "think": false,
+  "format": {
+    "type": "object",
+    "properties": {
+      "statuses": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "TRUE",
+                "FALSE",
+                "UNKNOWN",
+                "CONFLICTING"
+              ]
+            },
+            "evidence_quote": {
+              "type": "string"
+            },
+            "justification": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "evidence_quote",
+            "justification"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "scope_issues": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "statuses",
+      "scope_issues"
+    ],
+    "additionalProperties": false
+  }
+}

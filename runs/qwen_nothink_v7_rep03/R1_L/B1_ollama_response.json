@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T22:11:07.358108Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"conditional_branches\": [],\n  \"decision\": \"YES\",\n  \"justification\": \"The charity is recognised as a charity for tax purposes (E02), the donation is from an individual (Elaine Carter) made via direct bank transfer (not payroll giving, not for goods or services, not a share or voucher) (E09, E10, E12, E13), the donor has paid sufficient tax (Income Tax of £980 in 2025–26, which is more than the £80 claimed in total, satisfying E04/E07), and the donor has made a Gift Aid declaration (E05/E06). The donation was not in exchange for a benefit or goods/services (E11), and is not covered by any of the prohibited types (E09–E13). Therefore, Gift Aid is eligible for this donation (E01).\",\n  \"missing_facts\": [],\n  \"scope_issues\": [],\n  \"supporting_policy_ids\": [\n    \"E01\",\n    \"E02\",\n    \"E04\",\n    \"E05\",\n    \"E06\",\n    \"E07\",\n    \"E09\",\n    \"E10\",\n    \"E11\",\n    \"E12\",\n    \"E13\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7251761625,
+  "load_duration": 948791,
+  "prompt_eval_count": 923,
+  "prompt_eval_cached_count": 739,
+  "prompt_eval_duration": 414723000,
+  "eval_count": 291,
+  "eval_duration": 6704097000
+}

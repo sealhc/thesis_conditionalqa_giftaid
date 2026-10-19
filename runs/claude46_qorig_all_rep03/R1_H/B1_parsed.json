@@ -1,0 +1,21 @@
+{
+  "decision": "YES",
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "missing_facts": [],
+  "justification": "All requirements for Gift Aid on the £120 donation (FP-0316-EL) from Elaine Carter are satisfied. (1) Charity recognition [E02]: the charity holds a 2023 HMRC recognition letter and was confirmed still recognised on 16 March 2026. (2) Individual donor [E06]: Elaine made the payment personally from her own current account via her banking app. (3) Tax paid [E04/E07]: her tax summary shows £980 Income Tax paid in the year to 5 April 2026; the total Gift Aid to be reclaimed across all her donations is £80 (£30 on this gift, £50 on others), well within her £980 tax liability. (4) Gift Aid declaration [E05]: Elaine signed an electronic declaration on 15 March 2026 — the day before the donation — covering this donation, with a timestamped audit record matched to FP-0316-EL. (5) Exclusions [E08–E13]: the payment was not made through Payroll Giving [E09]; it was not a payment for goods or services and no benefit was provided to Elaine beyond a standard thank-you email [E10/E11]; no shares or securities were involved [E12]; and although an older spreadsheet groups it with CAF card/voucher redemptions (CC-0314, VC-0317), those were separate batch payments settled on 18 March — FP-0316-EL is a direct bank transfer from Elaine received on 16 March and is clearly not a charity card or voucher redemption [E13]. The treasurer may therefore include this £120 receipt in the ordinary Gift Aid return and reclaim £30 (25p per £1 donated).",
+  "scope_issues": [],
+  "conditional_branches": []
+}

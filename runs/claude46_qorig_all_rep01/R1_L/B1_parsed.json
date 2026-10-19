@@ -1,0 +1,22 @@
+{
+  "decision": "YES",
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "missing_facts": [],
+  "justification": "All requirements for Gift Aid on payment FP-0316-EL (Elaine Carter's £120 direct bank transfer on 16 March 2026) are satisfied. (1) The charity is HMRC-recognised as of 16 March 2026 [E02]. (2) Elaine is an individual donor [E06]. (3) She has a signed Gift Aid declaration covering this payment [E05]. (4) Her Income Tax paid for 2025–26 is £980, and the total Gift Aid claimed across all her donations that year is £80 (i.e. £80 × 4 = £320 in donations), well within her tax paid — the tax-paid requirement is met [E04/E07]. (5) None of the exclusions apply: the payment was not made via Payroll Giving [E09], was not for goods or services and Elaine received no benefit [E10/E11], was not a transfer of shares [E12], and was not from a CAF charity card or voucher [E13]. The charity can therefore claim 25p for every £1 donated, i.e. £30 in Gift Aid on this £120 donation [E01].",
+  "scope_issues": [
+    "This analysis covers payment FP-0316-EL only. The monthly direct-debit donors and any other one-off donors would each need to satisfy the same individual eligibility criteria (tax paid, Gift Aid declaration, no exclusions) before Gift Aid could be claimed on their donations."
+  ],
+  "conditional_branches": []
+}

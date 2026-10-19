@@ -1,0 +1,58 @@
+{
+  "policy_passages": [
+    {
+      "id": "E01",
+      "html": "<p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>"
+    },
+    {
+      "id": "E02",
+      "html": "<p>You must be recognised as a charity or CASC for tax purposes.</p>"
+    },
+    {
+      "id": "E03",
+      "html": "<p>The donor must:</p>"
+    },
+    {
+      "id": "E04",
+      "html": "<li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>"
+    },
+    {
+      "id": "E05",
+      "html": "<li>make a Gift Aid declaration that gives you permission to claim it</li>"
+    },
+    {
+      "id": "E06",
+      "html": "<p>You can claim Gift Aid on donations from individuals. The donor must:</p>"
+    },
+    {
+      "id": "E07",
+      "html": "<li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>"
+    },
+    {
+      "id": "E08",
+      "html": "<p>You cannot claim on donations:</p>"
+    },
+    {
+      "id": "E09",
+      "html": "<li>made through Payroll Giving</li>"
+    },
+    {
+      "id": "E10",
+      "html": "<li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>"
+    },
+    {
+      "id": "E11",
+      "html": "<li>where the donor gets a ‘benefit’ over a certain limit</li>"
+    },
+    {
+      "id": "E12",
+      "html": "<li>of shares</li>"
+    },
+    {
+      "id": "E13",
+      "html": "<li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>"
+    }
+  ],
+  "decision_question": "Am I eligible for Gift Aid?",
+  "customer_scenario": "I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations."
+}

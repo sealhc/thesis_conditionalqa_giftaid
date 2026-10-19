@@ -1,0 +1,48 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation incorrectly states that the donor has paid at least as much in tax as required, but the evidence shows no record of Devon's personal Income Tax or Capital Gains Tax for the tax year 2025–26. The P60 is from a different tax year (year ending 5 April 2024), and there is no personal tax record for the relevant year. This omission misrepresents the status of the donor's tax payment, which is a required condition under E04 and E07.",
+      "policy_ids": [
+        "E04",
+        "E07"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a3"
+      ],
+      "description": "The intermediate representation claims the donor has made a Gift Aid declaration, but the evidence shows only a partial scan of an older form with no visible declaration coverage or duration, and no verified link between the older form and Devon's current record. The status of the declaration is therefore not established, contradicting the intermediate representation's assertion.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "OMISSION"
+    }
+  ],
+  "justification": "The charity is recognised as a charity for tax purposes, and the donation is not via Payroll Giving, not for goods or services, not involving shares or vouchers, and does not provide a benefit over a limit. However, the donor's personal tax payment for the relevant tax year (2025–26) is not available, and there is no evidence of a valid Gift Aid declaration from Devon. Both conditions E04 and E05—donor's tax payment and a valid declaration—are unmet or unsupported by evidence. Without these, Gift Aid eligibility cannot be confirmed.",
+  "missing_facts": [
+    "Devon Gray's personal Income Tax or Capital Gains Tax payment for the tax year 2025–26",
+    "A verified Gift Aid declaration from Devon Gray covering the donation made on 1 March 2026"
+  ],
+  "scope_issues": [],
+  "supporting_policy_ids": [
+    "E02",
+    "E04",
+    "E05",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a2",
+    "a3"
+  ]
+}

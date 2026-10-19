@@ -1,0 +1,58 @@
+{
+  "policy_passages": [
+    {
+      "id": "E01",
+      "html": "<p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>"
+    },
+    {
+      "id": "E02",
+      "html": "<p>You must be recognised as a charity or CASC for tax purposes.</p>"
+    },
+    {
+      "id": "E03",
+      "html": "<p>The donor must:</p>"
+    },
+    {
+      "id": "E04",
+      "html": "<li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>"
+    },
+    {
+      "id": "E05",
+      "html": "<li>make a Gift Aid declaration that gives you permission to claim it</li>"
+    },
+    {
+      "id": "E06",
+      "html": "<p>You can claim Gift Aid on donations from individuals. The donor must:</p>"
+    },
+    {
+      "id": "E07",
+      "html": "<li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>"
+    },
+    {
+      "id": "E08",
+      "html": "<p>You cannot claim on donations:</p>"
+    },
+    {
+      "id": "E09",
+      "html": "<li>made through Payroll Giving</li>"
+    },
+    {
+      "id": "E10",
+      "html": "<li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>"
+    },
+    {
+      "id": "E11",
+      "html": "<li>where the donor gets a ‘benefit’ over a certain limit</li>"
+    },
+    {
+      "id": "E12",
+      "html": "<li>of shares</li>"
+    },
+    {
+      "id": "E13",
+      "html": "<li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>"
+    }
+  ],
+  "decision_question": "Can the specified receipt be included in the charity’s ordinary Gift Aid claim under the supplied policy?",
+  "customer_scenario": "I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nOur finance volunteer is working through March receipts for our small veterinary hardship charity. The payment under review is a £95 credit dated 1 March 2026. The bank export identifies Devon Gray as the remitter from a personal account. The charity's HMRC recognition letter and a recent registration-status response confirm its recognition was still in force on 1 March 2026. Devon responded to a veterinary emergency appeal, and the booking and sales registers show no related purchase or reservation; the only thing sent to Devon was the automated thank-you email, and no discount or other benefit was offered. The remitter page identifies an ordinary bank transfer initiated from Devon's personal account, distinct from the employer deduction file, the securities transfer journal, and the charity-card and voucher processor's separately numbered settlement batch.\n\nThere is a folder labelled 'Devon tax and Gift Aid'. A P60 inside shows a substantial tax payment, but its heading says 'year ending 5 April 2024'. A separate summary from our accountant covers the charity's own 2025–26 accounts, not Devon's personal tax. We do not have a record of Devon's Income Tax or Capital Gains Tax for the year covering that payment.\n\nThe donor database contains the first page of a scanned form marked 'D. Gray' from an earlier fundraising event. The only reference visible on that page belongs to an earlier gift, and the page setting out the declaration's coverage and duration is not in the scan. The older email address on the form has not been linked to Devon's current donor record. An index suggests a longer donor declaration may once have been filed, yet the remaining pages have not been located. The team wants to include the March £95 entry in its ordinary Gift Aid reconciliation if the supporting records permit it."
+}

@@ -1,0 +1,90 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "the donor",
+      "id": "a1",
+      "proposition": "the donor is an individual who donates to a charity or CASC",
+      "source_ids": [
+        "E01",
+        "E06"
+      ]
+    },
+    {
+      "entity_scope": "the donor",
+      "id": "a2",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in that tax year as the amount of Gift Aid claimed",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "entity_scope": "the donor",
+      "id": "a3",
+      "proposition": "the donor has made a Gift Aid declaration that gives permission to claim Gift Aid on the donation",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a4",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a5",
+      "proposition": "the donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a6",
+      "proposition": "the donation does not give the donor a 'benefit' over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a7",
+      "proposition": "the donation is not of shares or any other form of securities",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a8",
+      "proposition": "the donation is not from a charity card or voucher, such as Charities Aid Foundation (CAF) vouchers",
+      "source_ids": [
+        "E13"
+      ]
+    },
+    {
+      "entity_scope": "the charity",
+      "id": "a9",
+      "proposition": "the charity is recognised as a charity or CASC for tax purposes",
+      "source_ids": [
+        "E02"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid on a donation",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The policy does not specify how to evaluate whether a donation constitutes a 'benefit' over a certain limit, leaving this condition under-defined.",
+    "The policy does not specify whether a donation grouped with CAF card or voucher redemptions in a batch constitutes a separate donation for Gift Aid purposes, though it notes the batch was made on a different date."
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether the same rule applies to all types of donations (e.g., one-off vs. recurring), nor whether the rules are cumulative across multiple donations."
+  ]
+}

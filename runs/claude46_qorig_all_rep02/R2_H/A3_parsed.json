@@ -1,0 +1,40 @@
+{
+  "decision": "NO",
+  "supporting_policy_ids": [
+    "E10",
+    "E11"
+  ],
+  "decisive_condition_ids": [
+    "a5",
+    "a7"
+  ],
+  "unresolved_condition_ids": [],
+  "missing_facts": [],
+  "justification": "The evidence establishes that the £260 received on 4 February 2026 is not a qualifying donation for Gift Aid purposes. The scenario shows that in January 2026, Robyn Ellis (who runs a grooming salon) negotiated with the charity's coordinator for two advertising placements — a booking link in the supporter newsletter and a six-week homepage feature — and was quoted exactly £260 for those placements. Robyn confirmed the amount 'worked for her'. The coordinator's booking sheet recorded the placements as 'awaiting settlement' until 4 February when the £260 arrived, at which point the sheet changed to 'confirmed'. The March newsletter and dated website capture confirm the placements were delivered as agreed. The internal label of 'donation' and the absence of a formal invoice do not alter the substance of the transaction. Under E10, Gift Aid cannot be claimed on payments that are a payment for goods or services — the £260 matches the quoted price for advertising services that were subsequently delivered, making it a payment for services rather than a genuine donation (a5 is FALSE, i.e. the exclusion applies). Additionally, under E11, Robyn received a material benefit (the advertising placements) equal in value to the entire payment, which almost certainly exceeds any permitted benefit limit (a7 is FALSE, i.e. the exclusion applies). Either exclusion alone is sufficient to disqualify the £260 from Gift Aid. The conditions a3 and a4 (tax position and Gift Aid declaration) are unknown, but their resolution cannot change the outcome because the payment fails on a5 and a7 regardless. The charity's HMRC recognition (a1) is confirmed, and the payment is not via Payroll Giving, shares, or vouchers, but these positive factors are outweighed by the two decisive exclusions.",
+  "scope_issues": [
+    "This assessment is scoped solely to the £260 payment of 4 February 2026. The regular monthly direct-debit donations and other one-off donations each require a separate Gift Aid eligibility assessment. The separate £20 cash gift from Robyn Ellis at the December collection event is a distinct transaction outside the scope of this assessment."
+  ],
+  "ir_discrepancies": [
+    {
+      "type": "STATUS",
+      "description": "The intermediate representation frames a5 as a positive proposition ('The £260 payment is NOT a payment for goods or services') and the eligibility expression applies NOT(a5), but the condition_statuses correctly mark a5 as FALSE (meaning it IS a payment for services). The eligibility expression therefore requires NOT(FALSE) = FALSE, correctly excluding eligibility. However, the framing is potentially confusing: the atom proposition and the NOT wrapper in the eligibility expression together mean the exclusion triggers when a5 is FALSE, which is the correct logic but could be misread. No material error results, but the double-negative structure warrants noting.",
+      "policy_ids": [
+        "E10"
+      ],
+      "condition_ids": [
+        "a5"
+      ]
+    },
+    {
+      "type": "STATUS",
+      "description": "The condition_statuses mark a7 as FALSE on the basis that Robyn received advertising placements equal in value to the full £260 payment, constituting a benefit exceeding any reasonable permitted limit. The intermediate representation's limitations note acknowledge uncertainty about the precise threshold under E11, but the status assessment goes further and concludes FALSE. This conclusion is well-supported by the facts (benefit equals 100% of the payment) and aligns with the policy exclusion in E11, so no material error, but the policy passages do not specify the exact threshold, making the FALSE determination a reasonable inference rather than a certainty. The decision outcome is the same either way because a5 alone is decisive.",
+      "policy_ids": [
+        "E11"
+      ],
+      "condition_ids": [
+        "a7"
+      ]
+    }
+  ],
+  "conditional_branches": []
+}

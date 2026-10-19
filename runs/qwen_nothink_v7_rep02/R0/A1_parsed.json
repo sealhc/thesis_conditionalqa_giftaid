@@ -1,0 +1,80 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "one person",
+      "id": "a1",
+      "proposition": "the donor is recognised as a charity or CASC for tax purposes",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "entity_scope": "one person",
+      "id": "a2",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in that tax year as the amount of Gift Aid being claimed",
+      "source_ids": [
+        "E04"
+      ]
+    },
+    {
+      "entity_scope": "one person",
+      "id": "a3",
+      "proposition": "the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "one person",
+      "id": "a4",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "one person",
+      "id": "a5",
+      "proposition": "the donation is not a payment for goods or services or made because the charity or CASC bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "one person",
+      "id": "a6",
+      "proposition": "the donation is not a payment where the donor receives a benefit over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "one person",
+      "id": "a7",
+      "proposition": "the donation is not shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "one person",
+      "id": "a8",
+      "proposition": "the donation is not from charity cards or vouchers, such as Charities Aid Foundation (CAF) vouchers",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid",
+  "decision_unit": "one person",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The policy does not specify whether donations from individuals who are not recognised as a charity or CASC are eligible for Gift Aid, nor does it specify whether the tax requirement applies to all donors or only those with a certain level of tax payment.",
+    "The policy does not specify whether one-off donations or monthly direct debits are treated differently in terms of eligibility, though it states that Gift Aid can be claimed on donations from individuals."
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether the conditions apply to one-off donations or recurring donations such as monthly direct debits. This creates a potential scope ambiguity."
+  ]
+}

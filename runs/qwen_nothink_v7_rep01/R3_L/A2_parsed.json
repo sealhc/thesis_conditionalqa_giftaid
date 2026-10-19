@@ -1,0 +1,55 @@
+{
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether donations from individuals who are not recognised as charities or CASC are eligible. The decision target is per donation, but the policy may not cover all types of donations or donors."
+  ],
+  "statuses": [
+    {
+      "evidence_quote": "You must be recognised as a charity or CASC for tax purposes.",
+      "id": "a1",
+      "justification": "The customer runs a small independent charity, which implies recognition as a charity for tax purposes, as required by E02.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a2",
+      "justification": "No evidence is provided about Devon Gray's tax payments in the tax year of the donation (2026), and the tax document covers a previous year (2024), so it is not established whether the donor paid at least as much in tax as the claimed Gift Aid.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a3",
+      "justification": "The scanned declaration from an earlier event is incomplete, with the page stating its coverage and duration missing, so it is not established whether a valid Gift Aid declaration was made.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "You cannot claim on donations: made through Payroll Giving",
+      "id": "a4",
+      "justification": "The donation was made via personal bank account, not through Payroll Giving, so it satisfies the condition in E09.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "You cannot claim on donations: that are a payment for goods or services or made because your charity or CASC bought goods and services",
+      "id": "a5",
+      "justification": "The donation was made to help with an emergency vet appeal and is unrelated to sales, bookings, benefits, or services, so it is not a payment for goods or services.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a6",
+      "justification": "There is no evidence that the donor received a benefit over a certain limit; the donation was for an emergency vet appeal and not tied to a benefit structure.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a7",
+      "justification": "The donation was not of shares, as stated in the scenario: it was a personal bank transfer for an emergency appeal.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a8",
+      "justification": "The donation was not from a charity card or voucher, as explicitly stated in the scenario: it was made from a personal bank account and unrelated to such instruments.",
+      "status": "TRUE"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-10-18T22:15:54.040041Z",
+  "message": {
+    "role": "assistant",
+    "content": "{\n  \"conditional_branches\": [],\n  \"decision\": \"NEED_MORE_INFORMATION\",\n  \"justification\": \"The customer runs a recognised charity, so E02 is satisfied. The donation is from an individual (Devon) and is a direct debit-style payment (though not explicitly confirmed in the scenario), and is unrelated to goods/services or benefits, so E10 and E11 are not triggered. However, the donor's tax evidence for the year ending 5 April 2024 (which is not the tax year of the donation) is not available, and the Gift Aid declaration is incomplete. Policy E04 and E07 require the donor to have paid at least as much in income tax or capital gains tax as the claimed Gift Aid amount, and E05 requires a valid declaration. Without the donor's current-year tax evidence or a complete declaration, eligibility cannot be confirmed. Thus, the missing facts prevent a definite answer.\",\n  \"missing_facts\": [\n    \"The donor's tax payment in the tax year of the donation (2026) or the current year\",\n    \"A complete and valid Gift Aid declaration from Devon covering this donation\"\n  ],\n  \"scope_issues\": [],\n  \"supporting_policy_ids\": [\n    \"E02\",\n    \"E04\",\n    \"E05\",\n    \"E07\",\n    \"E10\",\n    \"E11\"\n  ]\n}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7563784875,
+  "load_duration": 612250,
+  "prompt_eval_count": 870,
+  "prompt_eval_cached_count": 744,
+  "prompt_eval_duration": 283871000,
+  "eval_count": 301,
+  "eval_duration": 6969757000
+}

@@ -1,0 +1,55 @@
+{
+  "scope_issues": [
+    "The policy does not specify whether one-off donations or recurring donations are treated differently."
+  ],
+  "statuses": [
+    {
+      "evidence_quote": "I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.",
+      "id": "a1",
+      "justification": "The customer runs a charity recognised by HMRC, and the donation is from an individual, satisfying the requirement that the donation is made by an individual to a recognised charity or CASC.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a2",
+      "justification": "The customer scenario does not state Robyn Ellis's tax position or whether she paid at least as much in Income Tax or Capital Gains Tax as the amount of Gift Aid being claimed; this information is not established.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a3",
+      "justification": "The scenario states that Robyn's Gift Aid declaration has not been checked; there is no evidence that she made a declaration or that one was made for the £260 donation.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "Robyn Ellis paid the charity £260 on 4 February 2026. The bookkeeping sheet calls it a donation, but January emails show she accepted a £260 price for advertising her grooming salon in the charity's newsletter and on its website. The booking was confirmed after her payment, and the advertisement appeared as agreed.",
+      "id": "a4",
+      "justification": "The donation was not made through Payroll Giving; it was a direct payment by an individual, so the condition in E09 is satisfied.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "Robyn Ellis paid the charity £260 on 4 February 2026. The bookkeeping sheet calls it a donation, but January emails show she accepted a £260 price for advertising her grooming salon in the charity's newsletter and on its website. The booking was confirmed after her payment, and the advertisement appeared as agreed.",
+      "id": "a5",
+      "justification": "The donation is described as a payment for advertising a grooming service, which constitutes a payment for goods or services, and thus falls under E10. The scenario explicitly describes this as a service exchange, so the donation is a payment for goods or services.",
+      "status": "FALSE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a6",
+      "justification": "The scenario does not state whether the donation provided Robyn with a benefit exceeding a certain limit; no information is given about benefits or thresholds.",
+      "status": "UNKNOWN"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a7",
+      "justification": "The donation is described as a payment for advertising, not a transfer of shares, so it is not of shares.",
+      "status": "TRUE"
+    },
+    {
+      "evidence_quote": "",
+      "id": "a8",
+      "justification": "The donation was not made from a charity card or voucher; it was a direct payment by an individual, and no reference to such instruments is made.",
+      "status": "TRUE"
+    }
+  ]
+}

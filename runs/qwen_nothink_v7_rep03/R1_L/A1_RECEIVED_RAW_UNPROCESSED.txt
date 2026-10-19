@@ -1,0 +1,64 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "the donor",
+      "id": "a1",
+      "proposition": "the donor is recognised as a charity or CASC for tax purposes",
+      "source_ids": ["E02"]
+    },
+    {
+      "entity_scope": "the donor",
+      "id": "a2",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid being claimed",
+      "source_ids": ["E04", "E07"]
+    },
+    {
+      "entity_scope": "the donor",
+      "id": "a3",
+      "proposition": "the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid",
+      "source_ids": ["E05"]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a4",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": ["E09"]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a5",
+      "proposition": "the donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": ["E10"]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a6",
+      "proposition": "the donation does not provide the donor with a 'benefit' over a certain limit",
+      "source_ids": ["E11"]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a7",
+      "proposition": "the donation is not shares",
+      "source_ids": ["E12"]
+    },
+    {
+      "entity_scope": "the donation",
+      "id": "a8",
+      "proposition": "the donation is not from a charity card or vouchers, for example Charities Aid Foundation (CAF) vouchers",
+      "source_ids": ["E13"]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The policy does not specify whether the charity must be a CASC or a registered charity, only that it must be recognised for tax purposes.",
+    "The policy does not specify the exact tax year or how the tax year is defined in relation to the donation date."
+  ],
+  "scope_issues": [
+    "The policy allows Gift Aid on donations from individuals, but does not specify whether it applies to multiple donations or only one; the decision target is per donation."
+  ]
+}

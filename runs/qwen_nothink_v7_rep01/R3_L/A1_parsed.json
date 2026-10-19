@@ -1,0 +1,81 @@
+{
+  "atoms": [
+    {
+      "entity_scope": "donor",
+      "id": "a1",
+      "proposition": "the donor is recognised as a charity or CASC for tax purposes",
+      "source_ids": [
+        "E02"
+      ]
+    },
+    {
+      "entity_scope": "donor",
+      "id": "a2",
+      "proposition": "the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year of the donation as the amount of Gift Aid being claimed",
+      "source_ids": [
+        "E04",
+        "E07"
+      ]
+    },
+    {
+      "entity_scope": "donor",
+      "id": "a3",
+      "proposition": "the donor has made a Gift Aid declaration that gives the charity permission to claim Gift Aid",
+      "source_ids": [
+        "E05"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a4",
+      "proposition": "the donation is not made through Payroll Giving",
+      "source_ids": [
+        "E09"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a5",
+      "proposition": "the donation is not a payment for goods or services or made because the charity bought goods and services",
+      "source_ids": [
+        "E10"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a6",
+      "proposition": "the donation is not where the donor receives a benefit over a certain limit",
+      "source_ids": [
+        "E11"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a7",
+      "proposition": "the donation is not of shares",
+      "source_ids": [
+        "E12"
+      ]
+    },
+    {
+      "entity_scope": "donation",
+      "id": "a8",
+      "proposition": "the donation is not from a charity card or of vouchers, for example Charities Aid Foundation (CAF) vouchers",
+      "source_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "decision_target": "eligibility for Gift Aid",
+  "decision_unit": "one donation",
+  "eligibility_expression": {
+    "ref": "a1"
+  },
+  "limitations": [
+    "The donor's tax year evidence is not available for the donation made in 2026, and the Gift Aid declaration is incomplete, so the truth of the tax and declaration conditions cannot be verified.",
+    "The policy does not specify whether donations from individuals are only eligible if the donor is a charity or CASC; this is not explicitly stated, and the donor must be recognised as a charity or CASC for tax purposes (E02), which is a separate condition."
+  ],
+  "scope_issues": [
+    "The policy applies to donations from individuals, but does not specify whether donations from individuals who are not recognised as charities or CASC are eligible. The decision target is per donation, but the policy may not cover all types of donations or donors."
+  ]
+}

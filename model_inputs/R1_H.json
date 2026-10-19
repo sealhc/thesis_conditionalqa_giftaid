@@ -1,0 +1,58 @@
+{
+  "policy_passages": [
+    {
+      "id": "E01",
+      "html": "<p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>"
+    },
+    {
+      "id": "E02",
+      "html": "<p>You must be recognised as a charity or CASC for tax purposes.</p>"
+    },
+    {
+      "id": "E03",
+      "html": "<p>The donor must:</p>"
+    },
+    {
+      "id": "E04",
+      "html": "<li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>"
+    },
+    {
+      "id": "E05",
+      "html": "<li>make a Gift Aid declaration that gives you permission to claim it</li>"
+    },
+    {
+      "id": "E06",
+      "html": "<p>You can claim Gift Aid on donations from individuals. The donor must:</p>"
+    },
+    {
+      "id": "E07",
+      "html": "<li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>"
+    },
+    {
+      "id": "E08",
+      "html": "<p>You cannot claim on donations:</p>"
+    },
+    {
+      "id": "E09",
+      "html": "<li>made through Payroll Giving</li>"
+    },
+    {
+      "id": "E10",
+      "html": "<li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>"
+    },
+    {
+      "id": "E11",
+      "html": "<li>where the donor gets a ‘benefit’ over a certain limit</li>"
+    },
+    {
+      "id": "E12",
+      "html": "<li>of shares</li>"
+    },
+    {
+      "id": "E13",
+      "html": "<li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>"
+    }
+  ],
+  "decision_question": "Can the specified receipt be included in the charity’s ordinary Gift Aid claim under the supplied policy?",
+  "customer_scenario": "I run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nThe treasurer is checking a £120 Faster Payment received on 16 March 2026, reference FP-0316-EL. The bank’s remitter details name Elaine Carter and her personal current account. Elaine’s email to the fundraiser says she sent the £120 from her banking app after reading about a rescued dog’s emergency treatment. The charity’s 2023 HMRC recognition letter is on file, and the treasurer’s status check confirms the charity was still recognised on 16 March 2026.\n\nElaine signed an electronic Gift Aid declaration on 15 March, and the e-signature service holds the signed document, timestamp and audit record. The declaration says it covers this donation, and the finance assistant matched it to FP-0316-EL through her donor record. Her tax summary for the year to 5 April 2026 shows £980 of Income Tax paid. Her signed note lists £200 of other Gift Aid donations that year; the treasurer’s sheet shows £30 recoverable on this £120 and £50 on the others, £80 in total, well below her £980.\n\nThe sales, booking and event records show nothing linked to this payment, and the only thing sent to Elaine was the standard thank-you email; she was not offered admission, advertising, a product or any other benefit. It did not go through a payroll giving scheme, and no shares, securities or other assets were delivered. An older spreadsheet groups it with two CAF card and voucher redemptions (CC-0314, VC-0317), but those were paid to the charity in a combined batch on 18 March, while FP-0316-EL came directly from Elaine’s bank on 16 March. The treasurer wants to include this receipt in the ordinary Gift Aid return if the records permit."
+}

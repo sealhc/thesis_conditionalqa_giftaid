@@ -1,0 +1,85 @@
+{
+  "model": "qwen3:4b-instruct",
+  "messages": [
+    {
+      "role": "user",
+      "content": "ROLE\nYou answer the customer's decision question using only the supplied policy passages, decision question, and customer scenario. Do not browse or use outside legal knowledge.\n\nTASK\nAnswer the customer's question directly. You may consider all material requirements, prohibitions, exceptions and relevant evidence, and explain them. You are NOT required to construct a separate machine-readable or persistent intermediate rule representation.\n\nDECISION REQUIREMENTS\n- Return YES when the supplied policy and customer evidence establish a positive decision.\n- Return NO when the supplied policy and customer evidence establish a negative decision.\n- Otherwise, return NEED_MORE_INFORMATION and identify the facts needed to resolve the decision.\n- Treat unmentioned facts as unknown, not false. Do not require every fact to be known when the available evidence already determines the outcome.\n- Pay attention to which person, payment, date or other unit the question covers. If multiple payments may have different eligibility, do not collapse them into an unsupported global conclusion.\n- Do not presume a specific final answer. Do not make up policy rules or user facts. You may give a concise explanation and cite the supplied passage IDs.\n- If unresolved, briefly state possible conditional YES/NO answers and what facts make them applicable. This is a conditional explanation, not a persistent rule graph. If definitely decided, use an empty conditional_branches list.\n- Do not conduct a follow-up conversation.\nReturn one valid JSON object only.\n\nOUTPUT SCHEMA\n{\n \"decision\":\"YES|NO|NEED_MORE_INFORMATION\",\n \"supporting_policy_ids\":[\"E01\"],\n \"missing_facts\":[\"specific unresolved fact, only if relevant\"],\n \"justification\":\"brief evidence-grounded explanation\",\n \"scope_issues\":[\"if applicable\"],\n \"conditional_branches\":[{\"possible_answer\":\"YES|NO\",\"conditions_in_words\":\"applicability condition, only if outcome remains unresolved\"}]\n}\n\n\n=== POLICY_PASSAGES ===\n[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>\n[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>\n[E03] <p>The donor must:</p>\n[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>\n[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>\n[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>\n[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>\n[E08] <p>You cannot claim on donations:</p>\n[E09] <li>made through Payroll Giving</li>\n[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>\n[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>\n[E12] <li>of shares</li>\n[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>\n\n=== DECISION_QUESTION ===\nAm I eligible for Gift Aid?\n\n=== CUSTOMER_SCENARIO ===\nI run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nThe treasurer is checking a £120 Faster Payment received on 16 March 2026, reference FP-0316-EL. The bank’s remitter details name Elaine Carter and her personal current account. Elaine’s email to the fundraiser says she sent the £120 from her banking app after reading about a rescued dog’s emergency treatment. The charity’s 2023 HMRC recognition letter is on file, and the treasurer’s status check confirms the charity was still recognised on 16 March 2026.\n\nElaine signed an electronic Gift Aid declaration on 15 March, and the e-signature service holds the signed document, timestamp and audit record. The declaration says it covers this donation, and the finance assistant matched it to FP-0316-EL through her donor record. Her tax summary for the year to 5 April 2026 shows £980 of Income Tax paid. Her signed note lists £200 of other Gift Aid donations that year; the treasurer’s sheet shows £30 recoverable on this £120 and £50 on the others, £80 in total, well below her £980.\n\nThe sales, booking and event records show nothing linked to this payment, and the only thing sent to Elaine was the standard thank-you email; she was not offered admission, advertising, a product or any other benefit. It did not go through a payroll giving scheme, and no shares, securities or other assets were delivered. An older spreadsheet groups it with two CAF card and voucher redemptions (CC-0314, VC-0317), but those were paid to the charity in a combined batch on 18 March, while FP-0316-EL came directly from Elaine’s bank on 16 March. The treasurer wants to include this receipt in the ordinary Gift Aid return if the records permit.\n"
+    }
+  ],
+  "stream": false,
+  "options": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 4102,
+    "num_ctx": 32768,
+    "num_predict": 8192
+  },
+  "think": false,
+  "format": {
+    "type": "object",
+    "properties": {
+      "decision": {
+        "type": "string",
+        "enum": [
+          "YES",
+          "NO",
+          "NEED_MORE_INFORMATION"
+        ]
+      },
+      "supporting_policy_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "missing_facts": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "justification": {
+        "type": "string"
+      },
+      "scope_issues": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "conditional_branches": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "possible_answer": {
+              "type": "string",
+              "enum": [
+                "YES",
+                "NO"
+              ]
+            },
+            "conditions_in_words": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "possible_answer",
+            "conditions_in_words"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "decision",
+      "supporting_policy_ids",
+      "missing_facts",
+      "justification",
+      "scope_issues",
+      "conditional_branches"
+    ],
+    "additionalProperties": false
+  }
+}

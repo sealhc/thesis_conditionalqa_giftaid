@@ -1,0 +1,138 @@
+{
+  "model": "claude-sonnet-4-6",
+  "max_tokens": 8192,
+  "messages": [
+    {
+      "role": "user",
+      "content": "ROLE\nYou are the final language-model decision stage of a condition-mediated decision-support workflow. Use only the supplied policy passages, decision question, customer scenario, and model-generated intermediate outputs. Do not browse or use external legal knowledge.\n\nTASK\nMake the final decision using BOTH the original source material (POLICY_PASSAGES, DECISION_QUESTION, CUSTOMER_SCENARIO) AND the explicit INTERMEDIATE_REPRESENTATION and CONDITION_STATUSES produced in earlier steps. The intermediate outputs are useful but fallible: examine whether they agree with the original evidence instead of accepting them blindly. You must make the decision yourself; no program calculates the decision for you.\n\nDECISION REQUIREMENTS\n- Return YES when the supplied policy and customer evidence establish a positive decision.\n- Return NO when the supplied policy and customer evidence establish a negative decision.\n- Otherwise return NEED_MORE_INFORMATION and identify the facts that could resolve the decision.\n- An unmentioned fact is unknown rather than false. A fact need not be known if its value cannot change an outcome already established by the evidence.\n- Apply facts to the correct decision unit, entity, payment and time period. Do not transfer evidence about one payment or person to another without support.\n- Compare the intermediate representation and mapped statuses against the original source. If an omission, unsupported atom, wrong logical relationship, mis-scoped fact, or misread evidence matters, report it in ir_discrepancies. Do not conceal a discrepancy or assume the intermediate outputs are correct merely because they are structured.\n- Do not assume any particular final decision. Do not invent policy rules or customer facts.\n- If unresolved, briefly describe conditional alternatives and the information needed. If the decision is established, conditional_branches should be empty.\n- Do not initiate a follow-up interaction. Return one valid JSON object only.\n\nOUTPUT SCHEMA\n{\n  \"decision\":\"YES|NO|NEED_MORE_INFORMATION\",\n  \"supporting_policy_ids\":[\"E01\"],\n  \"decisive_condition_ids\":[\"a1\"],\n  \"unresolved_condition_ids\":[\"a2\"],\n  \"missing_facts\":[\"a concrete fact needed to resolve the decision, if any\"],\n  \"justification\":\"concise explanation grounded in the supplied material\",\n  \"scope_issues\":[\"a decision-unit limitation, if any\"],\n  \"ir_discrepancies\":[{\"type\":\"OMISSION|UNSUPPORTED|RELATION|SCOPE|STATUS|OTHER\",\"description\":\"issue found when comparing intermediate outputs with the original source\",\"policy_ids\":[\"E01\"],\"condition_ids\":[\"a1\"]}],\n  \"conditional_branches\":[{\"possible_answer\":\"YES|NO\",\"conditions_in_words\":\"only if currently unresolved\"}]\n}\n\nThe example IDs above are output-format placeholders, not required findings. Use empty lists for inapplicable fields. The supplied intermediate representation and condition statuses are evidence aids, not an authoritative Gold answer.\n\n\n=== POLICY_PASSAGES ===\n[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>\n[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>\n[E03] <p>The donor must:</p>\n[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>\n[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>\n[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>\n[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>\n[E08] <p>You cannot claim on donations:</p>\n[E09] <li>made through Payroll Giving</li>\n[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>\n[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>\n[E12] <li>of shares</li>\n[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>\n\n=== DECISION_QUESTION ===\nAm I eligible for Gift Aid?\n\n=== CUSTOMER_SCENARIO ===\nI run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nWe are reviewing the £260 that reached our charity's bank account on 4 February 2026 from Robyn Ellis. The payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals. She has also volunteered at our adoption days. Our treasurer found two different folders under her name, so I have copied the relevant history below.\n\nIn the January events correspondence, Robyn, who runs a local grooming salon, asked whether our supporter newsletter could carry a booking link and whether the homepage could feature the salon for six weeks. The coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her. The coordinator's booking sheet shows the placements as 'awaiting settlement' until 4 February, when the £260 arrived; the same sheet then changed to 'confirmed'. The March newsletter archive and the dated website capture show the link in the agreed locations. A later volunteer note says 'we didn't raise an invoice, so I called it a donation'. A separate £20 cash gift from Robyn at the December collection event has its own receipt and was not part of the newsletter arrangement.\n\nA draft plan to cancel the March newsletter appears in the folder, but it is marked 'not approved'; the final distribution log and archived newsletter show that the edition went out. We have the charity's HMRC recognition letter. Robyn's personal tax position and whether she completed a Gift Aid form for the £260 have not been checked. The receipt under review in this file is the February £260 entry, not her separate £20 collection gift.\n\n=== INTERMEDIATE_REPRESENTATION (actual A1 JSON, wrapper excluded if present) ===\n{\n  \"decision_target\": \"Whether Gift Aid can be claimed on the £260 payment received from Robyn Ellis on 4 February 2026\",\n  \"decision_unit\": \"one transaction (the £260 payment of 4 February 2026)\",\n  \"atoms\": [\n    {\n      \"id\": \"a1\",\n      \"proposition\": \"The organisation claiming Gift Aid is recognised as a charity or CASC for tax purposes by HMRC\",\n      \"entity_scope\": \"the charity run by the customer\",\n      \"source_ids\": [\n        \"E02\"\n      ]\n    },\n    {\n      \"id\": \"a2\",\n      \"proposition\": \"The donation was made by an individual (not a company or other entity)\",\n      \"entity_scope\": \"Robyn Ellis as the donor\",\n      \"source_ids\": [\n        \"E06\"\n      ]\n    },\n    {\n      \"id\": \"a3\",\n      \"proposition\": \"The donor paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the amount of Gift Aid to be claimed on the donation\",\n      \"entity_scope\": \"Robyn Ellis in the tax year of the donation\",\n      \"source_ids\": [\n        \"E04\",\n        \"E07\"\n      ]\n    },\n    {\n      \"id\": \"a4\",\n      \"proposition\": \"The donor has made a Gift Aid declaration giving the charity permission to claim Gift Aid on the donation\",\n      \"entity_scope\": \"Robyn Ellis in relation to the £260 payment\",\n      \"source_ids\": [\n        \"E05\"\n      ]\n    },\n    {\n      \"id\": \"a5\",\n      \"proposition\": \"The payment was not made through Payroll Giving\",\n      \"entity_scope\": \"the £260 payment from Robyn Ellis\",\n      \"source_ids\": [\n        \"E09\"\n      ]\n    },\n    {\n      \"id\": \"a6\",\n      \"proposition\": \"The payment is not a payment for goods or services, and was not made because the charity bought goods or services from the donor\",\n      \"entity_scope\": \"the £260 payment from Robyn Ellis\",\n      \"source_ids\": [\n        \"E10\"\n      ]\n    },\n    {\n      \"id\": \"a7\",\n      \"proposition\": \"The donor does not receive a 'benefit' from the charity in connection with the donation that exceeds the permitted limit\",\n      \"entity_scope\": \"Robyn Ellis in relation to the £260 payment\",\n      \"source_ids\": [\n        \"E11\"\n      ]\n    },\n    {\n      \"id\": \"a8\",\n      \"proposition\": \"The donation is not a gift of shares\",\n      \"entity_scope\": \"the £260 payment from Robyn Ellis\",\n      \"source_ids\": [\n        \"E12\"\n      ]\n    },\n    {\n      \"id\": \"a9\",\n      \"proposition\": \"The donation was not made via charity cards or vouchers (e.g. CAF vouchers)\",\n      \"entity_scope\": \"the £260 payment from Robyn Ellis\",\n      \"source_ids\": [\n        \"E13\"\n      ]\n    }\n  ],\n  \"eligibility_expression\": {\n    \"op\": \"ALL\",\n    \"args\": [\n      {\n        \"ref\": \"a1\"\n      },\n      {\n        \"ref\": \"a2\"\n      },\n      {\n        \"ref\": \"a3\"\n      },\n      {\n        \"ref\": \"a4\"\n      },\n      {\n        \"ref\": \"a5\"\n      },\n      {\n        \"ref\": \"a6\"\n      },\n      {\n        \"ref\": \"a7\"\n      },\n      {\n        \"ref\": \"a8\"\n      },\n      {\n        \"ref\": \"a9\"\n      }\n    ]\n  },\n  \"scope_issues\": [\n    \"The £260 payment and the separate £20 cash gift from Robyn Ellis at the December collection event are two distinct transactions; this analysis covers only the £260 February payment as specified. The £20 gift would require a separate eligibility determination.\",\n    \"The booking correspondence and coordinator records raise a factual question about whether the £260 constitutes payment for advertising services (newsletter link and homepage placement) rather than a donation, which directly affects atom a6 and therefore whether Gift Aid can be claimed at all. This is a scope issue that must be resolved on the facts before the eligibility expression can be evaluated.\"\n  ],\n  \"limitations\": [\n    \"The passages do not define the monetary threshold for a donor 'benefit' that disqualifies a donation (atom a7); only the existence of such a limit is stated in E11.\",\n    \"The passages do not specify the precise form or content required for a valid Gift Aid declaration (atom a4) beyond the requirement that it gives permission to claim.\",\n    \"The passages do not address whether volunteering by the donor constitutes a 'benefit' for the purposes of E11.\",\n    \"Whether Robyn Ellis paid sufficient Income Tax or Capital Gains Tax in the 2025-26 tax year (atom a3) and whether she completed a Gift Aid declaration for the £260 (atom a4) are expressly noted as unchecked in the scenario.\"\n  ]\n}\n\n=== CONDITION_STATUSES (actual A2 JSON, wrapper excluded if present) ===\n{\n  \"statuses\": [\n    {\n      \"id\": \"a1\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"We have the charity's HMRC recognition letter.\",\n      \"justification\": \"The scenario explicitly states the charity holds an HMRC recognition letter, establishing it is recognised for tax purposes.\"\n    },\n    {\n      \"id\": \"a2\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"Robyn Ellis, who runs a local grooming salon\",\n      \"justification\": \"Robyn Ellis is described as an individual who runs a local grooming salon, establishing she is a natural person rather than a company or other entity.\"\n    },\n    {\n      \"id\": \"a3\",\n      \"status\": \"UNKNOWN\",\n      \"evidence_quote\": \"\",\n      \"justification\": \"The scenario explicitly states that Robyn's personal tax position has not been checked, so there is no evidence to establish whether she paid sufficient Income Tax or Capital Gains Tax in the relevant tax year.\"\n    },\n    {\n      \"id\": \"a4\",\n      \"status\": \"UNKNOWN\",\n      \"evidence_quote\": \"Robyn's personal tax position and whether she completed a Gift Aid form for the £260 have not been checked.\",\n      \"justification\": \"The scenario explicitly states that whether Robyn completed a Gift Aid declaration for the £260 has not been checked, so this cannot be established.\"\n    },\n    {\n      \"id\": \"a5\",\n      \"status\": \"UNKNOWN\",\n      \"evidence_quote\": \"\",\n      \"justification\": \"The scenario does not mention Payroll Giving in any form; while the payment arrived by direct debit, there is no explicit confirmation it was not routed through a Payroll Giving scheme, though there is also no positive evidence it was.\"\n    },\n    {\n      \"id\": \"a6\",\n      \"status\": \"CONFLICTING\",\n      \"evidence_quote\": \"The coordinator sent her a mock-up and quoted £260 for the two placements. Robyn replied that the amount worked for her... the payment spreadsheet labels it 'donation', and Robyn wrote in a message that she wanted to help the animals... A later volunteer note says 'we didn't raise an invoice, so I called it a donation'.\",\n      \"justification\": \"The scenario contains mutually inconsistent evidence: the booking correspondence, coordinator's quote of £260 for newsletter and homepage placements, and the booking sheet moving to 'confirmed' upon receipt of the £260 strongly indicate payment for advertising services, while the spreadsheet label 'donation', Robyn's stated charitable intent, and the volunteer's note characterise it as a donation.\"\n    },\n    {\n      \"id\": \"a7\",\n      \"status\": \"CONFLICTING\",\n      \"evidence_quote\": \"the March newsletter archive and the dated website capture show the link in the agreed locations... Robyn wrote in a message that she wanted to help the animals. She has also volunteered at our adoption days.\",\n      \"justification\": \"If the £260 is treated as a donation, Robyn appears to have received advertising placements (newsletter link and homepage feature) in return, which could constitute a benefit, but the scenario does not confirm whether this exceeds any permitted limit; simultaneously the payment may not be a donation at all, making the benefit question moot, creating conflicting factual framings.\"\n    },\n    {\n      \"id\": \"a8\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"The £260 that reached our charity's bank account on 4 February 2026\",\n      \"justification\": \"The payment is described as a monetary transfer of £260; there is no indication whatsoever that it involved shares.\"\n    },\n    {\n      \"id\": \"a9\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"The £260 that reached our charity's bank account on 4 February 2026 from Robyn Ellis\",\n      \"justification\": \"The payment arrived as cash in the bank account with no mention of charity cards or vouchers of any kind.\"\n    }\n  ],\n  \"scope_issues\": [\n    \"The evidence strongly suggests the £260 may be payment for advertising services (newsletter booking link and six-week homepage feature quoted at exactly £260) rather than a genuine donation, which is a threshold factual question that must be resolved before Gift Aid eligibility can be assessed for atom a6.\",\n    \"The separate £20 cash gift from Robyn Ellis at the December collection event is explicitly noted as a distinct transaction and is outside the scope of this analysis; it would require a separate eligibility determination.\",\n    \"The policy passages do not define the monetary threshold for a donor benefit under E11, so even if the £260 were treated as a donation, it cannot be determined from the passages alone whether the advertising placements received by Robyn exceed the permitted limit.\"\n  ]\n}\n"
+    }
+  ],
+  "temperature": 0.6,
+  "output_config": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "decision": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "NEED_MORE_INFORMATION"
+            ]
+          },
+          "supporting_policy_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "decisive_condition_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_condition_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_facts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "justification": {
+            "type": "string"
+          },
+          "scope_issues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ir_discrepancies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "OMISSION",
+                    "UNSUPPORTED",
+                    "RELATION",
+                    "SCOPE",
+                    "STATUS",
+                    "OTHER"
+                  ]
+                },
+                "description": {
+                  "type": "string"
+                },
+                "policy_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "condition_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "type",
+                "description",
+                "policy_ids",
+                "condition_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "conditional_branches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "possible_answer": {
+                  "type": "string",
+                  "enum": [
+                    "YES",
+                    "NO"
+                  ]
+                },
+                "conditions_in_words": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "possible_answer",
+                "conditions_in_words"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "decision",
+          "supporting_policy_ids",
+          "decisive_condition_ids",
+          "unresolved_condition_ids",
+          "missing_facts",
+          "justification",
+          "scope_issues",
+          "ir_discrepancies",
+          "conditional_branches"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "conditional_branches": [],
+  "decision": "NEED_MORE_INFORMATION",
+  "decisive_condition_ids": [],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a5"
+      ],
+      "description": "The intermediate representation incorrectly classifies the £260 as a donation under E10, when the evidence shows it is a payment for advertising placement (a service), which falls under E10's exclusion of 'payments for goods or services'. The status is marked 'CONFLICTING' in the condition statuses, but the intermediate representation fails to recognize that the donation is not a payment for goods or services, and instead treats it as a donation without assessing the service nature. This is a mis-scoped fact and incorrect logical relationship.",
+      "policy_ids": [
+        "E10"
+      ],
+      "type": "RELATION"
+    },
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation includes 'donor's tax position' as a condition (a2), but the original policy (E04, E07) requires the donor to have paid at least as much in tax as the claimed Gift Aid. The customer scenario does not provide any information about Robyn's tax position or the amount of tax she paid. This omission is not supported by the evidence and is a critical gap in eligibility.",
+      "policy_ids": [
+        "E04",
+        "E07"
+      ],
+      "type": "OMISSION"
+    },
+    {
+      "condition_ids": [
+        "a3"
+      ],
+      "description": "The intermediate representation includes a condition about a Gift Aid declaration (a3), but the original policy (E05) requires a declaration from the donor. The scenario does not confirm whether Robyn made such a declaration. This is an unsupported atom, as the evidence is absent.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "UNSUPPORTED"
+    }
+  ],
+  "justification": "The customer scenario establishes that the £260 is a payment for advertising space on a newsletter and website, which constitutes a payment for a service. Policy E10 explicitly excludes such payments from Gift Aid. The scenario does not confirm whether this payment is for goods or services, and the absence of an invoice and the description of it as a 'donation' are insufficient to override the policy definition. Additionally, there is no evidence about Robyn's tax position or whether she made a Gift Aid declaration. Without confirmation of these two required conditions (tax payment and declaration), eligibility cannot be established. The intermediate representation misreads the nature of the payment and fails to properly assess the exclusion under E10, and omits the critical facts about donor tax and declaration.",
+  "missing_facts": [
+    "Whether Robyn Ellis paid at least as much in Income Tax or Capital Gains Tax in the 2025-2026 tax year as the amount of Gift Aid being claimed (for the £260 donation)",
+    "Whether Robyn Ellis made a Gift Aid declaration authorizing the claim for the £260 donation",
+    "Whether the £260 payment for advertising space constitutes a payment for goods or services or a benefit, as per policy E10 and E11"
+  ],
+  "scope_issues": [
+    "The policy does not specify whether one-off donations or recurring donations are treated differently; this distinction is not addressed in the passages."
+  ],
+  "supporting_policy_ids": [
+    "E01",
+    "E02",
+    "E04",
+    "E05",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "unresolved_condition_ids": [
+    "a2",
+    "a3",
+    "a5"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "model": "claude-sonnet-4-6",
+  "max_tokens": 8192,
+  "messages": [
+    {
+      "role": "user",
+      "content": "ROLE\nYou are the final language-model decision stage of a condition-mediated decision-support workflow. Use only the supplied policy passages, decision question, customer scenario, and model-generated intermediate outputs. Do not browse or use external legal knowledge.\n\nTASK\nMake the final decision using BOTH the original source material (POLICY_PASSAGES, DECISION_QUESTION, CUSTOMER_SCENARIO) AND the explicit INTERMEDIATE_REPRESENTATION and CONDITION_STATUSES produced in earlier steps. The intermediate outputs are useful but fallible: examine whether they agree with the original evidence instead of accepting them blindly. You must make the decision yourself; no program calculates the decision for you.\n\nDECISION REQUIREMENTS\n- Return YES when the supplied policy and customer evidence establish a positive decision.\n- Return NO when the supplied policy and customer evidence establish a negative decision.\n- Otherwise return NEED_MORE_INFORMATION and identify the facts that could resolve the decision.\n- An unmentioned fact is unknown rather than false. A fact need not be known if its value cannot change an outcome already established by the evidence.\n- Apply facts to the correct decision unit, entity, payment and time period. Do not transfer evidence about one payment or person to another without support.\n- Compare the intermediate representation and mapped statuses against the original source. If an omission, unsupported atom, wrong logical relationship, mis-scoped fact, or misread evidence matters, report it in ir_discrepancies. Do not conceal a discrepancy or assume the intermediate outputs are correct merely because they are structured.\n- Do not assume any particular final decision. Do not invent policy rules or customer facts.\n- If unresolved, briefly describe conditional alternatives and the information needed. If the decision is established, conditional_branches should be empty.\n- Do not initiate a follow-up interaction. Return one valid JSON object only.\n\nOUTPUT SCHEMA\n{\n  \"decision\":\"YES|NO|NEED_MORE_INFORMATION\",\n  \"supporting_policy_ids\":[\"E01\"],\n  \"decisive_condition_ids\":[\"a1\"],\n  \"unresolved_condition_ids\":[\"a2\"],\n  \"missing_facts\":[\"a concrete fact needed to resolve the decision, if any\"],\n  \"justification\":\"concise explanation grounded in the supplied material\",\n  \"scope_issues\":[\"a decision-unit limitation, if any\"],\n  \"ir_discrepancies\":[{\"type\":\"OMISSION|UNSUPPORTED|RELATION|SCOPE|STATUS|OTHER\",\"description\":\"issue found when comparing intermediate outputs with the original source\",\"policy_ids\":[\"E01\"],\"condition_ids\":[\"a1\"]}],\n  \"conditional_branches\":[{\"possible_answer\":\"YES|NO\",\"conditions_in_words\":\"only if currently unresolved\"}]\n}\n\nThe example IDs above are output-format placeholders, not required findings. Use empty lists for inapplicable fields. The supplied intermediate representation and condition statuses are evidence aids, not an authoritative Gold answer.\n\n\n=== POLICY_PASSAGES ===\n[E01] <p>You can claim back 25p every time an individual donates £1 to your charity or community amateur sports club (CASC). This is called Gift Aid.</p>\n[E02] <p>You must be recognised as a charity or CASC for tax purposes.</p>\n[E03] <p>The donor must:</p>\n[E04] <li>have paid at least as much in Income Tax or Capital Gains Tax in that tax year as you want to claim in Gift Aid</li>\n[E05] <li>make a Gift Aid declaration that gives you permission to claim it</li>\n[E06] <p>You can claim Gift Aid on donations from individuals. The donor must:</p>\n[E07] <li>have paid the same amount or more in Income Tax or Capital Gains Tax in that tax year</li>\n[E08] <p>You cannot claim on donations:</p>\n[E09] <li>made through Payroll Giving</li>\n[E10] <li>that are a payment for goods or services or made because your charity or CASC bought goods and services</li>\n[E11] <li>where the donor gets a ‘benefit’ over a certain limit</li>\n[E12] <li>of shares</li>\n[E13] <li>from charity cards or of vouchers, for example Charities Aid Foundation (CAF) vouchers</li>\n\n=== DECISION_QUESTION ===\nAm I eligible for Gift Aid?\n\n=== CUSTOMER_SCENARIO ===\nI run a small, independent charity which attempts to help people struggling with their vet costs. I have several people who pay monthly by direct debit and also receive some one off donations.\n\nAdditional customer information:\nThe treasurer is checking a £120 Faster Payment received on 16 March 2026, reference FP-0316-EL. The bank’s remitter details name Elaine Carter and her personal current account. Elaine’s email to the fundraiser says she sent the £120 from her banking app after reading about a rescued dog’s emergency treatment. The charity’s 2023 HMRC recognition letter is on file, and the treasurer’s status check confirms the charity was still recognised on 16 March 2026.\n\nElaine signed an electronic Gift Aid declaration on 15 March, and the e-signature service holds the signed document, timestamp and audit record. The declaration says it covers this donation, and the finance assistant matched it to FP-0316-EL through her donor record. Her tax summary for the year to 5 April 2026 shows £980 of Income Tax paid. Her signed note lists £200 of other Gift Aid donations that year; the treasurer’s sheet shows £30 recoverable on this £120 and £50 on the others, £80 in total, well below her £980.\n\nThe sales, booking and event records show nothing linked to this payment, and the only thing sent to Elaine was the standard thank-you email; she was not offered admission, advertising, a product or any other benefit. It did not go through a payroll giving scheme, and no shares, securities or other assets were delivered. An older spreadsheet groups it with two CAF card and voucher redemptions (CC-0314, VC-0317), but those were paid to the charity in a combined batch on 18 March, while FP-0316-EL came directly from Elaine’s bank on 16 March. The treasurer wants to include this receipt in the ordinary Gift Aid return if the records permit.\n\n=== INTERMEDIATE_REPRESENTATION (actual A1 JSON, wrapper excluded if present) ===\n{\n  \"decision_target\": \"Whether Gift Aid can be claimed on the specific donation FP-0316-EL (£120 from Elaine Carter received 16 March 2026)\",\n  \"decision_unit\": \"one transaction (single donation)\",\n  \"atoms\": [\n    {\n      \"id\": \"a1\",\n      \"proposition\": \"The organisation claiming Gift Aid is recognised as a charity or CASC for tax purposes by HMRC\",\n      \"entity_scope\": \"the charity\",\n      \"source_ids\": [\n        \"E02\"\n      ]\n    },\n    {\n      \"id\": \"a2\",\n      \"proposition\": \"The donation was made by an individual (not a company or other entity)\",\n      \"entity_scope\": \"the donor (Elaine Carter)\",\n      \"source_ids\": [\n        \"E06\"\n      ]\n    },\n    {\n      \"id\": \"a3\",\n      \"proposition\": \"The donor has paid at least as much in Income Tax or Capital Gains Tax in the relevant tax year as the total Gift Aid to be reclaimed on their donations in that year\",\n      \"entity_scope\": \"the donor (Elaine Carter)\",\n      \"source_ids\": [\n        \"E04\",\n        \"E07\"\n      ]\n    },\n    {\n      \"id\": \"a4\",\n      \"proposition\": \"The donor has made a Gift Aid declaration giving the charity permission to claim Gift Aid on the donation\",\n      \"entity_scope\": \"the donor (Elaine Carter)\",\n      \"source_ids\": [\n        \"E05\"\n      ]\n    },\n    {\n      \"id\": \"a5\",\n      \"proposition\": \"The donation was NOT made through Payroll Giving\",\n      \"entity_scope\": \"the donation FP-0316-EL\",\n      \"source_ids\": [\n        \"E09\"\n      ]\n    },\n    {\n      \"id\": \"a6\",\n      \"proposition\": \"The donation is NOT a payment for goods or services, and was NOT made because the charity bought goods or services for the donor\",\n      \"entity_scope\": \"the donation FP-0316-EL\",\n      \"source_ids\": [\n        \"E10\"\n      ]\n    },\n    {\n      \"id\": \"a7\",\n      \"proposition\": \"The donor does NOT receive a benefit that exceeds the permitted limit in connection with this donation\",\n      \"entity_scope\": \"the donor (Elaine Carter) and the donation FP-0316-EL\",\n      \"source_ids\": [\n        \"E11\"\n      ]\n    },\n    {\n      \"id\": \"a8\",\n      \"proposition\": \"The donation is NOT a donation of shares\",\n      \"entity_scope\": \"the donation FP-0316-EL\",\n      \"source_ids\": [\n        \"E12\"\n      ]\n    },\n    {\n      \"id\": \"a9\",\n      \"proposition\": \"The donation was NOT made via a charity card or voucher (e.g. a CAF voucher)\",\n      \"entity_scope\": \"the donation FP-0316-EL\",\n      \"source_ids\": [\n        \"E13\"\n      ]\n    }\n  ],\n  \"eligibility_expression\": {\n    \"op\": \"ALL\",\n    \"args\": [\n      {\n        \"ref\": \"a1\"\n      },\n      {\n        \"ref\": \"a2\"\n      },\n      {\n        \"ref\": \"a3\"\n      },\n      {\n        \"ref\": \"a4\"\n      },\n      {\n        \"ref\": \"a5\"\n      },\n      {\n        \"ref\": \"a6\"\n      },\n      {\n        \"ref\": \"a7\"\n      },\n      {\n        \"ref\": \"a8\"\n      },\n      {\n        \"ref\": \"a9\"\n      }\n    ]\n  },\n  \"scope_issues\": [\n    \"The customer scenario also mentions multiple monthly direct-debit donors and other one-off donations. Each individual donation from each individual donor would require its own assessment against these conditions. This representation covers only the single transaction FP-0316-EL.\"\n  ],\n  \"limitations\": [\n    \"The passages do not specify the exact monetary threshold for a donor 'benefit' that would disqualify a donation (a7); the limit is referenced but not quantified in the supplied text.\",\n    \"The passages do not detail procedural or record-keeping requirements beyond the Gift Aid declaration (e.g. retention periods, claim deadlines, form types), so those are not represented as atoms.\",\n    \"E04 and E07 are near-duplicate passages covering the same tax-paid condition; both are cited for a3 as they appear to restate the same rule.\"\n  ]\n}\n\n=== CONDITION_STATUSES (actual A2 JSON, wrapper excluded if present) ===\n{\n  \"statuses\": [\n    {\n      \"id\": \"a1\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"The charity's 2023 HMRC recognition letter is on file, and the treasurer's status check confirms the charity was still recognised on 16 March 2026.\",\n      \"justification\": \"The scenario explicitly confirms the charity held HMRC recognition as a charity on the date of the donation.\"\n    },\n    {\n      \"id\": \"a2\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"the bank's remitter details name Elaine Carter and her personal current account\",\n      \"justification\": \"The payment originates from Elaine Carter's personal current account, establishing she is an individual donor.\"\n    },\n    {\n      \"id\": \"a3\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"Her tax summary for the year to 5 April 2026 shows £980 of Income Tax paid... £80 in total, well below her £980.\",\n      \"justification\": \"The scenario shows Elaine paid £980 in Income Tax, which exceeds the total £80 Gift Aid to be reclaimed on all her donations that year, satisfying the condition.\"\n    },\n    {\n      \"id\": \"a4\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"Elaine signed an electronic Gift Aid declaration on 15 March, and the e-signature service holds the signed document, timestamp and audit record. The declaration says it covers this donation, and the finance assistant matched it to FP-0316-EL through her donor record.\",\n      \"justification\": \"A signed, timestamped electronic Gift Aid declaration exists, pre-dates the donation, explicitly covers it, and has been matched to the specific transaction.\"\n    },\n    {\n      \"id\": \"a5\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"It did not go through a payroll giving scheme\",\n      \"justification\": \"The scenario explicitly states the donation was not made through a payroll giving scheme.\"\n    },\n    {\n      \"id\": \"a6\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"The sales, booking and event records show nothing linked to this payment, and the only thing sent to Elaine was the standard thank-you email; she was not offered admission, advertising, a product or any other benefit.\",\n      \"justification\": \"The scenario explicitly confirms no goods or services were provided in connection with this payment.\"\n    },\n    {\n      \"id\": \"a7\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"she was not offered admission, advertising, a product or any other benefit\",\n      \"justification\": \"The scenario explicitly states Elaine received no benefit in connection with the donation, so the benefit limit condition is not triggered.\"\n    },\n    {\n      \"id\": \"a8\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"no shares, securities or other assets were delivered\",\n      \"justification\": \"The scenario explicitly confirms no shares or other assets were involved in the donation.\"\n    },\n    {\n      \"id\": \"a9\",\n      \"status\": \"TRUE\",\n      \"evidence_quote\": \"FP-0316-EL came directly from Elaine's bank on 16 March... those were paid to the charity in a combined batch on 18 March\",\n      \"justification\": \"The scenario clearly distinguishes FP-0316-EL as a direct bank payment from Elaine's personal account, separate from the CAF card and voucher redemptions (CC-0314, VC-0317) which arrived in a different batch two days later.\"\n    }\n  ],\n  \"scope_issues\": [\n    \"The scenario mentions multiple monthly direct-debit donors and other one-off donations; each would require its own separate assessment. This evaluation covers only transaction FP-0316-EL.\",\n    \"The policy passages reference a benefit limit (E11) but do not quantify it; the scenario asserts no benefit was provided, making the threshold moot here, but the limit itself is not defined in the supplied text.\"\n  ]\n}\n"
+    }
+  ],
+  "temperature": 0.6,
+  "output_config": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "decision": {
+            "type": "string",
+            "enum": [
+              "YES",
+              "NO",
+              "NEED_MORE_INFORMATION"
+            ]
+          },
+          "supporting_policy_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "decisive_condition_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_condition_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_facts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "justification": {
+            "type": "string"
+          },
+          "scope_issues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ir_discrepancies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "OMISSION",
+                    "UNSUPPORTED",
+                    "RELATION",
+                    "SCOPE",
+                    "STATUS",
+                    "OTHER"
+                  ]
+                },
+                "description": {
+                  "type": "string"
+                },
+                "policy_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "condition_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "type",
+                "description",
+                "policy_ids",
+                "condition_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "conditional_branches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "possible_answer": {
+                  "type": "string",
+                  "enum": [
+                    "YES",
+                    "NO"
+                  ]
+                },
+                "conditions_in_words": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "possible_answer",
+                "conditions_in_words"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "decision",
+          "supporting_policy_ids",
+          "decisive_condition_ids",
+          "unresolved_condition_ids",
+          "missing_facts",
+          "justification",
+          "scope_issues",
+          "ir_discrepancies",
+          "conditional_branches"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
