@@ -1,0 +1,64 @@
+{
+  "conditional_branches": [],
+  "decision": "NO",
+  "decisive_condition_ids": [
+    "a5"
+  ],
+  "ir_discrepancies": [
+    {
+      "condition_ids": [
+        "a2"
+      ],
+      "description": "The intermediate representation lists 'the donor has paid at least as much in Income Tax or Capital Gains Tax' as a required condition, but the condition status explicitly states this information is not established. The intermediate representation fails to reflect this absence of evidence, creating a misaligned status.",
+      "policy_ids": [
+        "E04",
+        "E07"
+      ],
+      "type": "STATUS"
+    },
+    {
+      "condition_ids": [
+        "a3"
+      ],
+      "description": "The intermediate representation includes a proposition about a Gift Aid declaration, but the condition status correctly identifies that Robyn's declaration has not been checked. The intermediate representation does not reflect this absence of evidence, leading to an unsupported atom.",
+      "policy_ids": [
+        "E05"
+      ],
+      "type": "STATUS"
+    },
+    {
+      "condition_ids": [
+        "a6"
+      ],
+      "description": "The intermediate representation includes a proposition about a benefit exceeding a threshold, but the evidence does not mention any benefit or threshold. This is an unsupported atom that introduces a condition without evidence.",
+      "policy_ids": [
+        "E11"
+      ],
+      "type": "UNSUPPORTED"
+    },
+    {
+      "condition_ids": [
+        "a1"
+      ],
+      "description": "The intermediate representation correctly identifies the donation as from an individual to a recognised charity, but the condition status does not address whether the donation is properly classified as a donation under the policy. The scope issue about one-off donations is noted, but the policy does not clarify if such donations are treated differently, creating a gap in scope application.",
+      "policy_ids": [
+        "E01",
+        "E02"
+      ],
+      "type": "SCOPE"
+    }
+  ],
+  "justification": "The donation of £260 from Robyn Ellis is described as a payment for advertising her grooming salon, which constitutes a payment for goods or services. According to E10, such donations are not eligible for Gift Aid. The policy explicitly excludes donations made because a charity bought goods and services or as a payment for goods or services. The evidence confirms this transaction was an exchange for advertising, making it a service payment. Therefore, the donation fails the E10 condition and is ineligible for Gift Aid, regardless of the charity's recognition or donor's tax position.",
+  "missing_facts": [],
+  "scope_issues": [
+    "The policy does not specify whether one-off donations or recurring donations are treated differently."
+  ],
+  "supporting_policy_ids": [
+    "E10"
+  ],
+  "unresolved_condition_ids": [
+    "a2",
+    "a3",
+    "a6"
+  ]
+}
