@@ -1,0 +1,21 @@
+{
+  "atoms": [
+    {"entity_scope":"donation","id":"a1","proposition":"the donation is made by an individual to a recognised charity or CASC","source_ids":["E01","E02"]},
+    {"entity_scope":"donor","id":"a2","proposition":"the donor has paid at least as much in Income Tax or Capital Gains Tax in the tax year as the amount of Gift Aid being claimed","source_ids":["E04","E07"]},
+    {"entity_scope":"donor","id":"a3","proposition":"the donor has made a Gift Aid declaration that gives permission to claim Gift Aid","source_ids":["E05"]},
+    {"entity_scope":"donation","id":"a4","proposition":"the donation is not made through Payroll Giving","source_ids":["E09"]},
+    {"entity_scope":"donation","id":"a5","proposition":"the donation is not a payment for goods or services or made because the charity bought goods and services","source_ids":["E10"]},
+    {"entity_scope":"donation","id":"a6","proposition":"the donation does not provide the donor with a benefit exceeding a certain limit","source_ids":["E11"]},
+    {"entity_scope":"donation","id":"a7","proposition":"the donation is not of shares","source_ids":["E12"]},
+    {"entity_scope":"donation","id":"a8","proposition":"the donation is not from charity cards or vouchers, such as Charities Aid Foundation (CAF) vouchers","source_ids":["E13"]}
+  ],
+  "decision_target":"eligibility for Gift Aid on a donation",
+  "decision_unit":"one donation",
+  "eligibility_expression":{"ref":"a1"},
+  "limitations":[
+    "The policy does not specify how to evaluate the tax position of a donor or whether a Gift Aid declaration is required for a specific donation type.",
+    "The policy does not define what constitutes a 'benefit' or the threshold for such a benefit.",
+    "The policy does not specify whether a donation made in exchange for a service or advertisement is considered a payment for goods or services."
+  ],
+  "scope_issues":["The policy applies to donations from individuals, but does not specify whether one-off donations or recurring donations are treated differently."]
+}
