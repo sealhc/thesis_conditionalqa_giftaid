@@ -8,7 +8,7 @@ This guide explains the **four shared inputs**, why we synthesized YES/NO/NEED_M
 
 **Five-minute orientation:** We compare Pipeline A (**A1 builds condition structure → A2 fills evidence into that same structure → A3 decides**) against Pipeline B (**B1 decides directly**) using the same policy, original background, additional donation evidence and question. A1+A2 form **one** intermediate representation. The original ConditionalQA Gold is conditional; our concrete decisions and intermediate references are researcher-derived.
 
-**Archive status:** The source data, synthetic evidence, canonical and rendered prompts, raw model outputs, parsed JSON, experiment code, tests, and Claude retry logs have been uploaded. Review and independent validation of the researcher-defined Gold remain separate tasks.
+**[Read the repository quality audit](docs/QUALITY_AUDIT_20261019.md)** — includes open integrity issues and retry-counting caveats.\n\n**Archive status:** The source data, synthetic evidence, canonical and rendered prompts, raw model outputs, parsed JSON, experiment code, tests, and Claude retry logs have been uploaded. Review and independent validation of the researcher-defined Gold remain separate tasks.
 
 ---
 
@@ -71,3 +71,5 @@ R3 evaluation must assess the *correct missing facts* (tax sufficiency for the a
 - [ConditionalQA benchmark](https://github.com/haitian-sun/ConditionalQA) · [ACL 2022 paper](https://aclanthology.org/2022.acl-long.253/) · [GOV.UK Gift Aid](https://www.gov.uk/claim-gift-aid)
 
 **Publication status:** Research artifacts are uploaded. The archive is an exploratory single-case pilot, not a peer-reviewed or independently validated release. For reproducibility, inspect the exact rendered prompts, metadata, original responses and the [archive completeness/retry note](docs/ARCHIVE_COMPLETENESS.md).
+
+**Integrity qualification:** The packaged SHA-256 manifest has not been reconciled against every current GitHub file. See [quality audit](docs/QUALITY_AUDIT_20261019.md) before claiming a fully verified release.
