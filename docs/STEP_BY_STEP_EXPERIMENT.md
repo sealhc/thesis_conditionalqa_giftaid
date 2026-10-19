@@ -152,7 +152,7 @@ For Robyn R2_L, Qwen produces:
 
 ## Verified original Qwen R2_L rep01 JSON outputs (now on GitHub)
 
-These are **parsed model outputs**, not the raw response or the rendered prompt. They are linked for direct inspection; the corresponding exact prompts and raw response logs remain pending upload.
+These are **parsed model outputs**, not raw responses. The corresponding rendered prompts and raw logs are now uploaded; open the [artifact index](ARTIFACT_INDEX.md) to inspect each alongside the parsed JSON.
 
 - [A1 — actual parsed JSON](../runs/qwen_nothink_v7_rep01/R2_L/A1_parsed.json)
 - [A2 — actual parsed JSON](../runs/qwen_nothink_v7_rep01/R2_L/A2_parsed.json)
