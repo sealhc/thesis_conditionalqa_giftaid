@@ -91,7 +91,7 @@ By De Morgan's law, `NOT (X1 OR ... OR X5)` equals `NOT X1 AND ... AND NOT X5`. 
 
 **Actual A1 defect:** Qwen outputs eight atoms but its entire `eligibility_expression` is `{"ref":"a1"}`. This means **only the first condition is used by the rule**; the other seven are not linked into the decision formula. This is a logic-composition error, even if all relevant policy topics were extracted.
 
-## 6. A2 — Populate the SAME representation using evidence
+**A1 representation-quality audit:** [Atomicity, polarity and Boolean-composition findings](A1_REPRESENTATION_AUDIT.md). This records observed deviations without editing the frozen experiment.\n\n## 6. A2 — Populate the SAME representation using evidence
 
 **[A2: source evidence, prompt, model output and code](ARTIFACT_INDEX.md#a2--populate-the-same-ir-with-case-evidence)**
 
