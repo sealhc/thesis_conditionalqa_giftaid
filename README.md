@@ -8,7 +8,7 @@ This guide explains the **four shared inputs**, why we synthesized YES/NO/NEED_M
 
 **Five-minute orientation:** We compare Pipeline A (**A1 builds condition structure → A2 fills evidence into that same structure → A3 decides**) against Pipeline B (**B1 decides directly**) using the same policy, original background, additional donation evidence and question. A1+A2 form **one** intermediate representation. The original ConditionalQA Gold is conditional; our concrete decisions and intermediate references are researcher-derived.
 
-**[Read the repository quality audit](docs/QUALITY_AUDIT_20261019.md)** — includes open integrity issues and retry-counting caveats.\n\n**Archive status:** The source data, synthetic evidence, canonical and rendered prompts, raw model outputs, parsed JSON, experiment code, tests, and Claude retry logs have been uploaded. Review and independent validation of the researcher-defined Gold remain separate tasks.
+**[Read the A1 representation audit](docs/A1_REPRESENTATION_AUDIT.md)** · **[Read the repository quality audit](docs/QUALITY_AUDIT_20261019.md)** — includes open integrity issues and retry-counting caveats.\n\n**Archive status:** The source data, synthetic evidence, canonical and rendered prompts, raw model outputs, parsed JSON, experiment code, tests, and Claude retry logs have been uploaded. Review and independent validation of the researcher-defined Gold remain separate tasks.
 
 ---
 
