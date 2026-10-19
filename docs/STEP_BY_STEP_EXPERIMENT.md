@@ -8,6 +8,8 @@ Can a language model make more reliable, auditable decisions from policy documen
 
 This is an exploratory pilot using **one original ConditionalQA question (dev-38, Gift Aid)**. We compare two pipelines under the same source input. We do **not** compare two different policies or different underlying cases.
 
+**[Artifact map: exact policy, synthetic evidence, prompt templates, raw outputs and code paths for every step](ARTIFACT_INDEX.md)**. The artifact index identifies what is prepared and which files are not yet published; it does not disguise missing uploads as working links.
+
 ## 2. What does the model receive? Four source components
 
 | Component | What it contains | Origin | Fixed or varied? |
@@ -54,6 +56,10 @@ SAME INPUT: policy + original background + additional evidence + question
 
 ## 5. A1 — Extract the condition structure
 
+**[A1: source input, prompt template, rendered prompt, JSON output and implementation code](ARTIFACT_INDEX.md#a1--define-conditions-and-logical-structure)**
+
+
+
 **Input:** fixed policy evidence and the decision question; see the actual rendered A1 prompt for the exact additional context included in the call.
 
 **Prompt objective:** identify conditions that govern Gift Aid and write a machine-readable JSON representation, **without deciding this donor's case**.
@@ -87,6 +93,10 @@ By De Morgan's law, `NOT (X1 OR ... OR X5)` equals `NOT X1 AND ... AND NOT X5`. 
 
 ## 6. A2 — Populate the SAME representation using evidence
 
+**[A2: source evidence, prompt, model output and code](ARTIFACT_INDEX.md#a2--populate-the-same-ir-with-case-evidence)**
+
+
+
 **Input:** A1's condition definitions and the case evidence, with original sources as specified by the rendered prompt.
 
 **Prompt objective:** for **each condition already defined by A1**, assign `TRUE`, `FALSE`, `UNKNOWN` or `CONFLICTING`; cite an evidence quote and explain the assignment. **Do not make the final decision.**
@@ -106,6 +116,10 @@ For Robyn R2_L, Qwen produces:
 
 ## 7. A3 — Decide using the populated IR and original sources
 
+**[A3: populated IR, prompt, final JSON and code](ARTIFACT_INDEX.md#a3--final-llm-decision)**
+
+
+
 **Input:** original sources plus the A1 condition definitions and A2 evidence states, as rendered in the saved A3 prompt.
 
 **Prompt objective:** check the source evidence and the intermediate states, identify decisive conditions and produce one of the three labels with reasons.
@@ -115,6 +129,10 @@ For Robyn R2_L, Qwen produces:
 **Why it matters:** A1's Boolean expression is incomplete and A2 has a reference-relative status error, yet A3 returns the correct final label. This is **observed non-propagation / error absorption**. Since A3 also reads original policy and evidence, we cannot prove that the IR itself caused the correct decision.
 
 ## 8. B1 — Direct decision without persistent IR
+
+**[B1: identical source inputs, direct prompt, final JSON and code](ARTIFACT_INDEX.md#b1--direct-baseline)**
+
+
 
 **Input:** the same four original source components.
 
