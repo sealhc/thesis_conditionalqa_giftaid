@@ -1,6 +1,6 @@
 # Experimental workflow — a step-by-step guide for new reviewers
 
-> **Status:** This document explains the frozen study design. The archived prompts, JSON outputs and code are being uploaded separately. No link should be treated as an original run record until its target exists in this repository.
+> **Archive status:** Source evidence, synthesized inputs, rendered prompts, raw and parsed outputs, code and retry records are now present in this repository. Researcher-defined Gold and causal explanations remain subject to independent validation.
 
 ## 1. What is the question?
 
@@ -8,7 +8,7 @@ Can a language model make more reliable, auditable decisions from policy documen
 
 This is an exploratory pilot using **one original ConditionalQA question (dev-38, Gift Aid)**. We compare two pipelines under the same source input. We do **not** compare two different policies or different underlying cases.
 
-**[Artifact map: exact policy, synthetic evidence, prompt templates, raw outputs and code paths for every step](ARTIFACT_INDEX.md)**. The artifact index identifies what is prepared and which files are not yet published; it does not disguise missing uploads as working links.
+**[Artifact map: exact policy, synthetic evidence, prompt templates, raw outputs and code paths for every step](ARTIFACT_INDEX.md)**. The artifact index links directly to the uploaded original source evidence, synthesized information, exact prompts, raw outputs, parsed JSON and execution code.
 
 ## 2. What does the model receive? Four source components
 
@@ -163,7 +163,7 @@ These are **parsed model outputs**, not the raw response or the rendered prompt.
 
 For **every** run, the repository release must contain: `A1_PROMPT.txt`, `A1_raw.txt`, `A1_parsed.json`, equivalent A2/A3/B1 files, run metadata, provider request/attempt logs, source input and **post-run** Gold comparison. The raw outputs must not be replaced with cleaned summaries.
 
-**Release gate:** The complete run files are not yet uploaded here. This document explains the workflow, but the repository is not yet a complete reproducibility archive. Original failed API attempts and successful retries must remain separately identifiable.
+**Archive note:** Original failed API attempts and successful retries remain separately identifiable. Use the run-specific metadata and exact rendered prompts for reproducibility. See [archive completeness](ARCHIVE_COMPLETENESS.md).
 
 ## 11. Limitations
 
